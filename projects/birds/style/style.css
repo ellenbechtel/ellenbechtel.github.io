@@ -1,0 +1,219 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Helvetica Neue", Helvetica, Arial, Helvetica, sans-serif;
+  color: #352418;
+  font-size: 15pt;
+  line-height: 1.5;
+  background-color: #f9f9f7; 
+}
+
+header {
+  background-color: #cccccc;
+  color: white;
+}
+
+.header {
+  font-size: 30pt;
+  text-align: center;
+  color: #352418;
+  margin-top: 200px;
+  margin-bottom: 200px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.subheader {
+  font-size: 15pt;
+  font-style: italic;
+}
+
+.byline {
+  font-size: 10pt;
+  font-style: italic;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  max-width: 40rem;
+  padding: 1rem;
+  margin: 20px auto 20px auto;
+}
+
+.emphasize {
+  font-size: 20pt;
+  font-weight: bold;
+}
+
+.highlight {
+  max-width: 50rem;
+  padding: 3rem;
+  margin: 3rem auto 3rem auto;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column; 
+}
+
+.bird-container {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-self: auto;
+}
+
+.bird-pullout {
+  margin: 20px;
+  padding: 40px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.intro-bird{
+  margin: auto;
+  margin-top: 1rem;
+}
+
+
+.latinName {
+  font-style: italic;
+}
+
+.common-name {
+  font-style: bold;
+}
+
+.section-break {
+  margin: 0 auto;
+  width: 50%;
+  justify-content: center;
+}
+
+#dropdowns{
+  display: flex;
+  flex-direction: column;
+  max-width: 40rem;
+  padding: 1rem;
+  margin: 3rem auto 3rem auto;
+  background-color: #fff;
+}
+
+a {
+  color: #352418;
+  text-decoration: none;
+  border-bottom: 1px solid #282828;
+}
+
+a:hover {
+  color: #352418;
+  border-bottom: 3px solid #282828;
+  opacity: 80%;
+}
+
+a:active {
+  color: #352418;
+  color: black;
+}
+
+a:visited {
+  color: #352418;
+  border-bottom: 3px solid #282828;
+  opacity: 80%;
+}
+
+.interactive-title{
+  font-size: 15pt;
+  font-weight: none;
+}
+
+.pullout {
+  font-weight: bold;
+  opacity: 20%;
+  text-align: center;
+}
+
+select {
+  -webkit-appearance: none;
+  background-color: #fff;
+  margin: 0 1rem;
+  font-size: 15pt;
+  font-weight: bold;
+  appearance: none;
+  border: 0;
+  outline: 0;
+  border-bottom: 3px solid #282828;
+  border-radius:0;
+}
+
+#chart {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 0px;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+svg{
+  margin: auto 3rem auto 3rem;
+}
+
+.state {
+  fill: #F1F1F1;
+  stroke: #AAAAAA;
+  stroke-width: 2;
+}
+
+#slider {
+  margin: auto;
+  width: 50%;
+}
+
+#selectYear {
+  width: 100%;
+}
+
+.yearLabel {
+  font-family: "Helvetica Neue", Helvetica, Arial, Helvetica, sans-serif;
+  font-size: 120pt;
+  font-weight: 700;
+  fill: #E2E2E2;
+  cursor: default;
+}
+
+.orderLabel {
+  font-family: "Helvetica Neue", Helvetica, Arial, Helvetica, sans-serif;
+  font-size: 18pt;
+  font-style: italic;
+  font-weight: 700;
+  fill: #E2E2E2;
+  cursor: default;
+}
+
+.speciesLabel {
+  font-family: "Helvetica Neue", Helvetica, Arial, Helvetica, sans-serif;
+  font-size: 18pt;
+  font-weight: 700;
+  fill: #E2E2E2;
+  cursor: default;
+}
+
+.tooltip {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  visibility: hidden;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 10pt;
+  background-color:rgba(255,255,255,0.8);
+  padding: 12px;
+  pointer-events: none;
+}

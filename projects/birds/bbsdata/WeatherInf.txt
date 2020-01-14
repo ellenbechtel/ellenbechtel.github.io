@@ -1,0 +1,61 @@
+
+The Weather file (Weather.zip) contains the following columns:
+
+ RouteDataID 		Data identification number; unique for each unique combination of countrynum region, route, RPID, and year.
+
+ CountryNum  		The three digit code that identifies country where route is located (See RegionCodes file.).
+
+ StateNum    		The two digit numerical code that identifies the state, province, or territory where the route is located (See RegionCodes file.).
+
+ Route       		The three digit code that identifies the route.
+
+ RPID	     		The run protocol identification number.  Identifies protocol used to sample route (See RunProtocolID file.).
+
+ Year        		The year. The CountryNum, StateNum, Route, RPID, and Year columns uniquely identify a 
+	     		run of a route.
+
+ Month       		The month the route was run (1-12).
+
+ Day         		The day the route was run (1-31).
+
+ ObsN        		Unique observer identification number.
+
+ TotalSpp    		The total number of species recorded on that run of the route.
+
+ StartTemp   		The temperature recorded at the beginning of the run of the route.
+
+ EndTemp     		The temperature recorded at the end of the run of the route.
+
+ TempScale   		The scale in which the temperatures were recorded. F stands for Fahrenheit; 
+	     		C stands for Celcius.
+
+ StartWind   		The Beaufort wind speed code recorded at the beginning of the run of the route (See WeatherCodes file.).
+
+ EndWind     		The Beaufort wind speed code recorded at the end of the run of the route (See WeatherCodes file.).
+
+ StartSky    		The Weather Bureau sky code recorded at the beginning of the run of the route (See WeatherCodes file.).
+
+ EndSky      		The Weather Bureau sky code recorded at the end of the run of the route (See WeatherCodes file.).
+
+ StartTime   		The time the run of the route began, recorded in 24 hour local time.
+
+ EndTime     		The time the run of the route ended, recorded in 24 hour local time.
+
+ Assistant   		If someone assisted the observer by recording the data, then this column 
+	     		is 1, otherwise it is 0.
+
+ QualityCurrentID	Indicates whether the route sampling event (i.e., run) took place under suitable weather conditions and within suitable time, 
+			date, and route completion criteria. If data meet criteria, then QualityCurrentID is 1, otherwise it is 0 (See RunType file.).
+
+ RunType     		The RunType code helps to quickly determine which data do, or do not meet the BBS program’s data criteria.  
+			A RunType code of 1 is assigned whenever data were collected under conditions that meet BBS weather, date, time, and route completion 
+			criteria (QualityCurrentID = 1) on a randomly established route (i.e., RouteTypeDetailID = 1) using the official BBS
+			sampling protocol (RunProtocolID = 101).
+
+			Conversely, a RunType code of 0 indicates that data from a run fail to meet one or more of the aforementioned requirements.  This could 
+			occur in one of 3 scenarios, or in combination, when: data exceed suitable date, time, weather, and/or route completion 
+			criteria (QualityCurrentID = 0), data had been collected along a non-randomly established route (i.e., RouteTypeDetailID is not 1), and/or 
+			when the official BBS sampling protocol had not been used or it is a replicate run (RunProtocolID is not 101; See RunType file.).
+
+
+There is one record in the Weather file for every run of a route per year. 

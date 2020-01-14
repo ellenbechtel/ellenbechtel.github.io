@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="./style/style.css">
+        <script src="lib/d3.js"></script>
+    </head>
+    <body>
+        <header>
+            <section class="header" id="intro">
+                <h1 class="title">Are Birds Really Disappearing?</h1>
+                <h2 class="subheader">What the government knows about bird populations and how citizen science actually works.</h2>
+                <div class="article-meta">
+                        <p class="byline">Code, Story &amp; Design by Ellen Bechtel</p>
+                        <p class="byline">Northeastern University's Information Design and Visualization MS</p>
+                </div>
+            </section>
+        </header>
+
+        <main>
+            <div class="section-break"><img src=./img/flock.png alt="Flock of Birds" width=50%></div>
+            <section class="content">
+                <p class="prose"><span class="emphasize">Springtime in North America means sexy time for birds.</span> They fly back north to their breeding grounds across the US and get it on, and birders across the continent break out their binoculars to peep on the returning birds and their offspring.</p>
+                <p class="prose"><span class="emphasize">The North American Breeding Bird Survey</span> (BBS) was
+                        established in 1966 by Chandler S. Robbins in the wake of
+                        Rachel Carson's book <i>Silent Spring</i> which highlighted the effects of pesticides on wildlife populations. 
+                        Chandler realized that nobody had any reliable large-scale
+                        data on changes in the populations of many bird species,
+                        especially songbirds. The BBS now provides the most reliable regional 
+                        and continental trends and annual indices of abundance available for over 500 bird species continent-wide.</p>
+                <p class="prose">The BBS was one of the first citizen science programs; it relies
+                        on thousands of highly skilled birders, most of whom are
+                        volunteers, to undertake roadside surveys across the North
+                        American continent during the peak breeding season - between May and early July, depending on latitude.</p>
+                <p class="prose">Volunteers trace a route made up of fifty 3-min stations rougly 0.8 km apart on secondary roads. A single observer identifies
+                        and counts every bird they see within 400 m of their stop, or record any bird heard at any distance. The counts are then compiled the 
+                        United States Geological Survey (USGS) Patuxent Wildlife Research Center in Maryland and made available to the public.</p>
+
+                <p class="prose">In the last 50+ years, we've learned a lot from these samplings. he Breeding Bird Survey is used in all sorts of ornithological studies.  The data are publicly available for use and are updated regularly.
+                    By 2009, was used in a <a href="https://www.pwrc.usgs.gov/bbs/about/bbsbib.pdf">gajillion peer-reviewed scientific studies.</a> The information is publically available, but is SO dense and hard to get a sense of. So let's look at it a little differently.</p>
+            </section>
+            <section class="highlight"> 
+                    <img class="intro-bird" src="./img/common-grackle.png" width=600>
+                    <h3 class="intro-bird">Meet the <span class="emphasize">Common Grackle.</span></h3>
+                    <p class="prose"><a href="https://www.allaboutbirds.org/guide/Common_Grackle/overview">Grackles</a><span class="latinName"> (Quiscalus quiscula)</span> are in the Perching Bird family, the 
+                        <span class="latinName">Passeriformes</span>.  They are blackbirds that look like they've been slightly stretched, and they have 
+                        glossy, iridescent bodies.  They walk around on lawns and fields on their long legs, or gather in noisy groups high in trees. They'll eat almost 
+                        anything, including trash and corn crops. They live in Massachusetts year-round, and they're kinda everywhere.</p>
+                    <p class="prose">It was one of 183 different species spotted in Massachusetts over the 50 years of the BBS.</p>
+                    <p class="prose"><span class="emphasize">Data from the BBS shows that grackle populations are in steep decline,
+                    with populations shrinking 2% per year, and down 58% since the survey began in 1966.</span></p>
+            </section>
+
+            <div class="content"><h1>So let's explore the data ourselves.</h1></div>
+
+            <section class="chart">
+                <div id="dropdowns">
+                    <span class="interactive-title">Show me <select class="dropdown" id="dropdownOrder"></select>specifically the <select class="dropdown" id="dropdownCommonName"></select></span> 
+                </div>
+                <div id="chart"></div>
+                <div id="container">
+                   <div id="slider">
+                       <input id="selectYear" type="range" step=1>
+                   </div>
+               </div>             
+            </section>
+
+            <section class="content">
+                <h4>Try moving through the timeline like a movie for a few different species. Do you notice anything interesting about the following birds?</h4>
+                <div class="bird-container">
+                    <div class="bird-pullout">
+                        <h3>House Finch</h3>
+                        <p class="pullout">Perching Birds</p>
+                        <img src="./img/house-finch.png" alt="House Finch" height=300>
+                        <p class="latinName">Haemorhous mexicanus</p>
+                        <p><a href="https://www.allaboutbirds.org/guide/House_Finch/overview">Learn More</a></p>
+                    </div>
+                    <div class="bird-pullout">
+                        <h3>Wild Turkey</h3>
+                        <p class="pullout">Landfowl</p>
+                        <img src="./img/wild-turkey.png" alt="Wild Turkey" height=300>
+                        <p class="latinName">Meleagris gallopavo</p>
+                        <p><a href="https://www.allaboutbirds.org/guide/wild_turkey">Learn More</a></p>
+                    </div>
+                    <div class="bird-pullout">
+                            <h3>Chimney Swift</h3>
+                            <p class="pullout">Swifts</p>
+                            <img src="./img/chimney-swift.png" alt="Chimney Swift" height=300>
+                            <p class="latinName">Chaetura pelagica</p>
+                            <p><a href="https://www.allaboutbirds.org/guide/Chimney_Swift/overview">Learn More</a></p>
+                    </div>
+                </div>   
+
+
+            </section>
+            <section class="content" id="Data">
+                <h3>Data</h3>
+                <p class="prose">You too can download the <a href="https://www.usgs.gov/centers/pwrc/science/north-american-breeding-bird-survey?qt-science_center_objects=0#qt-science_center_objects">North American Breeding Bird Survey.</a>
+                The data used in this page is v2017, downloaded in November 2019.</p>
+                <p class="prose">Most importantly, you can learn tons about each bird species from the <a href="https://www.allaboutbirds.org/news/">Cornell Lab of Ornithology</a>, including results of survey analysis that shows whether each species is a conservation concern.</p>
+            </section>
+           
+
+        <script src="./script.js"></script>
+        </main>
+    </body>
+</html>
