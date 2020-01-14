@@ -1,0 +1,775 @@
+/* This is our real CSS!! */
+
+html, body {
+    margin: 0;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+
+body.full {
+    display: block;
+}
+
+
+.main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: #444;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-transition: background-image 0.4s ease-in-out;
+    transition: background-image 0.4s ease-in-out;
+  }
+
+
+  a {
+    color: #6bb45e;
+  }
+  
+  a:visited {
+    color: #c79652;
+  }
+
+
+
+.meat {
+  color: white;
+  margin: auto;
+  text-align: center;
+  position: relative;
+  width: inherit;
+  background-image: linear-gradient(90deg, rgba(107,180,94,.3) 0%, rgba(199,150,82,.5) 100%), url(photos/sunset.JPG);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.body {
+    min-height: 100%;
+    position: relative;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  
+
+.top-circle {
+    margin: auto;    
+    fill: #fff;
+    max-width: 100%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  
+  }
+
+  @media (max-width: 960px) {
+  
+    .top-circle {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+
+  @media (min-width: 961px) {
+  
+    .top-circle {
+      width: 500px;
+    }
+  }
+
+.details {
+    align-items: center;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    left: 0;
+    position: absolute;
+    right: 0px;
+    top: 0;
+    line-height: 1.6;
+    font-size: 1.2em;
+  }
+
+  @media (max-width: 960px) {
+    .details {
+      font-size: .6em;
+    }
+
+  }
+
+footer {
+    background: white;
+    text-align: center;
+    color: #999;
+    font-size: 80%;
+    margin: 20em 0 2em;
+  }
+
+footer .end-circle {
+    width: 160px;
+    fill: url(#warmombre);
+    margin: 1em auto 2em;
+  }
+  
+  nav {
+    width: 100%;
+    background: white;
+    padding: 16px 0 14px;
+    height: 50px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+    box-shadow:
+      0 2px 4px rgba(0,0,0,0.15),
+      0 1px 0 rgba(0,0,0,0.08);
+    top: 0;
+  }
+
+  nav:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  nav > div {
+    margin: 0 auto;
+    max-width: 960px;
+  }
+  
+  nav > div > a {
+    color: #444;
+    line-height: 20px;
+    margin: 0 0 0 -20px;
+  }
+
+  nav ul {
+    float: right;
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav a,
+  nav a:visited {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .6em;
+    font-weight: inherit;
+    line-height: 1;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #777;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 14px 20px;
+  }
+  
+  nav a:hover {
+    color: #c79652;
+  }
+
+
+@media (max-width: 960px) {
+    nav {
+      padding: 0;
+      height: 44px;
+    }
+  
+    nav > div > a {
+      display: none;
+    }
+  
+    nav ul {
+      margin: 0;
+      justify-content: space-around;
+      float: none;
+    }
+  
+    nav li {
+      flex-grow: 1;
+    }
+  
+    nav a {
+      display: block;
+      font-size: .6em;
+      line-height: 1;
+      padding: 17px 0 16px;
+      text-align: center;
+    }
+  }
+
+
+/* Accordion*/
+
+button{
+  background-color: white;
+}
+
+.accordion {
+  background-color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: lightgray;
+}
+
+.accordion:after {
+  content: '\002B';
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+
+/* Other*/
+
+
+  section {
+    width: 100%;
+    background: white;
+    padding-bottom: 3em;
+  }
+  
+  section .header {
+    height: 60vh; /* make media query to decrease this for mobile */
+    position: relative;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  
+    background: #444;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  
+
+.main::before,
+section .header:before {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(90deg, rgba(107,180,94,.2) 0%, rgba(199,150,82,.3) 100%);
+}
+
+@media (min-width: 961px) {
+    .main,
+    .main::before,
+    section .header,
+    section .header::before {
+      background-attachment: fixed;
+    }
+  
+    .meat {
+      background-attachment: fixed;
+    }
+  }
+
+@media (max-width: 960px) {
+  .main,
+  .main::before,
+  section .header,
+  section .header::before {
+    background-attachment: scroll;
+  }
+
+  .meat {
+    background-attachment: scroll;
+  }
+
+  section .header {
+    height: 30vh; /* make media query to decrease this for mobile */
+  }
+}
+
+
+.content {
+position: relative;
+width: auto;
+margin: 0 60px 0; /* this should be the base case, or on a computer screen */
+}
+
+@media (min-width: 960px) {
+  .content {
+      width: 960px;
+      margin: 0 auto;
+      padding: 2em 0 1em;
+  }
+}
+  
+
+.content h2 {
+    font-family: 'Montserrat', sans-serif;;
+    font-weight: 700;
+    font-size: 55px;
+    line-height: 1.1em;
+    text-align: left;
+  }
+
+@media (max-width: 960px) {
+
+  .content h2 {
+    font-size: 2.2em
+  }
+  
+}
+  
+  
+.content h3,
+.content h3 a,
+.content h3 a:hover {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1.3em; /* relative font sizing */
+    line-height: 1.3;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #444;
+  }
+
+.content h3 {
+    margin: 4em 0 1em;
+
+    display: inline-block;
+    padding-bottom: 2px;
+    border-width: 0 0 2px 0;
+    border-style: solid;
+    -webkit-border-image:
+    -webkit-gradient(linear, 100% 0, 0 0, from(#6bb45e), to(#c79652)) 0 0 100%;
+    -webkit-border-image:
+    -webkit-linear-gradient(right, #6bb45e, #c79652) 0 0 100%;
+    -moz-border-image:
+    -moz-linear-gradient(right, #6bb45e, #c79652) 0 0 100%;
+    -o-border-image:
+    -o-linear-gradient(right, #6bb45e, #c79652) 0 0 100%;
+    border-image:
+    linear-gradient(to right, #6bb45e, #c79652) 0 0 100%;
+}
+
+.content .day {
+  margin: 2em 0 1em;
+
+  display: inline-block;
+  padding-bottom: 2px;
+  border-width: 0 0 2px 0;
+  border-style: solid;
+  -webkit-border-image:
+  -webkit-gradient(linear, 100% 0, 0 0, from(#6bb45e), to(#c79652)) 0 0 100%;
+  -webkit-border-image:
+  -webkit-linear-gradient(right, #6bb45e, #c79652) 0 0 100%;
+  -moz-border-image:
+  -moz-linear-gradient(right, #6bb45e, #c79652) 0 0 100%;
+  -o-border-image:
+  -o-linear-gradient(right, #6bb45e, #c79652) 0 0 100%;
+  border-image:
+  linear-gradient(to right, #6bb45e, #c79652) 0 0 100%;
+}
+
+@media (max-width: 960px) {
+
+  .content .day {
+    font-size: 1.5em;
+  }
+  
+}
+
+
+.content h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.4;
+    color: #444;
+    margin-top: 2em;
+    margin-bottom: .5em;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+.content p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #444;
+    max-width: 600px; /* this is causing problems on mobile */
+  }
+  
+  .content .meta {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10pt;
+    font-weight: inherit;
+    line-height: 1.7;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #777;
+    margin: 0;
+  }
+
+  .reserve {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 19px;
+    font-weight: bold;
+    line-height: 1.7;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #777;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  
+
+
+  .content a {
+    color: #6bb45e;
+    text-decoration: none;
+  }
+  
+  .content a:hover {
+    text-decoration: underline;
+  }
+
+
+
+.place {
+    display: block;
+    position: relative;
+    margin: 1em -10px;
+    overflow: hidden;
+  }
+  
+  .place img {
+    width: 100%;
+    min-height: 80px;
+    max-height: 200px;
+    background: #444;
+  
+    -moz-transition: all 0.35s;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+  
+  .place:hover img {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  
+  .place h4 {
+    position: absolute;
+    margin-top: 10px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  
+    padding: 15px 10px 7px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.4));
+  
+    color: white;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+
+
+.map {
+    width: 485px;
+    height: 350px;
+    margin: 0 -10px;
+    pointer-events: none;
+  }
+  
+  .map > iframe {
+    width: 100%;
+    border: 0;
+    height: 100%;
+  }
+  
+  .weather {
+    position: relative;
+  }
+  
+  .weather .weather-glyph {
+    position: absolute;
+    top: 70px;
+    right: 290px;
+  }
+  
+  .weather img {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: -4px;
+    left: 98px;
+    transition: all 0.4s ease-in-out;
+  }
+
+
+.weather .high {
+    font-size: 75px;
+    position: absolute;
+    color: #c79652;
+    transition: all 0.25s 0.1s ease-in-out;
+  }
+  
+.weather .low {
+    font-size: 35px;
+    position: absolute;
+    top: 76px;
+    left: 36px;
+    transition: all 0.19s 0.12s ease-in-out;
+}
+
+.weather-glyph:hover img {
+    transform: scale(1.25) rotate(16deg);
+}
+
+.weather-glyph:hover .high {
+    transform: translateX(-14px);
+}
+
+.weather-glyph:hover .low {
+    transform: translateX(-7px);
+}
+
+/* mobile screen sizes */
+@media (max-width: 960px) {
+
+  body {
+    font-size: 20px;
+  }
+    
+  
+    .content h4,
+    .content p,
+    form input,
+    form label,
+    form textarea {
+      font-size: 18px; /* you probably don't need these specific font sizes anymore if all the non-media query ones are in em's */
+    }
+
+    h4 {
+        margin-top: 10px;
+    }
+  
+    .content .meta {
+      font-size: 12px;
+    }
+  
+    .wrap-photogrid {
+      margin: 0 -10px;
+    }
+  
+    .wrap-photogrid img {
+      display: block;
+      float: left;
+      width: 50%;
+    }
+  
+    .wrap-photogrid:after {
+      content: '';
+      clear: both;
+      display: block;
+    }
+  
+    .map {
+      width: calc(100% + 20px);
+      height: 260px;
+    }
+  
+    .weather .weather-glyph {
+      -moz-transform: scale(0.6);
+      -webkit-transform: scale(0.6);
+      transform: scale(0.6);
+      top: 30px;
+      right: 125px;
+    }
+  }
+
+  /* desktop screen sizes */
+@media (min-width: 961px) {
+    .columns {
+      display: flex;
+    }
+    .columns > div {
+      flex: 1;
+      margin-right: 60px; /* this is probably causing margin issues on mobile */
+    }
+  
+    .columns div:last-child {
+      float: right;
+      margin-right: 0;
+    }
+  
+    #lodging > .content {
+      padding-top: 210px;
+    }
+  
+    #gifts > .content {
+      padding-top: 250px;
+    }
+  
+    .wrap-photogrid {
+      left: -20px;
+      pointer-events: none;
+      position: absolute;
+      right: -10px;
+      top: 40px;
+    }
+  
+    .wrap-photogrid img {
+      display: block;
+      width: 310px;
+  
+      -moz-transition: all 0.35s;
+      -webkit-transition: all 0.35s;
+      transition: all 0.35s;
+    }
+  
+    .wrap-photogrid a {
+      display: block;
+      float: right;
+      margin: 10px;
+      overflow: hidden;
+      pointer-events: auto;
+      width: 310px;
+    }
+  
+    .wrap-photogrid a:hover img {
+      -moz-transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+  
+    .wrap-photogrid:after {
+      content: '';
+      clear: both;
+      display: block;
+    }
+  }
+
+
+
+section .header .content h2,
+section .header .content p {
+  color: white;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+
+  /* Edit stuff with "wear" */
+
+
+#wear img {
+  margin: 0 -10px;
+}
+
+@media (max-width: 960px) {
+  #wear img {
+    width: 100%;
+    width: calc(100% + 20px);
+    max-width: 485px;
+  }
+}
+
+  /* Button */
+
+  .reserve {
+    box-shadow: 0px 10px 14px -7px #444;
+    background:linear-gradient(90deg, rgba(107,180,94,.9) 0%, rgba(199,150,82,.9) 100%);
+    border-radius:12px;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-size: 1.2em;
+    font-weight:bold;
+    padding:13px 32px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #444;
+  }
+  .reserve:hover {
+    background:linear-gradient(90deg, rgba(107,180,94) 0%, rgba(199,150,82) 100%);
+  }
+  .reserve:active {
+    position:relative;
+    top:1px;
+  }
+  
+
+  /* Photos */
+
+#schedule .header {
+    background-image: linear-gradient(90deg, rgba(107,180,94,.2) 0%, rgba(199,150,82,.3) 100%), url(photos/boat.jpeg); 
+    background-size: 100%; /* probably will have to play around with this and other background stuff */
+  }
+  
+  #location .header {
+    background-image: linear-gradient(90deg, rgba(107,180,94,.2) 0%, rgba(199,150,82,.3) 100%), url(photos/redhill.JPG);
+  }
+  
+  #lodging .header {
+    background-image: linear-gradient(90deg, rgba(107,180,94,.2) 0%, rgba(199,150,82,.3) 100%), url(photos/genevapoint.JPG);
+  }
+  
+  #rsvp .header {
+    background-image: linear-gradient(90deg, rgba(107,180,94,.2) 0%, rgba(199,150,82,.3) 100%), url(photos/edies.jpg);
+  }
+  
+  #family .header {
+    background-image: linear-gradient(90deg, rgba(107,180,94,.2) 0%, rgba(199,150,82,.3) 100%), url(photos/oscar.jpeg);
+  }
+  
+  #gifts .header {
+    background-image: linear-gradient(90deg, rgba(107,180,94,.2) 0%, rgba(199,150,82,.3) 100%), url(photos/path.JPG);
+  }
+
+  .break{
+      margin: 10px;
+  }
