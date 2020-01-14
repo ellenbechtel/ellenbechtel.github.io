@@ -1,0 +1,80 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16pt;
+}
+
+body {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+#meat {
+    background-image: linear-gradient(90deg, rgba(107,180,94,.3) 0%, rgba(199,150,82,.5) 100%), url(mist.JPG);
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#meat .content {
+    color: white;
+    margin: 0 auto;
+    padding: 5em 0 5em;
+}
+.content {
+    width: 960px;
+    margin: 0 auto;
+    padding: 2em 0 1em;
+}
+
+h1 {
+    font-size: 5em;
+    margin: 2em auto 0;
+}
+
+a {
+    color:#026043;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+#potatoes .content {
+    margin: 0 auto 0;
+    padding: 5em 0 5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.weeks {
+    list-style: none;
+}
+
+button {
+    background-color:#ba0430;
+	cursor:pointer;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    box-shadow: 5px 10px 10px #888888;
+}
+
+button:hover {
+    background-color:#870323;
+}
+
+button:active {
+	position:relative;
+    top:1px;
+    outline: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+.date {
+    padding: 0 9px 0;
+}

@@ -1,0 +1,79 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16pt;
+}
+
+body {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+#meat {
+    background-image: linear-gradient(90deg, rgba(107,180,94,.3) 0%, rgba(199,150,82,.5) 100%), url(deelyboppers.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#meat .content {
+    color: white;
+    margin: 0 auto;
+    padding: 5em 0 5em;
+}
+.content {
+    width: 960px;
+    margin: 0 auto;
+    padding: 2em 0 1em;
+}
+
+h1 {
+    font-size: 5em;
+    margin: 2em auto 0;
+}
+
+a {
+    color:#026043;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+
+#potatoes .content {
+    margin: 0 auto;
+    padding: 5em 0 5em;
+}
+
+.weeks {
+    list-style: none;
+}
+
+button {
+    background-color:#026043;
+	border-radius:20px;
+	border:1px solid #026043;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size: 1em;
+	padding:16px 31px;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #023524;
+    margin: 1em 0 0;
+    width: 300px;
+}
+
+button:hover {
+	background-color:#023524;
+}
+.button:active {
+	position:relative;
+	top:1px;
+}
+
+.date {
+    padding: 0 9px 0;
+}
