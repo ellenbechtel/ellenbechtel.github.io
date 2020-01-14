@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="./style/style.css">
+        <script src="lib/d3.js"></script>
+    </head>
+    <body>
+        <header id="title-bar">        
+            <h1 class="title">Let's Dig a Hole, <br> Shall We?</h1>
+            <h2>To the Center of the Earth</h2>
+            <p id="intro">Like all terrestrial planets, the Earth's interior is differentiated. This means that its internal structure consists of layers, arranged like the skin of an onion.<br><br>Peel back one layer and you find another, distinguished from the last by its physical and chemical properties, as well as vast differences in temperature and pressure.  But how far really is it to get all the way to the center?
+              </p>
+        </header>
+
+        <div class="grid-container2" id="dashboard">
+            <div class="currentDepth"><span class="readOut" id="currentDepth">0</span></div>
+            <div class="currentPressure"><span class="readOut" id="currentPressure">0</span></div>
+            <div class="currentTemperature"><span class="readOut" id="currentTemperature">0</span></div>
+            <div class="depthUnit"><span class="unit" id="depthUnit"> kilometers deep</span></div>
+            <div class="pressureUnit"><span class="unit" id="pressureUnit"> gigaPascals of pressure</span></div>
+            <div class="temperatureUnit"><span class="unit"id="temperatureUnit"> Celsius</span></div>
+            <div class="pointer"><img src="pointer.svg"></div>
+        </div>
+                
+
+        <div id="navbar">
+            <div id="navbarText">
+                <span class="subtitle">A JOURNEY TO THE CENTER OF THE EARTH</span>
+                <span class="dropdown" id="dropdowns">Show <select id="selectBoundary"></select> layers</span>
+            </div>
+        </div>
+
+        <div id="layers" class="content"></div>
+
+        <div id="end">
+            <p id="closing-text">We've made it to the center of the earth!  <br><br>It's amazing that it's taken us this long.  The earth is huge, and we know so very little about what lies deep down here. <br><br>Many thanks to Dr. Tim Bechtel of Franklin & Marshall College and the geophysical data from his Earth, Environment, and Humanity geology class.</p>
+            <p id="byline">Made with love and sweat and molten iron by Ellen Bechtel, December 2019.</p>
+        </div>
+
+        <script src="./script.js"></script>
+
+    </body>
+</html>

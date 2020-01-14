@@ -1,0 +1,262 @@
+@font-face {
+  font-family: 'Oswald';
+  src: url('fonts/Oswald-Light.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Oswald';
+  src: url('fonts/Oswald-Bold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  min-height: 14000vh;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Oswald", Helvetica, Arial, Helvetica, sans-serif;
+  color: #352418;
+  font-size: 15pt;
+  line-height: 1.5;
+  background-color: #f9f9f7;
+}
+
+
+.title {
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 10px;
+  font-size: 70pt;
+  font-style: bold;
+  line-height: 85pt;
+  font-weight: bold;
+  }
+
+h2 {
+  text-align: center;
+  font-size: 20pt;
+  opacity: 50%;
+  font-weight: normal;
+  letter-spacing: 9px;
+}
+
+#intro {
+  padding-right: 500px;
+  padding-left: 500px;
+  padding-bottom: 100px;
+  padding-top: 50px;
+  align-content: center;
+  font-weight: normal;
+}
+
+.subtitle {
+  font-size: 12pt;
+  letter-spacing: 2pt;
+  font-weight: bold;
+}
+
+header {
+  background-color: #1E181B;
+  color:#FEF7E4;
+}
+
+/* NAVBAR */ 
+
+#navbar {
+  color:#1E181B;
+  overflow: hidden;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#dropdowns {
+  float: right;
+}
+
+select {
+  -webkit-appearance: none;
+  margin: 0 1rem;
+  font-family: "Oswald", Helvetica, Arial, sans-serif;
+  font-size: 15pt;
+  appearance: none;
+  fill: none;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px dashed darkgray;
+  border-radius:0;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 243px;
+  margin-bottom: 100px;
+}
+
+
+/* DASHBOARD */ 
+
+#dashboard {
+  max-width: 400px;
+  position: fixed;
+  top: 35%;
+  margin-left: 70px;
+}
+
+.visible {
+  position: fixed;
+  top: 50%;
+  right: 66%;
+  margin: auto;
+  width: 30%;
+}
+
+.grid-container2 {
+  display: grid;
+  font-size: 25pt;
+  font-weight: bold;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: 
+    "currentDepth depthUnit ." 
+    "currentPressure pressureUnit pointer" 
+    "currentTemperature temperatureUnit .";
+}
+
+.currentDepth { 
+  grid-area: currentDepth; 
+  text-align: right;
+  padding-right: 10px;
+}
+
+.currentPressure {
+  grid-area: currentPressure; 
+  text-align: right;
+  padding-right: 10px;
+}
+
+.currentTemperature { 
+  grid-area: currentTemperature; 
+  text-align: right;
+  padding-right: 10px;
+}
+
+.depthUnit { 
+  grid-area: depthUnit; 
+}
+
+.pressureUnit { 
+  grid-area: pressureUnit; 
+}
+
+.temperatureUnit { 
+  grid-area: temperatureUnit; 
+}
+
+.unit {
+  font-size: 10pt;
+  font-weight: normal;
+  color:#1E181B;
+}
+
+.pointer {
+  padding-left: 30px;
+  grid-area: pointer;
+  background: url(pointer.svg) 
+}
+
+
+/* SVG ELEMENTS */ 
+
+#layers {
+  width: 100%;
+  height: 14000vh;
+  
+}
+
+.precursor {
+  font-size: 8pt;
+  font-style: italic;
+}
+
+
+.landmark {
+  font-size: 20pt;
+  font-style: bold;
+  background-color: white;
+}
+
+
+.tooltip {
+  position: absolute;
+  max-width: 400px;
+  left: 0px;
+  top: 0px;
+  visibility: hidden;
+  font-family: "Oswald", Helvetica, Arial, sans-serif;
+  font-size: 12pt;
+  background-color:rgba(255,255,255,0.8);
+  padding: 30px;
+  pointer-events: none;
+}
+
+.layerLabel {
+  position: absolute;
+  max-width: 300px;
+  left: 0px;
+  top: 0px;
+  visibility: hidden;
+  font-family: "Oswald", Helvetica, Arial, sans-serif;
+  font-size: 8pt;
+  background-color:rgba(255,255,255,0.8);
+  padding: 10px;
+  pointer-events: none;
+}
+
+.axis {
+  color: #1E181B;
+  stroke-dasharray: 3 3;
+}
+
+.layerBar {
+  fill: #FECF69;
+}
+
+.indicator {
+  opacity: 20%;
+}
+
+
+/* Text */
+
+#closing-text{
+  max-width: 600px;
+  padding: 20px;
+  margin-left: 40%;
+  margin-top: 200px;
+}
+
+#byline{
+  font-size: 13pt;
+  font-style: italic;
+  opacity: 20%;
+  max-width: 600px;
+  padding: 20px;
+  margin-left: 40%;
+  margin-bottom: 200px;
+}

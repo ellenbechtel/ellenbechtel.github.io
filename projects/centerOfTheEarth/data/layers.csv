@@ -1,0 +1,9 @@
+layerName,startDepth,endDepth,strength,typeOfLayer
+Crust,0,10,Solid,chemical
+Lithosphere,0,100,Solid,physical
+Mantle,10,2890,Solid,chemical
+Asthenosphere,100,670,Plastic,physical
+Mesosphere,670,2890,Solid,physical
+Outer Core,2890,5160,Liquid,physical
+Inner Core,5160,6371,Solid,physical
+Center,6300,6371,Solid,physical

@@ -1,0 +1,17 @@
+Z (km),Density (g/cc),Pressure (Mpa),T (degC),Precursor,Landmark,Strength,Change
+0,0.001,0.1,10,We're at the,Surface ,Solid,"We're on top of continental crust, on land. There's lots of different stuff in different places - sediments, lava, water, etc."
+0.7,1.500,0.1,10,Entering the,Crust,Solid,We're now at the depth where the Chilean Miners were trapped in 2010.
+1,2.000,20,16,Entering the,Crust Basement,Solid,"Above are rocks affected by surface processes. Below are crystalline rocks, mostly igenous and metamorphic. "
+3.6,2.700,100,50,,The Deepest Mine in the World,Solid,It's a gold mine in South Africa.
+10,2.700,300,180,Leaving the,Upper Crust,Solid,"While the crust is thinner under oceans than continents, around here we start leaving the whole crust behind. The rocks begin to warm up, and most earthquakes originate here. "
+13,2.700,360,200,,Kola Superdeep Borehole,Solid,"This is the deepest hole ever dug, in Kola Peninsula, Russia.  We're still less than halfway to the mantle. "
+35,3.000,1100,600,We're at the ,Moho ,Solid,Mohorovicic Discontinuity is a distinct chemical boundary indicates the bottom of the crust and the beginning of the mantle.
+36,3.300,1100,600,Entering the,Mantle,Solid,"Rocks here suddenly become more dense and have lots more iron and magnesium - it's a chemical, compositional change. "
+100,3.400,3200,1200,Leaving the ,Lithosphere,Plastic,"Slowly the rocks become bendy and plastic. Above, everything is rigid  (lithos = rock), and in this layer, everything flows like goo (astheno = weak). This is a mechanically, physically different layer, even though the chemical composition is the same above and below.  "
+150,3.350,4800,1300,Entering the,Asthenosphere,Plastic,"Everything is slowly flowing here.  This is where magma comes from, and diamonds!"
+670,4.100,23800,1700,Entering the,Upper Mantle,Solid,"At this Transition zone, immense pressure eventually pushes the atoms so close together than it becomes solid again.  The deepest earthquakes originate here, where subducting slabs finally melt away. "
+2885,5.600,135800,3450,Exiting the ,Mantle,Solid,"This is an extremely prominent chemical and physical boundary. Everything up to this point is solid, but slowly flowing, and mostly made of silicates."
+2886,9.500,135800,3450,Entering the,Outer Core,Liquid,"Now, everything is mostly liquid iron. Because iron is conductive, the swirling turbulence in this liquid is what creates Earth's magnetic field."
+5155,12.200,329000,4700,Exiting the ,Outer Core,Liquid,"Despite being molten and almost four times hotter than an iron blast furnace, the pressure beats temperature. Here, the core becomes solid again."
+5156,12.800,329000,4700,Entering the,Inner Core,Solid,"Because of the liquid layer outside it, the inner core spins freely. "
+6371,13.100,364000,4800,The,Center,Solid,Gravity here is 0!
