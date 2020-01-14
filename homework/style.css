@@ -50,10 +50,15 @@ a {
     list-style: none;
 }
 
-button {
+.done {
     background-color:#026043;
+    border: none;
+}
+
+button {
+    background-color:#89c0ab;
+    border: none;
 	border-radius:20px;
-	border:1px solid #026043;
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
@@ -64,6 +69,7 @@ button {
     text-shadow:0px 1px 0px #023524;
     margin: 1em 0 0;
     width: 300px;
+    box-shadow: 5px 10px 10px #888888;
 }
 
 button:hover {
@@ -71,7 +77,12 @@ button:hover {
 }
 .button:active {
 	position:relative;
-	top:1px;
+    top:1px;
+    outline: none;
+}
+
+button:focus {
+    outline: none;
 }
 
 .date {
