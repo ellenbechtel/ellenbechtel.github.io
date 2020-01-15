@@ -11,7 +11,7 @@ body {
 }
 
 #meat {
-    background-image: linear-gradient(90deg, rgba(107,180,94,.3) 0%, rgba(199,150,82,.5) 100%), url(img/sunset.JPG);
+    background-image: linear-gradient(90deg, rgba(107,180,94,.3) 0%, rgba(199,150,82,.5) 100%), url(img/lake.JPG);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
