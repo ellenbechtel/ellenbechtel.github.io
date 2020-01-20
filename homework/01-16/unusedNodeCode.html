@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Let's load some data!</title>
+        <script src="http://d3js.org/d3.v4.min.js"></script>
+    </head>
+
+    <body>
+
+        <h1 id="label"></h1>
+
+        <p>
+            There are currently <span id="users"></span> users on Data USA.
+        </p>
+
+        <div id="chart"></div>
+
+        <script>
+            
+            // Credits to Steven Braun's Node Templates and Mike Bostock's Dynamic Bee Swarm https://bl.ocks.org/maegul/7d8e7342c649fdc077a6984e52da4b62
+     
+
+            //////////////////////////////////
+            // MAKE SVG AND SCALES
+            //////////////////////////////////
+
+            var width = document.querySelector("#chart").clientWidth;
+            var height = 500;
+            var margin = {
+              top: 50,
+              left: 50,
+              right: 50,
+              bottom: 50,  
+            };
+
+            var xScale = d3.scaleLinear()
+                .domain([0,200])
+                .range([0, width])
+                .clamp(true);
+
+            var svg = d3.select("body")
+                .append("svg")
+                .attr("width",width)
+                .attr("height",height);
+
+            // Draw center swarm line
+        
+            svg.append("line", 'svg')
+                .attr("x1", 0)
+                .attr("y1", height/2)
+                .attr("x2", width)
+                .attr("y2", height/2)
+                .attr("stroke-width", 1.5)
+                .attr("stroke", "black");
+
+
+
+            /*   NOTES
+
+            
+            //////////////////////////////////
+            // THIS IS WHAT IT WOULD LOOK LIKE IF WE LOADED A REGULAR API, NOT REALTIME
+            //////////////////////////////////
+            
+            //d3.csv("data.csv", analyzeData);
+            d3.json("data.json", analyzeData);
+
+            // Link the API
+            var url = "https://datausa.io/api/data?drilldowns=State&measures=Population&year=latest"
+
+            // Load the data from the API
+            d3.json(url,function(error, data) {
+                console.log(data);
+            });
+
+
+            // ORRR
+
+            function analyzeData (error, data) {
+
+                data.forEach(convertToNumbers);
+                console.log("error:", error);
+                console.log("data:", data);
+                
+                d3.select("#label").html(data[0].value);
+              
+            }  
+
+
+
+            function convertToNumbers (d, i) {
+                d.value = +d.value;
+            }
+            */
+
+
+
+
+
+
+
+
+        
+            //////////////////////////////////
+            // MAKE THE NODE NETWORK
+            //////////////////////////////////
+
+            // The Basics
+            var numNodes = 30; // THIS WOULD BE A PERFECT PLACE FOR THE API TO UPDATE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            var numNodes2 = 34;
+
+            // Make an array, then for each give it an id of just its index position
+            var nodes = d3.range(numNodes).map(function(d) { return {id: d}; }); 
+            var nodes2 = d3.range(numNodes).map(function(d) { return {id: d}; }); 
+
+
+            // Set the forces
+            var simulation = d3.forceSimulation(nodes)
+                .force("charge", d3.forceManyBody().strength(-2))
+                .force("center", d3.forceCenter(width/2,height/2))
+                .force("collide", d3.forceCollide().radius(20))
+            
+
+            // Draw circles for nodes
+            var node = svg.append("g")
+                .selectAll("circle")
+                .data(nodes)
+                .enter()
+                .append("circle")
+                    .attr("r",15)
+                    .attr("fill", "#026043")
+                 
+
+            simulation.on("tick", function() {
+                node.attr("cx", function(d) { return d.x; })
+                    .attr("cy", function(d) { return d.y; });
+            });
+
+
+            //////////////////////////////////
+            // ENTER UPDATE EXIT, BITCHES!!!!!
+            //////////////////////////////////
+
+
+
+            var newNodes = svg.selectAll("circle")
+                .data(nodes2, function(d) { return d.id});
+
+            newNodes.enter().append("circle")
+                .attr("r", 0) // this puts the brand new circles in the correct position, but gives them a radius of 0 so they are invisible. 
+                .attr("fill","teal")
+            .merge(newNodes)
+                .transition()
+                .duration(1000)
+                .delay(1000)
+                .attr("r", 15)
+                .attr("fill","teal")
+            newNodes.exit()
+                .transition()
+                .duration(1000)
+                .delay(1000)
+                .attr("r",0)
+                .remove();
+
+
+
+            //////////////////////////////////
+            // GET THE DATA AND DRAW STUFF WITH IT
+            //////////////////////////////////
+           
+            // Link the API and set the update frequency
+            var realTimeURL = "https://whiteboard.datawheel.us/api/google-analytics/realtime/111999474"
+            var frequency = 10 * 1000; // 10 seconds
+
+            // Write the function for what happens each time the API is updated
+            function fetchData() {
+
+                // The function says: Load the data from the API, and then do a function with it
+                d3.json(realTimeURL,function(error, users) {
+
+                    console.log("users:", users);
+
+                    // Update the text in the HTML with current # of users
+                    d3.select("#users").html(users); // Eventually link the data to the drawing via something like this
+
+
+
+
+                    
+                });
+
+            }
+
+            fetchData(); // initialize the data
+            setInterval(fetchData, frequency); // this is a real function! Tell it to do this at whatever interval you specify!
+        
+           
+       
+        </script>
+        
+        <h1>Hello, Dave!</h1>
+    </body>
+</html>
