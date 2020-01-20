@@ -2,10 +2,67 @@
 
 <html>
     <head>
-
+        <meta charset="utf-8" />
+        <title>Let's load some data!</title>
+        <script src="http://d3js.org/d3.v4.min.js"></script>
     </head>
 
     <body>
+
+        <h1 id="label"></h1>
+
+        <p>
+            There are currently <span id="users"></span> users on Data USA.
+        </p>
+
+        <script>
+            
+            function convertToNumbers (d, i) {
+                d.value = +d.value;
+            }
+
+            function analyzeData (error, data) {
+
+                data.forEach(convertToNumbers);
+                console.log("error:", error);
+                console.log("data:", data);
+
+                
+
+                d3.select("#label").html(data[0].value);
+
+            }
+
+            //d3.csv("data.csv", analyzeData);
+            d3.json("data.json", analyzeData);
+            console.log("Hello Dave!");
+
+
+            var url = "https://datausa.io/api/data?drilldowns=State&measures=Population&year=latest"
+
+            d3.json(url,function(error, data) {
+                console.log(data);
+            });
+
+            var realTimeURL = "https://whiteboard.datawheel.us/api/google-analytics/realtime/111999474"
+            var frequency = 10 * 1000; // 10 seconds
+
+            function fetchData() {
+
+                d3.json(realTimeURL,function(error, users) {
+                    console.log("users:", users);
+                    d3.select("#users").html(users);
+                });
+
+            }
+
+            fetchData(); // initialize the data
+            setInterval(fetchData, frequency); // this is a real function! Tell it to do this at whatever interval you specify!
+        
+           
+       
+        </script>
+        
         <h1>Hello, Dave!</h1>
     </body>
 </html>
