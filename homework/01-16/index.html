@@ -3,119 +3,32 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Let's load some data!</title>
+        <link rel="stylesheet" href="style.css"/>
+        <title>API TIME!</title>
         <script src="http://d3js.org/d3.v4.min.js"></script>
     </head>
 
     <body>
 
-        <h1 id="label"></h1>
+        <div id="meat">
+            <div class="content">
+                <h1>Week 2 - January 16th</h1>
+                <p>Create a visualization using the Realtime API showing current users on <a href="https://datausa.io/">datausa.io</a>. It should use the D3 enter/update/exit paradigm, and update itself every 10 seconds.</p>
+            </div>
+        </div>
 
-        <p>
-            There are currently <span id="users"></span> users on Data USA.
-        </p>
-
+        <div id="potatoes">
+            <div class="content">
+                <p>There are currently <span id="users"></span> users on Data USA.</p>
+        
+            </div>
+        </div>
+        
         <div id="chart"></div>
 
-        <script>
+        <script src="./script.js"></script>
             
-            // CREDITS
-
-            //////////////////////////////////
-            // MAKE SVG AND API DATA
-            //////////////////////////////////
-
-            var width = document.querySelector("#chart").clientWidth;
-            var height = 500;
-            var margin = {
-              top: 50,
-              left: 50,
-              right: 50,
-              bottom: 50,  
-            };
-          
-            var svg = d3.select("body")
-                .append("svg")
-                .attr("width",width)
-                .attr("height",height);
-
-            var realTimeURL = "https://whiteboard.datawheel.us/api/google-analytics/realtime/111999474"
-            
-            var data = [];
-            var interval = 10 * 1000; // 10 seconds
-       
-
-
-
-            //////////////////////////////////
-            // INITIALIZE THE VIZ WITH THE FIRST CALL OF THE API
-            //////////////////////////////////
-
-            function fetchData() {
-                d3.json(realTimeURL, function(error,users) {
-
-                    console.log("users:", users);
-                    data.push(users+5);
-                    console.log("data:", data);
-
-                    d3.select("#users").html(users); // Eventually link the data to the drawing via something like this
-
-                    var circle = svg.selectAll("circ")
-                        .data(data)
-                        .enter()
-                        .append("circ")
-                            .attr("cx", width/2)
-                            .attr("cy", height/2)
-                            .attr("r", data*20)
-                            .attr("fill","teal");
-                   
-                });
-            }
-
-            //////////////////////////////////
-            // ENTER UPDATE EXIT, BITCHES!!!!!
-            //////////////////////////////////
-
-            function updateData() {
-                d3.json(realTimeURL, function(error,users) {
-                    
-                    data.push(users+5);
-
-                    var nextCirc = svg.selectAll("circ")
-                        .data(data);
-                    
-                    nextCirc = enter().append("circ")
-                        .attr("cx", width/2)
-                        .attr("cy", height/2)
-                        .attr("r", 0)
-                        .attr("fill","teal")
-                    .merge(nextCirc)
-                        .transition()
-                        .attr("cx", width/2)
-                        .attr("cy", height/2)
-                        .attr("r", data*20)
-                        .attr("fill","teal");
-                    
-                    nextCirc.exit()
-                        .transition()
-                        .attr("r", 0)
-                        .remove();
-                        
-                });
-            }
-            //////////////////////////////////
-            // RUN THE WHOLE THING
-            //////////////////////////////////
-
-        
-            fetchData(); // initialize the data
-            updateData();
-            setInterval(updateData, interval); // this is a real function! Tell it to do this at whatever interval you specify!
-        
            
-       
-        </script>
-        
-        <h1>Please work, API!!!</h1>
+        <h2>C'mon little circles, appear for me!</h2>
     </body>
 </html>
