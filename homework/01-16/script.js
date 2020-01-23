@@ -20,63 +20,68 @@
 
             var realTimeURL = "https://whiteboard.datawheel.us/api/google-analytics/realtime/random"
             
-            var interval = 10 * 1000; // 10 seconds
+            var interval = 2 * 1000; // 1 second
        
-
-
-
-
-            // TESTING
-            var testCircle = svg.append("circle")
-                .attr("cx",30)
-                .attr("cy",30)
-                .attr("r",20)
-                .attr("fill","yellow");
-
-
-            svg.append("text")
-                .attr("x",30)
-                .attr("y",30)
-                .attr("stroke","black")
-                .text("This is a test blob");
-
-
-
-
+        
 
             //////////////////////////////////
             // ENTER UPDATE EXIT, BITCHES!!!!!
             //////////////////////////////////
 
-            var users = [];
-                console.log("users1:", users);
-
             function fetchData() {
 
-                d3.json(realTimeURL, function(error,users) {
+                d3.json(realTimeURL, function(error, users) {
 
                     console.log("users2:", users);
- 
-                    var circle = svg.selectAll("circle")
-                        .data(users)
+                    d3.select("#users").html(users);
+
+
+                    
+                    /////////////////////////////////
+                    // MAKE THE NODE NETWORK
+                    //////////////////////////////////
+                                  
+                    // Make an array, then for each give it an id of just its index position
+                    var nodes = d3.range(users).map(function(d) { return {id: d}; }); 
+        
+
+                    // Set the forces
+                    var simulation = d3.forceSimulation(nodes)
+                        .force("charge", d3.forceManyBody().strength(-2))
+                        .force("center", d3.forceCenter(width/2,height/2))
+                        .force("collide", d3.forceCollide().radius(10))
+                    
+                     
+                    // Draw circles for nodes
+                    var circles = svg.selectAll("circle")
+                        .data(nodes/*, function(d) { return d.id; }*/)
                         .enter()
                         .append("circle")
-                            .attr("cx", width/2)
-                            .attr("cy", height/2)
-                            .attr("r", 0)
-                            .attr("fill","teal")
-                        .merge(circle)
+                            .attr("r",5)
+                            .attr("fill", "white")
+                        /*.merge(circles)
                             .transition()
-                            .attr("cx", width/2)
-                            .attr("cy", height/2)
-                            .attr("r", users*3)
-                            .attr("fill","teal");
-                    
-                    circle.exit()
+                            .attr("r",15)
+                            .attr("fill","teal")*/;
+
+                    circles.exit()
                         .transition()
-                        .attr("r", 0)
+                        .duration(300)
+                        .attr("r",0)
                         .remove();
-                        
+                    
+                                            
+                    simulation.on("tick", function() {
+                        circles.attr("cx", function(d) { return d.x; })
+                            .attr("cy", function(d) { return d.y; });
+                    });
+                    
+
+
+
+
+
+                 
                 });
 
             }
@@ -88,7 +93,3 @@
         
             fetchData(); // initialize the data
             setInterval(fetchData, interval);
-        
-
-
-

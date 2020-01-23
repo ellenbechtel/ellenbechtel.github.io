@@ -196,6 +196,35 @@
             fetchData(); // initialize the data
             setInterval(fetchData, frequency); // this is a real function! Tell it to do this at whatever interval you specify!
         
+
+
+
+
+            // UNUSED CIRCLE CODE 
+
+               /*
+ 
+                    var circle = svg.selectAll("circle")
+                        .data(users)
+                        .enter()
+                        .append("circle")
+                            .attr("cx", width/2)
+                            .attr("cy", height/2)
+                            .attr("r", 0)
+                            .attr("fill","teal")
+                        .merge(circle)
+                            .transition()
+                            .attr("cx", width/2)
+                            .attr("cy", height/2)
+                            .attr("r", users*3)
+                            .attr("fill","teal");
+                    
+                    circle.exit()
+                        .transition()
+                        .attr("r", 0)
+                        .remove();
+                    
+                    */
            
        
         </script>
@@ -203,3 +232,9 @@
         <h1>Hello, Dave!</h1>
     </body>
 </html>
+
+
+
+
+
+

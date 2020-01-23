@@ -8,6 +8,7 @@ html, body {
 body {
     box-sizing: border-box;
     font-size: 16px;
+    background-color: #49868a;
 }
 
 #meat {
@@ -32,6 +33,10 @@ body {
 h1 {
     font-size: 5em;
     margin: 2em auto 0;
+}
+
+#users {
+    color: white;
 }
 
 a {
