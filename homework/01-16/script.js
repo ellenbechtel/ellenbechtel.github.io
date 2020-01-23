@@ -20,7 +20,7 @@
 
             var realTimeURL = "https://whiteboard.datawheel.us/api/google-analytics/realtime/random"
             
-            var interval = 2 * 1000; // 1 second
+            var interval = 5 * 1000; // 1 second
        
         
 
