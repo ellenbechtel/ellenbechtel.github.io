@@ -20,7 +20,7 @@
 
             var realTimeURL = "https://whiteboard.datawheel.us/api/google-analytics/realtime/random"
             
-            var interval = 10 * 1000; // 10 seconds
+            var interval = 2 * 1000; // 2 seconds
        
         
 
@@ -58,11 +58,12 @@
                         .enter()
                         .append("circle")
                             .attr("r",5)
-                            .attr("fill", "white")
-                        /*.merge(circles)
-                            .transition()
-                            .attr("r",15)
-                            .attr("fill","teal")*/;
+                            .attr("fill", "white");
+
+                    circles.merge(circles)
+                        .transition()
+                        .attr("r",s5)
+                        .attr("fill","white");
 
                     circles.exit()
                         .transition()
