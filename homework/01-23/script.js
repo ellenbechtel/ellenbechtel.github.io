@@ -3,7 +3,7 @@
     // Set up all the static variables
     //////////////////////////////////
                                   
-    var width = d3.min([window.innerWidth, 600]);
+    var width = d3.min([window.innerWidth, 900]);
     var height = d3.min([window.innerHeight, 500]);
     var svg = d3.select("#chart")
       .attr("width", width)
@@ -14,7 +14,7 @@
     var frequency = 1 * 1000; // 1 second
   
 
-    var dataMax = 20;
+    var dataMax = 50;
     var data = [];
 
     var barWidth = width / dataMax;
@@ -25,8 +25,9 @@
       .domain([dataMax, 1])
       .range([0, width - barWidth]);
 
-
-
+    var colorScale = d3.scaleSequential(d3.interpolatePlasma)
+      .domain([60, 180]);
+    
 
     function fetchData() {
   
@@ -73,7 +74,9 @@
             return x(i + 1);
             })
           .attr("y", height)
-          .attr("fill","teal");
+          .attr("fill", function(d, i) {
+            return colorScale(d.users)
+          });
         
         // update
         bars.merge(enter)
