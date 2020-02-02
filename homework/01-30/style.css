@@ -1,0 +1,69 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16pt;
+}
+
+body {
+    box-sizing: border-box;
+    font-size: 16px;
+    margin: 0;
+    }
+
+#meat {
+    background-image: linear-gradient(90deg, rgba(107,180,94,.4) 0%, rgba(199,150,82,.6) 100%), url(docks.JPG);
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#meat .content {
+    color: white;
+    margin: 0 auto;
+    padding: 5em 0 5em;
+}
+.content {
+    width: 960px;
+    margin: 0 auto;
+    padding: 2em 0 1em;
+}
+
+h1 {
+    font-size: 5em;
+    margin: 2em auto 0;
+}
+
+#users {
+    color: teal;
+}
+
+a {
+    color:#026043;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+#potatoes .content {
+    margin: 0 auto 0;
+    padding: 5em 0 5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    fill: transparent;
+    stroke: darkorchid;
+    stroke-width: 2px;
+}
+
+.label {
+    baseline-shift: -100%;
+}
+
+tspan {
+    baseline-shift: -100%;
+}
