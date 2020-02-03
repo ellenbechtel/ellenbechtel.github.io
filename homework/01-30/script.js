@@ -20,8 +20,6 @@
 
     var barWidth = width / dataMax;
 
-      
-
     var x = d3.scaleLinear()
       .domain([dataMax, 1])
       .range([0, width - barWidth]);
@@ -122,7 +120,7 @@
         // Selection
         var labels = svg.selectAll(".label")
             .data(data, function(d) {
-                return d.users;
+                return d.timestamp;
             });
 
         // Enter
@@ -140,11 +138,12 @@
         labels.merge(enterLabels)
             .transition()
             .duration(frequency/2)
+            .text(function(d) { 
+              return "What the heck are " + d.users + " ants doing in my shoes?!"; 
+              })
             
-            // The movement!
-            .text(function(d) {
-                return d.users;
-              })            
+            
+            // The movement!      
             .attr("height", function(d) {
               return barHeight(d.users);
               })
@@ -153,18 +152,63 @@
               })
             .attr("x", function(d, i) {
               return x(i + 1);
+              })
+
+            // The text wrapping part
+            // for each, but what is it selecting again?
+            .each(function(d, i) {
+              var textElement = d3.select(this);
+
+              // clear the selection? Or something
+              textElement.text("");
+
+              // Create a variable that makes a new object in the array for each thing split by a space
+              var words = labels.split(" ");
+
+              // A Tspan is a real thing, like a span or a div
+              var tspan = textElement.append("tspan");
+
+              // Start indexing what "line" of text we're on, so we can use this in the math later
+              var line = 0;
+
+              // Make a loop for each word, in order
+              words.forEach(function(word) {
+
+                // make a locally scoped variable called sentence that collects all the words / tspans which appear on that particular line
+                var sentence = tspan.text();
+
+                // Take the tspan we just made, append what already was stored in sentence, add a space, and the next word. 
+                tspan.text(sentence + " " + word);
+
+                // select the tspan element in the DOM ((WHAT DOES NODE DO AGAIN???))
+                var domElement = tspan.node();
+
+                // make a variable to store the tspan width. Then measure the width of the tspan by getting the DOM element we just made, finding the bounding rectangle, and measuring the width
+                var tspanWidth = domElement.getBoundingClientRect().width;
+
+                // Compare to see if tspan width is greater than the column width
+                if (tspanWidth > barWidth) {
+
+                  // If it is, add one to the line count..
+                  line++;
+
+                  // ... store whatever text is in sentence (not sentence+word) as a tspan all by itself...
+                  tspan.text(sentence);
+
+                  // ... and now make a new tspan element with the first word of the new line!  
+                  tspan = textElement.append("tspan")
+                      .text(word) // if it's too wide, remove that word from the sentence, create a new tspan, and put the new word in there!
+                      .attr("y", fontSize*line) // set the y position as font size times whatever line we're on
+                      .attr("x", barWidth*i); // set the x position as the beginning of the column
+              
+                }
+                
+
               });
+
+            });
   
   
-
-
-
-
-
-
-
-
-
 
 
         
