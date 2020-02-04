@@ -14,9 +14,9 @@
     var frequency = 1 * 1000; // 1 second
   
 
-    var dataMax = 8;
+    var dataMax = 6;
     var data = [];
-    var fontSize = 20;
+    var fontSize = 15;
 
     var barWidth = width / dataMax;
 
@@ -137,13 +137,9 @@
         // Update, including wrap
         labels.merge(enterLabels)
             .transition()
-            .duration(frequency/2)
-            .text(function(d) { 
-              return "What the heck are " + d.users + " ants doing in my shoes?!"; 
-              })
+            .duration(frequency/2)   
             
-            
-            // The movement!      
+          // The movement!      
             .attr("height", function(d) {
               return barHeight(d.users);
               })
@@ -162,8 +158,11 @@
               // clear the selection? Or something
               textElement.text("");
 
+              // What I want to say
+              var ants = "What the heck are " + d.users + " ants doing in my shoes?";
+
               // Create a variable that makes a new object in the array for each thing split by a space
-              var words = labels.split(" ");
+              var words = ants.split(" ");
 
               // A Tspan is a real thing, like a span or a div
               var tspan = textElement.append("tspan");
@@ -197,11 +196,16 @@
 
                   // ... and now make a new tspan element with the first word of the new line!  
                   tspan = textElement.append("tspan")
-                      .text(word) // if it's too wide, remove that word from the sentence, create a new tspan, and put the new word in there!
-                      .attr("y", fontSize*line) // set the y position as font size times whatever line we're on
-                      .attr("x", barWidth*i); // set the x position as the beginning of the column
-              
-                }
+                       // if it's too wide, remove that word from the sentence, create a new tspan, and put the new word in there!
+                      .attr("y", function() {
+                        return (height-barHeight(d.users)) + (fontSize * line);
+                      })
+                      .attr("x", function() {
+                        return x(i + 1);
+                        })
+                      .text(word);
+
+                };
                 
 
               });
