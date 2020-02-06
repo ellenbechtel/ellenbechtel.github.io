@@ -1,0 +1,138 @@
+/* General */ 
+
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+  
+
+  * {
+    box-sizing: border-box;
+  }
+    
+
+  html, body {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Nunito', sans-serif;
+    color: #352418;
+    font-size: 15pt;
+    line-height: 1.5;
+    background-color: #f9f9f7;
+  }
+
+
+.title {
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 10px;
+    font-size: 6em;
+    font-style: bold;
+    line-height: 1em;
+    font-weight: bold;
+    }
+
+
+.content {
+    max-width: 600px;
+    margin: auto;
+    align-content: center;
+    font-weight: normal;
+    }
+
+p .text{
+    padding-bottom: 1em;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+/* Brand Yolks Chart */ 
+
+#chart {
+  max-width: 900px;
+  margin: auto;
+  margin-top: 100px;
+}
+
+svg {
+  background-color: goldenrod;
+  margin: 10px;
+}
+
+.productLabel {
+  font-size: .8em;
+  text-transform: uppercase;
+}
+
+.store {
+  baseline-shift: -150%;
+  font-size: .6em;
+  font-style: italic;
+}
+
+circle {
+  fill: none;
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+
+/* Quiz and Slider */ 
+
+
+#slider-container {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 1.5fr 0.5fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "grid-item1 option1a slider1 option1b" "grid-item2 option2a slider2 option2b" "grid-item3 option3a slider3 option3b" "grid-item4 option4a slider4 option4b";
+
+}
+
+.grid-item1 { grid-area: grid-item1;  align-self: center;  justify-self: end; }
+.option1a { grid-area: option1a;  align-self: center; justify-self: end; }
+.slider1 { grid-area: slider1; align-self: center; }
+.option1b { grid-area: option1b;  align-self: center; }
+
+.grid-item2 { grid-area: grid-item2;  align-self: center;  justify-self: end; }
+.option2a { grid-area: option2a;  align-self: center;  justify-self: end; }
+.slider2 { grid-area: slider2;  align-self: center; }
+.option2b { grid-area: option2b;  align-self: center; }
+
+.grid-item3 { grid-area: grid-item3;  align-self: center;  justify-self: end; }
+.option3a { grid-area: option3a;  align-self: center;  justify-self: end; }
+.slider3 { grid-area: slider3;  align-self: center; }
+.option3b { grid-area: option3b;  align-self: center; }
+
+.grid-item4 { grid-area: grid-item4;  align-self: center;  justify-self: end; }
+.option4a { grid-area: option4a;  align-self: center;  justify-self: end; }
+.slider4 { grid-area: slider4;  align-self: center; }
+.option4b { grid-area: option4b;  align-self: center; }
+
+
+.quizItem{
+  font-style: bold;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  margin-bottom: 15px;
+  align-self: right;
+
+}
+
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 10px;
+  background-color: goldenrod;
+  overflow: visible;
+  cursor: pointer;
+}

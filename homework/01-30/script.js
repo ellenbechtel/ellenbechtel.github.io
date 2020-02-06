@@ -164,7 +164,7 @@
               // Create a variable that makes a new object in the array for each thing split by a space
               var words = ants.split(" ");
 
-              // A Tspan is a real thing, like a span or a div
+              // A Tspan is like a <span> element but can only exist inside svg text 
               var tspan = textElement.append("tspan");
 
               // Start indexing what "line" of text we're on, so we can use this in the math later
