@@ -166,6 +166,7 @@
 
               // A Tspan is like a <span> element but can only exist inside svg text 
               var tspan = textElement.append("tspan");
+                // SET X AND Y ATTRIBUTES FOR THE FIRST TIME!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
               // Start indexing what "line" of text we're on, so we can use this in the math later
               var line = 0;
@@ -178,6 +179,7 @@
 
                 // Take the tspan we just made, append what already was stored in sentence, add a space, and the next word. 
                 tspan.text(sentence + " " + word);
+                  // ALSO COPY THE X AND Y ATTRIBUTE HERE WHEN YOU MAKE A T SPAN!!
 
                 // select the tspan element in the DOM ((WHAT DOES NODE DO AGAIN???))
                 var domElement = tspan.node();
@@ -201,7 +203,7 @@
                         return (height-barHeight(d.users)) + (fontSize * line);
                       })
                       .attr("x", function() {
-                        return x(i + 1);
+                        return x(i + 1);  // IF YOU WANT TO ADD A TRANSITION, MAKE IT START AT I OR I+2 AS THE PREVIOUS POSITION, THEN SAY .TRANSITION TO NEXT POSITION
                         })
                       .text(word);
 
