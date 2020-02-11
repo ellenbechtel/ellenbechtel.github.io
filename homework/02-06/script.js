@@ -20,7 +20,7 @@ var svg = d3.select("#chart")
 
 // X Scale
 var x = d3.scaleBand()
-    .domain("Boat", "Bike")
+    .domain("true", "false") // the two options in d.water. This means boat is on the left, bike is on the right
     .range([margin.left, margin.left + chartWidth])
     .paddingInner(0.2)
     .paddingOuter(0.1);
@@ -37,7 +37,7 @@ svg.select("#x")
 // Y Scale
 
 var y = d3.scaleBand()
-    .domain("false","true")
+    .domain("false","true") // this says that when false, start the heigh all t
     .range([margin.top + chartHeight, margin.top]);
 
 var yAxis = d3.axisLeft(y);
@@ -45,6 +45,11 @@ var yAxis = d3.axisLeft(y);
 svg.select("#y")
     .attr("transform", "translate(" + margin.left + ",0)") // transform only listens to strings, so we have to jump in and out of javascript
     .call(yAxis);
+
+var barHeight = d3.scaleBand()
+    .domain("false","true") // this says that when false, start the heigh all t
+    .range(0, chartHeight);
+
 
 
 /////////////////////////////////
@@ -76,7 +81,7 @@ function getCoordinates () {
         function zeroState(selection) {
             selection
                 .attr("height", 0)
-                .attr("y", y(0));
+                .attr("y", margin.top);
             };
 
         
@@ -85,7 +90,9 @@ function getCoordinates () {
         var barWidth = x.bandwidth();
 
         var bars = svg.select("#shapes").selectAll(".bar")
-            .data(data); // THIS NEEDS TO BE A KEY to say which bar is which
+            .data(data, function(d) { 
+                return d.request_id; 
+            });
             
 
         var enter = bars.enter().append("rect")
@@ -93,16 +100,22 @@ function getCoordinates () {
             .attr("width", barWidth)
             .call(zeroState)
             .attr("x", function(d) {
-                if (d.water == true) {
-                    return x("Boat");
-                } else {
-                    return x("Bike");
-                }
-            });
+                    return x(d.water);
+                });
 
         // Bars Update
-
         
+        bars.merge(enter)
+            .transition()
+            .attr("height", function(d) {
+                return barHeight(d.water); // MAKE THIS AN IF LOOP
+            })
+            .attr("y", function(d) {
+                return y(d.water);
+            })
+            .attr("x", function(d) {
+                return x(d.water);
+            });
 
 
         // Bars Exit
