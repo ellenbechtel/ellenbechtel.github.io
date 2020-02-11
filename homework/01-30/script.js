@@ -165,7 +165,13 @@
               var words = ants.split(" ");
 
               // A Tspan is like a <span> element but can only exist inside svg text 
-              var tspan = textElement.append("tspan");
+              var tspan = textElement.append("tspan")
+              .attr("y", function() {
+                return (height-barHeight(d.users)) + (fontSize * line);
+              })
+              .attr("x", function() {
+                return x(i + 1);  // IF YOU WANT TO ADD A TRANSITION, MAKE IT START AT I OR I+2 AS THE PREVIOUS POSITION, THEN SAY .TRANSITION TO NEXT POSITION
+                });
                 // SET X AND Y ATTRIBUTES FOR THE FIRST TIME!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
               // Start indexing what "line" of text we're on, so we can use this in the math later
