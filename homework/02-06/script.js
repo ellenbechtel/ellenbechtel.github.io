@@ -1,137 +1,118 @@
-var realtimeURL = "https://whiteboard.datawheel.us/api/google-analytics/realtime/random";
-      var frequency = 1 * 1000; // 2 seconds
+/////////////////////////////////
+// Set up all the static variables
+//////////////////////////////////
 
-      var dataMax = 5;
-      var data = [];
+var width = window.innerWidth;
+var height = window.innerHeight;
+var margin = {
+    top: 20,
+    right: 20,
+    bottom: 50,
+    left: 100
+};
 
-      var width = window.innerWidth;
-      var height = window.innerHeight;
-      var margin = {
-          top: 20,
-          right: 20,
-          bottom: 50,
-          left: 100
-      };
+var chartWidth = width - margin.left - margin.right;
+var chartHeight = height - margin.top - margin.bottom;
 
-      var chartWidth = width - margin.left - margin.right;
-      var chartHeight = height - margin.top - margin.bottom;
+var svg = d3.select("#chart")
+    .attr("width", width)
+    .attr("height", height);
 
-
-      var svg = d3.select("#chart")
-        .attr("width", width)
-        .attr("height", height);
-
-      var domainValues = d3.range(1, dataMax+1);
-
-        var x = d3.scaleBand()
-        .domain(domainValues.reverse())
-        .range([margin.left, margin.left + chartWidth])
-        .paddingInner(0.2)
-        .paddingOuter(0.1);
-            
-
-      function fetchData() {
-
-        d3.json(realtimeURL, function(error, users) {
-
-          var dataObject = {
-            users: users,
-            timestamp: new Date()
-          };
-
-          data.unshift(dataObject);
-          if (data.length > dataMax) data.pop();
-         
-          var maximum = d3.max(data, function(d) {
-            return d.users;
-          });
-
-          var barHeight = d3.scaleLinear()
-            .domain([0, maximum])
-            .range([0, chartHeight]);
-
-        // Y has to be inside the call function becuase             
-        var y = d3.scaleLinear()
-            .domain([0, maximum])
-            .range([margin.top + chartHeight, margin.top]);
-        var yAxis = d3.axisLeft(y);
-        svg.select("#y")
-            .attr("transform", "translate(" + margin.left + ",0)") // transform only listens to strings, so we have to jump in and out of javascript
-            .transition()
-            .duration(frequency/2)
-            .call(yAxis);
-
-      var barWidth = x.bandwidth();  // make barWidth be dynamic
-
-        var xAxis = d3.axisBottom(x)
-            .tickFormat(function(d) {
-                var tickData = data[d-1];
-                 if (tickData) {
-                    var now = new Date();
-                    var msAgo = now - tickData.timestamp;
-                    var secondsAgo = Math.round(msAgo / 1000);
-                    if (secondsAgo === 0) { 
-                        return "now";
-                    }
-                   else {
-                        var word = secondsAgo === 1 ? "second" : "seconds";
-                        return secondsAgo + " " + word + " ago";
-                    }
-                 }
-                 else {
-                        return "";
-                }
-            });
-
-        svg.select("#x")
-            .attr("transform","translate(0," + (margin.top + chartHeight) + ")")
-            .transition()
-            .duration(frequency/2)
-            .call(xAxis);
+// X Scale
+var x = d3.scaleBand()
+    .domain("Boat", "Bike")
+    .range([margin.left, margin.left + chartWidth])
+    .paddingInner(0.2)
+    .paddingOuter(0.1);
 
 
-        // bars        
+var xAxis = d3.axisBottom(x);
 
-        var bars = svg.select("#shapes").selectAll(".bar") // first select anything with id="shapes" and put it in there
-            .data(data, function(d) {
-              return d.timestamp;
-            });
+svg.select("#x")
+    .attr("transform","translate(0," + (margin.top + chartHeight) + ")")
+    .call(xAxis);
 
-        // If you're using duplicate code, it's good practice to 
+
+
+// Y Scale
+
+var y = d3.scaleBand()
+    .domain("false","true")
+    .range([margin.top + chartHeight, margin.top]);
+
+var yAxis = d3.axisLeft(y);
+
+svg.select("#y")
+    .attr("transform", "translate(" + margin.left + ",0)") // transform only listens to strings, so we have to jump in and out of javascript
+    .call(yAxis);
+
+
+/////////////////////////////////
+// Grab inputs and fill in the API
+//////////////////////////////////
+
+var emptyAPI = "https://api.onwater.io/api/v1/results/";
+
+// Grab inputs from the form
+
+function getCoordinates () {
+
+    var thisLat = document.getElementById("lat").value;
+    var thisLong = document.getElementById("long").value;
+
+    var API = emptyAPI + thisLat + "," + thisLong + "?access_token=F25zaxPib_tMs-9jdF3d"; 
+    console.log(API);
+
+
+        
+    /////////////////////////////////
+    // Call API and draw a bar chart with it
+    //////////////////////////////////
+
+    d3.json(API, function(error, data) {
+
+        console.log(data.water);
+      
         function zeroState(selection) {
             selection
                 .attr("height", 0)
                 .attr("y", y(0));
             };
+
         
-          var enter = bars.enter().append("rect")
+        // Bars, Enter
+
+        var barWidth = x.bandwidth();
+
+        var bars = svg.select("#shapes").selectAll(".bar")
+            .data(data); // THIS NEEDS TO BE A KEY to say which bar is which
+            
+
+        var enter = bars.enter().append("rect")
             .attr("class", "bar")
             .attr("width", barWidth)
             .call(zeroState)
-            .attr("x", function(d, i) {
-              return x(i + 1);
+            .attr("x", function(d) {
+                if (d.water == true) {
+                    return x("Boat");
+                } else {
+                    return x("Bike");
+                }
             });
 
-          bars.merge(enter)
-            .transition().duration(frequency / 2)
-            .attr("height", function(d) {
-              return barHeight(d.users);
-            })
-            .attr("y", function(d) {
-              return y(d.users);
-            })
-            .attr("x", function(d, i) {
-              return x(i + 1);
-            });
+        // Bars Update
 
-          bars.exit()
-            .transition().duration(frequency / 2)
-            .call(zeroState)
-            .remove();
+        
 
-        });
 
-      }
+        // Bars Exit
+        bars.exit().transition().call(zeroState).remove();
 
-      fetchData();
-      setInterval(fetchData, frequency);
+
+
+    });
+
+
+    
+};
+

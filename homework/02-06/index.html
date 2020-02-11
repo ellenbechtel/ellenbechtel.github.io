@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="style.css"/>
-    <title>Axes Bonanza</title>
+    <title>Boat or Bike?</title>
     <script src="https://d3js.org/d3.v4.min.js"></script>
 
   </head>
@@ -13,12 +13,36 @@
       <div class="content">
           <h1>Week 5 - February 6th</h1>
           
-          <p>Find an API that returns data and make a chart with axes.</a></p>
+          <p>Find an API that returns data and make a bar chart.</a></p>
       </div>
     </div>
 
     <div id="potatoes">
       <div class="content">
+
+        <h1>You're an alien.</h1>
+
+        <p>And you're landing on Planet Earth from your spaceship hovering in low-earth orbit.  You can land anywhere on the planet, but you need to make sure you bring the right transportation vehicle to get around.</p>
+        <p>Use your mothership's OnWater API dashboard to determine whether you should bring the SS Minnow or ET's bicycle.</p>
+        <h2>Pick a landing spot.</h2>
+
+          <form id="coordinate-input">
+            <fieldset>
+              <div class="input">
+                <label for="lat">Latitude</label>
+                <input type="number" id="lat" min="-90" max="90" step="0.01">
+                <p class="desc">Positive numbers are in the Northern Hemisphere.</p>
+              </div>
+              <div class="input">
+                <label for="long">Longitude</label>
+                <input type="number" id="long" min="-180" max="180" step="0.01">
+                <p class="desc">Positive numbers are in the Eastern Hemisphere.</p>
+              </div>
+
+              <button type="button" id="submit" onclick="getCoordinates()">Launch your rover and land on this spot!</button>
+            
+            </fieldset>
+          </form>
 
         <svg id="chart" width="100%" height = "100vh">
             <g id="shapes"></g>

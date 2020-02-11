@@ -55,13 +55,23 @@ a {
 }
 
 .bar {
-    fill: goldenrod;
+    fill: darkorchid;
 }
 
 .tick text {
     fill: goldenrod;
 }
 
-tspan {
-    baseline-shift: -100%;
+svg {
+    background-color: goldenrod;
+}
+
+.input {
+    padding: 1em;
+}
+
+.desc {
+    font-size: .7em;
+    opacity: .6;
+    font-style: italic;
 }
