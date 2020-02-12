@@ -135,3 +135,49 @@ var realtimeURL = "https://whiteboard.datawheel.us/api/google-analytics/realtime
 
       fetchData();
       setInterval(fetchData, frequency);
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // Scales
+
+
+      // Y Scale
+
+
+var recScale = d3.scaleBand()   // how strongly we believe you'll need this vehicle
+.domain("false","true") 
+.range([0,100]);
+
+var y = d3.scaleBand()
+.domain([0,100]) // Scale the Y axis to be the full height of the chart, where false is on the bottom and true is all the way at the top
+.range([margin.top + chartHeight, margin.top]);
+
+var yAxis = d3.axisLeft(y);
+
+svg.select("#y")
+.attr("transform", "translate(" + margin.left + ",0)") // transform only listens to strings, so we have to jump in and out of javascript
+.call(yAxis);
+
+var yAxisLabel = svg.append("text")
+.attr("class","axisLabel")
+.attr("transform","rotate(-90)")
+.attr("x",-chartHeight/2)
+.attr("y",margin.left/2)
+.text("Recommendation Strength");
+
+
+// Height Scale
+
+var barHeight = d3.scaleLinear()
+.domain("false","true") // this says that when false, start the heigh all t
+.range(0, chartHeight);

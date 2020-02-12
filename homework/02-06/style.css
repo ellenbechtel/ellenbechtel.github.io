@@ -59,11 +59,12 @@ a {
 }
 
 .tick text {
-    fill: goldenrod;
+    fill: darkorchid;
+    font-size: 1em
 }
 
 svg {
-    background-color: goldenrod;
+    background-color: lightgray;
 }
 
 .input {

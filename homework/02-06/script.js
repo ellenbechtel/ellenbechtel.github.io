@@ -18,13 +18,20 @@ var svg = d3.select("#chart")
     .attr("width", width)
     .attr("height", height);
 
-// X Scale
-var x = d3.scaleBand()
-    .domain("true", "false") // the two options in d.water. This means boat is on the left, bike is on the right
-    .range([margin.left, margin.left + chartWidth])
-    .paddingInner(0.2)
-    .paddingOuter(0.1);
 
+// Water Scale
+
+var onWater = d3.scaleBand()
+    .domain(["true","false"])
+    .range(["Water","Land"]);
+
+
+// X Scale
+
+var x = d3.scaleBand()
+    .domain(["Water","Land"])
+    .rangeRound([margin.left, chartWidth-margin.right])
+    .padding(0.5);
 
 var xAxis = d3.axisBottom(x);
 
@@ -32,13 +39,22 @@ svg.select("#x")
     .attr("transform","translate(0," + (margin.top + chartHeight) + ")")
     .call(xAxis);
 
-
+var xAxisLabel = svg.append("text")
+    .attr("class","axisLabel")
+    .attr("x", chartWidth/2)
+    .attr("y", chartHeight+margin.bottom)
+    .text("Where You're Landing");
 
 // Y Scale
 
+
+var recScale = d3.scaleBand()   // how strongly we believe you'll need this vehicle
+    .domain("false","true") 
+    .range([0,100]);
+
 var y = d3.scaleBand()
-    .domain("false","true") // this says that when false, start the heigh all t
-    .range([margin.top + chartHeight, margin.top]);
+    .domain([0,100]) // Scale the Y axis to be the full height of the chart, where false is on the bottom and true is all the way at the top
+    .range([height-margin.bottom, margin.top]);
 
 var yAxis = d3.axisLeft(y);
 
@@ -46,9 +62,20 @@ svg.select("#y")
     .attr("transform", "translate(" + margin.left + ",0)") // transform only listens to strings, so we have to jump in and out of javascript
     .call(yAxis);
 
-var barHeight = d3.scaleBand()
+ var yAxisLabel = svg.append("text")
+    .attr("class","axisLabel")
+    .attr("transform","rotate(-90)")
+    .attr("x",-chartHeight/2)
+    .attr("y",margin.left/2)
+    .text("Recommendation Strength");
+
+
+// Height Scale
+
+var barHeight = d3.scaleLinear()
     .domain("false","true") // this says that when false, start the heigh all t
     .range(0, chartHeight);
+
 
 
 
@@ -81,7 +108,7 @@ function getCoordinates () {
         function zeroState(selection) {
             selection
                 .attr("height", 0)
-                .attr("y", margin.top);
+                .attr("y", y(0));
             };
 
         
@@ -91,7 +118,7 @@ function getCoordinates () {
 
         var bars = svg.select("#shapes").selectAll(".bar")
             .data(data, function(d) { 
-                return d.request_id; 
+                return d.request_id; // request_id is the key
             });
             
 
@@ -100,21 +127,21 @@ function getCoordinates () {
             .attr("width", barWidth)
             .call(zeroState)
             .attr("x", function(d) {
-                    return x(d.water);
+                    return x(onWater(d.water));
                 });
 
         // Bars Update
         
         bars.merge(enter)
             .transition()
-            .attr("height", function(d) {
-                return barHeight(d.water); // MAKE THIS AN IF LOOP
-            })
             .attr("y", function(d) {
-                return y(d.water);
+                return y(recScale(d.water));
             })
             .attr("x", function(d) {
-                return x(d.water);
+                return x(onWater(d.water));
+            })
+            .attr("height", function(d) {
+                return barHeight(d.water); 
             });
 
 
