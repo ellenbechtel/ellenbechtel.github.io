@@ -54,7 +54,9 @@ var realtimeURL = "https://whiteboard.datawheel.us/api/google-analytics/realtime
         var y = d3.scaleLinear()
             .domain([0, maximum])
             .range([margin.top + chartHeight, margin.top]);
+
         var yAxis = d3.axisLeft(y);
+
         svg.select("#y")
             .attr("transform", "translate(" + margin.left + ",0)") // transform only listens to strings, so we have to jump in and out of javascript
             .transition()
@@ -148,11 +150,35 @@ var realtimeURL = "https://whiteboard.datawheel.us/api/google-analytics/realtime
 
 
 
-      // Scales
+// Water Scale
 
+var onWater = d3.scaleBand()
+    .domain(["true","false"])
+    .range(["Water","Land"]);
+
+
+// X Scale
+
+var x = d3.scaleBand()
+    .domain(["Water","Land"])
+    .rangeRound([margin.left, chartWidth])
+    .padding(0.5);
+
+var xAxis = d3.axisBottom(x);
+
+svg.select("#x")
+    .attr("transform","translate(0," + (margin.top + chartHeight) + ")")
+    .call(xAxis);
+
+var xAxisLabel = svg.append("text")
+    .attr("class","axisLabel")
+    .attr("x", chartWidth/2)
+    .attr("y", chartHeight+margin.bottom)
+    .text("Where You're Landing");
 
       // Y Scale
 
+    
 
 var recScale = d3.scaleBand()   // how strongly we believe you'll need this vehicle
 .domain("false","true") 
