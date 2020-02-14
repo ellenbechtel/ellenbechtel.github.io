@@ -15,8 +15,8 @@
 // SET STATIC VARIABLES
 //////////////////////////////////
 var margin = {top: 30, right: 30, bottom: 30, left: 30};
-var width = 200
-var height = 200
+var width = 150;
+var height = 150;
 
 var chartWidth = width - margin.left - margin.right;
 var chartHeight = height - margin.top - margin.bottom;
@@ -2821,6 +2821,11 @@ var products =
     console.log(eggsplainer);
 
     // Get the keys for the circles and put them in order
+
+    var keywords = [];
+
+    keyworkds = eggsplainer.forEach function(d) {}
+
     
     // Make the Bad-Neutral-Good-Misleading Color Scale
 

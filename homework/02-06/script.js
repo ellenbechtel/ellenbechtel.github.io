@@ -138,7 +138,7 @@ function getCoordinates () {
             .attr("width", barWidth)
             .call(zeroState)
             .attr("x", function(d) {
-                    return x(onWater(data));
+                    return x(onWater(d));
                 });
 
 
@@ -162,7 +162,7 @@ function getCoordinates () {
             .transition()
             .attr("y", margin.top)
             .attr("x", function(d) {
-                return x(onWater(data));
+                return x(onWater(d));
             })
             .attr("height", chartHeight);
 
