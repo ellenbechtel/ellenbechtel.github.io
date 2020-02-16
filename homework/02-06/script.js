@@ -138,6 +138,7 @@ function getCoordinates () {
             .attr("width", barWidth)
             .call(zeroState)
             .attr("x", function(d) {
+                    console.log(d);
                     return x(onWater(d));
                 });
 
