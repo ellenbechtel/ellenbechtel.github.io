@@ -35,7 +35,7 @@ Promise.all(promises).then(function(data) {
     var eggsplainer = data[1];
 
 
-   
+   console.log(data[1]);
     
     
 
@@ -43,25 +43,10 @@ Promise.all(promises).then(function(data) {
 
 
 
+
 /////////////////////////////////
 // MANUALLY LOAD IN DATA FOR NOW
 //////////////////////////////////
-
-// Dummy Data
-
-var dummyData = [{"name":"lol","amount":34,"date":"11/12/2015","store":"Whole Foods"},
-  {"name":"The Country Hen","amount":120.11,"date":"11/12/2015","store":"Whole Foods"},
-  {"name":"365 Organic","amount":45,"date":"12/01/2015","store":"Whole Foods"},
-  {"name":"Organic Valley","amount":12.00,"date":"01/04/2016","store":"Market Basket"},
-  {"name":"Eggland's Best","amount":34.10,"date":"01/04/2016","store":"Market Basket"},
-  {"name":"Taggart's Eggs","amount":34.10,"date":"01/04/2016","store":"Market Basket"},
-  {"name":"Vital Farms","amount":34.10,"date":"01/04/2016","store":"Trader Joe's"},
-  {"name":"Happy Hens","amount":34.10,"date":"01/04/2016","store":"Trader Joe's"},
-  {"name":"Ari Bari","amount":44.80,"date":"01/05/2016","store":"Trader Joe's"}
-];
-
-
-
 
 
 // JSON EGGSPLAINER
@@ -2820,17 +2805,46 @@ var products =
     console.log(products);
     console.log(eggsplainer);
 
-    // Get the keys for the circles and put them in order
+    // Get the keywords for the circles and put them in order
 
     var keywords = [];
 
-    keyworkds = eggsplainer.forEach function(d) {}
+    eggsplainer.forEach(function(d) {
+      var this_keyword = d.category;
+      if(keywords.indexOf(this_keyword)<0) {
+        keywords.push(this_keyword);
+      }
+
+    });
+
+    console.log(keywords);  // THEY DONT EXACTLY MATCH THE KEYS IN PRODUCTS.CSV YET
+
+    // Keyword Index Scale
+    var keywordScale = d3.scaleSqrt()
+      .domain([]) // how do I dynamically calculate the length of the keyword array?  .length something?
+      .range([]); // how do I get this to be scaled to the size of the svg?
+
+
+
+
+    // Make new array of products with values that are replaced by the keywork lookups in eggsplainer
+
+
 
     
     // Make the Bad-Neutral-Good-Misleading Color Scale
 
+    var colorScale = d3.scaleOrdinal()
+      .domain(["Bad", "Neutral", "Good","Misleading"]) // change this to "too good to be true"
+      .range(["#4c6375", "#b1d4ce", "#fed200", "#fa8c00"]);
+
+
 
     // Make the Regulated-NonRegulated Dash Scale
+
+    var regulationScale = d3.scaleOrdinal()  // use .dasharray in d3 attr
+      .domain(["Regulated", "Optional", "Unregulated"])
+      .range(["0", "4 1", "1 4"]);
 
 
 
@@ -2841,7 +2855,7 @@ var expensesByName = d3.nest()
     .entries(dummyData);
 */
 
-/////// Make individual SVGs for each data point
+/////// Make individual SVGs for each data point, bind the data to the svgs
 
     var svg = d3.select("#chart")
         .selectAll("uniqueChart")
@@ -2856,7 +2870,9 @@ var expensesByName = d3.nest()
     svg
         .append("circle")
             .attr("class","productCircle")
-            .attr("r", 10)
+            .attr("r", function(d) {
+              return 0.01 * d.IMG;  // this needs to be an actual number
+            })
             .attr("cx", chartWidth/2)
             .attr("cy", chartHeight/2);
 
