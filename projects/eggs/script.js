@@ -40,6 +40,8 @@ var isChecked = document.getElementById("radio-appearance").checked;
   console.log(isChecked);
 
 
+// Tutorial at https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_radio_checked2
+
 
 
 /////////////////////////////////

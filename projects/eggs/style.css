@@ -20,17 +20,111 @@
     background-color: #f9f9f7;
   }
 
+  h1 {
+    display: block;
+    font-size: 5em;
+    margin: -60px -25px 0 0;
+    font-weight: bold;
+}
 
 .title {
-    text-align: center;
+    text-align: left;
     padding-top: 100px;
-    padding-bottom: 10px;
-    font-size: 3em;
-    font-style: bold;
-    line-height: 1em;
-    font-weight: bold;
+    padding-left: 10%;
+    padding-right: 50px;
+    padding-bottom: 40px;
+    display: flex;
+  
     }
 
+.title-text {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Keyframes animation */
+
+#bad-egg-svg {
+  animation: peek 3s ease forwards; 
+  animation-delay: .5s;
+}
+
+@-webkit-keyframes peek {
+  0% {
+    transform: scale(.8)
+  }
+  
+  100% {
+    transform-origin: bottom right;
+    transform: scale(1) translate(10px, 120px) rotate(.1turn);
+  }
+}
+
+@keyframes peek {
+  0% {
+    transform: scale(.8)
+  }
+  
+  100% {
+    transform-origin: bottom right;
+    transform: scale(1) translate(10px, 120px) rotate(.1turn);
+  }
+}
+
+
+
+
+#title-text2 {
+  padding-top: 1em;
+  position: absolute;
+  animation: hide 3s ease forwards;
+  animation-delay: .5s;
+}
+
+@-webkit-keyframes hide {
+  0% { opacity: 1; }
+  40% { opacity: 0}
+  100% { opacity: 0; }
+}
+
+
+@keyframes hide {
+  0% { opacity: 1; }
+  40% { opacity: 0}
+  100% { opacity: 0; }
+}
+
+#title-text3 {
+  padding-top: 1em;
+  position: absolute;
+  animation: show 3s ease forwards;
+  animation-delay: .5s;
+}
+
+
+
+@-webkit-keyframes show {
+  0% { opacity: 0; }
+  60% { opacity: 0}
+  100% { opacity: 1; }
+}
+
+
+@keyframes show {
+  0% { opacity: 0; }
+  60% { opacity: 0}
+  100% { opacity: 1; }
+}
+
+#title-text4 {
+  padding-top: 1em;
+}
+
+
+
+
+/* The Rest */
 
 .content {
     max-width: 600px;
