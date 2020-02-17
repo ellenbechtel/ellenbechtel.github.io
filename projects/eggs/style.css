@@ -25,7 +25,7 @@
     text-align: center;
     padding-top: 100px;
     padding-bottom: 10px;
-    font-size: 6em;
+    font-size: 3em;
     font-style: bold;
     line-height: 1em;
     font-weight: bold;
@@ -50,7 +50,7 @@ h4 {
 /* Brand Yolks Chart */ 
 
 #chart {
-  max-width: 900px;
+  max-width: 800px;
   margin: auto;
   margin-top: 100px;
 }
@@ -77,62 +77,63 @@ circle {
   stroke-width: 1.5px;
 }
 
-/* Quiz and Slider */ 
+/* Toggles */ 
 
 
-#slider-container {
-  display: grid;
-  grid-template-columns: 1fr 0.5fr 1.5fr 0.5fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-template-areas: "grid-item1 option1a slider1 option1b" "grid-item2 option2a slider2 option2b" "grid-item3 option3a slider3 option3b" "grid-item4 option4a slider4 option4b";
-
+#toggle-container {
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  top: 10px;
+  right: 10px;
+  background: lightgray;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: 15px;
+  font-size: .5em;
+  
 }
 
-.grid-item1 { grid-area: grid-item1;  align-self: center;  justify-self: end; }
-.option1a { grid-area: option1a;  align-self: center; justify-self: end; }
-.slider1 { grid-area: slider1; align-self: center; }
-.option1b { grid-area: option1b;  align-self: center; }
-
-.grid-item2 { grid-area: grid-item2;  align-self: center;  justify-self: end; }
-.option2a { grid-area: option2a;  align-self: center;  justify-self: end; }
-.slider2 { grid-area: slider2;  align-self: center; }
-.option2b { grid-area: option2b;  align-self: center; }
-
-.grid-item3 { grid-area: grid-item3;  align-self: center;  justify-self: end; }
-.option3a { grid-area: option3a;  align-self: center;  justify-self: end; }
-.slider3 { grid-area: slider3;  align-self: center; }
-.option3b { grid-area: option3b;  align-self: center; }
-
-.grid-item4 { grid-area: grid-item4;  align-self: center;  justify-self: end; }
-.option4a { grid-area: option4a;  align-self: center;  justify-self: end; }
-.slider4 { grid-area: slider4;  align-self: center; }
-.option4b { grid-area: option4b;  align-self: center; }
-
-
-.quizItem{
-  font-style: bold;
+.switch-field {
+	display: flex;
+	margin-bottom: 20px;
+	overflow: hidden;
 }
 
-.slider {
-  -webkit-appearance: none;
-  width: 100%;
-  height: 10px;
-  padding: 5px;
-  border-radius: 5px;
-  background: #d3d3d3;
-  outline: none;
-  margin-bottom: 15px;
-  align-self: right;
-
+.switch-field input {
+	position: absolute !important;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	width: 1px;
+	border: 0;
+	overflow: hidden;
 }
 
+.switch-field label {
+	background-color: #e4e4e4;
+	color: rgba(0, 0, 0, 0.6);
+	font-size: 1em;
+	line-height: 1;
+	text-align: center;
+	padding: 8px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+	transition: all 0.1s ease-in-out;
+}
 
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 18px;
-  height: 18px;
-  border-radius: 10px;
-  background-color: goldenrod;
-  overflow: visible;
-  cursor: pointer;
+.switch-field label:hover {
+	cursor: pointer;
+}
+
+.switch-field input:checked + label {
+	background-color: #FED200;
+	box-shadow: none;
+}
+
+.switch-field label:first-of-type {
+	border-radius: 4px 0 0 4px;
+}
+
+.switch-field label:last-of-type {
+	border-radius: 0 4px 4px 0;
 }

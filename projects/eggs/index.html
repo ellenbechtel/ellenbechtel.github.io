@@ -31,41 +31,81 @@
             <div id="chart"></div>
 
 
-            <div id="quiz" class="content">
-                <h1>But what do you look for in an egg?</h1>
-                <p class="text">Let's start with some basics.</p>
-
-                <h2>Slider Test Value: <span id="tester">0</span> </h2>
-
-                <div id="slider-container">
-                                    
-                    <div class="grid-item1"><h3 class="quizItem">Grade</h3></div>                        
-                    <div class="option1a"><p class="quizOption">A</p></div>
-                    <div class="slider1"><input type="range" class="slider" id="slider-size"></div>
-                    <div class="option1b"><p class="quizOption">AA</h4></div>
-
-                    <div class="grid-item2"><h3 class="quizItem">Color</h3></div>
-                    <div class="option2a"><p class="quizOption">Brown</h4></div>
-                    <div class="slider2"><input type="range" class="slider" id="slider-size"></div>
-                    <div class="option2b"><p class="quizOption">White</h4></div>
-
-                    <div class="grid-item3"><h3 class="quizItem">Hen's Lifestyle</h3></div>
-                    <div class="option3a"><p class="quizOption">Not Important</h4></div>
-                    <div class="slider3"><input type="range" class="slider" id="slider-size"></div>
-                    <div class="option3b"><p class="quizOption">Extremely Important</h4></div>
-
-                    <div class="grid-item4"><h3 class="quizItem">Organic-ness</h2></div>
-                    <div class="option4a"><p class="quizOption">Not Important</h4></div>
-                    <div class="slider4"><input type="range" class="slider" id="slider-size"></div>
-                    <div class="option4b"><p class="quizOption">Extremely Important</h4></div>
+            
     
-
-
-
-                </div>
+    
             </div>
-    
-    
+        </div>
+
+
+        <div id="toggle-container" class="content">
+            <h1>Decide for Yourself</h1>
+            <p class="text">Adjust the toggle switches to highlight what you look for in an egg.</p>
+
+            <div id="toggles">
+
+
+           <form class="form">
+               <h2>The Eggs</h2>
+
+                <h3>Appearance</h3>
+                <div class="switch-field">
+                    <input type="radio" id="radio-appearance" name="switch-one" value="Important" checked/>
+                    <label for="radio-appearance">Important</label>
+                    <input type="radio" id="radio-appearance-off" name="switch-one" value="Not" />
+                    <label for="radio-appearance-off">Not Important</label>
+                </div>
+
+                <h3>Nutrition</h3>
+                <div class="switch-field">
+                    <input type="radio" id="radio-nutrition" name="switch-two" value="Important" checked/>
+                    <label for="radio-nutrition">Important</label>
+                    <input type="radio" id="radio-nutrition-off" name="switch-two" value="Not" />
+                    <label for="radio-nutrition-off">Not Important</label>
+                </div>
+
+
+
+                <h2>The Chicken</h2>
+
+                <h3>What They Eat</h3>
+                <div class="switch-field">
+                    <input type="radio" id="radio-feed" name="switch-three" value="Important" checked/>
+                    <label for="radio-feed">Important</label>
+                    <input type="radio" id="radio-feed-off" name="switch-three" value="Not" />
+                    <label for="radio-feed-off">Not Important</label>
+                </div>
+
+                <h3>Where They Live</h3>
+                <div class="switch-field">
+                    <input type="radio" id="radio-lifestyle" name="switch-four" value="Important" checked/>
+                    <label for="radio-lifestyle">Important</label>
+                    <input type="radio" id="radio-lifestyle-off" name="switch-four" value="Not" />
+                    <label for="radio-lifestyle-off">Not Important</label>
+                </div>
+
+                <h3>What Medicines They Take</h3>
+                <div class="switch-field">
+                    <input type="radio" id="radio-meds" name="switch-five" value="Important" checked/>
+                    <label for="radio-meds">Important</label>
+                    <input type="radio" id="radio-meds-off" name="switch-five" value="Not" />
+                    <label for="radio-meds-off">Not Important</label>
+                </div>
+
+
+                <h2>The Packaging</h2>
+
+                <h3>How the Eggs are Packaged</h3>
+                <div class="switch-field">
+                    <input type="radio" id="radio-package" name="switch-six" value="Important" checked/>
+                    <label for="radio-package">Important</label>
+                    <input type="radio" id="radio-package-off" name="switch-six" value="Not" />
+                    <label for="radio-package-off">Not Important</label>
+                </div>
+
+            </form>
+
+
             </div>
         </div>
 

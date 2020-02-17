@@ -9,14 +9,45 @@
 // MAKE THE TOGGLE BUTTONS
 //////////////////////////////////
 
+// Make a sticky sidebar
+
+var toggleContainer = document.getElementById('toggle-container');
+    toggleContainer.style.opacity = 0;
+var chartPos = document.getElementById('chart');
+var sticky = chartPos.offsetTop - 300;
+
+function makeSticky() {
+
+  if (window.pageYOffset >= sticky ) {
+  toggleContainer.style.opacity = 1;
+
+  } else {
+  toggleContainer.style.opacity = 0;
+ 
+  }
+};
+
+window.addEventListener('scroll', function () {
+  makeSticky();
+});
+
+
+
+   
+// Get values of the toggle switches
+
+var isChecked = document.getElementById("radio-appearance").checked;
+  console.log(isChecked);
+
+
 
 
 /////////////////////////////////
 // SET STATIC VARIABLES
 //////////////////////////////////
 var margin = {top: 30, right: 30, bottom: 30, left: 30};
-var width = 150;
-var height = 150;
+var width = 120;
+var height = 120;
 
 var chartWidth = width - margin.left - margin.right;
 var chartHeight = height - margin.top - margin.bottom;
@@ -2932,4 +2963,6 @@ var expensesByName = d3.nest()
 //     return d;
     
 // }
+
+
 
