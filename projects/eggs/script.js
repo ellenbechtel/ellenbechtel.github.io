@@ -34,13 +34,13 @@ window.addEventListener('scroll', function () {
 
 
    
-// Get values of the toggle switches
+// Get values of the toggle switches // Tutorial at https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_radio_checked2
 
 var isChecked = document.getElementById("radio-appearance").checked;
   console.log(isChecked);
 
 
-// Tutorial at https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_radio_checked2
+
 
 
 
@@ -60,8 +60,8 @@ var chartHeight = height - margin.top - margin.bottom;
 //////////////////////////////////
 
 var promises = [
-    d3.csv("products.csv"),
-    d3.csv("eggsplainer.csv")
+    d3.csv("products.csv", parseProducts),
+    d3.csv("eggsplainer.csv", parseEggsplainer)
 ];
 
 
@@ -141,7 +141,7 @@ Promise.all(promises).then(function(data) {
       .append("circle")
           .attr("class","productCircle")
           .attr("r", function(d) {
-            return 0.01 * d.IMG;  // this needs to be an actual number
+            return 0.01 * d.img;  // this needs to be an actual number
           })
           .attr("cx", chartWidth/2)
           .attr("cy", chartHeight/2);
@@ -191,21 +191,64 @@ Promise.all(promises).then(function(data) {
 
 
 /////////////////////////////////
-// PARSE FUNCTION
+// PARSE FUNCTIONS
 //////////////////////////////////
 
 
-// function parseCSV(data) {
-//     var d = {};
-//     d.id = data.ID;
-//     d.store = data.Store;
-//     d.brand = data.Brand;
-//     d.ct = data.Count;
-//     d.price = data.Price;
+function parseProducts(data) {
+    var d = {};
+    d.img = data.IMG;
+    d.store = data.Store;
+    d.brand = data.Brand;
+    d.ct = data.Count;
+    d.price = data.Price;
+    d.pricePerEgg = data.perEgg;
+    d.containerMat = data.ContainerMaterial;
+    d.size = data.Size;
+    d.color = data.Color;
+    d.grade = data.Grade;
+    d.range = data.Range;
+    d.rangeQ = data.RangeQuote;
+    d.humane = data.Humane;
+    d.org = data.USDAOrganic;
+    d.gmo = data.NonGMOCertified;
+    d.otherCert = data.OtherCertifications;
+    d.hormones = data.Hormones;
+    d.hormQ = data.HormoneQuote;
+    d.antibio = data.Antibiotics;
+    d.omega3 = data.Omega3;
+    d.chol = data.Cholesterol;
+    d.vit = data.Vitamins;
+    d.fat = data.Fat;
+    d.feed = data.Feed;
+    d.feedQ = data.FeedQuote;
+    d.kosh = data.Kosher;
+    d.gmoFeed = data.GMOinFeed;
+    d.pest = data.Pesticides;
+    d.taglines = data.TagLines;
+    d.pic = data.Picture;
+    d.saysFresh = data.Fresh;
 
-//     return d;
-    
-// }
+    return d;
+
+};
+
+function parseEggsplainer(data) {
+  var d = {};
+  
+  d.order = data.Order;
+  d.EGP = data.conceptualGroup;  // Egg, Chicken, or Packaging
+  d.about = data.specificGroup; 
+  d.quality = data.category;
+  d.phrase = data.phrase;
+  d.meaning = data.meaning;
+  d.why = data.why;
+  d.source = data.source;
+  d.reg = data.regulated;
+
+  return d;
+
+};
 
 
 
