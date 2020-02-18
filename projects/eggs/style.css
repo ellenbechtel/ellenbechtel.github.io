@@ -3,128 +3,218 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
   
 
-  * {
-    box-sizing: border-box;
-  }
-    
+* {
+  box-sizing: border-box;
+}
+  
 
-  html, body {
-    margin: 0px;
-    padding: 0px;
-    display: flex;
-    flex-direction: column;
-    font-family: 'Nunito', sans-serif;
-    color: #352418;
-    font-size: 15pt;
-    line-height: 1.5;
-    background-color: #f9f9f7;
-  }
+html, body {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Nunito', sans-serif;
+  color: #352418;
+  font-size: 15pt;
+  line-height: 1.5;
+  background-color: #f9f9f7;
+}
 
-  h1 {
-    display: block;
-    font-size: 5em;
-    margin: -60px -25px 0 0;
-    font-weight: bold;
+header {
+  
+  background-color: #352418
+}
+
+
+h1 {
+  display: block;
+  margin: -60px -25px 0 0;
+  font-weight: bold;
 }
 
 .title {
-    text-align: left;
-    padding-top: 100px;
-    padding-left: 10%;
-    padding-right: 50px;
-    padding-bottom: 40px;
-    display: flex;
-  
-    }
+  max-width: 900px;
+  height: 900px;
+  margin: auto;
+  text-align: left;
+  padding-top: 100px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+
+  }
 
 .title-text {
   display: flex;
   flex-direction: column;
+  color: #f9f9f7;
+  font-size: 2em;
+  padding-top: 100px;
+}
+
+
+.title-animation-wrap {
+  margin: auto;
 }
 
 
 /* Keyframes animation */
 
 #bad-egg-svg {
-  animation: peek 3s ease forwards; 
+  animation: peek 2s ease forwards; 
   animation-delay: .5s;
+  opacity: 0;
 }
 
 @-webkit-keyframes peek {
   0% {
-    transform: scale(.8)
+    transform: scale(.8);
+    opacity: 0;
   }
   
   100% {
     transform-origin: bottom right;
     transform: scale(1) translate(10px, 120px) rotate(.1turn);
+    opacity: 1;
   }
 }
 
 @keyframes peek {
   0% {
-    transform: scale(.8)
+    transform: scale(.8);
+    opacity: 0;
   }
   
   100% {
     transform-origin: bottom right;
     transform: scale(1) translate(10px, 120px) rotate(.1turn);
+    opacity: 1;
   }
 }
 
 
 
-
 #title-text2 {
-  padding-top: 1em;
+  padding-top: 1.2em;
   position: absolute;
-  animation: hide 3s ease forwards;
-  animation-delay: .5s;
+  animation: hide 10s ease infinite;
+  opacity: 0;
 }
 
 @-webkit-keyframes hide {
   0% { opacity: 1; }
-  40% { opacity: 0}
-  100% { opacity: 0; }
+  10% { opacity: 0}
+  20% { opacity: 0; }
 }
 
 
 @keyframes hide {
-  0% { opacity: 1; }
-  40% { opacity: 0}
+  0% { opacity: 0; }
+  10% { opacity: 1}
+  20% { opacity: 0; }
+}
+
+
+#title-text3 {
+  padding-top: 1.2em;
+  position: absolute;
+  animation: showBad 10s ease infinite;
+  opacity: 0;
+}
+
+@-webkit-keyframes showBad {
+  20% { opacity: 0; }
+  30% { opacity: 1}
+  40% { opacity: 0; }
+}
+
+
+@keyframes showBad {
+  20% { opacity: 0; }
+  30% { opacity: 1}
+  40% { opacity: 0; }
+}
+
+
+#title-text4 {
+  padding-top: 1.2em;
+  position: absolute;
+  animation: showCF 10s ease infinite;
+  opacity: 0;
+}
+
+@-webkit-keyframes showCF {
+  40% { opacity: 0; }
+  50% { opacity: 1}
+  60% { opacity: 0; }
+}
+
+
+@keyframes showCF {
+  40% { opacity: 0; }
+  50% { opacity: 1}
+  60% { opacity: 0; }
+}
+
+
+#title-text5 {
+  padding-top: 1.2em;
+  position: absolute;
+  animation: showVF 10s ease infinite;
+  opacity: 0;
+}
+
+@-webkit-keyframes showVF {
+  60% { opacity: 0; }
+  70% { opacity: 1}
+  80% { opacity: 0; }
+}
+
+
+@keyframes showVF {
+  60% { opacity: 0; }
+  70% { opacity: 1}
+  80% { opacity: 0; }
+}
+
+
+
+#title-text6 {
+  padding-top: 1.2em;
+  position: absolute;
+  animation: showH 10s ease infinite;
+  opacity: 0;
+}
+
+@-webkit-keyframes showH {
+  80% { opacity: 0; }
+  90% { opacity: 1}
   100% { opacity: 0; }
 }
 
-#title-text3 {
-  padding-top: 1em;
-  position: absolute;
-  animation: show 3s ease forwards;
-  animation-delay: .5s;
+
+@keyframes showH {
+  80% { opacity: 0; }
+  90% { opacity: 1}
+  100% { opacity: 0; }
 }
 
 
 
-@-webkit-keyframes show {
-  0% { opacity: 0; }
-  60% { opacity: 0}
-  100% { opacity: 1; }
-}
 
-
-@keyframes show {
-  0% { opacity: 0; }
-  60% { opacity: 0}
-  100% { opacity: 1; }
-}
-
-#title-text4 {
-  padding-top: 1em;
+#title-text7 {
+  padding-top: 1.6em;
+  
 }
 
 
 
 
 /* The Rest */
+
+#potatoes {
+  padding-top: 100px;
+}
 
 .content {
     max-width: 600px;
@@ -170,6 +260,7 @@ circle {
   stroke: #000;
   stroke-width: 1.5px;
 }
+
 
 /* Toggles */ 
 
