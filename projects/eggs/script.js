@@ -83,7 +83,7 @@ Promise.all(promises).then(function(data) {
   var keywords = [];
 
   eggsplainer.forEach(function(d) {
-    var this_keyword = d.category;
+    var this_keyword = d.quality;
     if(keywords.indexOf(this_keyword)<0) {
       keywords.push(this_keyword);
     }
@@ -93,13 +93,20 @@ Promise.all(promises).then(function(data) {
   console.log(keywords);  // THEY DONT EXACTLY MATCH THE KEYS IN PRODUCTS.CSV YET
 
 
+  // Make Lookup Function
+
+  function lookup(phrase) {
+
+      // paste the filtering stuff from down below
+
+  };
+
   // Keyword Index Scale
   var keywordScale = d3.scaleSqrt()
     .domain([]) // how do I dynamically calculate the length of the keyword array?  .length something?
     .range([]); // how do I get this to be scaled to the size of the svg?
 
-
-
+ 
 
   // Make new array of products with values that are replaced by the keywork lookups in eggsplainer
 
@@ -133,18 +140,88 @@ Promise.all(promises).then(function(data) {
       .enter()
       .append("svg")
           .attr("width", width)
-          .attr("height", height);
+          .attr("height", height)
+          .attr("class", "miniEgg")
+          .attr("id", function(d,i) {
+            return "svg_" + i;
+          });
+
+
+
+
 
 
   // Draw Circles in each SVG
-  svg
+
+
+  d3.selectAll(".miniEgg").each(function(d) {
+
+     // Make deconstructed data
+
+    var deconstructed = [];
+
+    for(var property in d) {
+      var val = d[property];
+
+      var o = {keyword: property, value: val} 
+
+      deconstructed.push(o);
+    };
+
+      console.log(deconstructed);
+
+
+
+    var this_svg = d3.select(this);
+    console.log(this_svg);
+    this_svg.selectAll("circle")
+      .data(deconstructed) //deconstructed data
+      .enter()
       .append("circle")
-          .attr("class","productCircle")
-          .attr("r", function(d) {
-            return 0.01 * d.img;  // this needs to be an actual number
-          })
-          .attr("cx", chartWidth/2)
-          .attr("cy", chartHeight/2);
+        .attr("cx", chartWidth/2)
+        .attr("cy", chartHeight/2)
+        .attr("fill", "none")
+        .attr("stroke", function(e) {
+
+          var meaning = lookup(e.value);
+
+          // Make this a lookup function to call here and at the mouseover
+
+          console.log(e);
+          
+          var filtered = eggsplainer.filter(function(f) {
+            return f.phrase === e.value;
+          });
+          if(filtered.length == 1) {
+                    
+            //return colorScale(filtered[0].meaning);
+
+          } else {
+            return "none";
+          }
+ 
+        })
+        .attr("stroke-width", 1)
+        .attr("r", function(e,i) {
+          return i*3;
+          //return radiusScale(d.keyword)
+        });
+
+  });
+
+
+
+
+
+
+  // svg
+  //     .append("circle")
+  //         .attr("class","productCircle")
+  //         .attr("r", function(d) {
+  //           return 0.01 * d.img;  // this needs to be an actual number
+  //         })
+  //         .attr("cx", chartWidth/2)
+  //         .attr("cy", chartHeight/2);
 
 
   // Make text labels in each SVG
