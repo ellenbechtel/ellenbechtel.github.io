@@ -88,14 +88,40 @@ Promise.all(promises).then(function(data) {
   console.log(keywords);  // THEY DONT EXACTLY MATCH THE KEYS IN PRODUCTS.CSV YET
 
 
-  // Make Lookup Function
+  // Make Lookup Functions
 
-  function lookup(phrase) {
-
-      // paste the filtering stuff from down below
-
+  function lookupMeaning(phrase) {
+                   
+          var filtered = eggsplainer.filter(function(d) {
+            return d.phrase === phrase; // for the deconstructed data, which only has one value (like "Large"), go through eggsplainer (f.phrase) and see if there's anything that matches that value.  There should ony be one thing. 
+          });
+          if(filtered.length == 1) { // this is a filter to say "if there's ANYTHING in the array called filtered, do something with it".  There should only be one thing, or none. Not more.   
+            return filtered[0].meaning; // Whatever the meaning is, color code it
+          } else {
+            return "none"; // if there was no value, then there's no corresponding meaning, so don't color code it.
+          };
   };
 
+
+
+  function lookupReg(phrase) {
+      
+    var filtered = eggsplainer.filter(function(d) {
+      return d.reg === phrase; // for the deconstructed data, which only has one value (like "Large"), go through eggsplainer (f.phrase) and see if there's anything that matches that value.  There should ony be one thing. 
+    });
+    if(filtered.length == 1) { // this is a filter to say "if there's ANYTHING in the array called filtered, do something with it".  There should only be one thing, or none. Not more.   
+    console.log(filtered);
+      return filtered[0].reg; // Whatever the meaning is, color code it
+    } else {
+      return "0 0"; // if there was no value, then there's no corresponding meaning, so don't dash code it.
+    };
+};
+
+
+
+
+
+  
   // Keyword Index Scale
   var keywordScale = d3.scaleOrdinal()
     .domain([]) // how do I dynamically calculate the length of the keyword array?  .length something?
@@ -106,7 +132,7 @@ Promise.all(promises).then(function(data) {
 
   var colorScale = d3.scaleOrdinal()
     .domain(["Bad", "Neutral", "Good", "Misleading", "none"]) // change this to "too good to be true"
-    .range(["#4c6375", "#b1d4ce", "#fed200", "#fa8c00", "none"]);
+    .range(["#4C6375", "#B1D4CE", "#FED200", "#FA8C00", "none"]);
 
 
   // Make the Radius Scale, to say what order the circles should go in
@@ -120,8 +146,8 @@ Promise.all(promises).then(function(data) {
   // Make the Regulated-NonRegulated Dash Scale
 
   var regulationScale = d3.scaleOrdinal()  // use .dasharray in d3 attr
-    .domain(["Regulated", "Optional", "Unregulated"])
-    .range(["0", "4 1", "1 4"]);
+    .domain(["yes", "no"])
+    .range(["0", "2 2"]);
 
 
   /////////////////////////////////
@@ -165,31 +191,16 @@ Promise.all(promises).then(function(data) {
         .attr("cy", chartHeight/2)
         .attr("fill", "none")
         .attr("stroke", function(e) { // eventually Make this a lookup function to call here and at the mouseover
-          
-          //var meaning = lookup(e.value);
-          
-          var filtered = eggsplainer.filter(function(f) {
-            
-
-              return f.phrase === e.value; // for the deconstructed data, which only has one value (like "Large"), go through eggsplainer (f.phrase) and see if there's anything that matches that value.  There should ony be one thing. 
-              console.log(e.value);
-            });
-
-            if(filtered.length == 1) { // this is a filter to say "if there's ANYTHING in the array called filtered, do something with it".  There should only be one thing, or none. Not more.
-                      
-              return colorScale(filtered[0].meaning); // Whatever the meaning is, color code it
-
-            } else {
-
-              return "none"; // if there was no value, then there's no corresponding meaning, so don't color code it.
-            
-            };
+          var meaning = lookupMeaning(e.value);
+          return colorScale(meaning);
          })
         .attr("stroke-width", 1)
-        // add a stroke-dash array lookup here too
+        .attr("stroke-dasharray", function(e) {
+          var reg = lookupReg(e.value);
+          return regulationScale(reg);
+        })
         .attr("r", function(d) {
           return radiusScale(d.keyword);
-          //return radiusScale(d.keyword)
         });
 
   });
