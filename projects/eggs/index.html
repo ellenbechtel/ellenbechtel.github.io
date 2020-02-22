@@ -4,7 +4,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css"/>
-        <title>Good Eggs</title>
+        <title>Eggsplaining</title>
         <script src="https://d3js.org/d3.v5.min.js"></script>
     </head>
 
@@ -23,7 +23,7 @@
                 </div>    
 
                 <div class="title-animation-wrap">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="300" viewBox="100 -100 600 600">
+                    <svg id="egg-animation" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="300" viewBox="100 -100 600 600">
                         <defs>
                             <style>.cls-1{fill:#fff;stroke:#242e38;stroke-miterlimit:10;stroke-width:3px;}.cls-2{fill:url(#radial-gradient);}.cls-3{fill:#b1d4ce;}.cls-4{fill:url(#radial-gradient-2);}.cls-5{fill:#fed200;}</style>
                             <radialGradient id="radial-gradient" cx="-152.73" cy="38.67" r="126.93" gradientTransform="translate(304.21 165.26) rotate(-41.85)" gradientUnits="userSpaceOnUse">
@@ -90,6 +90,20 @@
     
             </div>
         </div>
+
+        <div id="legend-container" class="content">
+            <h2>Legend</h2>
+            <svg id="legend-svg">
+                <g id="legend"></g>
+                <g id="tooltip"></g>
+            </svg>
+            
+        </div>
+
+
+        <!-- 
+
+            We can put this toggle situation back in when I have time
 
 
         <div id="toggle-container" class="content">
@@ -161,7 +175,7 @@
 
 
             </div>
-        </div>
+        </div>   -->
 
         
 

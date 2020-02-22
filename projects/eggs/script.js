@@ -11,7 +11,7 @@
 
 // Make a sticky sidebar
 
-var toggleContainer = document.getElementById('toggle-container');
+var toggleContainer = document.getElementById('legend-container');
     toggleContainer.style.opacity = 0;
 var chartPos = document.getElementById('chart');
 var sticky = chartPos.offsetTop - 300;
@@ -36,7 +36,7 @@ window.addEventListener('scroll', function () {
    
 // Get values of the toggle switches // Tutorial at https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_radio_checked2
 
-var isChecked = document.getElementById("radio-appearance").checked;
+// var isChecked = document.getElementById("radio-appearance").checked;
 
 
 
@@ -44,12 +44,43 @@ var isChecked = document.getElementById("radio-appearance").checked;
 /////////////////////////////////
 // SET STATIC VARIABLES
 //////////////////////////////////
+
+
+// Mini Egg SVGs
 var margin = {top: 30, right: 30, bottom: 30, left: 30};
 var width = 230;
 var height = 230;
 
 var chartWidth = width;
 var chartHeight = height;
+
+
+// The Legend
+
+var legendMargin = {
+  top: 20,
+  right: 20,
+  bottom: 20,
+  left: 20
+};
+  // HOW CAN I GET THESE TO BE RESPONSIVE WHEN I RESIZE THE WINDOW??
+
+var legendSVGWidth = document.getElementById("legend-container").offsetWidth - legendMargin.left - legendMargin.right; 
+var legendSVGHeight = window.innerHeight - legendMargin.top - legendMargin.bottom;
+var legendSVG = d3.select("#legend-svg")
+  .attr("width", legendSVGWidth)
+  .attr("height", legendSVGHeight);
+
+var legendSize = 20;
+var legendPadding = 10;
+var legend = legendSVG.select("#legend")
+  .attr("transform", "translate(" + legendMargin.left + "," + legendMargin.top + ")");
+  
+var domainValues = d3.range(1, 5);
+
+console.log(domainValues);
+
+
 
 
 /////////////////////////////////
@@ -67,25 +98,6 @@ Promise.all(promises).then(function(data) {
   var products = data[0];
   var eggsplainer = data[1];
 
-
-  console.log(products);
-  /////////////////////////////////
-  // MANIPULATE THE DATA TO GET SOME THINGS WE WANT
-  //////////////////////////////////
-
-    // Get the keywords for the circles and put them in order
-
-  var keywords = [];
-
-  eggsplainer.forEach(function(d) {
-    var this_keyword = d.quality;
-    if(keywords.indexOf(this_keyword)<0) {
-      keywords.push(this_keyword);
-    }
-
-  });
-
-  console.log(keywords);  // THEY DONT EXACTLY MATCH THE KEYS IN PRODUCTS.CSV YET
 
 
   // Make Lookup Functions
@@ -115,7 +127,7 @@ Promise.all(promises).then(function(data) {
     } else {
       return "0 0"; // if there was no value, then there's no corresponding meaning, so don't dash code it.
     };
-};
+  };
 
 
 
@@ -151,7 +163,7 @@ Promise.all(promises).then(function(data) {
 
 
   /////////////////////////////////
-  // DRAWING STUFF!
+  // DRAWING THE BRAND CIRCLES
   //////////////////////////////////
 
   // Make individual SVGs for each data point, bind the data to the svgs
@@ -206,20 +218,6 @@ Promise.all(promises).then(function(data) {
   });
 
 
-
-
-
-
-  // svg
-  //     .append("circle")
-  //         .attr("class","productCircle")
-  //         .attr("r", function(d) {
-  //           return 0.01 * d.img;  // this needs to be an actual number
-  //         })
-  //         .attr("cx", chartWidth/2)
-  //         .attr("cy", chartHeight/2);
-
-
   // Make text labels in each SVG
   svg
       .append("text")
@@ -240,9 +238,62 @@ Promise.all(promises).then(function(data) {
 
     
   /////////////////////////////////
-  // GROUP THE DATA
+  // DRAW THE LEGEND
   //////////////////////////////////
       
+
+  console.log(eggsplainer);
+
+  var legendData = [];
+
+  eggsplainer.forEach(function(d) {
+    var this_meaning = d.meaning;
+    if(legendData.indexOf(this_meaning)<0) {
+      legendData.push(this_meaning);
+    }
+  });
+
+  // THIS SORTING DOESN'T PUT THEM IN THE ORDER I WANT THEM
+  legendData.sort(function(a,b) {
+    return b-a;
+  });
+
+  var legendRects = legend.selectAll("rect")
+    .data(legendData);
+
+  var legendRectEnter = legendRects.enter().append("rect");
+
+  legendRects.merge(legendRectEnter)
+    .attr("x", 0)
+    .attr("y", function(d, i) {
+      return i * legendSize + i * legendPadding;
+    })
+    .attr("width", legendSize)
+    .attr("height", legendSize)
+    .attr("fill", colorScale); // don't need to use an accessory function here because barColor has it's own numbers!
+
+  // Legend Labels
+
+  var legendTexts = legend.selectAll("text")
+    .data(legendData);
+
+  var legendTextsEnter = legendTexts.enter().append("text")
+    .attr("baseline-shift", "-150%");
+
+  legendTexts.merge(legendTextsEnter)
+    .attr("x", legendPadding + legendSize + legendPadding/2)
+    .attr("y", function(d,i) {
+      return i* legendSize + i* legendPadding;
+    })
+    .text(function(d) {
+      return d;
+    });
+
+
+  
+  
+
+
   /////////////////////////////////
   // SAMPLE SCRIPT ON SMALL MULTIPLES
   //////////////////////////////////

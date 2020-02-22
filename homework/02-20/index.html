@@ -88,7 +88,7 @@
       var legendSize = 20;
       var legendPadding = 10;
       var legend = svg.select("#legend")
-        .attr("transform", "translate(0" + legendX +", " + legendY + ")")
+        .attr("transform", "translate(" + legendX + ", " + legendY + ")");
 
       var domainValues = d3.range(1, dataMax + 1);
 

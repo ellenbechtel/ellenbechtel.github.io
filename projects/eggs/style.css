@@ -260,8 +260,25 @@ circle {
 }
 
 
-/* Toggles */ 
+/* Legend */ 
 
+#legend-container {
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  top: 20px;
+  right: 20px;
+  background: white;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding: 20px;
+  font-size: .5em;
+  
+}
+
+
+
+/* Toggles */ 
 
 #toggle-container {
   width: 20%;
