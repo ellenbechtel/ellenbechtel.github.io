@@ -99,19 +99,94 @@
                 <p class="text">Data can help us with this. Egg labels can be read as a type of language, and like all language it has a series of rules, and those rules can be used to <span class="good">clarify</span> or <span class="misleading">manipulate</span> what the text actually means.</p>
             </div>
 
+            <div class="break" id="break1">
+                <div class="content">
+                    <h2 class="break-text">So I went to three different supermarkets and surveyed every egg carton on the shelf.</h2>
+                </div>
+            </div>
+
             <div id="methods" class="content">
-                <h2>So I went to three different supermarkets and surveyed every egg carton on the shelf.</h2>
+                
                 <p class="text">Then I created an index of each of the label types that could appear on any given egg carton in the sample.  Does the label list size, color, and grade of the egg? Check.  Does it say the eggs are Kosher? Mark that.  Does it say they are Free-Range, or does it not say anything at all about how the chickens who laid the eggs lived? Put it in a spreadsheet.</p>
             </div>
             
-            <div id="break">
+            <div class="break" id="break2">
                 <div class="content">
                     <h2 class="break-text">This visualization turns the text of egg cartons into a visual encoding.</h2>
                 </div>
-                
             </div>
 
             <div id="learning">
+                <div class="content">
+                    <p>Here's how to read it.</p>
+                    <p>First, each product gets its own set of concentric circles. Anytime the carton says something about a specific topic, I draw a circle.  Words which have meanings more intrinsic to the egg are closer to the center of the circle.</p>
+                    <p>As you go further out, the circles begin to address the welfare of the chicken that laid the egg - what that hen ate, where it lived, what medicines it took.</p>
+                    <p>The outermost circles represent qualities of the packaing, like whether it says "fresh" anywhere or whethere there are extra tag lines.</p>
+                </div>
+                
+                <div>
+                    <svg id="example-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1200">
+                        <g id="example-labels">
+                            <text class="leglabel" transform="translate(89.28 32.47) scale(0.99 1)">Grade</text>
+                            <text class="leglabel" transform="translate(89.28 43.96) scale(0.99 1)">Cholesterol</text>
+                            <text class="leglabel" transform="translate(89.28 20.99) scale(0.99 1)">Color</text>
+                            <text class="leglabel" transform="translate(89.28 9.51) scale(0.99 1)">Size</text>
+                            <text class="leglabel" transform="translate(89.28 66.92) scale(0.99 1)">Vitamins</text>
+                            <text class="leglabel" transform="translate(89.28 177.27) scale(0.99 1)">Humane Certified</text>
+                            <text class="leglabel" transform="translate(89.28 142.82) scale(0.99 1)">Organic Certified</text>
+                            <text class="leglabel" transform="translate(89.28 154.3) scale(0.99 1)">Living Space</text>
+                            <text class="leglabel" transform="translate(89.28 165.78) scale(0.99 1)">Fertile</text>
+                            <text class="leglabel" transform="translate(89.28 131.34) scale(0.99 1)">Non-GMO Certified</text>
+                            <text class="leglabel" transform="translate(89.28 119.85) scale(0.99 1)">No GMOs in Feed</text>
+                            <text class="leglabel" transform="translate(89.28 200.23) scale(0.99 1)">No Hormones</text>
+                            <text class="leglabel" transform="translate(89.28 55.44) scale(0.99 1)">Fat</text>
+                            <text class="leglabel" transform="translate(89.28 108.37) scale(0.99 1)">No Pesticides</text>
+                            <text class="leglabel" transform="translate(89.28 96.89) scale(0.99 1)">Feed Ingredients</text>
+                            <text class="leglabel" transform="translate(89.28 78.4) scale(0.99 1)">Omega 3</text>
+                            <text class="leglabel" transform="translate(89.28 188.75) scale(0.99 1)">No Antibiotics</text>
+                            <text class="leglabel" transform="translate(89.28 217.72) scale(0.99 1)">Kosher</text>
+                            <text class="leglabel" transform="translate(89.28 229.2) scale(0.99 1)">Container Material</text>
+                            <text class="leglabel" transform="translate(89.28 240.68) scale(0.99 1)">Pictures</text>
+                            <text class="leglabel" transform="translate(89.28 252.16) scale(0.99 1)">Other Certifications</text>
+                            <text class="leglabel" transform="translate(89.28 263.65) scale(0.99 1)">Says "Fresh"</text>
+                            <text class="leglabel" transform="translate(89.28 275.13) scale(0.99 1)">Extra Taglines</text>
+                            <text class="leglabel-big" transform="matrix(0.26, -0.95, 0.97, 0.26, 57.21, 41.6)">Egg</text>
+                            <text class="leglabel-big" transform="matrix(0.26, -0.95, 0.97, 0.26, 32.1, 145.98)">Chicken</text>
+                            <text class="leglabel-big" transform="translate(6.26 245.08) rotate(-75.1) scale(0.99 1)">Packaging</text>
+                            <path class="cls-12" d="M83.5,8.08a11.23,11.23,0,0,1-3.45-.56"/>
+                            <path class="cls-12" d="M77.34,18.59a22.74,22.74,0,0,0,6.16.86"/>
+                            <path class="cls-12" d="M74.64,29.64a34.07,34.07,0,0,0,8.86,1.18"/>
+                            <path class="cls-12" d="M72,40.67A44.82,44.82,0,0,0,83.5,42.19"/>
+                            <path class="cls-12" d="M69.24,51.75A56.81,56.81,0,0,0,83.5,53.56"/>
+                            <path class="cls-12" d="M66.54,62.77a67.78,67.78,0,0,0,17,2.16"/>
+                            <path class="cls-12" d="M63.84,73.83A79.62,79.62,0,0,0,83.5,76.3"/>
+                            <path class="cls-12" d="M61.14,91.88A91.07,91.07,0,0,0,83.5,94.67"/>
+                            <path class="cls-12" d="M58.44,102.92A102.46,102.46,0,0,0,83.5,106"/>
+                            <path class="cls-12" d="M55.74,114a113.37,113.37,0,0,0,27.76,3.45"/>
+                            <path class="cls-12" d="M53,125a124.83,124.83,0,0,0,30.46,3.77"/>
+                            <path class="cls-12" d="M50.34,136.05a136.29,136.29,0,0,0,33.16,4.1"/>
+                            <path class="cls-12" d="M47.64,147.09a147.69,147.69,0,0,0,35.86,4.43"/>
+                            <path class="cls-12" d="M44.94,158.14a159.14,159.14,0,0,0,38.56,4.75"/>
+                            <path class="cls-12" d="M42.24,169.19a170.61,170.61,0,0,0,41.26,5.07"/>
+                            <path class="cls-12" d="M39.54,180.24a182,182,0,0,0,44,5.39"/>
+                            <path class="cls-12" d="M36.84,191.3A193.9,193.9,0,0,0,83.5,197"/>
+                            <path class="cls-12" d="M34.14,208.34a204.87,204.87,0,0,0,49.36,6"/>
+                            <path class="cls-12" d="M31.44,219.38a216.27,216.27,0,0,0,52.06,6.36"/>
+                            <path class="cls-12" d="M28.74,230.42a227.68,227.68,0,0,0,54.76,6.69"/>
+                            <path class="cls-12" d="M26,241.47a239.14,239.14,0,0,0,57.46,7"/>
+                            <path class="cls-12" d="M23.34,252.51a250,250,0,0,0,60.16,7.34"/>
+                            <path class="cls-12" d="M20.64,263.56a262,262,0,0,0,62.86,7.66"/>
+                            <polyline class="cls-12" points="63.17 79.09 55.63 77.25 74.33 0.6 81.87 2.44"/>
+                            <polyline class="cls-12" points="34.89 195.4 26.47 193.31 53.55 84.17 61.97 86.25"/>
+                            <polyline class="cls-12" points="17.15 267.17 8.23 264.95 24.55 199.17 33.48 201.38"/>
+                        </g>
+                    </svg>
+                </div>
+
+                <div class="content">
+                    <p>Next, I color code each circle based on whether that word is good, bad, neutral, or is in fact misleading or is meant to persuade potential consumers.</p>
+                </div>
+
                 <div id="exampleChart" class="chart">
                     <svg id="eggsample-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 543.31 133.26">
                     <title>Eggsample-1</title>
@@ -128,7 +203,9 @@
                     </svg>
     
     
-                    <p>sdflksjf;slkjfdk</p>
+                    <div class="content">
+                        <p>Once each circle is coded, we end up with a little thumbprint of each product, showing what is said (and what isn't), as well as whether what it's saying is meaningful or</p>
+                    </div>
     
                     <svg id="eggsample-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 522.38 148.75">
                         <title>Eggsample-2</title>
@@ -170,8 +247,10 @@
 
             
 
-            <div class="content">
-                <p>Now we've seen some examples, let's try it out for real!</p>
+            <div class="break" id="break3">
+                <div class="content">
+                    <h2 class="break-text">And the code is live!</h2>
+                </div>
             </div>
 
             <div id="chart" class="chart"></div>
@@ -204,7 +283,7 @@
                     <text class="leglabel" transform="translate(89.28 119.85) scale(0.99 1)">No GMOs in Feed</text>
                     <text class="leglabel" transform="translate(89.28 200.23) scale(0.99 1)">No Hormones</text>
                     <text class="leglabel" transform="translate(89.28 55.44) scale(0.99 1)">Fat</text>
-                    <text class="leglabel" transform="translate(89.28 108.37) scale(0.99 1)">Pesticides in Feed</text>
+                    <text class="leglabel" transform="translate(89.28 108.37) scale(0.99 1)">No Pesticides</text>
                     <text class="leglabel" transform="translate(89.28 96.89) scale(0.99 1)">Feed Ingredients</text>
                     <text class="leglabel" transform="translate(89.28 78.4) scale(0.99 1)">Omega 3</text>
                     <text class="leglabel" transform="translate(89.28 188.75) scale(0.99 1)">No Antibiotics</text>
