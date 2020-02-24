@@ -258,3 +258,13 @@ var render = (function () {
 
 
 
+
+
+
+
+
+
+
+  var colorScale = d3.scaleOrdinal()
+  .domain(["Bad", "Neutral", "Good", "Misleading", "none"]) // change this to "too good to be true"
+  .range(["#4C6375", "#B1D4CE", "#FED200", "#FA8C00", "none"]);
