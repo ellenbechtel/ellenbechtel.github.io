@@ -32,6 +32,23 @@ h1 {
   font-weight: bold;
 }
 
+a {
+  text-decoration: none;
+  color: #fa8c00;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  color: black;
+}
+
+a:visited {
+  color:#fed200;
+}
+
 .title {
   max-width: 1000px;
   height: 100vh;
@@ -40,23 +57,28 @@ h1 {
   padding-bottom: 40vh;
   display: flex;
   flex-direction: column;
-
   }
 
+.title p {
+  color: #f9f9f7;
+  opacity: 20%;
+  text-align: right;
+  font-size: .8em;
+}
+  
 .title-text {
   display: flex;
   flex-direction: column;
   color: #f9f9f7;
-  font-size: 3em;
+  font-size: 2.8em;
   padding-top: 200px;
 }
-
 
 .title-animation-wrap {
   margin: auto;
   position: absolute;
   right: 15%;
-  top: 20%;
+  top: 30%;
 }
 
 
@@ -209,6 +231,10 @@ h1 {
   
 }
 
+.byline {
+  opacity: .4;
+}
+
 #grosh {
   background-image: linear-gradient(180deg, rgba(177,212,206,.9), 10%, rgba(76,99,117,.9) 100%), url(img/grocerystore.jpg);
   height: 120vh;
@@ -225,6 +251,7 @@ h1 {
 }
 
 .break {  
+  height: 30vh;
   color: #f9f9f7;
   background-size:cover;
   background-attachment: fixed;
@@ -235,7 +262,7 @@ h1 {
   background-image: linear-gradient(180deg, rgba(177,212,206,.9), 10%, rgba(76,99,117,.9) 100%), url(img/farmhouse.jpg);
 }
 #break2 {
-  background-image: linear-gradient(180deg, rgba(177,212,206,.9), 10%, rgba(76,99,117,.9) 100%), url(img/marketbasket.jpg);
+  background-image: linear-gradient(180deg, rgba(177,212,206,.9), 10%, rgba(76,99,117,.9) 100%), url(img/vital.jpg);
 }
 
 #break3 {
@@ -245,7 +272,13 @@ h1 {
 
 /* Eggsamples */
 
+.examplelabel {
+  font-size: .4em;
+}
 
+.examplelabel-big {
+  font-size: .6em;
+}
 
 .eggsample-text {
   font-size:10px;
