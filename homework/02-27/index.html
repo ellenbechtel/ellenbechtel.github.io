@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://unpkg.com/topojson@3"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js">//This loads the Miller projection and others</script>
+    <title>Map map brap!</title>
+
+    <style>
+        body{margin:0}
+    </style>
+  </head>
+  <body>
+
+    <h1>Mbrap!</h1>
+    <svg id="viz">
+        <rect id="ocean" fill="cornflowerblue" />
+        <g id="map"></g>
+    </svg>
+  </body>
+
+  <script>
+        var width = window.innerWidth;
+        var height = window.innerHeight;
+        var svg = d3.select("#viz")
+            .attr("width", width)
+            .attr("height", height);
+
+        ocean = svg.select("#ocean")
+            .attr("width", width)
+            .attr("height", height);
+    
+
+        var map = svg.select("#map");
+
+
+        // Define Zoom Functions
+        var zoom = d3.zoom()
+            .translateExtent([
+                [0,0],[width,height]
+            ])
+            .scaleExtent([1,32])
+            .on("zoom", zoomed);
+
+        function zoomed() {
+            map.attr("transform", d3.event.transform);
+        }
+
+        // apply the zoom to the entire svg
+        svg.call(zoom);
+
+
+        d3.json("world-alpha3.json", function(error, world) {
+            
+            var geoJSON = topojson.feature(world, world.objects.countries); // pick what level of hierarchy you want the object to select arcs from
+            console.log(geoJSON);
+
+            // take out antarctica
+            geoJSON.features = geoJSON.features.filter(function(d) { return d.id !== "ATA"; })
+
+            var proj = d3.geoMercator() // think of this like a scale function, which maps coordinates (lat long, y x) into x,y svg coordinates
+                .fitSize([width, height], geoJSON);
+ 
+            var path = d3.geoPath() // this makes a path string out of geoJSON points, arcs, and a projection and fitsize!
+                .projection(proj);
+
+            var countries = map.selectAll("path")
+                .data(geoJSON.features);
+
+            countries.enter().append("path")
+                .attr("d", path)
+                .attr("fill", "goldenrod")
+                .attr("stroke", "white")
+                .attr("stroke-width", .2);
+
+        
+            var points = [
+                {"name": "Boston", "coords": [-71.0589, 42.3601]}, // note that this is LONGITUDE then LATITUDE
+                {"name": "London", "coords": [-0.1278, 51.5074]}
+            ];
+
+            var circles = map.selectAll("circle")
+                .data(points);
+
+            circles.enter().append("circle")
+                .attr("transform", function(d) {
+                    return "translate(" + proj(d.coords) + ")";
+                })
+                .attr("r", 7)
+                .attr("fill","black");
+        });
+
+
+
+  </script>
+
+</html>
