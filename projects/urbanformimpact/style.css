@@ -1,0 +1,11 @@
+/* Fonts */
+
+@font-face {
+    font-family: 'Klima';
+    src: url('fonts/klima-regular.ttf'); /* Safari, Android, iOS */
+         
+  }
+
+body {
+    font-family: 'Klima', sans-serif;
+}

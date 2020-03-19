@@ -2,7 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Wigglies</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,300,400,500,600&display=swap" rel="stylesheet">
+    <title>Sperm Studies</title>
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://rawcdn.githack.com/Kcnarf/d3-weighted-voronoi/v1.0.1/build/d3-weighted-voronoi.js"></script>
     <script src="https://rawcdn.githack.com/Kcnarf/d3-voronoi-map/v2.0.1build/d3-voronoi-map.js"></script>
@@ -12,9 +13,13 @@
   <body>
       <div id="banner">
 
-        <h1>The Little Prints</h1>
-        <p>Introductory text</p>
+        <h1>What does the gene pool look like?</h1>
+        <p>Yep, let's look at sperm donors.</p>
       </div>
+
+      <div id="gif">
+        <img src="./spermies.gif">
+      </div> 
 
       <div class="section">
           <p>
@@ -22,7 +27,8 @@
 
             Etiam rhoncus imperdiet rutrum. Morbi interdum aliquet metus id laoreet. In vehicula ligula ut venenatis feugiat. Donec interdum, purus ut condimentum dictum, felis urna vehicula ex, ac ultricies mauris ex quis nisl. Nunc ultrices erat nec eleifend imperdiet. Nunc vel urna in arcu interdum efficitur. Duis ultrices odio eu eros laoreet, ac laoreet orci semper. Nunc eu dolor nec enim tincidunt molestie sed in elit. Proin risus elit, blandit eget maximus id, hendrerit quis nulla. Sed malesuada tincidunt pulvinar. Aliquam orci tellus, ornare nec libero et, vestibulum posuere dui. Morbi sit amet varius arcu, vel feugiat ligula. Duis facilisis nunc hendrerit, consequat eros ut, varius arcu. Phasellus eget libero non leo fringilla lobortis non at augue.
           </p>
-          <svg id="voronoi"></svg>
+          
+          <svg id="chart1"></svg>
       </div>
 
       <div class="section">
@@ -31,12 +37,11 @@
 
           Etiam rhoncus imperdiet rutrum. Morbi interdum aliquet metus id laoreet. In vehicula ligula ut venenatis feugiat. Donec interdum, purus ut condimentum dictum, felis urna vehicula ex, ac ultricies mauris ex quis nisl. Nunc ultrices erat nec eleifend imperdiet. Nunc vel urna in arcu interdum efficitur. Duis ultrices odio eu eros laoreet, ac laoreet orci semper. Nunc eu dolor nec enim tincidunt molestie sed in elit. Proin risus elit, blandit eget maximus id, hendrerit quis nulla. Sed malesuada tincidunt pulvinar. Aliquam orci tellus, ornare nec libero et, vestibulum posuere dui. Morbi sit amet varius arcu, vel feugiat ligula. Duis facilisis nunc hendrerit, consequat eros ut, varius arcu. Phasellus eget libero non leo fringilla lobortis non at augue.
         </p>
-        <svg id="geomap"></svg>
+        <svg id="chart2"></svg>
 
         <div id="tooltip"></div>
     </div>
 
-    <script src="./voronoi.js"></script>
     <script src="./chart1.js"></script>
   </body>
 </html>
