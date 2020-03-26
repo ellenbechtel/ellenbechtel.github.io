@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,300,400,500,600&display=swap" rel="stylesheet">
+    <title>Sperm Bank Explorer</title>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+      <div id="explorer-banner" class="banner">
+
+        <h1>Sperm Bank Explorer</h1>
+        <p>In which we ask: <i>What does the gene pool look like?</i></p>
+
+        <button onclick="showDiv1()">Read More</button>
+
+      </div>
+
+      <div id="about-text" class="content hidden-div">
+        
+        <p>The sperm bank / donation business is a $3.5 billion market, and growing accessibility to fertility-related medical care means that more and more people (including many of my peers, who are in relationships where no one produces sperm) have the unenviable luxury of grappling with thorny questions like "Do genetics matter?", "What do I care about in a donor?", and most importantly, "How am I, justly or unjustly, using the information a sperm bank provides to me to judge donors for their 'worthiness'?".</p>
+
+        <p>Additionally, there's been some reporting on the fact that many sperm banks have mostly white donors, and very few donors of color.  There's also been some reporting that while donors will publicly say things like "I donated because I want to give the gift of life", there are some donors who will also say off-record that "I donated because I want to propogate the white race."  Some donors have upwards of 300 children born from their donations, and while companies won't advertise their donors as open white supremacists, I'd like to see if there are trends or insights that can be gleaned from what a donor says about themselves anyway.</p>
+   
+        <p>Turns out, many sperm banks offer 14-day free trials to view their donor catalogs, so I used a web scraper to scrape the text of "Why I donated" from the five biggest online sperm banks.</p>
+            
+      </div>
+      
+      <div class="section">
+        <svg id="beeswarm"></svg>
+        <div id="tooltip"></div>
+      </div>
+
+      
+
+
+      <div id="skew-banner" class="banner">
+
+        <h1>Notice that banks skew towards a certain type of donor.</h1>
+        <!-- <button onclick="showDiv2()">Read More</button> -->
+        <p>The modal donor would be...</p>
+        
+
+      </div>
+
+      <div id="skew-text" class="content hidden-div">
+        
+        <p>The sperm bank / donation business is a $3.5 billion market, and growing accessibility to fertility-related medical care means that more and more people (including many of my peers, who are in relationships where no one produces sperm) have the unenviable luxury of grappling with thorny questions like "Do genetics matter?", "What do I care about in a donor?", and most importantly, "How am I, justly or unjustly, using the information a sperm bank provides to me to judge donors for their 'worthiness'?".</p>
+
+        <p>Additionally, there's been some reporting on the fact that many sperm banks have mostly white donors, and very few donors of color.  There's also been some reporting that while donors will publicly say things like "I donated because I want to give the gift of life", there are some donors who will also say off-record that "I donated because I want to propogate the white race."  Some donors have upwards of 300 children born from their donations, and while companies won't advertise their donors as open white supremacists, I'd like to see if there are trends or insights that can be gleaned from what a donor says about themselves anyway.</p>
+   
+        <p>Turns out, many sperm banks offer 14-day free trials to view their donor catalogs, so I used a web scraper to scrape the text of "Why I donated" from the five biggest online sperm banks.</p>
+            
+      </div>
+
+      <div class="section">
+        <svg id="barcharts"></svg>
+        
+        <div id="tooltip"></div>
+      </div>
+      
+    <script src="./js/beeswarm.js"></script>
+    <script src="./js/barcharts.js"></script>
+    <script src="./js/pageFunctions.js"></script>
+  </body>
+</html>

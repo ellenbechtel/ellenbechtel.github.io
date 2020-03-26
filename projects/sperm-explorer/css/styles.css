@@ -1,0 +1,93 @@
+
+
+body { 
+  margin: 0;
+  font-size: 10pt;
+  color: #DBDAD9;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  background-image: url('/projects/sperm-explorer/img/background2.svg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+h1 { 
+  font-size: 3em;
+  font-weight: 600;
+}
+
+.content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 5em;
+  
+}
+
+.banner {
+  background-position: 50% 60%;
+  background-size: cover;
+  padding: 10vh 8vh 5vh;
+  text-align: center;
+}
+
+.hidden-div {
+  display: none;
+}
+
+.section {
+  padding: 20px;
+  display: flex;
+}
+
+.section p { 
+  flex: 1;
+
+}
+
+svg {
+  border: 1px dotted white;
+  width: 75%;
+  margin: auto;
+}
+
+@media (max-width: 600px) {
+  .section {
+    flex-direction: column;
+  }
+  .section svg {
+    flex: none;
+  }
+}
+
+
+/* Doodads*/
+
+#tooltip {
+  display: none;
+  position: absolute;
+  border: 1px solid cornflowerblue;
+  padding: 10px;
+}
+
+
+/* Buttons */
+
+button {
+  display: inline-block;
+  background-color: transparent;
+  color: #DBDAD9;
+  padding:0.35em 1.2em;
+  border:0.1em solid #DBDAD9;
+  margin:0 0.3em 0.3em 0;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  text-align:center;
+  transition: all 0.2s;
+}
+
+button:hover {
+  color:#000000;
+  background-color:#DBDAD9;
+}
