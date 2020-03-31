@@ -38,6 +38,26 @@ h1 {
 .section {
   padding: 20px;
   display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+span .interactive-title {
+  display: inline-block
+}
+
+select {
+  -webkit-appearance: none;
+  background-color: transparent;
+  margin: 0 .3em;
+  font-size: 1.1em;
+  color: #DBDAD9;
+  font-weight: bold;
+  appearance: none;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid #DBDAD9;
+  border-radius:0;
 }
 
 .section p { 
@@ -46,7 +66,7 @@ h1 {
 }
 
 svg {
-  border: 1px dotted white;
+  border: 0px dotted white;
   width: 75%;
   margin: auto;
 }
@@ -59,6 +79,11 @@ svg {
     flex: none;
   }
 }
+
+
+/* SVG and Spermies Styles */
+
+
 
 
 /* Doodads*/
