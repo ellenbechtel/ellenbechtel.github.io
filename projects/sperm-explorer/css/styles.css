@@ -83,7 +83,9 @@ svg {
 
 /* SVG and Spermies Styles */
 
-
+.spermies {
+  fill: white;
+}
 
 
 /* Doodads*/

@@ -12,6 +12,8 @@
 var width = document.querySelector("#beeswarm").clientWidth;
 var height = document.querySelector("#beeswarm").clientHeight;
 
+transitionTime = 1 * 1000; // 1 second
+
 /*
 var margin = {
     top: 20,
@@ -57,14 +59,10 @@ d3.csv("./donors.csv", function(donors) {
         }
     });
 
-    /*
+    
     var eyeColorScale = d3.scaleOrdinal()
         .domain(eyeColors)
-        .range(["brown", "green", "gold", "blue", "black", "grey"])
-        .paddingInner(0.5)
-        .paddingOuter(0.25);
-
-    */
+        .range(["brown", "green", "gold", "blue", "black", "grey"]);  // pick colors
 
 
     // Hair Color
@@ -76,7 +74,7 @@ d3.csv("./donors.csv", function(donors) {
 
     // GROUPINGS FOR Y SCALE
 
-    //Sperm Bank of Origin
+    // Sperm Bank of Origin
 
     var banks = [];
     donors.forEach(function(d) {
@@ -85,23 +83,23 @@ d3.csv("./donors.csv", function(donors) {
             banks.push(thisOne);
         }
     });
-    
+    banks = banks.sort();  
+
     var bankScale = d3.scaleBand()
         .domain(banks)
-        .range([0, width])
-        .paddingInner(0.5)
-        .paddingOuter(0.25);
+        .rangeRound([0, width])
+        .padding(0.5);
 
 
-    // Height
+    // Height  -- FIGURE OUT THE BANDS HERE
     var heightScale = [];
 
-    // Weight
+
+    // Weight  -- FIGURE OUT THE BANDS HERE
     var weightScale = [];
 
-    // Blood Type
-    var bloodTypeScale = [];
 
+    // Blood Type
     var bloodTypes = [];
     donors.forEach(function(d) {
         var thisOne = d.bloodType;
@@ -109,21 +107,47 @@ d3.csv("./donors.csv", function(donors) {
             bloodTypes.push(thisOne);
         }
     });
-    
-    var bankScale = d3.scaleBand()
-        .domain(bloodTypes)
-        .range([0, width])
-        .paddingInner(0.5)
-        .paddingOuter(0.25);
+    bloodTypes = bloodTypes.sort();
+
+    var bloodTypeScale = [];    
 
     // Race
-    var raceScale = [];
+    var races = [];
+    donors.forEach(function(d) {
+        var thisOne = d.race;
+        if(races.indexOf(thisOne)<0) {
+            races.push(thisOne);
+        }
+    });
+    races = races.sort();
 
     // Religion
+    var religions = [];
+    donors.forEach(function(d) {
+        var thisOne = d.religion;
+        if(religions.indexOf(thisOne)<0) {
+            religions.push(thisOne);
+        }
+    });
+    religions = religions.sort();
+    console.log(religions);
+
     var religionScale = [];
 
     // Jewish Ancestry
+    
+    var jews = [];
+    donors.forEach(function(d) {
+        var thisOne = d.jewish;
+        if(jews.indexOf(thisOne)<0) {
+            jews.push(thisOne);
+        }
+    });
+    jews = jews.sort();
+    console.log(jews);
+
     var jewishScale = [];
+
 
 
     /////////////////////////////////
@@ -145,11 +169,11 @@ d3.csv("./donors.csv", function(donors) {
     dropdownColor.on("change", function() {
         currentColorScale = this.value;
         if(currentColorScale == colorScales[0]) {
-            //axis selector
+            // select the correct scale from above
         } else if (currentColorScale == colorScales[1]) {
-            // axis selector
+            // select the correct scale from above
         } else if(currentColorScale == colorScales[2]) {
-            // axis selector
+            // select the correct scale from above
         }
         updateBeeswarm();
     });
@@ -166,23 +190,26 @@ d3.csv("./donors.csv", function(donors) {
             .text(o);
     });
 
-    currentGroupScale = groupScales[0];
+    // Initialize with Blood Type for now
+    currentGroupScale = groupScales[3]; 
+
+    // Update the beeswarm with each change of the dropdown
     dropdownGroup.on("change", function() {
         currentGroupScale = this.value;
         if(currentGroupScale == groupScales[0]) {
-            //axis selector
+            // select the correct scale from above
         } else if (currentGroupScale == groupScales[1]) {
-            // axis selector
+            // select the correct scale from above
         } else if(currentGroupScale == groupScales[2]) {
-            // axis selector
+            // select the correct scale from above
         } else if(currentGroupScale == groupScales[3]) {
-            // axis selector
+            // select the correct scale from above
         } else if(currentGroupScale == groupScales[4]) {
-            // axis selector
+            // select the correct scale from above
         } else if(currentGroupScale == groupScales[5]) {
-            // axis selector
+            // select the correct scale from above
         } else if(currentGroupScale == groupScales[6]) {
-            // axis selector
+            // select the correct scale from above
         }
 
         updateBeeswarm();
@@ -193,7 +220,9 @@ d3.csv("./donors.csv", function(donors) {
     //////////////////////////////////
 
 
-    var x = [];
+    var xScale = d3.scaleOrdinal()
+        .domain([currentGroupScale])
+        .range([0, width]);  // Range bands?
 
     /////////////////////////////////
     // DRAW LINE
@@ -207,20 +236,52 @@ d3.csv("./donors.csv", function(donors) {
         .attr("y1", (2*height)/3)
         .attr("x2", width)
         .attr("y2", (2*height)/3)
-        .attr("stroke-width", 1.5)
+        .attr("stroke-width", 1)
         .attr("stroke", "#DBDAD9");
 
     /////////////////////////////////
-    // WRITE FUNCTION TO UPDATE CLUSTERS
+    // WRITE FUNCTION TO ENTER / UPDATE / EXIT CLUSTERS
     //////////////////////////////////
 
+    function zeroState(selection) {
+        selection  
+            .attr("opacity", 0);
+    }
+
+
     function updateBeeswarm() {
+        
+        // Put all the spermies in a group on the svg canvas
+        var spermies = svg.select("#spermSwarm").selectAll(".spermies")
+            .data(donors); // How do I select a certain property based on what the selected groupings are?
+
         // Enter
+        var enter = spermies.enter()
+            .append("circle")
+            .attr("class","spermies")
+            .attr("r", 3)
+            .attr("cx", function(d) { return xScale(d.bloodType); })  // I want this to be based on whatever group is selected in the dropdown
+            .attr("cy", function() { return height/2; });  // The cy I don't care about - as long as it's within the correct scale band
         
         // Update
 
+        spermies.merge(enter)
+            .transition()
+            .duration(transitionTime)
+            /*
+            .attr("cx", ?)
+            .attr("cy", ?)
+            */;
+
         // Exit
 
+        spermies.exit()
+            .transition()
+            .duration(transitionTime)
+            .call(zeroState)
+            .remove();
+
+                
         console.log(currentColorScale, currentGroupScale);
 
     };
