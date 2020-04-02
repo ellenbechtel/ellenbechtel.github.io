@@ -41,9 +41,6 @@ d3.csv("./donors.csv", function(donors) {
     
     console.log(donors);
 
-
-
-
     /////////////////////////////////
     // MAKE SCALES
     //////////////////////////////////
@@ -99,7 +96,7 @@ d3.csv("./donors.csv", function(donors) {
     var weightScale = [];
 
 
-    // Blood Type
+    // Blood Types
     var bloodTypes = [];
     donors.forEach(function(d) {
         var thisOne = d.bloodType;
@@ -107,9 +104,7 @@ d3.csv("./donors.csv", function(donors) {
             bloodTypes.push(thisOne);
         }
     });
-    bloodTypes = bloodTypes.sort();
-
-    var bloodTypeScale = [];    
+    bloodTypes = bloodTypes.sort();  
 
     // Race
     var races = [];
@@ -130,9 +125,6 @@ d3.csv("./donors.csv", function(donors) {
         }
     });
     religions = religions.sort();
-    console.log(religions);
-
-    var religionScale = [];
 
     // Jewish Ancestry
     
@@ -144,9 +136,6 @@ d3.csv("./donors.csv", function(donors) {
         }
     });
     jews = jews.sort();
-    console.log(jews);
-
-    var jewishScale = [];
 
 
 
@@ -190,26 +179,30 @@ d3.csv("./donors.csv", function(donors) {
             .text(o);
     });
 
+
     // Initialize with Blood Type for now
-    currentGroupScale = groupScales[3]; 
+    currentGroupScale = groupScales[3]; // make this dynamic
+    domainValues = bloodTypes; // make this dynamic
+
+    console.log(currentColorScale, currentGroupScale);
 
     // Update the beeswarm with each change of the dropdown
     dropdownGroup.on("change", function() {
         currentGroupScale = this.value;
-        if(currentGroupScale == groupScales[0]) {
-            // select the correct scale from above
-        } else if (currentGroupScale == groupScales[1]) {
-            // select the correct scale from above
-        } else if(currentGroupScale == groupScales[2]) {
-            // select the correct scale from above
-        } else if(currentGroupScale == groupScales[3]) {
-            // select the correct scale from above
-        } else if(currentGroupScale == groupScales[4]) {
-            // select the correct scale from above
-        } else if(currentGroupScale == groupScales[5]) {
-            // select the correct scale from above
-        } else if(currentGroupScale == groupScales[6]) {
-            // select the correct scale from above
+        if(currentGroupScale == "Sperm Bank") {
+            domainValues = banks;
+        } else if (currentGroupScale == "Height") {
+            //domainValues = ;
+        } else if(currentGroupScale == "Weight") {
+            //domainValues = ;
+        } else if(currentGroupScale == "Blood Type") {
+            domainValues = bloodTypes;
+        } else if(currentGroupScale == "Race") {
+            domainValues = races;
+        } else if(currentGroupScale == "Religion") {
+            domainValues = religions;
+        } else if(currentGroupScale == "Jewish Ancestry") {
+            domainValues = jews;
         }
 
         updateBeeswarm();
