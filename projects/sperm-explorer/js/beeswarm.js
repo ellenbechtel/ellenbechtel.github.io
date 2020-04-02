@@ -181,8 +181,8 @@ d3.csv("./donors.csv", function(donors) {
 
 
     // Initialize with Blood Type for now
-    currentGroupScale = groupScales[3]; // make this dynamic
-    domainValues = bloodTypes; // make this dynamic
+    currentGroupScale = groupScales[0]; // make this dynamic
+    domainValues = banks; // make this dynamic
 
     console.log(currentColorScale, currentGroupScale);
 
@@ -214,7 +214,7 @@ d3.csv("./donors.csv", function(donors) {
 
 
     var xScale = d3.scaleOrdinal()
-        .domain([currentGroupScale])
+        .domain([domainValues])
         .range([0, width]);  // Range bands?
 
     /////////////////////////////////
