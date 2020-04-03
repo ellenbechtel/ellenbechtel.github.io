@@ -145,7 +145,7 @@ d3.csv("./donors.csv", function(donors) {
 
     // Color Dropdown Options
     var dropdownColor = d3.select("#dropdownColor");
-    var colorScales = ["Eye Color", "Hair Color", "Skin Tone"];
+    var colorScales = ["None", "Eye Color", "Hair Color", "Skin Tone"];
     var currentColorScale = colorScales[0];
     
     colorScales.forEach(function(o) {
@@ -170,41 +170,43 @@ d3.csv("./donors.csv", function(donors) {
 
     // Groupings Dropdown Options
     var dropdownGroup = d3.select("#dropdownGroup");
-    var groupScales = ["Sperm Bank", "Height", "Weight", "Blood Type", "Race", "Religion", "Jewish Ancestry"];
-    var currentGroupScale = groupScales[0];
+
+    var dropdownObj = [
+        {label: "Sperm Bank", value: "banks"},
+        {label: "Height", value: ""},
+        {label: "Weight", value: ""},
+        {label: "Blood Type", value: "bloodTypes"},
+        {label: "Race", value: "races"},
+        {label: "Religion", value: "religions"},
+        {label: "Jewish Ancestry", value: "jews"}
+    ];
+
+    console.log(dropdownObj);
+
+    var currentGroupScale = dropdownObj[3].value;
     
-    groupScales.forEach(function(o) {
+    dropdownObj.forEach(function(o) {
         dropdownGroup.append("option")
-            .property("value", o)
-            .text(o);
+            .property("value", o.value)
+            .text(o.label);
     });
 
-
-    // Initialize with Blood Type for now
-    currentGroupScale = groupScales[0]; // make this dynamic
-    domainValues = banks; // make this dynamic
+    var domainsObj = {
+        banks: banks,
+        // height,
+        // weight,
+        bloodTypes: bloodTypes
+    };
+ 
+    // // Initialize with Blood Type for now
+    // currentGroupScale = groupScales[0]; // make this dynamic
+    // domainValues = banks; // make this dynamic
 
     console.log(currentColorScale, currentGroupScale);
 
     // Update the beeswarm with each change of the dropdown
     dropdownGroup.on("change", function() {
         currentGroupScale = this.value;
-        if(currentGroupScale == "Sperm Bank") {
-            domainValues = banks;
-        } else if (currentGroupScale == "Height") {
-            //domainValues = ;
-        } else if(currentGroupScale == "Weight") {
-            //domainValues = ;
-        } else if(currentGroupScale == "Blood Type") {
-            domainValues = bloodTypes;
-        } else if(currentGroupScale == "Race") {
-            domainValues = races;
-        } else if(currentGroupScale == "Religion") {
-            domainValues = religions;
-        } else if(currentGroupScale == "Jewish Ancestry") {
-            domainValues = jews;
-        }
-
         updateBeeswarm();
     });
 
@@ -212,10 +214,13 @@ d3.csv("./donors.csv", function(donors) {
     // MAKE Y AXIS GROUPINGS BASED ON SELECTION FROM DROPDOWN
     //////////////////////////////////
 
+    console.log(domainsObj[currentGroupScale]);
+
+    var range = d3.range(0, width + 1, width / domainsObj[currentGroupScale].length - 1);
 
     var xScale = d3.scaleOrdinal()
-        .domain([domainValues])
-        .range([0, width]);  // Range bands?
+        .domain(domainsObj[currentGroupScale])
+        .range(range);
 
     /////////////////////////////////
     // DRAW LINE
@@ -253,7 +258,7 @@ d3.csv("./donors.csv", function(donors) {
             .append("circle")
             .attr("class","spermies")
             .attr("r", 3)
-            .attr("cx", function(d) { return xScale(d.bloodType); })  // I want this to be based on whatever group is selected in the dropdown
+            .attr("cx", function(d) { return xScale(d[currentGroupScale]); })  // I want this to be based on whatever group is selected in the dropdown
             .attr("cy", function() { return height/2; });  // The cy I don't care about - as long as it's within the correct scale band
         
         // Update
