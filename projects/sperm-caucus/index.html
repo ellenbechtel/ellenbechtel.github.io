@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,300,400,500,600&display=swap" rel="stylesheet">
-    <title>Sperm Bank Explorer</title>
+    <title>Sperm Donation Caucuses</title>
     <script src="https://d3js.org/d3.v4.min.js"></script>
 
     <link rel="stylesheet" href="./css/styles.css" />
@@ -11,12 +11,26 @@
   <body>
       <div id="explorer-banner" class="banner">
 
-        <h1>Sperm Bank Explorer</h1>
+        <h1>Sperm Donation Caucuses</h1>
         <p>In which we ask: <i>What does the gene pool look like?</i></p>
 
-        <button onclick="showDiv1()">Read More</button>
+        
+      </div>
+
+      <div class="section">
+        <svg id="beeswarm">
+          <g id="line"></g>
+          <g id="spermSwarm"></g>
+        </svg>
+        
+        <span class="interactive-title">Group by <select class="dropdown" id="dropdownGroup"></select>               Color by<select class="dropdown" id="dropdownColor"></select></span> 
+       
+        <div id="tooltip" class="tooltip"></div>
 
       </div>
+
+  
+      <div class="button-container"><button onclick="showDiv1()">Read More</button></div>
 
       <div id="about-text" class="content hidden-div">
         
@@ -43,17 +57,7 @@
         </ul>
       </div>
       
-      <div class="section">
-        <svg id="beeswarm">
-          <g id="line"></g>
-          <g id="spermSwarm"></g>
-        </svg>
-        
-        <span class="interactive-title">Color by<select class="dropdown" id="dropdownColor"></select>       Group by <select class="dropdown" id="dropdownGroup"></select></span> 
-       
-        <div id="tooltip"></div>
-
-      </div>
+     
 
       
 

@@ -6,7 +6,7 @@ body {
   color: #DBDAD9;
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
-  background-image: url('/projects/sperm-explorer/img/background2.svg');
+  background-image: url('/projects/sperm-caucus/img/background2.svg');
   background-attachment: fixed;
   background-size: cover;
   background-position: 50% 50%;
@@ -69,6 +69,7 @@ svg {
   border: 0px dotted white;
   width: 75%;
   margin: auto;
+  height: 50vh;
 }
 
 @media (max-width: 600px) {
@@ -85,20 +86,32 @@ svg {
 
 .spermies {
   fill: white;
+  padding: 1px;
 }
 
 
 /* Doodads*/
 
-#tooltip {
-  display: none;
+
+
+
+.tooltip {
   position: absolute;
-  border: 1px solid cornflowerblue;
+  visibility: hidden;
+  background-color:rgba(255,255,255,0.8);
   padding: 10px;
+  pointer-events: none;
+  color: black;
 }
 
 
 /* Buttons */
+
+.button-container {
+  padding-top: 20px;
+  text-align: center;
+  margin: auto;
+}
 
 button {
   display: inline-block;
