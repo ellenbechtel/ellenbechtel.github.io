@@ -164,7 +164,7 @@ d3.csv("./donors.csv", function(donors) {
     });
 
     /////////////////////////////////
-    // MAKE Y AXIS GROUPINGS BASED ON SELECTION FROM DROPDOWN
+    // MAKE X AXIS GROUPINGS BASED ON SELECTION FROM DROPDOWN
     //////////////////////////////////
 
     var xScale = d3.scaleBand()
@@ -254,19 +254,15 @@ d3.csv("./donors.csv", function(donors) {
 
 
     /////////////////////////////////
-    // DRAW LINE
+    // DRAW SCAFFOLDING
     //////////////////////////////////
 
-    var line = svg.select("#line");
+    // Global variables
+    var x = function(d) { return d[currentGroupScale]; };
+    var y = function(d) { return d.height; };
 
-    line.append("line")
-        .attr("class","beeswarmLine")
-        .attr("x1", 0)
-        .attr("y1", (2*height)/3)
-        .attr("x2", width)
-        .attr("y2", (2*height)/3)
-        .attr("stroke-width", 1)
-        .attr("stroke", "#DBDAD9");
+    // Translate x and y to scaled value
+    var xValue = function(d) { return currentGroupScale}
 
     /////////////////////////////////
     // WRITE FUNCTION TO ENTER / UPDATE / EXIT CAUCUS ALIGNMENTS

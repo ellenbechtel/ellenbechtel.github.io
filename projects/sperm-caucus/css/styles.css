@@ -69,7 +69,7 @@ svg {
   border: 0px dotted white;
   width: 75%;
   margin: auto;
-  height: 50vh;
+  height: 70vh;
 }
 
 @media (max-width: 600px) {
