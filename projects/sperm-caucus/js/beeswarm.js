@@ -12,16 +12,16 @@
 var width = document.querySelector("#beeswarm").clientWidth;
 var height = document.querySelector("#beeswarm").clientHeight;
 
-transitionTime = 1 * 1000; // 1 second
+var transitionTime = 1 * 1000; // 1 second
 
 var margin = {
     top: 20,
-    right: 150,
+    right: 0,
     bottom: 100,
-    left: 50 
+    left: 0 
 };
 
-var chartWidth = width - margin.left - margin.right;
+var chartWidth = width;
 var chartHeight = height - margin.top - margin.bottom;
 
 // Use chartWidth and chartHeight as dimensions of the beeswarm chart, because it takes into account the margins.  Maybe we don't need the margins?
@@ -53,7 +53,7 @@ d3.csv("./donors.csv", function(donors) {
     var minWeight = d3.min(weights);
     var weightScale = d3.scaleSqrt()
         .domain([minWeight, maxWeight])
-        .range([1,5]);
+        .range([1,10]);
 
 
     // Height-to-Height scale
@@ -84,10 +84,10 @@ d3.csv("./donors.csv", function(donors) {
         }
     });
     banks = banks.sort();  
-    var bankScale = d3.scaleBand()
-        .domain(banks)
-        .rangeRound([0, width])
-        .padding(0.5);
+    // var bankScale = d3.scaleBand()
+    //     .domain(banks)
+    //     .rangeRound([0, width])
+    //     .padding(0.5);
 
 
     // Blood Types
@@ -161,15 +161,10 @@ d3.csv("./donors.csv", function(donors) {
     dropdownGroup.on("change", function() {
         currentGroupScale = this.value;
         updateBeeswarm(currentGroupScale, currentColorScale);
+    
+    
     });
 
-    /////////////////////////////////
-    // MAKE X AXIS GROUPINGS BASED ON SELECTION FROM DROPDOWN
-    //////////////////////////////////
-
-    var xScale = d3.scaleBand()
-        .domain(domainsObj[currentGroupScale])
-        .rangeRound([0, chartWidth]);
 
 
     /////////////////////////////////
@@ -178,6 +173,7 @@ d3.csv("./donors.csv", function(donors) {
 
     // COLOR SCALES
 
+    var strokeColor = d3.scaleOrdinal(d3.interpolateRainbow);
     // None
     var none = ["none"];
 
@@ -252,80 +248,91 @@ d3.csv("./donors.csv", function(donors) {
         .range(currentColors);
     */
 
-
-    /////////////////////////////////
-    // DRAW SCAFFOLDING
-    //////////////////////////////////
-
-    // Global variables
-    var x = function(d) { return d[currentGroupScale]; };
-    var y = function(d) { return d.height; };
-
-    // Translate x and y to scaled value
-    var xValue = function(d) { return currentGroupScale}
-
     /////////////////////////////////
     // WRITE FUNCTION TO ENTER / UPDATE / EXIT CAUCUS ALIGNMENTS
     //////////////////////////////////
 
-    var simulation = d3.forceSimulation(donors)
-        .force("charge", d3.forceManyBody().strength(1))
-        .force("collide", d3.forceCollide().radius(6)) // make this more of a padding than a radius
-        .force("center", d3.forceCenter(chartWidth/2, chartHeight/2)); // I want height to be calculated by height, and width to be centered along the axes for the ordinal scales
-
-
-    function zeroState(selection) {
-        selection  
-            .attr("opacity", 0);
-    }
-
-
     function updateBeeswarm(currentGroupScale, currentColorScale) {
+
+        /////////////////////////////////
+        // MAKE INITIAL SIMULATION
+        //////////////////////////////////
+
+        console.log(domainsObj[currentGroupScale], chartWidth);
+
+        var xScale = d3.scalePoint()
+            .padding(1)
+            .rangeRound([0, chartWidth]);
         
+
+        var simulation = d3.forceSimulation(donors)
+            .nodes(donors)
+            .velocityDecay(0.2)
+            .force("gravity", d3.forceManyBody().strength(1))
+            .force("collide", d3.forceCollide().radius(function(d) { return weightScale(d.weight) + 2 ; })) 
+            //.force("center", d3.forceCenter(chartWidth/2, chartHeight/2)) // I want height to be calculated by height, and width to be centered along the axes for the ordinal scales
+            .force("y", d3.forceY().y(height / 2))
+            .force("x", d3.forceX().x(width / 2))
+            .on("tick", tick);
+
+           
+        function tick() {
+            spermies
+                .attr("cx", function(d) { return d.x; })
+                .attr("cy", function(d) { return d.y; });
+         };
+        
+            
         // Put all the spermies in a group on the svg canvas
         var spermies = svg.select("#spermSwarm").selectAll(".spermies")
-            .data(donors); // How do I select a certain property based on what the selected groupings are?
+            .data(donors); // do I add a key in here?
 
         // Enter
         var enter = spermies.enter()
             .append("circle")
             .attr("class","spermies")
-            .attr("opacity", 0.3)
-            .attr("fill", "white"/*function(d) { return currentColorScale(d[currentColorScale]); }*/)
+            .attr("fill", "white")
             .attr("r", function(d) { return weightScale(d.weight); })
-            .attr("cx", function(d) { return xScale(d[currentGroupScale]); })  // I want this to be based on whatever group is selected in the dropdown
-            .attr("cy", function(d) { return heightScale(d.height); });  // The cy I don't care about - as long as it's within the correct scale band
+            .attr("cx", function(d,i) { return width*Math.random(); })  // math random!
+            .attr("cy", function(d,i) { return height*Math.random(); })  // math random!
+            // .call(d3.drag()
+            //     .on("start", dragstarted)
+            //     .on("drag", dragged)
+            //     .on("end", dragended)
+            // )
+            ;
         
         // Update
-
         spermies.merge(enter)
             .transition()
-            .duration(transitionTime)
-            /*
-            .attr("cx", ?)
-            .attr("cy", ?)
-            */;
+            .duration(transitionTime/4);
 
-        // Exit
 
-        spermies.exit()
-            .transition()
-            .duration(transitionTime)
-            .call(zeroState)
-            .remove();
+        /////////////////////////////////
+        // MAKE GROUPINGS
+        //////////////////////////////////
 
-            
-        simulation.on("tick", function() {
-            spermies.attr("cx", function(d) { return d.x; })
-                .attr("cy", function(d) { return d.y; })
-        });
+        // Make Titles
+
+        function hideTitles() {
+            svg.selectAll('.title').remove();
+        }
+
+        function showTitles(byVar, scale) {
+            var titles = svg.selectAll('.title')
+                .data(scale)
+        }
+
+        /////////////////////////////////
+        // Tooltip
+        //////////////////////////////////
 
         var tooltip = d3.select("#tooltip");
 
         spermies.on("mouseover", function(d) {
     
             var cx = event.clientX + 10;
-            var cy = event.clientY + 10;
+            var cy = event.clientY + 130;
     
             tooltip
                 .style("visibility","visible")
@@ -341,22 +348,22 @@ d3.csv("./donors.csv", function(donors) {
             d3.select(this)
                 .transition()
                 .duration(transitionTime/4)
-                .attr("opacity",1);
+                .attr("opacity",0.8);
     
         }).on("mouseout", function() {
-    
             tooltip.style("visibility","hidden");
-
             svg.selectAll(".spermies")
                 .transition()
                 .duration(transitionTime/4)
-                .attr("opacity",1);
+                .attr("opacity",0.8);
     
         }).on("click", function() {
             d3.select(this)
-                .style("stroke","#000")
-                .style("stroke-width",2)
-        })// HOW DO I ADD A CLICK OUT???;
+                .style("stroke", "#D5B63B") // make this change in order of clickage
+                .style("stroke-width", "2")
+        })
+        
+        // HOW DO I ADD A CLICK OUT???
 
     };
     /////////////////////////////////
@@ -366,9 +373,38 @@ d3.csv("./donors.csv", function(donors) {
     updateBeeswarm(currentGroupScale, currentColorScale);
 
     /////////////////////////////////
-    // TOOLTIP
+    // Dragging
     //////////////////////////////////
+    
+    // function dragstarted(d,i) {
+    //     //console.log("dragstarted " + i)
+    //     if (!d3.event.active) simulation.alpha(1).restart();
+    //     d.fx = d.x;
+    //     d.fy = d.y;
+    //   }
 
+    //   function dragged(d,i) {
+    //     //console.log("dragged " + i)
+    //     d.fx = d3.event.x;
+    //     d.fy = d3.event.y;
+    //   }
+  
+    //   function dragended(d,i) {
+    //     //console.log("dragended " + i)
+    //     if (!d3.event.active) simulation.alphaTarget(0);
+    //     d.fx = null;
+    //     d.fy = null;
+    //     var me = d3.select(this)
+    //     console.log(me.classed("selected"))
+    //     me.classed("selected", !me.classed("selected"))
+        
+    //     // d3.selectAll("circle")
+    //     //   .style("fill", function(d, i){ return color(d.ID); })
+      	
+    //     // d3.selectAll("circle.selected")
+    //     //   .style("fill", "none")
+      	
+    //   } 
 
 
 

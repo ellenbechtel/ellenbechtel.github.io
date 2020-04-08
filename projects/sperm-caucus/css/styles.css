@@ -66,9 +66,6 @@ select {
 }
 
 svg {
-  border: 0px dotted white;
-  width: 75%;
-  margin: auto;
   height: 70vh;
 }
 
@@ -86,9 +83,23 @@ svg {
 
 .spermies {
   fill: white;
+  opacity: 0.8;
   padding: 1px;
+  cursor: pointer;
+
 }
 
+/* .selected {
+  stroke: #D5B63B;
+  stroke-width: 2;
+} */
+
+
+.title {
+  font-size: 1.2em;
+  font-weight: 300;
+
+}
 
 /* Doodads*/
 
