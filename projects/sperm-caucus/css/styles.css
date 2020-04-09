@@ -83,28 +83,21 @@ svg {
 /* SVG and Spermies Styles */
 
 .spermies {
-  fill: white;
-  opacity: 0.8;
   padding: 1px;
   cursor: pointer;
 }
 
-/* .selected {
-  stroke: #D5B63B;
-  stroke-width: 2;
-} */
-
-
 .title {
-  font-size: 1.2em;
+  font-size: .8em;
   font-weight: 300;
-
+  fill: #DBDAD9;
 }
 
 /* Doodads*/
 
 .selected {
-  fill: none;
+  stroke: black;
+  stroke-width: 3px;
 }
 
 .tooltip {

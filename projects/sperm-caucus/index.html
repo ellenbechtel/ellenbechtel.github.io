@@ -27,15 +27,18 @@
           <button id="race" class="gbutton">By Race</button>
           <button id="religion" class="gbutton">By Religion</button>
           <button id="jewish" class="gbutton">By Jewish Ancestry</button>
+          <button id="eye" class="gbutton">By Eye Color</button>
+          <button id="hair" class="gbutton">By Hair Color</button>
+          <button id="skintone" class="gbutton">By Skintone</button>
         </div>
     
     
         <div id="colorToolbar" class="toolbar">
             <h2>Color By </h2>
-            <button id="none" class="button active">All</button>
-            <button id="eye" class="button">By Eye Color</button>
-            <button id="hair" class="button">By Hair Color</button>
-            <button id="skintone" class="button">By Skintone</button>
+            <button id="all" class="cbutton active">All</button>
+            <button id="eye" class="cbutton">By Eye Color</button>
+            <button id="hair" class="cbutton">By Hair Color</button>
+            <button id="skintone" class="cbutton">By Skintone</button>
         </div>
         
         <svg id="beeswarm">
@@ -43,8 +46,6 @@
           <g id="spermSwarm"></g>
         </svg>
         
-        <span class="interactive-title">Align by <select class="dropdown" id="dropdownGroup"></select>               Color by<select class="dropdown" id="dropdownColor"></select></span> 
-       
         <div id="tooltip" class="tooltip"></div>
 
       </div>
@@ -111,7 +112,6 @@
     -->
       
     <script src="./js/beeswarm.js"></script>
-    <script src="./js/barcharts.js"></script>
     <script src="./js/pageFunctions.js"></script>
   </body>
 </html>

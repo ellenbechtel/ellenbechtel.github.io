@@ -386,7 +386,7 @@ d3.csv("./donors.csv", function(donors) {
             d3.select(this)
                 .style("stroke", "#D5B63B") // make this change in order of clickage
                 .style("stroke-width", "3")
-        })
+        });
         
 
         // add a click out reset??
