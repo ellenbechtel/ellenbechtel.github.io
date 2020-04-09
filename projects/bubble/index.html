@@ -100,8 +100,6 @@
 
         donors.forEach(function(d){
             d.r = radius*Math.random();
-            d.weight = radius*Math.random();
-            d.height = radius*Math.random();
             d.x = w / 2;
             d.y = h / 2;
         })
@@ -137,7 +135,7 @@
         // .attr("ry", function(d) { return heightScale(d.height); })
         .attr("r", function(d) { return (d.r); })
         .attr("cx", function(d,i) { return (w-100)*Math.random(); })
-		.attr("cy", function(d,i) { return (h-100)*Math.random(); })
+		    .attr("cy", function(d,i) { return (h-100)*Math.random(); })
       	.style("fill", function(d, i){ return color(d.ID); })
       	.style("stroke", function(d, i){ return color(d.ID); })
       	.style("stroke-width", 2)

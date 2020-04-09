@@ -8,16 +8,11 @@
 // SET STATIC VARIABLES
 //////////////////////////////////
 
-console.clear()
 
 var width = document.querySelector("#beeswarm").clientWidth;
 var height = document.querySelector("#beeswarm").clientHeight;
 
 var transitionTime = 1 * 1000; // 1 second
-var radius = 3;
-var color = d3.scaleOrdinal(d3.schemeCategory20);
-var centerScale = d3.scalePoint().padding(1).range([100, width-100]);
-var forceStrength = .5;
 
 var margin = {
     top: 20,
@@ -36,224 +31,231 @@ var svg = d3.select("#beeswarm")
     .attr("height", height);
 
 
-// Simulation Forces
-
-var simulation = d3.forceSimulation()
-    .force("collide",d3.forceCollide( function(d){
-        return d.r + 1 }).iterations(16))
-    .force("gravity", d3.forceManyBody().strength(-3))
-    .force("y", d3.forceY().y(height / 2))
-    .force("x", d3.forceX().x(width / 2))
-    .velocityDecay(0.2);
-
 /////////////////////////////////
 // UPLOAD DATA
 //////////////////////////////////
 
 d3.csv("./donors.csv", function(donors) {
     
-
     /////////////////////////////////
-    // Scales and New Properties
+    // MAKE HEIGHT AND WEIGHT SCALES
     //////////////////////////////////
 
-    donors.forEach(function(d){
-        d.r = radius*Math.random();
+    // Weight-to-Radius scale
+    var weights = [];
+    donors.forEach(function(d) {
+        var thisOne = d.weight;
+        if(weights.indexOf(thisOne)<0) {
+            weights.push(thisOne);
+        }
+    });
+    var maxWeight = d3.max(weights);
+    var minWeight = d3.min(weights);
+    var weightScale = d3.scaleSqrt()
+        .domain([minWeight, maxWeight])
+        .range([2,10]);
 
-        // set the enter coordinates here??????????????????????????
-        d.x = width / 2;
-        d.y = height / 2;
+
+    // Height-to-Height scale
+    var heights = [];
+    donors.forEach(function(d) {
+        var thisOne = d.height;
+        if(heights.indexOf(thisOne)<0) {
+            heights.push(thisOne);
+        }
+    });
+    var maxHeight = d3.max(heights);
+    var minHeight = d3.min(heights);
+    var heightScale = d3.scaleLinear()
+        .domain([minHeight, maxHeight])
+        .range([4,12]);
+
+
+    /////////////////////////////////
+    // MAKE GROUPINGS AND DROPDOWNS
+    //////////////////////////////////
+    
+    // No Alignment
+    var all = [];
+
+    // Sperm Bank of Origin
+    var banks = [];
+    donors.forEach(function(d) {
+        var thisOne = d.bank;
+        if(banks.indexOf(thisOne)<0) {
+            banks.push(thisOne);
+        }
+    });
+    banks = banks.sort();  
+
+    // Blood Types
+    var bloodTypes = [];
+    donors.forEach(function(d) {
+        var thisOne = d.bloodType;
+        if(bloodTypes.indexOf(thisOne)<0) {
+            bloodTypes.push(thisOne);
+        }
+    });
+    bloodTypes = bloodTypes.sort();  
+
+    // Race
+    var races = [];
+    donors.forEach(function(d) {
+        var thisOne = d.race;
+        if(races.indexOf(thisOne)<0) {
+            races.push(thisOne);
+        }
+    });
+    races = races.sort();
+
+    // Religion
+    var religions = [];
+    donors.forEach(function(d) {
+        var thisOne = d.religion;
+        if(religions.indexOf(thisOne)<0) {
+            religions.push(thisOne);
+        }
+    });
+    religions = religions.sort();
+
+    // Jewish Ancestry
+    var jews = [];
+    donors.forEach(function(d) {
+        var thisOne = d.jewish;
+        if(jews.indexOf(thisOne)<0) {
+            jews.push(thisOne);
+        }
+    });
+    jews = jews.sort();
+
+    // No Alignment
+    var all = [];
+   
+    // GROUP DROPDOWNS
+    var dropdownGroup = d3.select("#dropdownGroup");
+    var dropdownObj = [
+        {label: "All", value: "all"},
+        {label: "Sperm Bank", value: "banks"},
+        {label: "Blood Type", value: "bloodTypes"},
+        {label: "Race", value: "races"},
+        {label: "Religion", value: "religions"},
+        {label: "Jewish Ancestry", value: "jews"}
+    ];
+
+    var currentGrouping = dropdownObj[0].value;
+
+    dropdownObj.forEach(function(o) {
+        dropdownGroup.append("option")
+            .property("value", o.value)
+            .text(o.label);
     });
 
-    // // Height
-    // var maxheight = d3.max(donors.height);
-    // var minheight = d3.min(donors.height);
-    // var heightScale = d3.scaleLinear()
-    //     .domain([minWeight, maxWeight])
-    //     .range([2,10]);
-
-    // // Weight
-    // var maxWeight = d3.max(donors.weight);
-    // var minWeight = d3.min(donors.weight);
-    // var weightScale = d3.scaleLinear()
-    //     .domain([minWeight, maxWeight])
-    //     .range([2,10]);     
-      
-
-    /////////////////////////////////
-    // ENTER / UPDATE / EXIT CAUCUS ALIGNMENTS
-    //////////////////////////////////
-
-    var spermies = svg.selectAll("circle")
-      	.data(donors, function(d){ return d.ID ;});
-      
-    var spermiesEnter = spermies.enter().append("circle")
-        // .attr("rx", function(d) { return weightScale(d.weight); })
-        // .attr("ry", function(d) { return heightScale(d.height); })
-        .attr("r", function(d) { return (d.r); })
-        .attr("cx", function(d,i) { return width*Math.random(); })
-            .attr("cy", function(d,i) { return height*Math.random(); })
-        .style("fill", function(d, i){ return color(d.ID); })
-        .style("stroke", function(d, i){ return color(d.ID); })
-        .style("stroke-width", 2)
-        .style("pointer-events", "all")
-        .call(d3.drag()
-            .on("start", dragstarted)
-            .on("drag", dragged)
-            .on("end", dragended));
-
-    spermies = spermies.merge(spermiesEnter);
-
-
-    /////////////////////////////////
-    // BEGIN SIMULATION
-    //////////////////////////////////
-
-    function ticked() {
-        spermies
-            .attr("cx", function(d){ return d.x; })
-            .attr("cy", function(d){ return d.y; });
-      };
-
-    simulation
-        .nodes(donors)
-        .on("tick", ticked);
-
-
-    /////////////////////////////////
-    // DRAGGING BEHAVIOR
-    //////////////////////////////////
-
-    function dragstarted(d,i) {
-        //console.log("dragstarted " + i)
-        if (!d3.event.active) simulation.alpha(1).restart();
-        d.fx = d.x;
-        d.fy = d.y;
+    var domainsObj = {
+        all: all,
+        banks: banks,
+        bloodTypes: bloodTypes,
+        races: races,
+        religions: religions,
+        jews: jews
     };
 
-    function dragged(d,i) {
-        //console.log("dragged " + i)
-        d.fx = d3.event.x;
-        d.fy = d3.event.y;
-    };
+    // Update the beeswarm with each change of the dropdown
+    dropdownGroup.on("change", function() {
 
-    function dragended(d,i) {
-        //console.log("dragended " + i)
-        if (!d3.event.active) simulation.alphaTarget(0);
-
-        d.fx = null;
-        d.fy = null;
-
-        var me = d3.select(this)
-
-        console.log(me.classed("selected"));
-        me.classed("selected", !me.classed("selected"));
+        currentGrouping = this.value;
         
-        d3.selectAll("circle")
-          .style("fill", function(d, i){ return color(d.ID); });
-      	
-        d3.selectAll("circle.selected")
-          .style("fill", "none");
-      	
-    };
-
-    /////////////////////////////////
-    // GROUPING BEHAVIOR
-    //////////////////////////////////
-
-
-    // Spermies
-    function groupBubbles() {
-        hideTitles();
-
-        // @v4 Reset the 'x' force to draw the bubbles to the center.
-        simulation.force('x', d3.forceX().strength(forceStrength).x(width / 2));
-
-        // @v4 We can reset the alpha value and restart the simulation
-        simulation.alpha(1).restart();
-    };
-      
-    function splitBubbles(currentGrouping) {
-        
-        centerScale.domain(donors.map(function(d){ return d[currentGrouping]; }));
-        
-        if(currentGrouping == "all"){
-          hideTitles()
-        } else {
-	        showTitles(currentGrouping, centerScale);
-        };
-        
-        // @v4 Reset the 'x' force to draw the bubbles to their centers
-        simulation.force('x', d3.forceX().strength(forceStrength).x(function(d){ 
-        	return centerScale(d[currentGrouping]);
-        }));
-
-        // @v4 We can reset the alpha value and restart the simulation
-        simulation.alpha(2).restart();
-    };
-
-
-    // Titles
-    function hideTitles() {
-        svg.selectAll('.title').remove();
-      };
-
-    function showTitles(currentGrouping, scale) {
-        // Another way to do this would be to create
-        // the year texts once and then just hide them.
-       	var titles = svg.selectAll('.title')
-          .data(scale.domain());
-        
-        titles.enter().append('text')
-          	.attr('class', 'title')
-        	.merge(titles)
-            .attr('x', function (d) { return scale(d); })
-            .attr('y', 40)
-            .attr('text-anchor', 'middle')
-            .text(function (d) { return d; });
-        
-        titles.exit().remove();
-    };
+        //splitSpermies(currentGrouping);
+        updateBeeswarm(currentGrouping, currentColorScale);
+        console.log(currentGrouping);
+    
+    });
 
 
 
     /////////////////////////////////
-    // ENABLE BUTTONS
+    // MAKE COLOR SCALES AND DROPDOWNS
     //////////////////////////////////
 
-    function setupButtons() {
-        d3.selectAll('.gbutton')
-          .on('click', function () {
-          	
-            // Remove active class from all buttons
-            d3.selectAll('.button').classed('active', false);
+    // COLOR SCALES
 
-            // Find the button just clicked
-            var button = d3.select(this);
+    var strokeColor = d3.scaleOrdinal(d3.interpolateRainbow);
+    // None
+    var none = ["none"];
 
-            // Set it as the active button
-            button.classed('active', true);
+    // Eye Color
+    var eyeColors = [];
+    donors.forEach(function(d) {
+        var thisOne = d.eye;
+        if(eyeColors.indexOf(thisOne)<0) {
+            eyeColors.push(thisOne);
+        }
+    });
+    eyeColors = eyeColors.sort();
 
-            // Get the id of the button
-            var buttonId = button.attr('id');
+    // Hair Color
+    var hairColors = [];    
+    donors.forEach(function(d) {
+        var thisOne = d.hair;
+        if(hairColors.indexOf(thisOne)<0) {
+            hairColors.push(thisOne);
+        }
+    });
+    hairColors = hairColors.sort();
+   
+    // Skin Color
+    var skinColors = [];
+    donors.forEach(function(d) {
+        var thisOne = d.skintone;
+        if(skinColors.indexOf(thisOne)<0) {
+            skinColors.push(thisOne);
+        }
+    });
+    skinColors = skinColors.sort();
 
-	          console.log(buttonId)
-            // Toggle the bubble chart based on the currently clicked button.
-            splitBubbles(buttonId);
-          });
-      };
-      
-      setupButtons()
-      
-});
 
+    // DROPDOWNS
 
+    // Color Dropdown Options
+    var dropdownColor = d3.select("#dropdownColor");
 
+    var dropdownColorObj = [
+        //{label: "Nothing", value: "none", colors: "white"},
+        {label: "Eye Color", value: "eyeColors", colors: "green"},  // how do I make these arrays of the color options???
+        {label: "Hair Color", value: "hairColors", colors: "gray"},
+        {label: "Skin Tone", value: "skinColors", colors: "blue"},
+    ];
 
+    var currentColorScale = dropdownColorObj[0].values;
+    var currentColorOptions = dropdownColorObj[0].colors;
+    
+    dropdownColorObj.forEach(function(o) {
+        dropdownColor.append("option")
+            .property("value", o.value)
+            .text(o.label);
+    });
 
-/*
+    var domainsColorObj = {
+        none: none,
+        eyeColors: eyeColors,
+        hairColors: hairColors,
+        skinColors: skinColors
+    }
 
+    dropdownColor.on("change", function() {
+        currentColorScale = this.value;
+        // ADD IN COLOR OPTIONS HERE!
+        updateBeeswarm(currentGrouping, currentColorScale);
+    });
+    
+    /*
+    var colorScale = d3.scaleOrdinal()
+        .domain(domainsColorObj[currentColorScale])
+        .range(currentColors);
+    */
 
+    /////////////////////////////////
+    // WRITE FUNCTION TO ENTER / UPDATE / EXIT CAUCUS ALIGNMENTS
+    //////////////////////////////////
 
     function updateBeeswarm(currentGrouping, currentColorScale) {
 
@@ -268,6 +270,22 @@ d3.csv("./donors.csv", function(donors) {
             .rangeRound([0, chartWidth]);
         
 
+        var simulation = d3.forceSimulation(donors)
+            .nodes(donors)
+            .velocityDecay(0.2)
+            .force("gravity", d3.forceManyBody().strength(.15))
+            .force("collide", d3.forceCollide().radius(function(d) { return heightScale(d.height) + 2 ; })) 
+            //.force("center", d3.forceCenter(chartWidth/2, chartHeight/2)) // I want height to be calculated by height, and width to be centered along the axes for the ordinal scales
+            .force("y", d3.forceY().y(height / 2))
+            .force("x", d3.forceX().x(width / 2))
+            .on("tick", tick);
+
+           
+        function tick() {
+            spermies
+                .attr("cx", function(d) { return d.x; })
+                .attr("cy", function(d) { return d.y; });
+         };
         
             
         // Put all the spermies in a group on the svg canvas
@@ -422,4 +440,3 @@ d3.csv("./donors.csv", function(donors) {
 
 
 
-*/
