@@ -17,10 +17,11 @@ var radius = 6;
 var color = d3.scaleOrdinal(d3.schemeCategory20);
 var centerScale = d3.scalePoint().padding(1).range([100, width-100]);
 var colorScale = d3.scaleOrdinal();
-var forceStrength = .5;
-var gravityStrength = -8;
-var friction = 0.4;
-var yGravity = 0.2;
+var forceStrength = .3;
+var gravityStrength = -4;
+var friction = 0.5;
+var yGravity = 0.3;
+var collPadding = 3;
 
 var margin = {
     top: 20,
@@ -37,8 +38,8 @@ var eyes = ["Black","Blue","Brown","Green","Grey","Hazel"];
 var eyeColors = ["#000000", "#48CED9", "#915841", "#A5BF66", "#AAAAAA", "#D8A760"];
 var hair = ["Black","Blonde","Brown","Red"];
 var hairColors = ["#000000", "#EDAC5F", "#77412F", "#A3180D"];
-var skin = ["1","2","3","4","5","6"];
-var skinColors = ["#F0D3B0", "#EACA92", "#D5AC73", "#BB7452", "#7D4E37", "#2E1D13"];
+var skin = ["Light","Fair","Medium","Olive","Brown","Dark"];
+var skinColors = ["#F9E8D7", "#EFD6AC", "#D5AC73", "#BB7452", "#7D4E37", "#2E1D13"];
 
 // SVG
 var svg = d3.select("#beeswarm")
@@ -49,7 +50,7 @@ var svg = d3.select("#beeswarm")
 // Simulation Forces
 var simulation = d3.forceSimulation()
     .force("collide",d3.forceCollide( function(d){
-        return d.r + 3 }).iterations(16))
+        return d.r + collPadding }).iterations(16))
     .force("gravity", d3.forceManyBody().strength(gravityStrength))
     .force("y", d3.forceY().y(height / 2))
     .force("x", d3.forceX().x(width / 2))
@@ -60,6 +61,14 @@ var simulation = d3.forceSimulation()
 //////////////////////////////////
 
 d3.csv("./donors.csv", function(donors) {
+    
+    console.log(donors);
+
+    donors.sort(function(a,b) {
+        return a.skintoneNum - b.skintoneNum
+    });
+
+    console.log(donors);
     
     /////////////////////////////////
     // Scales and New Properties
@@ -88,7 +97,7 @@ d3.csv("./donors.csv", function(donors) {
     });
     var weightScale = d3.scaleLinear()
         .domain([d3.min(weights), d3.max(weights)])
-        .range([1,5]);    
+        .range([1,6]);    
 
     donors.forEach(function(d){
         d.r = radius*Math.random();
@@ -224,7 +233,7 @@ d3.csv("./donors.csv", function(donors) {
         } else if (currentColorScale == "skintone") {
             colorScale.domain(skin).range(skinColors);
             spermies.transition()
-                .style("fill", function(d) { return colorScale(d.hair); });
+                .style("fill", function(d) { return colorScale(d.skintone); });
          };
         
     
