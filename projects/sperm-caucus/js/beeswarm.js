@@ -16,12 +16,12 @@ var transitionTime = 1 * 1000; // 1 second
 
 var margin = {
     top: 20,
-    right: 0,
+    right: 20,
     bottom: 100,
-    left: 0 
+    left: 20 
 };
 
-var chartWidth = width;
+var chartWidth = width-margin.left-margin.right;
 var chartHeight = height - margin.top - margin.bottom;
 
 // Use chartWidth and chartHeight as dimensions of the beeswarm chart, because it takes into account the margins.  Maybe we don't need the margins?
@@ -53,7 +53,7 @@ d3.csv("./donors.csv", function(donors) {
     var minWeight = d3.min(weights);
     var weightScale = d3.scaleSqrt()
         .domain([minWeight, maxWeight])
-        .range([1,10]);
+        .range([2,10]);
 
 
     // Height-to-Height scale
@@ -68,12 +68,15 @@ d3.csv("./donors.csv", function(donors) {
     var minHeight = d3.min(heights);
     var heightScale = d3.scaleLinear()
         .domain([minHeight, maxHeight])
-        .range([chartHeight, margin.top]);
+        .range([4,12]);
 
 
     /////////////////////////////////
-    // MAKE GROUP SCALES AND DROPDOWNS
+    // MAKE GROUPINGS AND DROPDOWNS
     //////////////////////////////////
+    
+    // No Alignment
+    var all = [];
 
     // Sperm Bank of Origin
     var banks = [];
@@ -84,11 +87,6 @@ d3.csv("./donors.csv", function(donors) {
         }
     });
     banks = banks.sort();  
-    // var bankScale = d3.scaleBand()
-    //     .domain(banks)
-    //     .rangeRound([0, width])
-    //     .padding(0.5);
-
 
     // Blood Types
     var bloodTypes = [];
@@ -130,10 +128,13 @@ d3.csv("./donors.csv", function(donors) {
     });
     jews = jews.sort();
 
+    // No Alignment
+    var all = [];
    
     // GROUP DROPDOWNS
     var dropdownGroup = d3.select("#dropdownGroup");
     var dropdownObj = [
+        {label: "All", value: "all"},
         {label: "Sperm Bank", value: "banks"},
         {label: "Blood Type", value: "bloodTypes"},
         {label: "Race", value: "races"},
@@ -141,7 +142,7 @@ d3.csv("./donors.csv", function(donors) {
         {label: "Jewish Ancestry", value: "jews"}
     ];
 
-    var currentGroupScale = dropdownObj[0].value;
+    var currentGrouping = dropdownObj[0].value;
 
     dropdownObj.forEach(function(o) {
         dropdownGroup.append("option")
@@ -150,6 +151,7 @@ d3.csv("./donors.csv", function(donors) {
     });
 
     var domainsObj = {
+        all: all,
         banks: banks,
         bloodTypes: bloodTypes,
         races: races,
@@ -159,9 +161,12 @@ d3.csv("./donors.csv", function(donors) {
 
     // Update the beeswarm with each change of the dropdown
     dropdownGroup.on("change", function() {
-        currentGroupScale = this.value;
-        updateBeeswarm(currentGroupScale, currentColorScale);
-    
+
+        currentGrouping = this.value;
+        
+        //splitSpermies(currentGrouping);
+        updateBeeswarm(currentGrouping, currentColorScale);
+        console.log(currentGrouping);
     
     });
 
@@ -239,7 +244,7 @@ d3.csv("./donors.csv", function(donors) {
     dropdownColor.on("change", function() {
         currentColorScale = this.value;
         // ADD IN COLOR OPTIONS HERE!
-        updateBeeswarm(currentGroupScale, currentColorScale);
+        updateBeeswarm(currentGrouping, currentColorScale);
     });
     
     /*
@@ -252,13 +257,13 @@ d3.csv("./donors.csv", function(donors) {
     // WRITE FUNCTION TO ENTER / UPDATE / EXIT CAUCUS ALIGNMENTS
     //////////////////////////////////
 
-    function updateBeeswarm(currentGroupScale, currentColorScale) {
+    function updateBeeswarm(currentGrouping, currentColorScale) {
 
         /////////////////////////////////
         // MAKE INITIAL SIMULATION
         //////////////////////////////////
 
-        console.log(domainsObj[currentGroupScale], chartWidth);
+        console.log(domainsObj[currentGrouping], chartWidth);
 
         var xScale = d3.scalePoint()
             .padding(1)
@@ -268,8 +273,8 @@ d3.csv("./donors.csv", function(donors) {
         var simulation = d3.forceSimulation(donors)
             .nodes(donors)
             .velocityDecay(0.2)
-            .force("gravity", d3.forceManyBody().strength(1))
-            .force("collide", d3.forceCollide().radius(function(d) { return weightScale(d.weight) + 2 ; })) 
+            .force("gravity", d3.forceManyBody().strength(.15))
+            .force("collide", d3.forceCollide().radius(function(d) { return heightScale(d.height) + 2 ; })) 
             //.force("center", d3.forceCenter(chartWidth/2, chartHeight/2)) // I want height to be calculated by height, and width to be centered along the axes for the ordinal scales
             .force("y", d3.forceY().y(height / 2))
             .force("x", d3.forceX().x(width / 2))
@@ -289,12 +294,14 @@ d3.csv("./donors.csv", function(donors) {
 
         // Enter
         var enter = spermies.enter()
-            .append("circle")
+            .append("ellipse")
             .attr("class","spermies")
             .attr("fill", "white")
-            .attr("r", function(d) { return weightScale(d.weight); })
-            .attr("cx", function(d,i) { return width*Math.random(); })  // math random!
-            .attr("cy", function(d,i) { return height*Math.random(); })  // math random!
+            .attr("rx", function(d) { return weightScale(d.weight); })
+            .attr("ry", function(d) { return heightScale(d.height); })
+            .attr("cx", function(d,i) { return width*Math.random(); })  
+            .attr("cy", function(d,i) { return height*Math.random(); }) 
+            //.attr("transform", function(d,i) {return "rotate(" + 180*Math.random() + ")";})
             // .call(d3.drag()
             //     .on("start", dragstarted)
             //     .on("drag", dragged)
@@ -315,13 +322,31 @@ d3.csv("./donors.csv", function(donors) {
         // Make Titles
 
         function hideTitles() {
-            svg.selectAll('.title').remove();
-        }
+            svg.select("#titles").selectAll('.title').exit().transition().remove();
+        };
 
-        function showTitles(byVar, scale) {
+        function showTitles(currentGrouping, scale) {
             var titles = svg.selectAll('.title')
-                .data(scale)
-        }
+                .data(scale.domain());
+
+            titles.enter().append("text")
+                .attr("class", "title")
+                .merge(titles)
+                    .attr('x', function(d) { return scale(d); })
+                    .attr('y', 40)
+                    .attr('text-anchor', 'middle')
+                    .text(function (d) { return currentGrouping + ' ' + d; });
+
+            titles.exit().remove();
+        };
+
+        // Split Spermies
+
+        function splitSpermies(currentGrouping) {
+            xScale.domain(data.map(function(d) { return d[currentGrouping]; }));
+
+            //if(currentGrouping=="all")
+        };
 
         /////////////////////////////////
         // Tooltip
@@ -360,17 +385,18 @@ d3.csv("./donors.csv", function(donors) {
         }).on("click", function() {
             d3.select(this)
                 .style("stroke", "#D5B63B") // make this change in order of clickage
-                .style("stroke-width", "2")
+                .style("stroke-width", "3")
         })
         
-        // HOW DO I ADD A CLICK OUT???
+
+        // add a click out reset??
 
     };
     /////////////////////////////////
     // DRAW THE SPERMIES
     //////////////////////////////////
 
-    updateBeeswarm(currentGroupScale, currentColorScale);
+    updateBeeswarm(currentGrouping, currentColorScale);
 
     /////////////////////////////////
     // Dragging

@@ -36,7 +36,8 @@ h1 {
 }
 
 .section {
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -66,7 +67,7 @@ select {
 }
 
 svg {
-  height: 70vh;
+  height: 100vh;
 }
 
 @media (max-width: 600px) {
@@ -86,7 +87,6 @@ svg {
   opacity: 0.8;
   padding: 1px;
   cursor: pointer;
-
 }
 
 /* .selected {

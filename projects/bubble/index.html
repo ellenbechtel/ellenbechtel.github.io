@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <style>
+    body { 
+      margin:0;
+      position:fixed;
+      top:0;
+      right:0;
+      bottom:0;
+      left:0;
+    	font-family: sans-serif;
+    }
+    .selected {
+      fill: none;
+    }
+    
+    .gbutton {
+      min-width: 130px;
+      padding: 4px 5px;
+      cursor: pointer;
+      text-align: center;
+      font-size: 13px;
+      border: 1px solid #e0e0e0;
+      text-decoration: none;
+    }
+
+    .button.active {
+      background: #000;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+    
+    <div id="toolbarGroup" class="toolbar">
+      <h2>Align By </h2>
+      <button id="all" class="gbutton active">All</button>
+      <button id="bank" class="gbutton">By Sperm Bank</button>
+      <button id="bloodType" class="gbutton">By Blood Type</button>
+      <button id="race" class="gbutton">By Race</button>
+      <button id="religion" class="gbutton">By Religion</button>
+      <button id="jewish" class="gbutton">By Jewish Ancestry</button>
+    </div>
+
+
+    <div id="colorToolbar" class="toolbar">
+        <h2>Color By </h2>
+        <button id="none" class="button active">All</button>
+        <button id="eye" class="button">By Eye Color</button>
+        <button id="hair" class="button">By Hair Color</button>
+        <button id="skintone" class="button">By Skintone</button>
+    </div>
+  
+
+    
+  <script>
+
+
+
+
+/////////////////////////////////
+// BEEWARM CODE!
+//////////////////////////////////
+
+
+/////////////////////////////////
+// SET STATIC VARIABLES
+//////////////////////////////////
+
+    console.clear()
+
+    var w = 960, h = 500;
+    
+    var radius = 3;
+    var color = d3.scaleOrdinal(d3.schemeCategory20);
+    var centerScale = d3.scalePoint().padding(1).range([100, w-100]);
+    var forceStrength = .5;
+    
+    var svg = d3.select("body").append("svg")
+      .attr("width", w)
+      .attr("height", h);
+
+
+
+
+    var simulation = d3.forceSimulation()
+            .force("collide",d3.forceCollide( function(d){
+              	return d.r + 1 }).iterations(16) 
+            )
+            .force("gravity", d3.forceManyBody().strength(-3))
+            .force("y", d3.forceY().y(h / 2))
+            .force("x", d3.forceX().x(w / 2))
+            .velocityDecay(0.2);
+    
+    d3.csv("donors.csv", function(donors){
+      
+
+        donors.forEach(function(d){
+            d.r = radius*Math.random();
+            d.weight = radius*Math.random();
+            d.height = radius*Math.random();
+            d.x = w / 2;
+            d.y = h / 2;
+        })
+        
+        console.log(donors); 
+
+
+
+        /////////////////////////////////
+        // MAKE HEIGHT AND WEIGHT SCALES
+        //////////////////////////////////
+        
+        // // Height
+        // var maxheight = d3.max(donors.height);
+        // var minheight = d3.min(donors.height);
+        // var heightScale = d3.scaleLinear()
+        //     .domain([minWeight, maxWeight])
+        //     .range([2,10]);
+
+        // // Weight
+        // var maxWeight = d3.max(donors.weight);
+        // var minWeight = d3.min(donors.weight);
+        // var weightScale = d3.scaleLinear()
+        //     .domain([minWeight, maxWeight])
+        //     .range([2,10]);     
+      
+      
+      var spermies = svg.selectAll("circle")
+      	.data(donors, function(d){ return d.ID ;});
+      
+      var spermiesEnter = spermies.enter().append("circle")
+        // .attr("rx", function(d) { return weightScale(d.weight); })
+        // .attr("ry", function(d) { return heightScale(d.height); })
+        .attr("r", function(d) { return (d.r); })
+        .attr("cx", function(d,i) { return (w-100)*Math.random(); })
+		.attr("cy", function(d,i) { return (h-100)*Math.random(); })
+      	.style("fill", function(d, i){ return color(d.ID); })
+      	.style("stroke", function(d, i){ return color(d.ID); })
+      	.style("stroke-width", 2)
+      	.style("pointer-events", "all")
+      	.call(d3.drag()
+                .on("start", dragstarted)
+                .on("drag", dragged)
+                .on("end", dragended));
+    
+      spermies = spermies.merge(spermiesEnter);
+      
+      function ticked() {
+        spermies
+            .attr("cx", function(d){ return d.x; })
+            .attr("cy", function(d){ return d.y; });
+      };
+
+      simulation
+            .nodes(donors)
+            .on("tick", ticked);
+      
+      function dragstarted(d,i) {
+        //console.log("dragstarted " + i)
+        if (!d3.event.active) simulation.alpha(1).restart();
+        d.fx = d.x;
+        d.fy = d.y;
+      };
+
+      function dragged(d,i) {
+        //console.log("dragged " + i)
+        d.fx = d3.event.x;
+        d.fy = d3.event.y;
+      };
+
+      function dragended(d,i) {
+        //console.log("dragended " + i)
+        if (!d3.event.active) simulation.alphaTarget(0);
+        d.fx = null;
+        d.fy = null;
+
+        var me = d3.select(this)
+        console.log(me.classed("selected"));
+        me.classed("selected", !me.classed("selected"));
+        
+        d3.selectAll("circle")
+          .style("fill", function(d, i){ return color(d.ID); });
+      	
+        d3.selectAll("circle.selected")
+          .style("fill", "none");
+      	
+      };
+      
+      function groupBubbles() {
+        hideTitles();
+
+        // @v4 Reset the 'x' force to draw the bubbles to the center.
+        simulation.force('x', d3.forceX().strength(forceStrength).x(w / 2));
+
+        // @v4 We can reset the alpha value and restart the simulation
+        simulation.alpha(1).restart();
+      };
+      
+      function splitBubbles(currentGrouping) {
+        
+        centerScale.domain(donors.map(function(d){ return d[currentGrouping]; }));
+        
+        if(currentGrouping == "all"){
+          hideTitles()
+        } else {
+	        showTitles(currentGrouping, centerScale);
+        };
+        
+        // @v4 Reset the 'x' force to draw the bubbles to their centers
+        simulation.force('x', d3.forceX().strength(forceStrength).x(function(d){ 
+        	return centerScale(d[currentGrouping]);
+        }));
+
+        // @v4 We can reset the alpha value and restart the simulation
+        simulation.alpha(2).restart();
+      };
+      
+      function hideTitles() {
+        svg.selectAll('.title').remove();
+      };
+
+      function showTitles(currentGrouping, scale) {
+        // Another way to do this would be to create
+        // the year texts once and then just hide them.
+       	var titles = svg.selectAll('.title')
+          .data(scale.domain());
+        
+        titles.enter().append('text')
+          	.attr('class', 'title')
+        	.merge(titles)
+            .attr('x', function (d) { return scale(d); })
+            .attr('y', 40)
+            .attr('text-anchor', 'middle')
+            .text(function (d) { return d; });
+        
+        titles.exit().remove();
+      };
+      
+      function setupButtons() {
+        d3.selectAll('.gbutton')
+          .on('click', function () {
+          	
+            // Remove active class from all buttons
+            d3.selectAll('.button').classed('active', false);
+
+            // Find the button just clicked
+            var button = d3.select(this);
+
+            // Set it as the active button
+            button.classed('active', true);
+
+            // Get the id of the button
+            var buttonId = button.attr('id');
+
+	          console.log(buttonId)
+            // Toggle the bubble chart based on the currently clicked button.
+            splitBubbles(buttonId);
+          });
+      };
+      
+      setupButtons()
+      
+    });
+    
+  </script>
+</body>

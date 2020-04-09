@@ -1,0 +1,13 @@
+ID,Location,Group,Class,Type
+1,1,A,X,M
+2,1,A,Y,N
+3,1,A,Y,N
+4,1,B,Z,M
+5,1,B,Y,M
+6,1,B,X,N
+7,1,B,Z,N
+8,2,A,Z,M
+9,2,B,Z,M
+10,2,B,Y,N
+11,2,B,X,N
+12,2,B,X,M
