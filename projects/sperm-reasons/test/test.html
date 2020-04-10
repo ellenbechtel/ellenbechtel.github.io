@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<!-- From http://bl.ocks.org/alandunning/51c76ec99c3ffee2fde6923ac14a4dd4 -->
+<style>
+
+body {
+	background-color: #F1F3F3;
+}
+  
+text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 900;
+    pointer-events: none;
+}
+
+circle {
+    cursor: pointer;
+    fill-opacity: 0.9;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.x.axis path,
+.x.axis line {
+    display: none;
+}
+
+.y.axis path,
+.y.axis line {
+    display: none;
+}
+</style>
+<div class="chart"></div>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<script>
+  var margin = { top: 10, right: 20, bottom: 20, left: 40 };
+        var width = 400 - margin.left - margin.right;
+        var height = 600 - margin.top - margin.bottom;
+        var clickToggle = false;
+        var color = d3.scaleOrdinal(["#FA8334", "#AFFC41", "#19647E", "#7FDDDD", "#949396", "#DCF763", "#00C6D0", "#C1C1C1", "#666666", "#FDCDAE"]);
+        var radius = d3.scaleSqrt()
+            .domain([0, 280])
+            .range([15, 50]);
+
+        var svg = d3.select(".chart")
+          .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .call(responsivefy)
+          .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        var x = d3.scaleBand().rangeRound([0, width]);
+        var y = d3.scaleBand().rangeRound([height, 0]);
+
+        d3.tsv("data.tsv", function (error, data) {
+
+            console.log("data", data);
+
+            // makes an array of all the unique group types EXCEPT the year
+            var grpNames = d3.keys(data[0]).filter(function (key) { return key !== "Deal Type"; });
+
+            // for each YEAR
+            data.forEach(function (d) {
+
+                // adds a property called "groups", and the value is an array of objects where each object has a name and a value of that group 
+                d.groups = grpNames.map(function (name) { return { name: name, value: +d[name] }; });
+                
+                // then it's sorted
+                d.groups.sort(function (x, y) { return d3.ascending(y.value, x.value); });
+            });
+            
+            // this makes arrays of all the values in "Deal Type" and sets that as an array
+            y.domain(data.map(function (d) { return d["Deal Type"]; })); // this domain is an array of all the values of Deal Type, which happens to be Years
+            x.domain(grpNames);
+
+            color.domain(grpNames);
+    
+            var rows = svg.selectAll(".row")
+                .data(data)
+                .enter()
+              .append("g")
+                .attr("class", "row")
+                .attr("transform", function (d) { return "translate(0," + y(d["Deal Type"]) + ")"; });
+
+            var cells = rows.selectAll(".cell")
+                .data(function (d) { return d.groups; })
+                .enter()
+              .append("g")
+                .attr("transform", function (d, i) { return "translate(" + i * x.bandwidth() + ",0)"; })
+                .attr("class", "cell");
+
+            var circle = cells.append("circle")
+                .attr("class", function (d) { return d.className = d.name.replace(/[\ ,/-]+/g, "-").toLowerCase(); })
+                .style('fill', function (d, i) { return color(d.name); })
+                .attr("cx", x.bandwidth() / 2)
+                .attr("cy", y.bandwidth() / 2)
+                .attr("r", function (d) { return d.value === 0 ? 0 : radius(d.value); })
+                .on("click", highlightCircles);
+
+            var text = cells.append("text")
+                .attr("class", function (d) { return d.className = d.name.replace(/[\ ,/-]+/g, "-").toLowerCase(); })
+                .attr("text-anchor", "middle")
+                .style("fill", "#ffffff")
+                .attr("dx", x.bandwidth() / 2)
+                .attr("dy", y.bandwidth() / 2 + 4)
+                .text(function (d) { return d.value !== 0 ? d.value : ''; });
+
+            svg.append("g")
+                .attr("class", "x axis")
+                .attr("transform", "translate(0," + height + ")")
+                .call(d3.axisBottom(x))
+                .selectAll("text")
+                .remove();
+
+            svg.append("g")
+                .attr("class", "y axis")
+                .call(d3.axisLeft(y));
+
+            var legend = d3.select(".legend")
+              .append("svg")
+                .attr("height", height)
+                .append("g")
+                .attr("transform", "translate(0," + margin.top + ")");
+
+            var legendG = legend.selectAll(".legendRow")
+                .data(data[0].groups)
+                .enter()
+              .append("g")
+                .attr("class", "legendRow")
+                .attr("transform", function (d, i) { return "translate(0," + i * y.bandwidth() + ")"; });
+
+            legendG.append("circle")
+                .style('fill', function (d) { return color(d.name); })
+                .attr("cx", 20)
+                .attr("cy", 20)
+                .attr("r", 15)
+                .on("click", highlightCircles);
+
+            legendG.append("text")
+                .attr("dx", x.bandwidth() + 10)
+                .attr("dy", y.bandwidth() / 2)
+                .attr("text-anchor", "start")
+                .text(function (d) { return d.name });
+
+        });
+
+        function highlightCircles(d) {
+            if (!clickToggle) {
+                var className = d.name.replace(/[\ ,/-]+/g, "-").toLowerCase();
+                d3.selectAll("circle, text").transition().style("fill-opacity", function (elem) {
+                    if (elem.className !== className) return 0.07;
+                })
+            } else {
+                d3.selectAll("circle, text").transition().style("fill-opacity", 1);
+            }
+            clickToggle = !clickToggle;
+        }
+
+        function responsivefy(svg) {
+            var container = d3.select(svg.node().parentNode);
+            var width = parseInt(svg.style("width"));
+            var height = parseInt(svg.style("height"));
+            var aspect = width / height;
+            svg.attr("viewBox", "0 0 " + width + " " + height)
+                .attr("perserveAspectRatio", "xMinYMid")
+                .call(resize);
+            function resize() {
+                var targetWidth = parseInt(container.style("width"));
+                svg.attr("width", targetWidth);
+                svg.attr("height", Math.round(targetWidth / aspect));
+            }
+            d3.select(window).on("resize." + container.attr("id"), resize);
+        }
+</script>

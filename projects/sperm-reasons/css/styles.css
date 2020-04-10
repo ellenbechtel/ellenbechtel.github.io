@@ -24,13 +24,6 @@ h1 {
   
 }
 
-.banner {
-  background-position: 50% 60%;
-  background-size: cover;
-  padding: 10vh 8vh 5vh;
-  text-align: center;
-}
-
 .hidden-div {
   display: none;
 }
@@ -43,9 +36,6 @@ h1 {
   text-align: center;
 }
 
-span .interactive-title {
-  display: inline-block
-}
 
 select {
   -webkit-appearance: none;
@@ -67,7 +57,7 @@ select {
 }
 
 svg {
-  height: 100vh;
+  height: 50vh;
 }
 
 @media (max-width: 600px) {
@@ -82,11 +72,6 @@ svg {
 
 /* SVG and Spermies Styles */
 
-.spermies {
-  padding: 1px;
-  cursor: pointer;
-}
-
 .title {
   font-size: .8em;
   font-weight: 300;
@@ -95,10 +80,6 @@ svg {
 
 /* Doodads*/
 
-.selected {
-  stroke: black;
-  stroke-width: 3px;
-}
 
 .tooltip {
   position: absolute;
@@ -111,43 +92,3 @@ svg {
 
 
 /* Buttons */
-
-.button-container {
-  padding-top: 20px;
-  text-align: center;
-  margin: auto;
-}
-
-button {
-  display: inline-block;
-  background-color: transparent;
-  color: #DBDAD9;
-  padding:0.35em 1.2em;
-  border:0.1em solid #DBDAD9;
-  margin:0 0.3em 0.3em 0;
-  border-radius:0.12em;
-  box-sizing: border-box;
-  text-decoration:none;
-  text-align:center;
-  transition: all 0.2s;
-}
-
-button:hover {
-  color:#000000;
-  background-color:#DBDAD9;
-}
-
-.gbutton {
-  min-width: 130px;
-  padding: 4px 5px;
-  cursor: pointer;
-  text-align: center;
-  font-size: 13px;
-  border: 1px solid #e0e0e0;
-  text-decoration: none;
-}
-
-.button.active {
-  background: #000;
-  color: #fff;
-}

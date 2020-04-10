@@ -15,38 +15,15 @@
               
       </div>
 
-      <div class="section">
+      
+      <svg id="matrix">
+        <g id="labels"></g>
+        <g id="donorRows"></g>
+      </svg>
+      
+      <div id="tooltip" class="tooltip"></div>
 
-        <div id="toolbarGroup" class="toolbar">
-          <h2>Align By </h2>
-          <button id="all" class="gbutton active">All</button>
-          <button id="bank" class="gbutton">By Sperm Bank</button>
-          <button id="bloodType" class="gbutton">By Blood Type</button>
-          <button id="race" class="gbutton">By Race</button>
-          <button id="religion" class="gbutton">By Religion</button>
-          <button id="jewish" class="gbutton">By Jewish Ancestry</button>
-          <button id="eye" class="gbutton">By Eye Color</button>
-          <button id="hair" class="gbutton">By Hair Color</button>
-          <button id="skintone" class="gbutton">By Skintone</button>
-        </div>
-    
-    
-        <div id="colorToolbar" class="toolbar">
-            <h2>Color By </h2>
-            <button id="all" class="cbutton active">All</button>
-            <button id="eye" class="cbutton">By Eye Color</button>
-            <button id="hair" class="cbutton">By Hair Color</button>
-            <button id="skintone" class="cbutton">By Skintone</button>
-        </div>
-        
-        <svg id="matrix">
-          <g id="labels"></g>
-          <g id="donorRows"></g>
-        </svg>
-        
-        <div id="tooltip" class="tooltip"></div>
-
-      </div>
+     
 
   
       <div class="button-container"><button onclick="showDiv1()">Read More</button></div>
@@ -109,7 +86,7 @@
 
     -->
       
-    <script src="./js/beeswarm.js"></script>
+    <script src="./js/matrix.js"></script>
     <script src="./js/pageFunctions.js"></script>
   </body>
 </html>
