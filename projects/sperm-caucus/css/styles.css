@@ -25,9 +25,11 @@ h1 {
 }
 
 .banner {
+  width: 100%;
+  position: absolute;
   background-position: 50% 60%;
   background-size: cover;
-  padding: 10vh 8vh 5vh;
+  padding: 8vh 8vh 1vh;
   text-align: center;
 }
 
@@ -109,6 +111,20 @@ svg {
   color: black;
 }
 
+#toolbar-container {
+  width: 230px;
+  position: fixed;
+  z-index: 1;
+  top: 20px;
+  right: 20px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding: 20px;
+  font-size: 1em;
+  color: #DBDAD9;
+  
+}
+
 
 /* Buttons */
 
@@ -137,6 +153,16 @@ button:hover {
   background-color:#DBDAD9;
 }
 
+.gbutton.active {
+  background: #DBDAD9;
+  color: #000000;
+}
+
+.cbutton.active {
+  background: #DBDAD9;
+  color: #000000;
+}
+
 .gbutton {
   min-width: 130px;
   padding: 4px 5px;
@@ -145,9 +171,4 @@ button:hover {
   font-size: 13px;
   border: 1px solid #e0e0e0;
   text-decoration: none;
-}
-
-.button.active {
-  background: #000;
-  color: #fff;
 }

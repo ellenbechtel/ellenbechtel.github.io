@@ -12,7 +12,7 @@ console.clear()
 var width = document.querySelector("#beeswarm").clientWidth;
 var height = document.querySelector("#beeswarm").clientHeight;
 
-var transitionTime = 1 * 1000; // 1 second
+var transitionTime = .25 * 1000; // 1 second
 var radius = 6;
 var color = d3.scaleOrdinal(d3.schemeCategory20);
 var centerScale = d3.scalePoint().padding(1).range([100, width-100]);
@@ -24,8 +24,8 @@ var yGravity = 0.3;
 var collPadding = 3;
 
 var margin = {
-    top: 20,
-    right: 20,
+    top: .20*height,
+    right: .25*width,
     bottom: 100,
     left: 20 
 };
@@ -40,11 +40,12 @@ var hair = ["Black","Blonde","Brown","Red"];
 var hairColors = ["#000000", "#EDAC5F", "#77412F", "#A3180D"];
 var skin = ["Light","Fair","Medium","Olive","Brown","Dark"];
 var skinColors = ["#F9E8D7", "#EFD6AC", "#D5AC73", "#BB7452", "#7D4E37", "#2E1D13"];
+var noColors = ["#DBDAD9f", "#DBDAD9f", "#DBDAD9f", "#DBDAD9f"];
 
 // SVG
 var svg = d3.select("#beeswarm")
-    .attr("width", width)
-    .attr("height", height);
+    .attr("width", chartWidth)
+    .attr("height", chartHeight);
 
 
 // Simulation Forces
@@ -204,14 +205,14 @@ d3.csv("./donors.csv", function(donors) {
 	        showTitles(currentGrouping, centerScale);
         };
         
-        // @v4 Reset the 'x' force to draw the bubbles to their centers
+        // Reset the 'x' force to draw the bubbles to their centers
         simulation
             .force("y", d3.forceY().strength(yGravity).y(height / 2))
             .force('x', d3.forceX().strength(forceStrength).x(function(d){ 
         	return centerScale(d[currentGrouping]);
         }));
 
-        // @v4 We can reset the alpha value and restart the simulation
+        // Reset the alpha value and restart the simulation
         simulation.alpha(2).restart();
     };
 
@@ -220,19 +221,24 @@ d3.csv("./donors.csv", function(donors) {
     function colorBubbles(currentColorScale) {
 
         if(currentColorScale == "all") {
+            colorScale.domain(hair).range(noColors);  // WHY IS THIS NOT WORKING??!
             spermies.transition()
-                .style("fill", "#DBDAD9f");
+                .duration(transitionTime)
+                .style("fill", function(d) { return colorScale(d.hair); });
         } else if (currentColorScale == "eye") {
             colorScale.domain(eyes).range(eyeColors);
             spermies.transition()
+                .duration(transitionTime)
                 .style("fill", function(d) { return colorScale(d.eye); });
         } else if (currentColorScale == "hair") {
             colorScale.domain(hair).range(hairColors);
             spermies.transition()
+                .duration(transitionTime)
                 .style("fill", function(d) { return colorScale(d.hair); });
         } else if (currentColorScale == "skintone") {
             colorScale.domain(skin).range(skinColors);
             spermies.transition()
+                .duration(transitionTime)
                 .style("fill", function(d) { return colorScale(d.skintone); });
          };
         
