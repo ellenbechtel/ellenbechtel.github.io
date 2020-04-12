@@ -3,20 +3,34 @@
   <head>
     <meta charset="utf-8" />
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,300,400,500,600&display=swap" rel="stylesheet">
-    <title>Sperm Donation Caucuses</title>
+    <title>Gene Pool Caucuses</title>
     <script src="https://d3js.org/d3.v4.min.js"></script>
 
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
       <div id="explorer-banner" class="banner">
+        <div id="title-banner">
+          <h1>The Gene Pool<br>Inside Sperm Banks</h1>
+          <h2>A caucus of the donor sperm available in the biggest sperm banks</h2>
+        </div>
+                
+      </div>
 
-        <h1>Sperm Donation Caucuses</h1>
-
+      <div class="section">
+      
         
+        <svg id="beeswarm">
+          <g id="titles"></g>
+          <g id="spermSwarm"></g>
+        </svg>
+        
+        <div id="tooltip" class="tooltip"></div>
+
       </div>
 
       <div id="toolbar-container">
+
         <div id="groupToolbar" class="toolbar">
           <h2>Align By </h2>
           <button id="all" class="gbutton active">All</button>
@@ -39,17 +53,8 @@
             <button id="skintone" class="cbutton">By Skintone</button>
         </div>
       </div>
-      <div class="section">
-      
-        
-        <svg id="beeswarm">
-          <g id="titles"></g>
-          <g id="spermSwarm"></g>
-        </svg>
-        
-        <div id="tooltip" class="tooltip"></div>
 
-      </div>
+      
 
   
       <div class="button-container"><button onclick="showDiv1()">Read More</button></div>

@@ -13,19 +13,19 @@ var width = document.querySelector("#beeswarm").clientWidth;
 var height = document.querySelector("#beeswarm").clientHeight;
 
 var transitionTime = .25 * 1000; // 1 second
-var radius = 6;
 var color = d3.scaleOrdinal(d3.schemeCategory20);
 var centerScale = d3.scalePoint().padding(1).range([100, width-100]);
 var colorScale = d3.scaleOrdinal();
 var forceStrength = .3;
-var gravityStrength = -4;
+var gravityStrength = -5;
 var friction = 0.5;
-var yGravity = 0.3;
+var yGravity = 0.2;
 var collPadding = 3;
+var iterations = 6;
 
 var margin = {
-    top: .20*height,
-    right: .25*width,
+    top: 100,
+    right: 20,
     bottom: 100,
     left: 20 
 };
@@ -51,7 +51,7 @@ var svg = d3.select("#beeswarm")
 // Simulation Forces
 var simulation = d3.forceSimulation()
     .force("collide",d3.forceCollide( function(d){
-        return d.r + collPadding }).iterations(16))
+        return d.r + collPadding }).iterations(iterations))
     .force("gravity", d3.forceManyBody().strength(gravityStrength))
     .force("y", d3.forceY().y(height / 2))
     .force("x", d3.forceX().x(width / 2))
@@ -100,8 +100,9 @@ d3.csv("./donors.csv", function(donors) {
         .domain([d3.min(weights), d3.max(weights)])
         .range([1,6]);    
 
+
     donors.forEach(function(d){
-        d.r = radius*Math.random();
+        d.r = (heightScale(d.height))*Math.random();
     });
 
     /////////////////////////////////
@@ -114,7 +115,7 @@ d3.csv("./donors.csv", function(donors) {
     var spermiesEnter = spermies.enter().append("ellipse")
         .attr("rx", function(d) { return weightScale(d.weight); })
         .attr("ry", function(d) { return heightScale(d.height); })
-        .attr("r", function(d) { return (d.r); })
+        
         .attr("cx", function(d,i) { return width*Math.random(); })
             .attr("cy", function(d,i) { return height*Math.random(); })
         .style("fill", "#DBDAD9")
@@ -171,8 +172,11 @@ d3.csv("./donors.csv", function(donors) {
         console.log(me.classed("selected"));
         me.classed("selected", !me.classed("selected"));
         
-        d3.selectAll("circle.selected")
-          // do other things to the selected circles;
+        d3.selectAll("circle.selected");
+
+
+
+          
       	
     };
 
@@ -259,7 +263,7 @@ d3.csv("./donors.csv", function(donors) {
           	.attr('class', 'title')
         	.merge(titles)
             .attr('x', function (d) { return scale(d); })
-            .attr('y', 100)
+            .attr('y', height-10)
             .attr('text-anchor', 'middle')
             .text(function (d) { return d; });
         
@@ -327,6 +331,10 @@ d3.csv("./donors.csv", function(donors) {
     // Tooltip and Selection of Spermies
     //////////////////////////////////  
 
+    // Tooltip Content 
+
+    // Tooltip
+
     var tooltip = d3.select("#tooltip");
 
     spermies.on("mouseover", function(d) {
@@ -338,7 +346,11 @@ d3.csv("./donors.csv", function(donors) {
             .style("visibility","visible")
             .style("left", cx + "px")
             .style("top", cy + "px")
-            .html("Donor " + d.donorNum +"<br>" + d.bank);
+            .html(
+                '<span class="info">Donor: </span><span class="value">' + d.donorNum + '</span><br/>' +
+                '<span class="info">Bank: </span><span class="value">' + d.bank + '</span><br/>' +
+                '<span class="info link">Click to read more and track this donor</span>'
+            );
 
         svg.selectAll(".spermies")
             .transition()
