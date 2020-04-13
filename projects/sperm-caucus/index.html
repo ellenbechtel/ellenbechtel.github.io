@@ -9,111 +9,89 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-      <div id="explorer-banner" class="banner">
+      <div id="title-banner-container" class="banner">
         <div id="title-banner">
-          <h1>The Gene Pool<br>Inside Sperm Banks</h1>
-          <h2>A caucus of the donor sperm available in the biggest sperm banks</h2>
+          <h1>The Gene Pool</h1>
+          <h2>Who donates genetic material to the world's biggest sperm banks?</h2>
         </div>
                 
       </div>
 
       <div class="section">
       
+        <div id="about-text" class="content hidden-div">
+          <p>The sperm bank / donation business is a $3.5 billion market, and growing accessibility to fertility-related medical care means that more and more people (including many of my peers, who are in relationships where no one produces sperm) have the unenviable luxury of grappling with thorny questions like "Do genetics matter?", "What do I care about in a donor?", and most importantly, "How am I, justly or unjustly, using the information a sperm bank provides to me to judge donors for their 'worthiness'?".</p>
+          <p>Additionally, there's been some reporting on the fact that many sperm banks have mostly white donors, and very few donors of color.  There's also been some reporting that while donors will publicly say things like "I donated because I want to give the gift of life", there are some donors who will also say off-record that "I donated because I want to propogate the white race."  Some donors have upwards of 300 children born from their donations, and while companies won't advertise their donors as open white supremacists, I'd like to see if there are trends or insights that can be gleaned from what a donor says about themselves anyway.</p>
+          <p>Turns out, many sperm banks offer 14-day free trials to view their donor catalogs, so I used a web scraper to scrape the text of "Why I donated" from the five biggest online sperm banks.</p>
+        </div>
         
+        <div class="button-container">
+          <button onclick="showDiv1()">Read More</button>
+        </div>
+
+        <div id="toolbar-container">
+          <div id="toolbar-buttons"> 
+            <div id="colorToolbar" class="toolbar">
+              <span><h3>Color</h3></span>
+              <button id="all" class="cbutton active">Clear</button>
+              <button id="eye" class="cbutton">By Eye Color</button>
+              <button id="hair" class="cbutton">By Hair Color</button>
+              <button id="skintone" class="cbutton">By Skintone</button>
+            </div>
+  
+            <div id="groupToolbar" class="toolbar">
+              <span><h3>Align</h3></span>
+              <button id="all" class="gbutton active">Together</button>
+              <button id="bank" class="gbutton">By Sperm Bank</button>
+              <button id="bloodType" class="gbutton">By Blood Type</button>
+              <button id="race" class="gbutton">By Race</button>
+              <button id="religion" class="gbutton">By Religion</button>
+              <button id="jewish" class="gbutton">By Jewish Ancestry</button>
+              <button id="eye" class="gbutton">By Eye Color</button>
+              <button id="hair" class="gbutton">By Hair Color</button>
+              <button id="skintone" class="gbutton">By Skintone</button>
+            </div>
+          </div>
+                    
+          <div id="tooltip" class="tooltip">
+            <h2 id="ttInit">Hover over a donor<br>to learn more about them. <br> Click to track them.
+            </h2>
+          </div>
+        </div>
+
         <svg id="beeswarm">
           <g id="titles"></g>
           <g id="spermSwarm"></g>
         </svg>
         
-        <div id="tooltip" class="tooltip"></div>
+
 
       </div>
 
-      <div id="toolbar-container">
-
-        <div id="groupToolbar" class="toolbar">
-          <h2>Align By </h2>
-          <button id="all" class="gbutton active">All</button>
-          <button id="bank" class="gbutton">By Sperm Bank</button>
-          <button id="bloodType" class="gbutton">By Blood Type</button>
-          <button id="race" class="gbutton">By Race</button>
-          <button id="religion" class="gbutton">By Religion</button>
-          <button id="jewish" class="gbutton">By Jewish Ancestry</button>
-          <button id="eye" class="gbutton">By Eye Color</button>
-          <button id="hair" class="gbutton">By Hair Color</button>
-          <button id="skintone" class="gbutton">By Skintone</button>
-        </div>
-    
-    
-        <div id="colorToolbar" class="toolbar">
-            <h2>Color By </h2>
-            <button id="all" class="cbutton active">All</button>
-            <button id="eye" class="cbutton">By Eye Color</button>
-            <button id="hair" class="cbutton">By Hair Color</button>
-            <button id="skintone" class="cbutton">By Skintone</button>
+      <div class="section">
+        <div id="analysis-text" class="content hidden-div">
+          <p>The sperm bank / donation business is a $3.5 billion market, and growing accessibility to fertility-related medical care means that more and more people (including many of my peers, who are in relationships where no one produces sperm) have the unenviable luxury of grappling with thorny questions like "Do genetics matter?", "What do I care about in a donor?", and most importantly, "How am I, justly or unjustly, using the information a sperm bank provides to me to judge donors for their 'worthiness'?".</p>
+          <p>Additionally, there's been some reporting on the fact that many sperm banks have mostly white donors, and very few donors of color.  There's also been some reporting that while donors will publicly say things like "I donated because I want to give the gift of life", there are some donors who will also say off-record that "I donated because I want to propogate the white race."  Some donors have upwards of 300 children born from their donations, and while companies won't advertise their donors as open white supremacists, I'd like to see if there are trends or insights that can be gleaned from what a donor says about themselves anyway.</p>
+          <p>Turns out, many sperm banks offer 14-day free trials to view their donor catalogs, so I used a web scraper to scrape the text of "Why I donated" from the five biggest online sperm banks.</p>
         </div>
       </div>
+
+
 
       
 
   
-      <div class="button-container"><button onclick="showDiv1()">Read More</button></div>
-
-      <div id="about-text" class="content hidden-div">
-        
-        <p>The sperm bank / donation business is a $3.5 billion market, and growing accessibility to fertility-related medical care means that more and more people (including many of my peers, who are in relationships where no one produces sperm) have the unenviable luxury of grappling with thorny questions like "Do genetics matter?", "What do I care about in a donor?", and most importantly, "How am I, justly or unjustly, using the information a sperm bank provides to me to judge donors for their 'worthiness'?".</p>
-
-        <p>Additionally, there's been some reporting on the fact that many sperm banks have mostly white donors, and very few donors of color.  There's also been some reporting that while donors will publicly say things like "I donated because I want to give the gift of life", there are some donors who will also say off-record that "I donated because I want to propogate the white race."  Some donors have upwards of 300 children born from their donations, and while companies won't advertise their donors as open white supremacists, I'd like to see if there are trends or insights that can be gleaned from what a donor says about themselves anyway.</p>
-   
-        <p>Turns out, many sperm banks offer 14-day free trials to view their donor catalogs, so I used a web scraper to scrape the text of "Why I donated" from the five biggest online sperm banks.</p>
-        
-        <ul> <h3>Color-based Encoding</h3>
-          <li>Skin Color</li>
-          <li>Eye Color</li>
-          <li>Hair Color</li>
-        </ul>
-
-        <ul> <h3>Categorical Bee Swarm Areas</h3>
-          <li>Bank of Origin</li>
-          <li>Race</li>
-          <li>Blood Type</li>
-          <li>Height</li>
-          <li>Weight</li>
-          <li>Religion</li>
-          <li>Jewish Ancestry</li>
-        </ul>
-      </div>
       
+
      
 
       
 
 <!--
 
-      <div id="skew-banner" class="banner">
+    
+     
 
-        <h1>Notice that banks skew towards a certain type of donor.</h1>
-        <button onclick="showDiv2()">Read More</button>
-        <p>The modal donor would be...</p>
-        
-
-      </div>
-
-      <div id="skew-text" class="content hidden-div">
-        
-        <p>The sperm bank / donation business is a $3.5 billion market, and growing accessibility to fertility-related medical care means that more and more people (including many of my peers, who are in relationships where no one produces sperm) have the unenviable luxury of grappling with thorny questions like "Do genetics matter?", "What do I care about in a donor?", and most importantly, "How am I, justly or unjustly, using the information a sperm bank provides to me to judge donors for their 'worthiness'?".</p>
-
-        <p>Additionally, there's been some reporting on the fact that many sperm banks have mostly white donors, and very few donors of color.  There's also been some reporting that while donors will publicly say things like "I donated because I want to give the gift of life", there are some donors who will also say off-record that "I donated because I want to propogate the white race."  Some donors have upwards of 300 children born from their donations, and while companies won't advertise their donors as open white supremacists, I'd like to see if there are trends or insights that can be gleaned from what a donor says about themselves anyway.</p>
-   
-        <p>Turns out, many sperm banks offer 14-day free trials to view their donor catalogs, so I used a web scraper to scrape the text of "Why I donated" from the five biggest online sperm banks.</p>
-            
-      </div>
-
-      <div class="section">
-        <svg id="barcharts"></svg>
-        
-        <div id="tooltip"></div>
-      </div>
 
     -->
       

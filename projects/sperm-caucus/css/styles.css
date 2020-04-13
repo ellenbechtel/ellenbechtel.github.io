@@ -15,14 +15,22 @@ body {
 }
 
 h1 { 
-  font-size: 4em;
+  font-size: 8em;
   font-weight: 600;
+  margin: auto;
+}
+
+h2 {
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 
 .content {
   max-width: 600px;
   margin: 0 auto;
   padding: 5em;
+  text-align: left;
+  line-height: 1.4em;
   
 }
 
@@ -30,27 +38,33 @@ h1 {
   width: 100%;
   background-position: 50% 60%;
   background-size: cover;
-  padding: 8vh 8vh 1vh;
   text-align: center;
+}
+
+#title-banner-container {
+  background-image: linear-gradient(0deg, rgba(0,0,0,.7) 0%, rgba(100,100,100,.7) 100%), url('/projects/sperm-caucus/img/spermMicroscope.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: black;
 }
 
 #title-banner {
   width: 66%;
   margin: auto;
+  padding-top: 50vh;
+  padding-bottom: 30vh;
   justify-content: center;
   text-align: center;
 }
 
 .hidden-div {
-  display: none;
+  display: block;
 }
 
 .section {
   padding-top: 20px;
   padding-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
 }
 
 span .interactive-title {
@@ -77,12 +91,13 @@ select {
 }
 
 svg {
-  height: 90vh;
+  height: 60vh;
+  width: 100%;
 }
 
 @media (max-width: 600px) {
   .section {
-    flex-direction: column;
+   
   }
   .section svg {
     flex: none;
@@ -107,41 +122,78 @@ svg {
 
 .selected {
   
+  box-shadow: 0px 0px 40px 40px white;
   stroke: white;
   stroke-width: 2px;
   color: none;
   
 }
 
+
+
+#toolbar-container {
+  font-size: .8em;
+  color: #DBDAD9;
+  max-width: 85%;
+  margin: 0 auto 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: 
+    "colorToolbar tooltip" 
+    "groupToolbar tooltip";
+}
+
+#toolbar-buttons {
+  margin: 10px;
+  padding: 20px;
+  background-color:rgba(255,255,255,0.1);
+}
+
+/* .toolbar {
+  align-items: baseline;
+  max-width: 600px;
+  align-content: left;
+} */
+
+#colorToolbar { 
+  grid-area: colorToolbar; 
+}
+
+#groupToolbar { 
+  grid-area: groupToolbar; 
+}
+
+#tooltip { 
+  grid-area: tooltip; 
+}
+
+
 .tooltip {
-  position: absolute;
-  visibility: hidden;
-  text-align: left;
-  background-color:rgba(255,255,255,0.8);
-  padding: 10px 20px;
-  pointer-events: none;
-  color: black;
-  font-weight: 800;
-  line-height: 1.7;
-}
-
-.info {
+  background-color:rgba(255,255,255,0.1);
+  margin: 10px;
+  padding: 30px;
   font-weight: 300;
+  line-height: 1.7;
+  overflow: scroll;
+
 }
 
-.link {
-  font-size: .9em;
+#ttInit {
+  text-align: center;
   opacity: .5;
 }
 
-#toolbar-container {
-  padding: 20px;
-  font-size: 1em;
-  color: #DBDAD9;
-  z-index: 1;
-
+.info {
+  font-weight: 100;
+  opacity: .3;
 }
 
+.break {
+  font-size: 1.2em;
+  font-weight: 800;
+  opacity: .3;
+  line-height: 3em;
+}
 
 /* Buttons */
 
@@ -155,14 +207,20 @@ button {
   display: inline-block;
   background-color: transparent;
   color: #DBDAD9;
-  padding:0.35em 1.2em;
+  padding: 10px;
+  margin:0 0.2em 0.2em 0;
   border:0.1em solid #DBDAD9;
-  margin:0 0.3em 0.3em 0;
   border-radius:0.12em;
   box-sizing: border-box;
   text-decoration:none;
   text-align:center;
   transition: all 0.2s;
+  min-width: 130px;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: 0;
 }
 
 button:hover {
@@ -178,14 +236,4 @@ button:hover {
 .cbutton.active {
   background: #DBDAD9;
   color: #000000;
-}
-
-.gbutton {
-  min-width: 130px;
-  padding: 4px 5px;
-  cursor: pointer;
-  text-align: center;
-  font-size: 13px;
-  border: 1px solid #e0e0e0;
-  text-decoration: none;
 }

@@ -471,3 +471,181 @@ d3.csv("./donors.csv", function(donors) {
 
 
 
+
+
+
+
+
+
+
+
+
+ /////////////////////////////////
+    // Tooltip and Selection of Spermies
+    //////////////////////////////////  
+
+    // Tooltip Content Functions
+
+    // convert inches to a ft/in format for easier reading
+    function convertToFt(inches) {
+        var feet = Math.round(inches/12);
+        var rInches = Math.round(inches % 12);
+
+        return feet + "ft " + rInches + "in";
+
+    };
+
+    // Age
+    function ttAge(age) {
+        if(age == true) { return "'<span class='info'>Age at Donation: </span><span class='value'>' + age + '</span><br/>'";
+        } else { return "" };
+    };
+
+    // Price
+    function ttPr(pr) {
+        if(pr == true) { return "'<span class='info'>Price per Vial: </span><span class='value'>' + d.price + '</span><br/>'";
+        } else { return "" };
+    };
+
+    // Look Alikes
+    function ttLook(look) {
+        if(look == true) { return "'<span class='info'>Look Alikes: </span><span class='value'>' + d.lookAlikes + '</span><br/>'";
+        } else { return "" };
+    };
+
+    // Hand
+    function ttHand(hand) {
+        if(hand == true) { return "'<span class='info'>Dominant Hand: </span><span class='value'>' + d.dominantHand + '</span><br/>'";
+        } else { return "" };
+    };
+
+    // Shoe Size
+    function ttShoe(shoe) {
+        if(shoe == true) { return "'<span class='info'>Shoe Size: </span><span class='value'>' + d.shoeSize + '</span><br/>'";
+        } else { return "" };
+    };
+
+    // Face
+    function ttFace(f) {
+        if(f == true) { return "'<span class='info'>Face Shape: </span><span class='value'>' + d.faceShape + '</span><br/>'";
+        } else { return "" };
+    };
+
+    // Lips
+    function ttLips(l) {
+        if(l == true) { return "'<span class='info'>Lips: </span><span class='value'>' + d.lips + '</span><br/>'";
+        } else { return "" };
+    };
+
+    // Nose
+    function ttNose(l) {
+        if(l == true) { return "'<span class='info'>Nose: </span><span class='value'>' + d.noseShape + '</span><br/>'";
+        } else { return "" };
+    };
+
+    // Chest
+    function ttChest(l) {
+        if(l == true) { return "'<span class='info'>Hairy Chest: </span><span class='value'>' + d.hairyChest + '</span><br/>'";
+        } else { return "" };
+    };
+
+    // Beard
+    function ttBeard(l) {
+        if(l == true) { return "'<span class='info'>Beard Color: </span><span class='value'>' + d.beardColor + '</span><br/>'";
+        } else { return "" };
+    };
+
+    // Eyebrows
+    function ttEyebrows(l) {
+        if(l == true) { return "'<span class='info'>Eyebrows: </span><span class='value'>' + d.eyebrows + '</span><br/>'";
+        } else { return "" };
+    };
+
+    // Dimples
+    function ttDimp(l) {
+        if(l == true) { return "'<span class='info'>Dimples: </span><span class='value'>' + d.dimples + '</span><br/>'";
+        } else { return "" };
+    };
+
+    // Acne
+    function ttAcne(l) {
+        if(l == true) { return "'<span class='info'>Acne: </span><span class='value'>' + d.acne + '</span><br/>'";
+        } else { return "" };
+    };
+
+    // Hair Loss
+    function ttLoss(l) {
+        if(l == true) { return "'<span class='info'>Hair Loss: </span><span class='value'>' + d.hairLoss + '</span><br/>'";
+        } else { return "" };
+    };
+
+    // Degree
+    function ttDegree(l) {
+        if(l == true) { return "'<span class='info'>Degree: </span><span class='value'>' + d.degree + '</span><br/>'";
+        } else { return "" };
+    };
+
+    // Occupation
+    function ttOcc(l) {
+        if(l == true) { return "'<span class='info'>Occupation: </span><span class='value'>' + d.occupation + '</span><br/>'";
+        } else { return "" };
+    };
+
+    // Sign
+    function ttSign(l) {
+        if(l == true) { return "'<span class='info'>Astrological Sign: </span><span class='value'>' + d.dimples + '</span><br/>'";
+        } else { return "" };
+    };
+
+
+
+
+    // Tooltip
+    var tooltip = d3.select("#tooltip");
+
+    spermies.on("mouseover", function(d) {
+        tooltip 
+            .style("visibility","visible")
+            .html(
+                '<span class="info">Donor: </span><span class="value">' + d.donorNum + '</span><br/>' +
+                '<span class="info">Bank: </span><span class="value">' + d.bank + '</span><br/>' +
+                '<span class="info">Blood Type: </span><span class="value">' + d.bloodType + '</span><br/>' +
+                ttAge(d.age) +
+                ttPr(d.price) +
+
+                '<br>' +                
+                '<span class="info">Body: </span><span class="value">' + convertToFt(d.height) + ', ' + d.weight + 'lbs</span><br/>' +
+                '<span class="info">Eye Color: </span><span class="value">' + d.eye + '</span><br/>' +
+                '<span class="info">Hair: </span><span class="value">' + d.hairTexture + ' ' + d.hair + '</span><br/>' +
+                '<span class="info">Skintone: </span><span class="value">' + d.skintone + '</span><br/>' +
+                '<span class="info">Race: </span><span class="value">' + d.race + '</span><br/>' +
+                '<span class="info">Ethnic Origin: </span><span class="value">' + d.ethnicity + '</span><br/>' +
+                '<span class="info">Religion: </span><span class="value">' + d.religion + '</span><br/>' +
+                '<span class="info">Jewish Ancestry: </span><span class="value">' + d.jewish + '</span><br/>' +
+                
+
+                '<br>' +
+                ttLook(d.lookAlikes) +
+                ttHand(d.dominantHand) +
+                ttShoe(d.shoeSize) +
+                ttFace(d.faceShape) +
+                ttLips(d.lips) +
+                ttNose(d.noseShape) +
+                ttChest(d.hairyChest) +
+                ttBeard(d.beardColor) +
+                ttEyebrows(d.eyebrows) +
+                ttDimp(d.dimples) +
+                ttAcne(d.acne) +
+                ttLoss(d.hairLoss) +
+
+                '<br>' +
+                ttDegree(d.degree) +
+                ttOcc(d.occupation) +
+                '<span class="info">Astrological Sign: </span><span class="value">' + d.sign + '</span><br/>' +
+                '<span class="info">Hobbies: </span><span class="value">' + d.hobbies + '</span><br/>' +
+                '<span class="info">Favorite Subject: </span><span class="value">' + d.faveSubjects + '</span><br/>' +
+                '<span class="info">Donated because: </span><span class="value">' + d.whyDonate + '</span><br/>' +
+                '<span class="info">Staff Description: </span><span class="value">' + d.description + '</span><br/>' +
+                '<span class="info">Describes Himself: </span><span class="value">' + d.describesHimself + '</span><br/>'
+                
+            );

@@ -98,8 +98,8 @@ Promise.all(promises).then(function(data) {
 
   function lookupReg(phrase) {   
     var filtered = eggsplainer.filter(function(d) {
-      return d.reg === phrase; // for the deconstructed data, which only has one value (like "Large"), go through eggsplainer (f.phrase) and see if there's anything that matches that value.  There should ony be one thing. 
-    });
+        return d.reg === phrase; // for the deconstructed data, which only has one value (like "Large"), go through eggsplainer (f.phrase) and see if there's anything that matches that value.  There should ony be one thing. 
+      });
     if(filtered.length == 1) { // this is a filter to say "if there's ANYTHING in the array called filtered, do something with it".  There should only be one thing, or none. Not more.   
     console.log(filtered);
       return filtered[0].reg; // Whatever the meaning is, color code it

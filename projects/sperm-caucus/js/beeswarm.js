@@ -10,17 +10,17 @@
 console.clear()
 
 var width = document.querySelector("#beeswarm").clientWidth;
-var height = document.querySelector("#beeswarm").clientHeight;
+var height = 450;
 
 var transitionTime = .25 * 1000; // 1 second
 var color = d3.scaleOrdinal(d3.schemeCategory20);
 var centerScale = d3.scalePoint().padding(1).range([100, width-100]);
 var colorScale = d3.scaleOrdinal();
 var forceStrength = .3;
-var gravityStrength = -5;
+var gravityStrength = -2;
 var friction = 0.5;
 var yGravity = 0.2;
-var collPadding = 3;
+var collPadding = 2;
 var iterations = 6;
 
 var margin = {
@@ -39,13 +39,13 @@ var eyeColors = ["#000000", "#48CED9", "#915841", "#A5BF66", "#AAAAAA", "#D8A760
 var hair = ["Black","Blonde","Brown","Red"];
 var hairColors = ["#000000", "#EDAC5F", "#77412F", "#A3180D"];
 var skin = ["Light","Fair","Medium","Olive","Brown","Dark"];
-var skinColors = ["#F9E8D7", "#EFD6AC", "#D5AC73", "#BB7452", "#7D4E37", "#2E1D13"];
+var skinColors = ["#F9E8D7", "#EFD6AC", "#D5AC73", "#BB7452", "#7D4E37", "#56352B"];
 var noColors = ["#DBDAD9f", "#DBDAD9f", "#DBDAD9f", "#DBDAD9f"];
 
 // SVG
 var svg = d3.select("#beeswarm")
-    .attr("width", chartWidth)
-    .attr("height", chartHeight);
+    .attr("width", width)
+    .attr("height", height);
 
 
 // Simulation Forces
@@ -86,7 +86,7 @@ d3.csv("./donors.csv", function(donors) {
     });
     var heightScale = d3.scaleLinear()
         .domain([d3.min(heights), d3.max(heights)])
-        .range([2,7]);
+        .range([1,6]);
 
     // Weights
     var weights = [];
@@ -98,7 +98,7 @@ d3.csv("./donors.csv", function(donors) {
     });
     var weightScale = d3.scaleLinear()
         .domain([d3.min(weights), d3.max(weights)])
-        .range([1,6]);    
+        .range([1,4]);    
 
 
     donors.forEach(function(d){
@@ -117,7 +117,7 @@ d3.csv("./donors.csv", function(donors) {
         .attr("ry", function(d) { return heightScale(d.height); })
         
         .attr("cx", function(d,i) { return width*Math.random(); })
-            .attr("cy", function(d,i) { return height*Math.random(); })
+        .attr("cy", function(d,i) { return height*Math.random(); })
         .style("fill", "#DBDAD9")
         .style("pointer-events", "all")
         .call(d3.drag()
@@ -168,9 +168,10 @@ d3.csv("./donors.csv", function(donors) {
         d.fy = null;
 
         var me = d3.select(this)
-
         console.log(me.classed("selected"));
         me.classed("selected", !me.classed("selected"));
+
+
         
         d3.selectAll("circle.selected");
 
@@ -263,7 +264,7 @@ d3.csv("./donors.csv", function(donors) {
           	.attr('class', 'title')
         	.merge(titles)
             .attr('x', function (d) { return scale(d); })
-            .attr('y', height-10)
+            .attr('y', 50)
             .attr('text-anchor', 'middle')
             .text(function (d) { return d; });
         
@@ -331,25 +332,66 @@ d3.csv("./donors.csv", function(donors) {
     // Tooltip and Selection of Spermies
     //////////////////////////////////  
 
-    // Tooltip Content 
+    // Tooltip Content Functions
+
+    
+    function convertToFt(inches) {
+        var feet = Math.round(inches/12);
+        var rInches = Math.round(inches % 12);
+
+        return feet + "ft " + rInches + "in";
+
+    };
+
 
     // Tooltip
 
     var tooltip = d3.select("#tooltip");
 
     spermies.on("mouseover", function(d) {
-
-        var cx = event.clientX + 10;
-        var cy = event.clientY + 250;
-
-        tooltip
+        tooltip 
             .style("visibility","visible")
-            .style("left", cx + "px")
-            .style("top", cy + "px")
             .html(
                 '<span class="info">Donor: </span><span class="value">' + d.donorNum + '</span><br/>' +
                 '<span class="info">Bank: </span><span class="value">' + d.bank + '</span><br/>' +
-                '<span class="info link">Click to read more and track this donor</span>'
+                '<span class="info">Age: </span><span class="value">' + d.donationAge + '</span><br/>' +
+                '<span class="info">Price per Vial: </span><span class="value">' + d.price + '</span><br/>' +
+                '<span class="info">Blood Type: </span><span class="value">' + d.bloodType + '</span><br/>' +
+
+                '<br>' +                
+                '<span class="info">Body: </span><span class="value">' + convertToFt(d.height) + ', ' + d.weight + 'lbs</span><br/>' +
+                '<span class="info">Eye Color: </span><span class="value">' + d.eye + '</span><br/>' +
+                '<span class="info">Hair: </span><span class="value">' + d.hairTexture + ' ' + d.hair + '</span><br/>' +
+                '<span class="info">Skintone: </span><span class="value">' + d.skintone + '</span><br/>' +
+                '<span class="info">Race: </span><span class="value">' + d.race + '</span><br/>' +
+                '<span class="info">Ethnic Origin: </span><span class="value">' + d.ethnicity + '</span><br/>' +
+                '<span class="info">Religion: </span><span class="value">' + d.religion + '</span><br/>' +
+                '<span class="info">Jewish Ancestry: </span><span class="value">' + d.jewish + '</span><br/>' +
+                '<span class="info">Look-Alikes: </span><span class="value">' + d.lookAlikes + '</span><br/>' +
+
+                '<br>' +
+                '<span class="info">Dominant Hand: </span><span class="value">' + d.dominantHand + '</span><br/>' +
+                '<span class="info">Shoe Size: </span><span class="value">' + d.shoeSize + '</span><br/>' +
+                '<span class="info">Face Shape: </span><span class="value">' + d.faceShape + '</span><br/>' +
+                '<span class="info">Lips: </span><span class="value">' + d.lips + '</span><br/>' +
+                '<span class="info">Nose: </span><span class="value">' + d.noseShape + '</span><br/>' +
+                '<span class="info">Hairy Chest: </span><span class="value">' + d.hairyChest + '</span><br/>' +
+                '<span class="info">Beard Color: </span><span class="value">' + d.beardColor + '</span><br/>' +
+                '<span class="info">Eyebrows: </span><span class="value">' + d.eyebrows + '</span><br/>' +
+                '<span class="info">Dimples: </span><span class="value">' + d.dimples + '</span><br/>' +
+                '<span class="info">Acne: </span><span class="value">' + d.acne + '</span><br/>' +
+                '<span class="info">Hair Loss: </span><span class="value">' + d.hairLoss + '</span><br/>' +
+
+                '<br>' +
+                '<span class="info">Degree: </span><span class="value">' + d.degree + '</span><br/>' +
+                '<span class="info">Occupation: </span><span class="value">' + d.occupation + '</span><br/>' +
+                '<span class="info">Astrological Sign: </span><span class="value">' + d.sign + '</span><br/>' +
+                '<span class="info">Hobbies: </span><span class="value">' + d.hobbies + '</span><br/>' +
+                '<span class="info">Favorite Subject: </span><span class="value">' + d.faveSubjects + '</span><br/>' +
+                '<span class="info">Donated because: </span><span class="value">' + d.whyDonate + '</span><br/>' +
+                '<span class="info">Staff Description: </span><span class="value">' + d.description + '</span><br/>' +
+                '<span class="info">Describes Himself: </span><span class="value">' + d.describesHimself + '</span><br/>'
+                
             );
 
         svg.selectAll(".spermies")
@@ -363,16 +405,14 @@ d3.csv("./donors.csv", function(donors) {
             .attr("opacity",1);
 
     }).on("mouseout", function() {
-        tooltip.style("visibility","hidden");
+        //tooltip.style("visibility","hidden");
         svg.selectAll(".spermies")
             .transition()
             .duration(transitionTime/4)
             .attr("opacity",1);
 
     }).on("click", function() {
-        d3.select(this)
-            //.style("stroke", "#D5B63B") // make this change in order of clickage
-            //.style("stroke-width", "3")
+        //tooltip.style("visibility","visible");
     });
 
 
