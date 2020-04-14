@@ -66,8 +66,10 @@ circle {
 
             // makes an array of all the unique group types EXCEPT the year
             var grpNames = d3.keys(data[0]).filter(function (key) { return key !== "Deal Type"; });
-
-            // for each YEAR
+                console.log(grpNames);
+                //["Early Stage VC", "Later Stage VC", "Growth/Expansion", "Seed", "Recapitalization", "Acquisition Financing", "Grants", "Corporate", "Angel", "Pre/Accelerator/Incubator"]
+            
+                // for each YEAR
             data.forEach(function (d) {
 
                 // adds a property called "groups", and the value is an array of objects where each object has a name and a value of that group 
@@ -77,6 +79,7 @@ circle {
                 d.groups.sort(function (x, y) { return d3.ascending(y.value, x.value); });
             });
             
+            console.log("mapped groups", data);
             // this makes arrays of all the values in "Deal Type"
             
             y.domain(data.map(function (d) { return d["Deal Type"]; })); // this domain is an array of all the values of Deal Type, which happens to be Years

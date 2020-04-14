@@ -109,6 +109,8 @@ d3.csv("./donors.csv", function(donors) {
     // ENTER / UPDATE / EXIT CAUCUS ALIGNMENTS
     //////////////////////////////////
 
+    //  Adding in a filter of the dataset by sperm bank would happen here
+
     var spermies = svg.select("#spermSwarm").selectAll("ellipse")
       	.data(donors, function(d){ return d.ID ;});
       
