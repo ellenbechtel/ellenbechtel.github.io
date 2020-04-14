@@ -52,7 +52,7 @@ h2 {
 #title-banner {
   width: 66%;
   margin: auto;
-  padding-top: 50vh;
+  padding-top: 40vh;
   padding-bottom: 30vh;
   justify-content: center;
   text-align: center;
@@ -137,7 +137,7 @@ svg {
   max-width: 85%;
   margin: 0 auto 0 auto;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 3fr 2fr;
   grid-template-areas: 
     "colorToolbar tooltip" 
     "groupToolbar tooltip";
@@ -146,7 +146,10 @@ svg {
 #toolbar-buttons {
   margin: 10px;
   padding: 20px;
+  padding-left: 30px;
   background-color:rgba(255,255,255,0.1);
+  height: 200px;
+
 }
 
 /* .toolbar {
@@ -171,9 +174,10 @@ svg {
 .tooltip {
   background-color:rgba(255,255,255,0.1);
   margin: 10px;
-  padding: 30px;
-  font-weight: 300;
-  line-height: 1.7;
+  padding: 20px 30px;
+  font-weight: 100;
+  line-height: 1.5;
+  height: 200px;
   overflow: scroll;
 
 }
@@ -207,7 +211,7 @@ button {
   display: inline-block;
   background-color: transparent;
   color: #DBDAD9;
-  padding: 10px;
+  padding: 7px;
   margin:0 0.2em 0.2em 0;
   border:0.1em solid #DBDAD9;
   border-radius:0.12em;
@@ -215,8 +219,9 @@ button {
   text-decoration:none;
   text-align:center;
   transition: all 0.2s;
-  min-width: 130px;
+  min-width: 110px;
   cursor: pointer;
+  font-size: .9em;
 }
 
 button:focus {

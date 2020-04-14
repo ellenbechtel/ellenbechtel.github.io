@@ -50,7 +50,7 @@ var xScale = d3.scaleBand()
     .rangeRound([0, chartWidth]);
 
 var yScale = d3.scaleBand()
-    .rangeRound([chartHeight, 0]); // set the domain afterwards, once all the donors are loaded
+    .rangeRound([0, chartHeight]); // set the domain afterwards, once all the donors are loaded
 
 
 /////////////////////////////////
@@ -66,20 +66,22 @@ d3.csv("donorReasons.csv", function (error, donorsR) {
 
     // get an array of all the donor names in the database, set that to the domain of Y scale
     var names = donorsR.map(function (d) { return d["name"]; });
+        console.log("names", names); // names is an array of the donor Names, listed in order of selfishnes scale 
+
     yScale.domain(names);
 
-    opacityScale.domain();
-
-
     // begin making some groupings
-
     var rows = svg.select("#donorRows").selectAll(".row")
         .data(donorsR)
         .enter()
         .append("g")
             .attr("class","row")
-            .attr("transform", function(d) { return "translate(0," + yScale(d["name"]) +")"; }); // this part is not working
+            .attr("transform", function (d) { return "translate(0," + yScale(d["name"]) + ")"; });
+            //.attr("transform", function(d) { return "translate(0," + yScale(d.name) +")"; }); // this part is not working
 
+    // add cells to the row
+    var cells = rows.seletAll(".cell")
+        .data(function(d) { return d.})
 });
 /*
 

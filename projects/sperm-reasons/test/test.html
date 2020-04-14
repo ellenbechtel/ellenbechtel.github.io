@@ -77,7 +77,8 @@ circle {
                 d.groups.sort(function (x, y) { return d3.ascending(y.value, x.value); });
             });
             
-            // this makes arrays of all the values in "Deal Type" and sets that as an array
+            // this makes arrays of all the values in "Deal Type"
+            
             y.domain(data.map(function (d) { return d["Deal Type"]; })); // this domain is an array of all the values of Deal Type, which happens to be Years
             x.domain(grpNames);
 

@@ -58,6 +58,7 @@ select {
 
 svg {
   height: 50vh;
+  width: 100%;
 }
 
 @media (max-width: 600px) {

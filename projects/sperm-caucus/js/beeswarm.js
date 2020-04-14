@@ -188,24 +188,20 @@ d3.csv("./donors.csv", function(donors) {
 
     // Spermies Grouping
 
-    // function groupBubbles() {
-    //     hideTitles();
-
-    //     // Reset the 'x' force to draw the bubbles to the center.
-    //     simulation.force('x', d3.forceX().strength(forceStrength).x(width / 2));
-
-    //     // We can reset the alpha value and restart the simulation
-    //     simulation.alpha(1).restart();
-    // };
       
     function splitBubbles(currentGrouping) {
-        
+
         centerScale.domain(donors.map(function(d){ return d[currentGrouping]; }));
-        
+        donors.sort(function(a,b) { return a[currentGrouping] - b[currentGrouping] });
+
         if(currentGrouping == "all"){
-          hideTitles()
-          simulation
-            .force("y", d3.forceY().strength(0.01).y(height / 2))
+            hideTitles()
+            simulation
+                .force("y", d3.forceY().strength(0.01).y(height / 2))
+        } else if (currentGrouping == "height"){
+            //showtitles
+        } else if (currentGrouping == "weight"){
+            //showtitles
         } else {
 	        showTitles(currentGrouping, centerScale);
         };
@@ -257,6 +253,11 @@ d3.csv("./donors.csv", function(donors) {
       };
 
     function showTitles(currentGrouping, scale) {
+
+        var domain = scale.domain();
+        console.log("domain", domain); //height and weight don't work here!
+
+
        	var titles = svg.select("#titles").selectAll('.title')
           .data(scale.domain());
         
@@ -332,16 +333,19 @@ d3.csv("./donors.csv", function(donors) {
     // Tooltip and Selection of Spermies
     //////////////////////////////////  
 
-    // Tooltip Content Functions
-
-    
+    // Tooltip Content Functions  
     function convertToFt(inches) {
         var feet = Math.round(inches/12);
         var rInches = Math.round(inches % 12);
 
-        return feet + "ft " + rInches + "in";
-
+        return feet + " ft  " + rInches + " in";
     };
+
+
+    // Tooltip Label Function
+    function ttLabel(title, value) {
+        return '<span class="info">' + title + ': </span><span class="value">' + value + '</span><br>';
+    }
 
 
     // Tooltip
@@ -349,50 +353,52 @@ d3.csv("./donors.csv", function(donors) {
     var tooltip = d3.select("#tooltip");
 
     spermies.on("mouseover", function(d) {
+
+        // create html content
+        var html = '<span><h3>Available Donor Information</h3></span>'; // header
+
+        if (d.donorNum) html+= ttLabel("Donor", d.donorNum);
+        if (d.bank) html += ttLabel("Bank", d.bank);        
+        if (d.price) html += ttLabel("Price per Vial", d.price) + "<br>";
+
+        if (d.donationAge) html += ttLabel("Age", d.donationAge);
+        if (d.height) html += ttLabel("Height", convertToFt(d.height));
+        if (d.weight) html += ttLabel("Weight", d.weight + " lbs");
+        if (d.ethnicity) html += ttLabel("Ethnic Origin", d.ethnicity);
+        if (d.skintone) html += ttLabel("Skintone", d.skintone);
+        if (d.race) html += ttLabel("Race", d.race);        
+        if (d.jewish) html += ttLabel("Jewish Ancestry", d.jewish);
+        if (d.religion) html += ttLabel("Religion", d.religion) + "<br>";
+
+        if (d.lookAlikes) html += ttLabel("Look Alikes", d.lookAlikes) + "<br>"; 
+        if (d.hair) html += ttLabel("Hair", d.hair + ' ' + d.hairTexture);
+        if (d.hairyChest) html += ttLabel("Hairy Chest", d.hairyChest);
+        if (d.beardColor) html += ttLabel("Beard Color", d.beardColor);
+        if (d.hairLoss) html += ttLabel("Hair Loss", d.hairLoss);
+        if (d.faceShape) html += ttLabel("Face Shape", d.faceShape);
+        if (d.dimples) html += ttLabel("Dimples", d.dimples);
+        if (d.acne) html += ttLabel("Acne", d.acne);
+        if (d.noseShape) html += ttLabel("Nose Shape", d.noseShape);
+        if (d.lips) html += ttLabel("Lips Shape", d.lips);
+        if (d.eye) html += ttLabel("Eye Color", d.eye);
+        if (d.eyebrows) html += ttLabel("Eyebrows", d.eyebrows);
+        if (d.dominantHand) html += ttLabel("Dominant Hand", d.dominantHand);
+        if (d.shoeSize) html += ttLabel("Shoe Size", d.shoeSize);
+        if (d.bloodType) html += ttLabel("Blood Type", d.bloodType) + "<br>"; 
+
+
+        if (d.degree) html += ttLabel("Degree", d.degree); 
+        if (d.occupation) html += ttLabel("Occupation", d.occupation); 
+        if (d.sign) html += ttLabel("Astrological Sign", d.sign); 
+        if (d.hobbies) html += ttLabel("Hobbies", d.hobbies); 
+        if (d.faveSubjects) html += ttLabel("Favorite Subjects", d.faveSubjects); 
+        if (d.description) html += ttLabel("Staff Description", d.description); 
+        if (d.describesHimself) html += ttLabel("Self Description", d.describesHimself); 
+        if (d.whyDonate) html += ttLabel("Donated because", d.whyDonate); 
+        
         tooltip 
             .style("visibility","visible")
-            .html(
-                '<span class="info">Donor: </span><span class="value">' + d.donorNum + '</span><br/>' +
-                '<span class="info">Bank: </span><span class="value">' + d.bank + '</span><br/>' +
-                '<span class="info">Age: </span><span class="value">' + d.donationAge + '</span><br/>' +
-                '<span class="info">Price per Vial: </span><span class="value">' + d.price + '</span><br/>' +
-                '<span class="info">Blood Type: </span><span class="value">' + d.bloodType + '</span><br/>' +
-
-                '<br>' +                
-                '<span class="info">Body: </span><span class="value">' + convertToFt(d.height) + ', ' + d.weight + 'lbs</span><br/>' +
-                '<span class="info">Eye Color: </span><span class="value">' + d.eye + '</span><br/>' +
-                '<span class="info">Hair: </span><span class="value">' + d.hairTexture + ' ' + d.hair + '</span><br/>' +
-                '<span class="info">Skintone: </span><span class="value">' + d.skintone + '</span><br/>' +
-                '<span class="info">Race: </span><span class="value">' + d.race + '</span><br/>' +
-                '<span class="info">Ethnic Origin: </span><span class="value">' + d.ethnicity + '</span><br/>' +
-                '<span class="info">Religion: </span><span class="value">' + d.religion + '</span><br/>' +
-                '<span class="info">Jewish Ancestry: </span><span class="value">' + d.jewish + '</span><br/>' +
-                '<span class="info">Look-Alikes: </span><span class="value">' + d.lookAlikes + '</span><br/>' +
-
-                '<br>' +
-                '<span class="info">Dominant Hand: </span><span class="value">' + d.dominantHand + '</span><br/>' +
-                '<span class="info">Shoe Size: </span><span class="value">' + d.shoeSize + '</span><br/>' +
-                '<span class="info">Face Shape: </span><span class="value">' + d.faceShape + '</span><br/>' +
-                '<span class="info">Lips: </span><span class="value">' + d.lips + '</span><br/>' +
-                '<span class="info">Nose: </span><span class="value">' + d.noseShape + '</span><br/>' +
-                '<span class="info">Hairy Chest: </span><span class="value">' + d.hairyChest + '</span><br/>' +
-                '<span class="info">Beard Color: </span><span class="value">' + d.beardColor + '</span><br/>' +
-                '<span class="info">Eyebrows: </span><span class="value">' + d.eyebrows + '</span><br/>' +
-                '<span class="info">Dimples: </span><span class="value">' + d.dimples + '</span><br/>' +
-                '<span class="info">Acne: </span><span class="value">' + d.acne + '</span><br/>' +
-                '<span class="info">Hair Loss: </span><span class="value">' + d.hairLoss + '</span><br/>' +
-
-                '<br>' +
-                '<span class="info">Degree: </span><span class="value">' + d.degree + '</span><br/>' +
-                '<span class="info">Occupation: </span><span class="value">' + d.occupation + '</span><br/>' +
-                '<span class="info">Astrological Sign: </span><span class="value">' + d.sign + '</span><br/>' +
-                '<span class="info">Hobbies: </span><span class="value">' + d.hobbies + '</span><br/>' +
-                '<span class="info">Favorite Subject: </span><span class="value">' + d.faveSubjects + '</span><br/>' +
-                '<span class="info">Donated because: </span><span class="value">' + d.whyDonate + '</span><br/>' +
-                '<span class="info">Staff Description: </span><span class="value">' + d.description + '</span><br/>' +
-                '<span class="info">Describes Himself: </span><span class="value">' + d.describesHimself + '</span><br/>'
-                
-            );
+            .html(html);
 
         svg.selectAll(".spermies")
             .transition()
