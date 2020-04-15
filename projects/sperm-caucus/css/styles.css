@@ -113,8 +113,8 @@ svg {
 }
 
 .title {
-  font-size: .8em;
-  font-weight: 300;
+  font-size: 1em;
+  font-weight: 500;
   fill: #DBDAD9;
 }
 
@@ -132,7 +132,7 @@ svg {
 
 
 #toolbar-container {
-  font-size: .8em;
+  font-size: 1em;
   color: #DBDAD9;
   max-width: 85%;
   margin: 0 auto 0 auto;

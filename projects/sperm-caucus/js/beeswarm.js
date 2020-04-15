@@ -17,10 +17,10 @@ var color = d3.scaleOrdinal(d3.schemeCategory20);
 var centerScale = d3.scalePoint().padding(1).range([100, width-100]);
 var colorScale = d3.scaleOrdinal();
 var forceStrength = .3;
-var gravityStrength = -2;
+var gravityStrength = -4;
 var friction = 0.5;
 var yGravity = 0.2;
-var collPadding = 2;
+var collPadding = 3;
 var iterations = 6;
 
 var margin = {
@@ -42,6 +42,10 @@ var skin = ["Light","Fair","Medium","Olive","Brown","Dark"];
 var skinColors = ["#F9E8D7", "#EFD6AC", "#D5AC73", "#BB7452", "#7D4E37", "#56352B"];
 var noColors = ["#DBDAD9f", "#DBDAD9f", "#DBDAD9f", "#DBDAD9f"];
 
+// Custom Domains
+var heightsDomain = ["5ft","5ft 6in","6ft","6ft 6in","7ft","7ft 6in"];
+var weightsDomain = ["100lb","150lbs","200lbs","250lbs","300lbs"];
+
 // SVG
 var svg = d3.select("#beeswarm")
     .attr("width", width)
@@ -53,7 +57,7 @@ var simulation = d3.forceSimulation()
     .force("collide",d3.forceCollide( function(d){
         return d.r + collPadding }).iterations(iterations))
     .force("gravity", d3.forceManyBody().strength(gravityStrength))
-    .force("y", d3.forceY().y(height / 2))
+    .force("y", d3.forceY().y(2*height / 3))
     .force("x", d3.forceX().x(width / 2))
     .velocityDecay(friction);
 
@@ -187,39 +191,6 @@ d3.csv("./donors.csv", function(donors) {
     // GROUPING BEHAVIOR
     //////////////////////////////////
 
-
-    // Spermies Grouping
-
-      
-    function splitBubbles(currentGrouping) {
-
-        centerScale.domain(donors.map(function(d){ return d[currentGrouping]; }));
-        donors.sort(function(a,b) { return a[currentGrouping] - b[currentGrouping] });
-
-        if(currentGrouping == "all"){
-            hideTitles()
-            simulation
-                .force("y", d3.forceY().strength(0.01).y(height / 2))
-        } else if (currentGrouping == "height"){
-            //showtitles
-        } else if (currentGrouping == "weight"){
-            //showtitles
-        } else {
-	        showTitles(currentGrouping, centerScale);
-        };
-        
-        // Reset the 'x' force to draw the bubbles to their centers
-        simulation
-            .force("y", d3.forceY().strength(yGravity).y(height / 2))
-            .force('x', d3.forceX().strength(forceStrength).x(function(d){ 
-        	return centerScale(d[currentGrouping]);
-        }));
-
-        // Reset the alpha value and restart the simulation
-        simulation.alpha(2).restart();
-    };
-
-
     // Color Coding
     function colorBubbles(currentColorScale) {
 
@@ -248,6 +219,41 @@ d3.csv("./donors.csv", function(donors) {
     
     };
 
+    // Spermies Grouping      
+    function splitBubbles(currentGrouping) {
+
+        centerScale.domain(donors.map(function(d){ return d[currentGrouping]; }));
+        donors.sort(function(a,b) { return a[currentGrouping] - b[currentGrouping] });
+
+        if(currentGrouping == "all"){
+            hideTitles()
+            simulation
+                .force("y", d3.forceY().strength(0.01).y(2*height / 3))
+        } else if (currentGrouping == "skintone"){
+            donors.sort(function(a,b) { return a.skintoneNum - b.skintoneNum });
+            showTitles(currentGrouping, centerScale);
+        } else if (currentGrouping == "height"){
+            donors.sort(function(a,b) { return a.height - b.height });
+            showTitles(currentGrouping, centerScale);
+        } else if (currentGrouping == "weight"){
+            donors.sort(function(a,b) { return a.weight - b.weight });
+            showTitles(currentGrouping, centerScale);
+        } else {
+
+            
+	        showTitles(currentGrouping, centerScale);
+        };
+        
+        // Reset the 'x' force to draw the bubbles to their centers
+        simulation
+            .force("y", d3.forceY().strength(yGravity).y(2*height / 3))
+            .force('x', d3.forceX().strength(forceStrength).x(function(d){ 
+        	    return centerScale(d[currentGrouping]);
+        }));
+
+        // Reset the alpha value and restart the simulation
+        simulation.alpha(2).restart();
+    };
 
     // Titles
     function hideTitles() {
@@ -255,13 +261,24 @@ d3.csv("./donors.csv", function(donors) {
       };
 
     function showTitles(currentGrouping, scale) {
+        var domain = [];
+       
+        if(currentGrouping == "skintone") {
+            domain = skin;
+        } else if (currentGrouping =="height") {
+            domain = heightsDomain;
+        } else if (currentGrouping =="weight") {
+            domain = weightsDomain;
+        } else {
+            domain = scale.domain();
+            domain.sort(function(a,b) { return a - b });
+        };
 
-        var domain = scale.domain();
-        console.log("domain", domain); //height and weight don't work here!
+        console.log("domain", domain);
 
 
        	var titles = svg.select("#titles").selectAll('.title')
-          .data(scale.domain());
+          .data(domain);
         
         titles.enter().append('text')
           	.attr('class', 'title')
