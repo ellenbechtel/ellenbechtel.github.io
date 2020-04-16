@@ -4,7 +4,7 @@
 
 body { 
   margin: 0;
-  font-size: 10pt;
+  font-size: 14pt;
   color: #DBDAD9;
   background-image: url('/projects/sperm-caucus/img/background2.svg');
   background-attachment: fixed;
@@ -15,14 +15,18 @@ body {
 }
 
 h1 { 
-  font-size: 8em;
+  font-size: 6em;
   font-weight: 600;
   margin: auto;
 }
 
 h2 {
+  font-size: 2em;
   padding-top: 2em;
-  padding-bottom: 2em;
+}
+
+h3 {
+  font-size: 2em;
 }
 
 .content {
@@ -30,7 +34,7 @@ h2 {
   margin: 0 auto;
   padding: 5em;
   text-align: left;
-  line-height: 1.4em;
+  line-height: 1.5em;
   
 }
 
@@ -53,7 +57,7 @@ h2 {
   width: 66%;
   margin: auto;
   padding-top: 40vh;
-  padding-bottom: 30vh;
+  padding-bottom: 20vh;
   justify-content: center;
   text-align: center;
 }
@@ -75,7 +79,7 @@ select {
   -webkit-appearance: none;
   background-color: transparent;
   margin: 0 .3em;
-  font-size: 1.1em;
+  font-size: 1em;
   color: #DBDAD9;
   font-weight: bold;
   appearance: none;
@@ -91,8 +95,9 @@ select {
 }
 
 svg {
-  height: 60vh;
+  height: 70vh;
   width: 100%;
+  background-color:rgba(255,255,255,0.1);
 }
 
 @media (max-width: 600px) {
@@ -113,8 +118,8 @@ svg {
 }
 
 .title {
-  font-size: 1em;
-  font-weight: 500;
+  font-size: 1.2em;
+  font-weight: 600;
   fill: #DBDAD9;
 }
 
@@ -132,31 +137,18 @@ svg {
 
 
 #toolbar-container {
-  font-size: 1em;
+  font-size: .8em;
   color: #DBDAD9;
   max-width: 85%;
   margin: 0 auto 0 auto;
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
   grid-template-areas: 
-    "colorToolbar tooltip" 
-    "groupToolbar tooltip";
+    "groupToolbar colorToolbar tooltip";
 }
 
-#toolbar-buttons {
-  margin: 10px;
-  padding: 20px;
-  padding-left: 30px;
-  background-color:rgba(255,255,255,0.1);
-  height: 200px;
 
-}
-
-/* .toolbar {
-  align-items: baseline;
-  max-width: 600px;
-  align-content: left;
-} */
 
 #colorToolbar { 
   grid-area: colorToolbar; 
@@ -172,9 +164,7 @@ svg {
 
 
 .tooltip {
-  background-color:rgba(255,255,255,0.1);
   margin: 10px;
-  padding: 20px 30px;
   font-weight: 100;
   line-height: 1.5;
   height: 200px;
@@ -221,7 +211,7 @@ button {
   transition: all 0.2s;
   min-width: 110px;
   cursor: pointer;
-  font-size: .9em;
+  font-size: .8em;
 }
 
 button:focus {

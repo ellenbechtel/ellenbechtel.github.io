@@ -17,10 +17,10 @@ var color = d3.scaleOrdinal(d3.schemeCategory20);
 var centerScale = d3.scalePoint().padding(1).range([100, width-100]);
 var colorScale = d3.scaleOrdinal();
 var forceStrength = .3;
-var gravityStrength = -4;
+var gravityStrength = -5;
 var friction = 0.5;
 var yGravity = 0.2;
-var collPadding = 3;
+var collPadding = 4;
 var iterations = 6;
 
 var margin = {
@@ -57,7 +57,7 @@ var simulation = d3.forceSimulation()
     .force("collide",d3.forceCollide( function(d){
         return d.r + collPadding }).iterations(iterations))
     .force("gravity", d3.forceManyBody().strength(gravityStrength))
-    .force("y", d3.forceY().y(2*height / 3))
+    .force("y", d3.forceY().y(3*height / 4))
     .force("x", d3.forceX().x(width / 2))
     .velocityDecay(friction);
 
@@ -90,7 +90,7 @@ d3.csv("./donors.csv", function(donors) {
     });
     var heightScale = d3.scaleLinear()
         .domain([d3.min(heights), d3.max(heights)])
-        .range([1,6]);
+        .range([2,7]);
 
     // Weights
     var weights = [];
@@ -102,7 +102,7 @@ d3.csv("./donors.csv", function(donors) {
     });
     var weightScale = d3.scaleLinear()
         .domain([d3.min(weights), d3.max(weights)])
-        .range([1,4]);    
+        .range([2,5]);    
 
 
     donors.forEach(function(d){
@@ -176,15 +176,7 @@ d3.csv("./donors.csv", function(donors) {
         var me = d3.select(this)
         console.log(me.classed("selected"));
         me.classed("selected", !me.classed("selected"));
-
-
-        
         d3.selectAll("circle.selected");
-
-
-
-          
-      	
     };
 
     /////////////////////////////////
@@ -228,15 +220,12 @@ d3.csv("./donors.csv", function(donors) {
         if(currentGrouping == "all"){
             hideTitles()
             simulation
-                .force("y", d3.forceY().strength(0.01).y(2*height / 3))
+                .force("y", d3.forceY().strength(0.01).y(3*height / 4))
         } else if (currentGrouping == "skintone"){
-            donors.sort(function(a,b) { return a.skintoneNum - b.skintoneNum });
             showTitles(currentGrouping, centerScale);
         } else if (currentGrouping == "height"){
-            donors.sort(function(a,b) { return a.height - b.height });
             showTitles(currentGrouping, centerScale);
         } else if (currentGrouping == "weight"){
-            donors.sort(function(a,b) { return a.weight - b.weight });
             showTitles(currentGrouping, centerScale);
         } else {
 
@@ -246,7 +235,7 @@ d3.csv("./donors.csv", function(donors) {
         
         // Reset the 'x' force to draw the bubbles to their centers
         simulation
-            .force("y", d3.forceY().strength(yGravity).y(2*height / 3))
+            .force("y", d3.forceY().strength(yGravity).y(3*height / 4))
             .force('x', d3.forceX().strength(forceStrength).x(function(d){ 
         	    return centerScale(d[currentGrouping]);
         }));
@@ -261,32 +250,26 @@ d3.csv("./donors.csv", function(donors) {
       };
 
     function showTitles(currentGrouping, scale) {
-        var domain = [];
-       
-        if(currentGrouping == "skintone") {
-            domain = skin;
-        } else if (currentGrouping =="height") {
-            domain = heightsDomain;
-        } else if (currentGrouping =="weight") {
-            domain = weightsDomain;
-        } else {
-            domain = scale.domain();
-            domain.sort(function(a,b) { return a - b });
-        };
-
-        console.log("domain", domain);
-
-
+    
        	var titles = svg.select("#titles").selectAll('.title')
-          .data(domain);
+          .data(scale.domain());
         
         titles.enter().append('text')
           	.attr('class', 'title')
         	.merge(titles)
             .attr('x', function (d) { return scale(d); })
-            .attr('y', 50)
+            .attr('y', 100)
             .attr('text-anchor', 'middle')
-            .text(function (d) { return d; });
+            .text(function (d) { 
+                
+                if (currentGrouping === "height") {
+                    if (d % 6 == 0) { return convertToFt(d); }
+                } else if (currentGrouping === "weight") {
+                    if (d % 25 == 0) { return d + " lbs"; }
+                } else {
+                    return d; 
+                };
+            });
         
         titles.exit().remove();
     };
@@ -315,7 +298,19 @@ d3.csv("./donors.csv", function(donors) {
             // Get the id of the button
             var buttonId = button.attr('id');
 
-	          console.log(buttonId)
+              console.log(buttonId);
+
+            if(buttonId == "skintone") {
+                donors.sort(function(a,b) { return a.skintoneNum - b.skintoneNum });
+            } else if (buttonId == "height") {
+                donors.sort(function(a,b) { return a.height - b.height });
+            } else if (buttonId == "weight") {
+                donors.sort(function(a,b) { return a.weight - b.weight });
+            } else {
+                donors.sort(function(a,b) { return a[buttonId] - b[buttonId] });
+    
+            };
+
             // Toggle the bubble chart based on the currently clicked button.
             splitBubbles(buttonId);
 
@@ -354,8 +349,8 @@ d3.csv("./donors.csv", function(donors) {
 
     // Tooltip Content Functions  
     function convertToFt(inches) {
-        var feet = Math.round(inches/12);
-        var rInches = Math.round(inches % 12);
+        var feet = Math.floor(inches/12);
+        var rInches = Math.floor(inches % 12);
 
         return feet + " ft  " + rInches + " in";
     };
