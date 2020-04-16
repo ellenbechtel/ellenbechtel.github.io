@@ -6,7 +6,7 @@ body {
   margin: 0;
   font-size: 12pt;
   color: #DBDAD9;
-  background-image: url('/projects/sperm-caucus/img/background2.svg');
+  background-image: url('/projects/sperm-gene-pool/img/background2.svg');
   background-attachment: fixed;
   background-size: cover;
   background-position: 50% 50%;
@@ -73,7 +73,7 @@ h4 {
 }
 
 #title-banner-container {
-  background-image: linear-gradient(0deg, rgba(0,0,0,.7) 0%, rgba(100,100,100,.7) 100%), url('/projects/sperm-caucus/img/spermMicroscope.gif');
+  background-image: linear-gradient(0deg, rgba(0,0,0,.7) 0%, rgba(100,100,100,.7) 100%), url('/projects/sperm-gene-pool/img/spermMicroscope.gif');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
