@@ -18,10 +18,10 @@ var centerScale = d3.scalePoint().padding(1).range([100, width-100]);
 var colorScale = d3.scaleOrdinal();
 var forceStrength = .3;
 var gravityStrength = -5;
-var friction = 0.5;
+var friction = 0.6;
 var yGravity = 0.2;
 var collPadding = 4;
-var iterations = 6;
+var iterations = 1;
 
 var margin = {
     top: 100,
@@ -35,9 +35,9 @@ var chartHeight = height - margin.top - margin.bottom;
 
 // Custom Color Schemes
 var eyes = ["Black","Blue","Brown","Green","Grey","Hazel"];
-var eyeColors = ["#000000", "#48CED9", "#915841", "#A5BF66", "#AAAAAA", "#D8A760"];
+var eyeColors = ["#000000", "#48CED9", "#91594A", "#A5BF66", "#AAAAAA", "#D8A760"];
 var hair = ["Black","Blonde","Brown","Red"];
-var hairColors = ["#000000", "#EDAC5F", "#77412F", "#A3180D"];
+var hairColors = ["#000000", "#EDAC5F", "#91594A", "#A52117"];
 var skin = ["Light","Fair","Medium","Olive","Brown","Dark"];
 var skinColors = ["#F9E8D7", "#EFD6AC", "#D5AC73", "#BB7452", "#7D4E37", "#56352B"];
 var noColors = ["#DBDAD9f", "#DBDAD9f", "#DBDAD9f", "#DBDAD9f"];
