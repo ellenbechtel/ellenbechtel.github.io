@@ -137,6 +137,24 @@ svg {
 }
 
 
+
+
+a {
+  color: #DBDAD9;
+  text-decoration: underline;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+a:visited {
+  opacity: .7;
+}
+
+
+
+
 /* SVG and Spermies Styles */
 
 .spermies {
@@ -167,7 +185,8 @@ svg {
   font-size: .8em;
   color: #DBDAD9;
   max-width: 85%;
-  margin: 0 auto 0 auto;
+  margin: auto;
+  margin-bottom: 30px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
