@@ -90,7 +90,7 @@ d3.csv("./donors.csv", function(donors) {
     });
     var heightScale = d3.scaleLinear()
         .domain([d3.min(heights), d3.max(heights)])
-        .range([2,7]);
+        .range([3,10]);
 
     // Weights
     var weights = [];
@@ -102,7 +102,7 @@ d3.csv("./donors.csv", function(donors) {
     });
     var weightScale = d3.scaleLinear()
         .domain([d3.min(weights), d3.max(weights)])
-        .range([2,5]);    
+        .range([2,7]);    
 
 
     donors.forEach(function(d){
