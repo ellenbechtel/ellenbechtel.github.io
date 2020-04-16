@@ -4,7 +4,7 @@
 
 body { 
   margin: 0;
-  font-size: 14pt;
+  font-size: 12pt;
   color: #DBDAD9;
   background-image: url('/projects/sperm-caucus/img/background2.svg');
   background-attachment: fixed;
@@ -30,7 +30,7 @@ h3 {
 }
 
 .content {
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
   padding: 5em;
   text-align: left;
