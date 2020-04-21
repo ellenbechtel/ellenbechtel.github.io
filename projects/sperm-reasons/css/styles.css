@@ -6,14 +6,32 @@ body {
   color: #DBDAD9;
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
-  background-image: url('/projects/sperm-caucus/img/background2.svg');
+  background-image: url('/projects/sperm-reasons/img/background2.svg');
   background-attachment: fixed;
   background-size: cover;
   background-position: 50% 50%;
 }
 
+#title-banner-container {
+  background-image: linear-gradient(0deg, rgba(0,0,0,.7) 0%, rgba(100,100,100,.7) 100%), url('/projects/sperm-reasons/img/spermMicroscope.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: black;
+}
+
+#title-banner {
+  width: 66%;
+  margin: auto;
+  padding-top: 40vh;
+  padding-bottom: 20vh;
+  justify-content: center;
+  text-align: center;
+}
+
+
 h1 { 
-  font-size: 3em;
+  font-size: 4em;
   font-weight: 600;
 }
 
@@ -22,10 +40,6 @@ h1 {
   margin: 0 auto;
   padding: 5em;
   
-}
-
-.hidden-div {
-  display: none;
 }
 
 .section {
@@ -57,31 +71,55 @@ select {
 }
 
 svg {
-  height: 300vh;
-  width: 50%;
-  margin-left: 300px;
-}
-
-@media (max-width: 600px) {
-  .section {
-    flex-direction: column;
-  }
-  .section svg {
-    flex: none;
-  }
+margin: auto;
+width: 60%;
+height: 500vh;
 }
 
 
-/* SVG and Spermies Styles */
 
-.title {
+
+
+/* Draggable List */
+
+li.draggable {
+  list-style-type: none;
+  display: inline-block;
+  background-color: transparent;
+  color: #DBDAD9;
+  padding: 7px;
+  margin:0 0.2em 0.2em 0;
+  border: 0.1em solid #DBDAD9;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  text-align:center;
+  transition: all 0.2s;
+  min-width: 110px;
+  cursor: pointer;
   font-size: .8em;
-  font-weight: 300;
-  fill: #DBDAD9;
+  
+
+}
+
+li.draggable:hover {
+  color:#000000;
+  background-color:#DBDAD9;
 }
 
 /* Doodads*/
+.reasonText {
+  font-size: .5em;
+}
 
+.rowRect {
+  fill: none;
+}
+
+ g.active > rect {
+  fill: black;
+  opacity: .2;
+ }
 
 .tooltip {
   position: block;
@@ -89,8 +127,59 @@ svg {
   background-color:rgba(255,255,255,0.8);
   padding: 10px;
   pointer-events: none;
+  background-color: black;
+  color: #DBDAD9;
+}
+
+#tooltip {
+  width: 300px;
+  position: fixed;
+  z-index: 1;
+  bottom: 40px;
+  right: 40px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding: 30px;
+  font-size: .8em;
+  
+}
+
+#ttHeader {
+  text-align: center;
+  font-size: 1.7em;
+  font-weight: 600;
+}
+
+#ttReason {
+
+  padding: 10px;
+  font-size: 1.3em;
+  font-weight: 600;
+  background-color: #DBDAD9;
   color: black;
 }
 
+#ttContent {
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
-/* Buttons */
+
+/* Axes */
+
+g.tick > text {
+  fill: #DBDAD9;
+  font-size: .5em;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #DBDAD9;
+    shape-rendering: crispEdges;
+}
+
+.y.axis path,
+.y.axis line {
+    display: none;
+}

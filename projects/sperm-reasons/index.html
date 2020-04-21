@@ -9,26 +9,57 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-      <div id="explorer-banner" class="banner">
 
-        <h1>Why do sperm donors say they donate?</h1>
-              
+
+
+
+      <div id="title-banner-container" class="banner">
+        <div id="title-banner">
+          <h1>Why do sperm donors say they donate?</h1>
+          <h2>An exploration of the gene pool and why men send their swimmers into it.</h2>
+          <p>By Ellen Bechtel, April 2020</p>
+        </div>
+                
       </div>
 
-      
-      <svg id="matrix">
-        <g id="labels"></g>
-        <g id="donorRows"></g>
-      </svg>
-      
-      <div id="tooltip" class="tooltip"></div>
+      <div id="about-text" class="content">
+        
+        <p>The sperm bank / donation business is a $3.5 billion market, and growing accessibility to fertility-related medical care means that more and more people (including many of my peers, who are in relationships where no one produces sperm) have the unenviable luxury of grappling with thorny questions like "Do genetics matter?", "What do I care about in a donor?", and most importantly, "How am I, justly or unjustly, using the information a sperm bank provides to me to judge donors for their 'worthiness'?".</p>
 
-     
-
+        <p>Additionally, there's been some reporting on the fact that many sperm banks have mostly white donors, and very few donors of color.  There's also been some reporting that while donors will publicly say things like "I donated because I want to give the gift of life", there are some donors who will also say off-record that "I donated because I want to propogate the white race."  Some donors have upwards of 300 children born from their donations, and while companies won't advertise their donors as open white supremacists, I'd like to see if there are trends or insights that can be gleaned from what a donor says about themselves anyway.</p>
+   
+        <p>Turns out, many sperm banks offer 14-day free trials to view their donor catalogs, so I used a web scraper to scrape the text of "Why I donated" from the five biggest online sperm banks.</p>
+        
   
-      <div class="button-container"><button onclick="showDiv1()">Read More</button></div>
+      </div>
+      
 
-      <div id="about-text" class="content hidden-div">
+      
+      <div>
+        <h2>DRAG AND DROP</h2>
+        <h3>Most Selfless</h3>
+        <ol id="list"></ol>
+        <h3>Most Selfish</h3>
+        <button id="submit-button">Sort</button>
+      </div>
+
+
+      <div id="vis">
+        <svg id="matrix">
+          <g id="labels"></g>
+          <g id="donorRows"></g>
+        </svg>
+      </div>
+      
+      
+      <div id="tooltip" class="tooltip">
+        <div id="tooltip-text">
+
+        </div>
+      </div>
+
+     
+      <div id="about-text" class="content">
         
         <p>The sperm bank / donation business is a $3.5 billion market, and growing accessibility to fertility-related medical care means that more and more people (including many of my peers, who are in relationships where no one produces sperm) have the unenviable luxury of grappling with thorny questions like "Do genetics matter?", "What do I care about in a donor?", and most importantly, "How am I, justly or unjustly, using the information a sperm bank provides to me to judge donors for their 'worthiness'?".</p>
 
@@ -36,55 +67,13 @@
    
         <p>Turns out, many sperm banks offer 14-day free trials to view their donor catalogs, so I used a web scraper to scrape the text of "Why I donated" from the five biggest online sperm banks.</p>
         
-        <ul> <h3>Color-based Encoding</h3>
-          <li>Skin Color</li>
-          <li>Eye Color</li>
-          <li>Hair Color</li>
-        </ul>
-
-        <ul> <h3>Categorical Bee Swarm Areas</h3>
-          <li>Bank of Origin</li>
-          <li>Race</li>
-          <li>Blood Type</li>
-          <li>Height</li>
-          <li>Weight</li>
-          <li>Religion</li>
-          <li>Jewish Ancestry</li>
-        </ul>
+  
       </div>
       
      
 
       
 
-<!--
-
-      <div id="skew-banner" class="banner">
-
-        <h1>Notice that banks skew towards a certain type of donor.</h1>
-        <button onclick="showDiv2()">Read More</button>
-        <p>The modal donor would be...</p>
-        
-
-      </div>
-
-      <div id="skew-text" class="content hidden-div">
-        
-        <p>The sperm bank / donation business is a $3.5 billion market, and growing accessibility to fertility-related medical care means that more and more people (including many of my peers, who are in relationships where no one produces sperm) have the unenviable luxury of grappling with thorny questions like "Do genetics matter?", "What do I care about in a donor?", and most importantly, "How am I, justly or unjustly, using the information a sperm bank provides to me to judge donors for their 'worthiness'?".</p>
-
-        <p>Additionally, there's been some reporting on the fact that many sperm banks have mostly white donors, and very few donors of color.  There's also been some reporting that while donors will publicly say things like "I donated because I want to give the gift of life", there are some donors who will also say off-record that "I donated because I want to propogate the white race."  Some donors have upwards of 300 children born from their donations, and while companies won't advertise their donors as open white supremacists, I'd like to see if there are trends or insights that can be gleaned from what a donor says about themselves anyway.</p>
-   
-        <p>Turns out, many sperm banks offer 14-day free trials to view their donor catalogs, so I used a web scraper to scrape the text of "Why I donated" from the five biggest online sperm banks.</p>
-            
-      </div>
-
-      <div class="section">
-        <svg id="barcharts"></svg>
-        
-        <div id="tooltip"></div>
-      </div>
-
-    -->
       
     <script src="./js/matrix.js"></script>
     <script src="./js/pageFunctions.js"></script>

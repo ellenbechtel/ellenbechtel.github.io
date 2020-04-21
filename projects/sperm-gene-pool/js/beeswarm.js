@@ -67,13 +67,11 @@ var simulation = d3.forceSimulation()
 
 d3.csv("./donors.csv", function(donors) {
     
-    console.log(donors);
-
+ 
+    // initially sort by skintone
     donors.sort(function(a,b) {
         return a.skintoneNum - b.skintoneNum
     });
-
-    console.log(donors);
     
     /////////////////////////////////
     // Scales and New Properties

@@ -86,26 +86,26 @@ Promise.all(promises).then(function(data) {
 
   // Make Lookup Functions
   function lookupMeaning(phrase) {
-          var filtered = eggsplainer.filter(function(d) {
-            return d.phrase === phrase; // for the deconstructed data, which only has one value (like "Large"), go through eggsplainer (f.phrase) and see if there's anything that matches that value.  There should ony be one thing. 
-          });
-          if(filtered.length == 1) { // this is a filter to say "if there's ANYTHING in the array called filtered, do something with it".  There should only be one thing, or none. Not more.   
-            return filtered[0].meaning; // Whatever the meaning is, color code it
-          } else {
-            return "none"; // if there was no value, then there's no corresponding meaning, so don't color code it.
-          };
+      var filtered = eggsplainer.filter(function(d) {
+        return d.phrase === phrase; // for the deconstructed data, which only has one value (like "Large"), go through eggsplainer (f.phrase) and see if there's anything that matches that value.  There should ony be one thing. 
+      });
+      if(filtered.length == 1) { // this is a filter to say "if there's ANYTHING in the array called filtered, do something with it".  There should only be one thing, or none. Not more.   
+        return filtered[0].meaning; // Whatever the meaning is, color code it
+      } else {
+        return "none"; // if there was no value, then there's no corresponding meaning, so don't color code it.
+      };
   };
 
   function lookupReg(phrase) {   
-    var filtered = eggsplainer.filter(function(d) {
-        return d.reg === phrase; // for the deconstructed data, which only has one value (like "Large"), go through eggsplainer (f.phrase) and see if there's anything that matches that value.  There should ony be one thing. 
-      });
-    if(filtered.length == 1) { // this is a filter to say "if there's ANYTHING in the array called filtered, do something with it".  There should only be one thing, or none. Not more.   
-    console.log(filtered);
-      return filtered[0].reg; // Whatever the meaning is, color code it
-    } else {
-      return "0 0"; // if there was no value, then there's no corresponding meaning, so don't dash code it.
-    };
+      var filtered = eggsplainer.filter(function(d) {
+          return d.reg === phrase; // for the deconstructed data, which only has one value (like "Large"), go through eggsplainer (f.phrase) and see if there's anything that matches that value.  There should ony be one thing. 
+        });
+      if(filtered.length == 1) { // this is a filter to say "if there's ANYTHING in the array called filtered, do something with it".  There should only be one thing, or none. Not more.   
+      console.log(filtered);
+        return filtered[0].reg; // Whatever the meaning is, color code it
+      } else {
+        return "0 0"; // if there was no value, then there's no corresponding meaning, so don't dash code it.
+      };
   };
 
    
