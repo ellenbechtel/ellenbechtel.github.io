@@ -19,132 +19,42 @@ var margin = {
 };
 var chartWidth = width-margin.left-margin.right;
 var chartHeight = height - margin.top - margin.bottom;
+var transitionTime = .25 * 1000; // quarter second
 
 var svg = d3.select("#matrix")
     .attr("width", chartWidth)
     .attr("height", chartHeight);
 
+
+// Make Color Coding
+var colorScale = d3.scaleOrdinal();
+var eyes = ["Blue","Brown","Green"];
+var eyeColors = ["#48CED9", "#91594A", "#A5BF66"];
+var hair = ["Black","Blonde","Brown","Red"];
+var hairColors = ["#000000", "#EDAC5F", "#91594A", "#A52117"];
+var skin = ["Light","Fair","Medium","Olive","Brown","Dark"];
+var skinColors = ["#F9E8D7", "#EFD6AC", "#D5AC73", "#BB7452", "#7D4E37", "#56352B"];
+
+
+
 // Make an object of the reasons why a donor might donate and its altruism value
 var reasons = [
-    {code: "0", value: 0, label: "Genetic Pride", because: "he is proud of his genetics"},
-    {code: "1", value: 1, label: "Money", because: "of the money"},
-    {code: "2", value: 2, label: "Why Not", because: "why the heck not"},
-    {code: "3", value: 3, label: "Curiosity", because: "he is curious"},
-    {code: "4", value: 4, label: "Likes Donating", because: "he likes donating in general"},
-    {code: "5", value: 5, label: "Doesn't Have, Like, or Want Kids", because: "he doesn't have, like, or want kids"},
-    {code: "6", value: 6, label: "Has, Likes, or Wants Kids", because: "he has, likes, or wants kids"},
-    {code: "7", value: 7, label: "Knows Someone", because: "he knows someone"},
-    {code: "8", value: 8, label: "It's a Good Deed", because: "it's a good deed"},
-    {code: "9", value: 9, label: "Wants to Help Others", because: "he wants to help others"}
+    {code: "0", order: 0, label: "Genetic Pride", because: "he is proud of his genetics"},
+    {code: "1", order: 1, label: "Money", because: "of the money"},
+    {code: "2", order: 2, label: "Why Not", because: "why the heck not"},
+    {code: "3", order: 3, label: "Curiosity", because: "he is curious"},
+    {code: "4", order: 4, label: "Likes Donating", because: "he likes donating in general"},
+    {code: "5", order: 5, label: "Doesn't Have, Like, or Want Kids", because: "he doesn't have, like, or want kids"},
+    {code: "6", order: 6, label: "Has, Likes, or Wants Kids", because: "he has, likes, or wants kids"},
+    {code: "7", order: 7, label: "Knows Someone", because: "he knows someone"},
+    {code: "8", order: 8, label: "It's a Good Deed", because: "it's a good deed"},
+    {code: "9", order: 9, label: "Wants to Help Others", because: "he wants to help others"}
    ];
-
-
-// Append a list item for each reason in its current order
-var listOfReasons = d3.select("#list");
-
-reasons.forEach(function(r) {
-    listOfReasons.append("li")
-        .property("className", "draggable")
-        .property("id", r.value)
-        .property("draggable", "true")
-        .text(r.label);    
-});
-
-
-
-/////////////////////////////////
-// Drag and drop ordering of the columns // https://webdevtrick.com/html-drag-and-drop-list/
-//////////////////////////////////
-
-// make all five dragging event listeners
-
-// dragStart
-function dragStart(e) { // on the first click before the drag moves at all
-    this.style.opacity = "0.4"; // make it a little transparent
-    dragSrcEl = this; // ???????????
-    e.dataTransfer.effectAllowed = "move";
-    e.dataTransfer.setData("text/html", this.innerHTML);
-};
-
-// dragEnter
-function dragEnter(e) {
-    this.classList.add("over");
-};
-
-// dragLeave
-function dragLeave(e) {
-    this.classList.remove("over")
-};
-
-// dragOver
-function dragOver(e) {
-    e.preventDefault(); //what??
-    e.dataTransfer.dropEffect = "move";
-    return false;
-}
-
-//dragDrop
-function dragDrop(e) {
-    if (dragSrcEl != this) {
-        dragSrcEl.innerHTML = this.innerHTML;
-        this.innerHTML = e.dataTransfer.getData('text/html'); // ???
-    }
-    return false;
-};
-
-// dragEnd
-function dragEnd(e) {
-    var listItems = document.querySelectorAll(".draggable");
-    [].forEach.call(listItems, function(item) { // ????
-        item.classList.remove("over");
-    });
-    this.style.opacity = "1";
-}
-
-function addEventsDragAndDrop(el) {
-    el.addEventListener("dragstart", dragStart, false);
-    el.addEventListener("dragenter", dragEnter, false);
-    el.addEventListener("dragover", dragOver, false);
-    el.addEventListener("dragleave", dragLeave, false);
-    el.addEventListener("drop", dragDrop, false);
-    el.addEventListener("dragend", dragEnd, false);
-};
-
-var listItems = document.querySelectorAll(".draggable");
-    [].forEach.call(listItems, function(item) {
-        addEventsDragAndDrop(item);
-    });
-
-// Engage the Submit Button!
-var list = document.querySelector("#list");
-var listOfItems = list.children;
-var orderedValues = [];
-for(var i=0; i < listOfItems.length; ++i) {
-    orderedValues.push(listOfItems[i].textContent);
-};
-console.log(orderedValues);
-
-d3.selectAll("#submit-button")
-    .on("click", function() {
-        var orderedValues = [];
-        for(var i=0; i < listOfItems.length; ++i) {
-            orderedValues.push(listOfItems[i].textContent);
-        };
-        console.log(orderedValues);
-
-
-});
-
-
-
-
-
-
 
 
 // Make Scales
 var orders = ["0","1","2","3","4"];
-var opacities = ["0","1","0.5","0.2","0.07"]
+var opacities = ["0","1","0.5","0.2","0.1"]
 var opacityScale = d3.scaleOrdinal()
     .domain(orders)
     .range(opacities);
@@ -156,8 +66,10 @@ var xScale = d3.scaleBand()
 var yScale = d3.scaleBand()
     .range([0, chartHeight]); // set the domain afterwards, once all the donors are loaded
 
+var weightScale = d3.scaleSequential(d3.interpolatePlasma)
+    .domain([0,5]);
 
-// create function to add digits
+// sum the code
 function sum(code) {
     var sum = 0;
     var split = code.toString();
@@ -167,43 +79,50 @@ function sum(code) {
     return sum;
 };
 
-
-
+// weighted sums of the code
+function weightedSum(code) {
+    var weightedSum = 0;
+    var split = code.toString();
+    for(i=0; i < split.length; i++){
+        weightedSum = weightedSum + (+split.substring(i,i+1) * 1/(i+1));
+    }
+    return ((5 * weightedSum)/13).toFixed(1);
+};
 
 /////////////////////////////////
 // LOAD THE DATA!
 //////////////////////////////////
 
-
 d3.csv("donorReasons.csv", function (error, donorsR) {
+    
 
+        
+    // Do some data manipulation to each donor, so that they have an object to which to map cells in their row
+    function writeData(data) {
+        data.forEach (function(d) {
+            d.allReasons = reasons.map(function(reason) { return {reason: reason.label, code: reason.code, order: d[reason.code]}; });
+            d.codeSum = sum(d.code);
+            d.weightedSum = weightedSum(d.code);
+        });
 
+        // sort the donors by their altruisticness code, most altruistic to most selfish
+        data = data.sort(function (a,b) {return d3.ascending(b.code, a.code);});
 
-    // sort the donors by their altruisticness code, most altruistic to most selfish
-    donorsR = donorsR.sort(function (a,b) {return d3.descending(b.code, a.code);});
-        // console.log(donorsR);
+        // get an array of all the donor names in the database, set that to the domain of Y scale
+        var names = data.map(function (d) { return d["name"]; });
+     
+        // set that sorted array of names to the domain of yScale, so that each donor will have a vertical row
+        yScale.domain(names);
 
-    // get an array of all the donor names in the database, set that to the domain of Y scale
-    var names = donorsR.map(function (d) { return d["name"]; });
-        // console.log("names", names); // names is an array of the donor Names, listed in order of selfishnes scale 
-
-    // set that sorted array of names to the domain of yScale, so that each donor will have a vertical row
-    yScale.domain(names);
-
-    // make a function to push the order of each reason for each donor
-    function lookup(code) {
-        var filtered = donorsR.filter(function(d) {
-            return d[code] == code; 
-        })
+        console.log(data);
     };
 
-    // Do some data manipulation to each donor, so that they have an object to which to map cells in their row
-    donorsR.forEach (function(d) {
-        d.codeSum = sum(d.code);
-        d.allReasons = reasons.map(function(reason) { return {reason: reason.label, code: reason.code, order: d[reason.code]}; });
-    });
+    writeData(donorsR);
+    
 
-    console.log("mapped donors", donorsR);
+    /////////////////////////////////
+    // Draw Everything!
+    //////////////////////////////////
 
     // begin making some groupings
     var rows = svg.select("#donorRows").selectAll(".row")
@@ -220,20 +139,8 @@ d3.csv("donorReasons.csv", function (error, donorsR) {
         .attr("x", 0)
         .attr("y", 0)
         .attr("width", chartWidth)
-        .attr("height", yScale.bandwidth());
-
-    // add labels to each row
-    // var labels = rows.selectAll(".donorLabel")
-    //     .append("text")
-    //     .attr("class", "rowText")
-    //     .attr("id", function(d) { return d.name; })
-    //     .style("fill", "#ffffff")
-    //     .style("opacity", 1)
-    //     .attr("text-anchor", "end")
-    //     .attr("dx", xScale.bandwidth() / 2)
-    //     .attr("dy", yScale.bandwidth() / 2 + 4)
-    //     .text(function(d) { return d.name; });
-
+        .attr("height", yScale.bandwidth())
+        .style("fill", function(d) { return weightScale(d.weightedSum)} );
 
     // add cells to the row
     var cells = rows.selectAll(".cell")
@@ -245,7 +152,7 @@ d3.csv("donorReasons.csv", function (error, donorsR) {
 
     // add squares to cell
     var rects = cells.append("rect")
-        .attr("class", function(d) { return "reasonRect " + d.code ; })
+        .attr("class", function(d) {return "reasonRect " + d.order; })
         .attr("x", 0)
         .attr("y", 0)
         .attr("width", xScale.bandwidth()-5)
@@ -255,9 +162,8 @@ d3.csv("donorReasons.csv", function (error, donorsR) {
         ;
 
     // add text over each rect
-
     var text = cells.append("text")
-        .attr("class", function(d) { return "reasonText " + d.code; })
+        .attr("class", function(d) { return "reasonText " + d.order; })
         .attr("text-anchor", "middle")
         .style("fill", "#ffffff")
         .style("opacity", 0) // they're there, just invisible
@@ -266,17 +172,18 @@ d3.csv("donorReasons.csv", function (error, donorsR) {
         .text(function(d) { return d.reason; });
   
 
-    // Labels for each donor
-    svg.append("g")
-        .attr("class", "y axis")
-        .attr("transform", "translate(" + margin.left + ",0)")  
-        .call(d3.axisLeft(yScale));
 
 
-    // Tooltip
+    // add in color coding here
+
+    /////////////////////////////////
+    // TOOLTIP
+    //////////////////////////////////
 
     var tooltip = d3.select("#tooltip");
-    var tooltipText = d3.select("#tooltip-text")
+    var tooltipMain = d3.select("#tooltip-main")
+    var tooltipExtras = d3.select("#tooltip-extras")
+    var tooltipStars = d3.select("#tooltip-stars-blocker")
 
     // Tooltip Content Function
      function ttReason(name, why) {
@@ -284,7 +191,11 @@ d3.csv("donorReasons.csv", function (error, donorsR) {
     };
 
     function ttLabel(title, value) {
-        return '<p class="ttText"><span class="info">' + title + '</span><span class="value">' + value + '</span></p>';
+        return '<p class="ttExtras"><span class="info">' + title + '</span><span class="value">' + value + '</span></p>';
+    };
+
+    function ttRating(title, value) {
+        return '<p class="ttRating"><span class="info">' + title + '</span><span class="value">' + value + '</span></p>';
     };
 
     function convertToFt(inches) {
@@ -303,6 +214,10 @@ d3.csv("donorReasons.csv", function (error, donorsR) {
         first = filtered[0].because;
         return first;
     };
+
+    function starRating(this_weightedSum) {
+        return ((5-this_weightedSum)*100)/5;
+    };
    
     rows.on("mouseover", function(d) {
 
@@ -311,44 +226,43 @@ d3.csv("donorReasons.csv", function (error, donorsR) {
         var this_row = d3.select(this);
         this_row.classed("active",true);
 
-        // d3.selectAll(".row")
-        //     .attr("opacity", 0.5);
-        
-        // d3.select(".active")
-        //     .attr("opacity",1);
-
         // create html content
-        var html = '<div id="ttHeader"><span>' + d.name +' donated mostly because</span><br><span id="ttHeaderR">' + findMainReasons(d.code) + '</span></div>'; // header
+        var htmlMain = '<div id="ttHeader"><span>"' + d.name +'" says he donated because </span><span id="ttHeaderR">' + findMainReasons(d.code) + '.</span></div>'; // header
+        if (d.why) htmlMain += ttReason(d.name, d.why);
+        if (d.weightedSum) htmlMain += ttRating("Good Guy Rating: ", d.weightedSum);
 
-        if (d.why) html += ttReason(d.name, d.why);
-        if (d.ethnicity) html += '<div id="ttContent">' + ttLabel("Ethnicity: ", d.ethnicity);
-        if (d.height) html += ttLabel("Height: ", convertToFt(Math.floor(d.height)));
-        if (d.weight) html += ttLabel("Weight: ", d.weight + " lbs");
-        if (d.eye) html += ttLabel("Eye Color: ", d.eye);
-        if (d.hair) html += ttLabel("Hair Color: ", d.hair);
-        if (d.skintone) html += ttLabel("Skin Tone: ", d.skintone);
-        if (d.hand) html += ttLabel("Dominant Hand: ", d.hand);
-        if (d.bloodType) html += ttLabel("Blood Type: ", d.bloodType);
-        if (d.education) html += ttLabel("Education: ", d.education);
-        if (d.occupation) html += ttLabel("Occupation: ", d.occupation);
-        if (d.hobbies) html += ttLabel("Hobbies: ", d.hobbies);
-        if (d.descr) html += ttLabel("", d.descr + ".") + '</div>';
+        var htmlExtras = "";        
+        if (d.ethnicity) htmlExtras += ttLabel("Ethnicity: ", d.ethnicity);
+        if (d.height) htmlExtras += ttLabel("Height: ", convertToFt(Math.floor(d.height)));
+        if (d.weight) htmlExtras += ttLabel("Weight: ", d.weight + " lbs");
+        if (d.eye) htmlExtras += ttLabel("Eye Color: ", d.eye);
+        if (d.hair) htmlExtras += ttLabel("Hair Color: ", d.hair);
+        if (d.skintone) htmlExtras += ttLabel("Skin Tone: ", d.skintone);
+        if (d.hand) htmlExtras += ttLabel("Dominant Hand: ", d.hand);
+        if (d.bloodType) htmlExtras += ttLabel("Blood Type: ", d.bloodType);
+        if (d.education) htmlExtras += ttLabel("Education: ", d.education);
+        if (d.occupation) htmlExtras += ttLabel("Occupation: ", d.occupation);
+        if (d.hobbies) htmlExtras += ttLabel("Hobbies: ", d.hobbies);
+        if (d.descr) htmlExtras += ttLabel("", d.descr + ".") + '</div>';
         
-
         tooltip 
             .style("visibility","visible");
-
-        tooltipText
-            .html(html);
-        
-    }).on("mouseout", function() {
-
-        // d3.selectAll(".row")
-        //     .style("opacity", function(d) { return opacityScale(d.order); });
-        
-
+        tooltipMain
+            .style("visibility","visible")
+            .html(htmlMain);
+        tooltipStars
+            .style("width", starRating(d.weightedSum) + '%');
+        tooltipExtras
+            .html(htmlExtras);
+    
     }).on("click", function() {
-        tooltip.style("visibility","visible");
-    });
+        tooltipExtras.style("display","block");
 
+    }).on("mouseout", function() {
+        tooltip 
+        .style("visibility","visible");
+    
+        tooltipExtras.style("display","none");
+      
+    });
 });

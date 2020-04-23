@@ -10,72 +10,152 @@
   </head>
   <body>
 
+    <div id="title-banner-container" class="banner">
+      <div id="title-banner">
+        <h1>Who are the sperm donors?</h1>
+        <h2>An exploration of the gene pool and why men send their swimmers into it.</h2>
+        <p>By Ellen Bechtel, April 2020</p>
+        <p class="caption">Get ready for some weirdness!</p>
+      </div>
+              
+    </div>
 
-
-
-      <div id="title-banner-container" class="banner">
-        <div id="title-banner">
-          <h1>Why do sperm donors say they donate?</h1>
-          <h2>An exploration of the gene pool and why men send their swimmers into it.</h2>
-          <p>By Ellen Bechtel, April 2020</p>
-        </div>
-                
+    <div class="section">
+      <div id="intro-text" class="content">
+        <p>Choosing to start building a family comes with all sorts of questions, surprises, and unknowns, no matter who you are.</p><br>
+        <p>But neither my wife nor I produce sperm. And like lots of queers, single parents by choice, or any hopeful parent grappling with any number of fertility issues, we are starting to think about the weird world of assisted fertility. And no matter which one of us chooses carry our future kid, at some point we have to ask:</p><br>
+        <h3>Who's gonna be the sperm donor?</h3>
+        <p>Phew, good thing sperm banks promise high-quality options.</p>
       </div>
 
-      <div id="about-text" class="content">
-        
-        <p>The sperm bank / donation business is a $3.5 billion market, and growing accessibility to fertility-related medical care means that more and more people (including many of my peers, who are in relationships where no one produces sperm) have the unenviable luxury of grappling with thorny questions like "Do genetics matter?", "What do I care about in a donor?", and most importantly, "How am I, justly or unjustly, using the information a sperm bank provides to me to judge donors for their 'worthiness'?".</p>
-
-        <p>Additionally, there's been some reporting on the fact that many sperm banks have mostly white donors, and very few donors of color.  There's also been some reporting that while donors will publicly say things like "I donated because I want to give the gift of life", there are some donors who will also say off-record that "I donated because I want to propogate the white race."  Some donors have upwards of 300 children born from their donations, and while companies won't advertise their donors as open white supremacists, I'd like to see if there are trends or insights that can be gleaned from what a donor says about themselves anyway.</p>
-   
-        <p>Turns out, many sperm banks offer 14-day free trials to view their donor catalogs, so I used a web scraper to scrape the text of "Why I donated" from the five biggest online sperm banks.</p>
-        
-  
-      </div>
-      
-
-      
-      <div>
-        <h2>DRAG AND DROP</h2>
-        <h3>Most Selfless</h3>
-        <ol id="list"></ol>
-        <h3>Most Selfish</h3>
-        <button id="submit-button">Sort</button>
+      <div class="pic-container">
+        <img class="img" src="img/euro1.png" alt="Euro Homepage Screenshot">
+        <p class="caption">A screenshot from European Sperm Bank's home page, assuring good genes and medical supervision, bolstered by a stock hunky dude who may or may not be our future sperm donor.</p>
       </div>
 
-
-      <div id="vis">
-        <svg id="matrix">
-          <g id="labels"></g>
-          <g id="donorRows"></g>
-        </svg>
+      <div id="banking-text" class="content">
+        <p>The sperm banking business is a $3.5 billion market, and when people use sperm banks, they are buying DNA.  That means you can select by genetic traits like hair color, eye color, and skin color.  But you can see more than just the basics.  Most sperm banks let you see baby photos, hear audio interviews, read written samples and staff impressions, and see all sorts of family medical history.</p><br>
+        <p>We’ve been fortunate enough to know some other folks who have chosen donors through a sperm bank already, and we asked them about it. They said yeah, it can feel a little weird to sift through donors who have been categorized by what they look like and their education level and their medical history.  But they also say that when the option is there, all those things can feel like important information to help them make a big decision.</p>
       </div>
       
-      
-      <div id="tooltip" class="tooltip">
-        <div id="tooltip-text">
-
-        </div>
+      <div class="pic-container">
+        <img class="img" src="img/euro2.png" alt="Euro Search Screenshot">
+        <p class="caption">The European Sperm Bank's gallery-view sperm donor search page, where you can scan through baby pictures and filter donors by all sorts of genetic traits.  These donors are not available to US customers, so I had to look at donors available to me if we went to my wife's country of citizenship, Canada.</p>
       </div>
 
-     
-      <div id="about-text" class="content">
-        
-        <p>The sperm bank / donation business is a $3.5 billion market, and growing accessibility to fertility-related medical care means that more and more people (including many of my peers, who are in relationships where no one produces sperm) have the unenviable luxury of grappling with thorny questions like "Do genetics matter?", "What do I care about in a donor?", and most importantly, "How am I, justly or unjustly, using the information a sperm bank provides to me to judge donors for their 'worthiness'?".</p>
-
-        <p>Additionally, there's been some reporting on the fact that many sperm banks have mostly white donors, and very few donors of color.  There's also been some reporting that while donors will publicly say things like "I donated because I want to give the gift of life", there are some donors who will also say off-record that "I donated because I want to propogate the white race."  Some donors have upwards of 300 children born from their donations, and while companies won't advertise their donors as open white supremacists, I'd like to see if there are trends or insights that can be gleaned from what a donor says about themselves anyway.</p>
-   
-        <p>Turns out, many sperm banks offer 14-day free trials to view their donor catalogs, so I used a web scraper to scrape the text of "Why I donated" from the five biggest online sperm banks.</p>
-        
-  
+      <div id="why-text" class="content">
+        <p>The European Sperm bank in particular shows something interesting.  They ask their donors, "why do you want to donate your sperm?"</p><br>
+        <p>The answers are pretty short, so they aren't a comprehensive read on the complicated thoughts that a donor might have about their choice.  But more than hair color, eye color, or education level, I want to make sure we choose someone who is generally a good person.</p><br>
+        <h3>I think hearing in their own words why they are selling their DNA will help give me a sense of who this person is, and whether I want their sperm.</h3>
       </div>
-      
-     
 
-      
+      <div class="pic-container">
+        <img class="img" src="img/euro3.png" alt="Euro Donor Screenshot">
+        <p class="caption">Each donor has a profile where you can read all sorts of stuff about them.</p>
+      </div>
 
+      <div id="methods-text" class="content">
+        <p>So I wrote a web scraper to collect the answers to "Why?" that each donor provided, along with all their other information. Then I parsed through each answer and coded it based on the reasons they state and the order in which they state them.</p><br>
+        <p>Donors state one (or more) of ten loosely-grouped types of reasons.  They generally fall somewhere along a scale of selfish to selfless, and more verbose donors can wander through semantic space along this spectrum.</p><br>
+        <p>The semantic space looks different for everybody, but for me, I ranked them like this:</p>
+        <h4>Most Selfless</h4>
+        <ol>
+          <li>He wants to <span class="reason">help others</span></li>
+          <li>He thinks <span class="reason">it's a good deed</span></li>
+          <li>He <span class="reason">knows someone</span></li>
+          <li>He <span class="reason">has, or likes, or wants kids</span></li>
+          <li>He <span class="reason">doesn't have, doesn't like, or doesn't want kids</span></li>
+          <li>He <span class="reason">likes donating in general</span></li>
+          <li>He <span class="reason">is curious</span></li>
+          <li><span class="reason">Why not?</span></li>
+          <li>He wants the <span class="reason">money</span></li>
+          <li>He is <span class="reason">proud of his own genetics</span></li>
+        </ol>
+        <h4>Most Selfish</h4>
+
+        <p>Your ranking would probably look different than my ranking, and how you interpret the semantic landscape is probably different than mine too.</p><br>
+        <p>But I like that people want to help others and am skeptical of people who brag about their genes. Eat me.</p>
+      </div>
+    </div>  
+
+    
+
+    <div class="instructions">
+      <h3>So here's how to read the chart.</h3>
+    </div>
       
+    <div class="pic-container">
+      <img class="imgRead" src="img/1.png" alt="Reasons">
+    </div>
+
+    <div class="instructions">
+      <p>The horizontal axis is the spectrum of all possible reasons donors say why they donate.</p>
+      <p>The vertical axis lists a row for each donor, one by one.</p>
+      <p>For each donor, I add white bars for any reason they DO mention.  They first reason is colored solidly, and sequential reasons fade away. Here's what a generally selfish donor might look like.</p>
+    </div>
+
+    <div class="pic-container">
+      <img class="imgRead" src="img/2.png" alt="Reasons">
+    </div>
+
+    <div class="instructions">
+      <p>And here's a donor who generally says more generous, selfless reasons.</p>
+    </div>
+
+    <div class="pic-container">
+      <img class="imgRead" src="img/3.png" alt="Reasons">
+    </div>
+      
+    <div class="instructions">
+      <h3>Finally, I calculate a rating based on what they said and in what order they said it.</h3> 
+      <p>Each is given a rating out of 5 stars, and the donor's row is color coded along the selfish - selfless color spectrum.</p>
+      <p>The chart below shows all the donors available in the sperm bank, grouped by their primary reasons.</p>
+    </div>
+
+    <div class="pic-container">
+      <img class="imgRead" src="img/4.png" alt="Reasons">
+    </div>
+
+
+    
+
+
+    <div class="content">
+      <h2>Explore the chart below to see what the donors said.</h2>
+      <p>Click on a row to read more about them.</p>
+    </div>
+
+    <div id="vis">
+      <svg id="matrix">
+        <g id="labels"></g>
+        <g id="donorRows"></g>
+      </svg>
+    </div>
+    
+    
+    <div id="tooltip" class="tooltip">
+      <div id="tooltip-main"></div>
+      <div id="tooltip-stars">
+        <div id="tooltip-stars-blocker"></div>
+      </div>
+      <div id="tooltip-extras"></div>
+    </div>
+
+    
+    <div class="section">
+      <div id="closing-text" class="content">
+      <p>This is an incredibly intimate decision.  But ya know what?  </p><br>
+      <h3>This decision, like the information itself, is personal.</h3>
+      <p>Sure we'll think long and hard about this.  But in the end, the kid is going to be their own person. We get to use as much or as little information as we want, and nobody gets to judge us for it.</p><br>
+      <p>I don't think, once we do decide, that we'll ever tell anyone the exact details of it. Because in the end, everything becomes such a crap shoot. Ultimately, how important is it to pick the "right" donor? How much of our future family will be nature versus nurture?  We have no idea and no way of checking. It’s a mystery.</p> <br>
+      <h3>After all, my siblings and I are all genetically of the same stock, but you could not pick three more different people.</h3>
+      <h3>So what the heck.  Let's do this, baby!</h3>
+    </div>
+      
+    <footer>
+      <p>Here's lookin' at you, future kid.</p>
+    </footer>
+
     <script src="./js/matrix.js"></script>
-    <script src="./js/pageFunctions.js"></script>
   </body>
 </html>

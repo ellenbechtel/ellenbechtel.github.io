@@ -12,6 +12,13 @@ body {
   background-position: 50% 50%;
 }
 
+.banner {
+  width: 100%;
+  background-position: 50% 60%;
+  background-size: cover;
+  text-align: center;
+}
+
 #title-banner-container {
   background-image: linear-gradient(0deg, rgba(0,0,0,.7) 0%, rgba(100,100,100,.7) 100%), url('/projects/sperm-reasons/img/spermMicroscope.gif');
   background-size: cover;
@@ -23,7 +30,7 @@ body {
 #title-banner {
   width: 66%;
   margin: auto;
-  padding-top: 40vh;
+  padding-top: 20vh;
   padding-bottom: 20vh;
   justify-content: center;
   text-align: center;
@@ -31,83 +38,127 @@ body {
 
 
 h1 { 
-  font-size: 4em;
+  font-size: 6em;
   font-weight: 600;
 }
 
+h2 {
+  font-size: 2em;
+  line-height: 1.5em;
+  padding-top: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+
+h4 {
+  font-size: 1.1em;
+}
+
+p {
+  margin: 0;
+}
+
 .content {
-  max-width: 600px;
+  min-width: 300px;
+  max-width: 33%;
   margin: 0 auto;
   padding: 5em;
-  
+  text-align: left;
+  line-height: 1.5em;
 }
 
+.instructions {
+  min-width: 300px;
+  max-width: 33%;
+  margin: 0 auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding-left: 5em;
+  padding-right: 5em;
+  text-align: left;
+  line-height: 1.5em;
+}
+
+.reason {
+  font-weight: 600;
+  color: #EDB400;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.imgRead {
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+}
+
+.caption{
+  max-width: 700px;
+  margin: auto;
+  padding-top: 10px;
+  font-style: italic;
+  line-height: 1.5em;
+  opacity: .6;
+}
+.pic-container {
+  max-width: 60%;
+  align-content: center;
+  margin: auto;
+  opacity: .9;
+}
 .section {
   padding-top: 20px;
-  padding-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+}
+
+footer {
+  padding: 40px;
+  background-color: black;
+  opacity: .4;
+  text-align: right;
 }
 
 
-select {
-  -webkit-appearance: none;
-  background-color: transparent;
-  margin: 0 .3em;
-  font-size: 1.1em;
-  color: #DBDAD9;
-  font-weight: bold;
-  appearance: none;
-  border: 0;
-  outline: 0;
-  border-bottom: 1px solid #DBDAD9;
-  border-radius:0;
-}
-
-.section p { 
-  flex: 1;
-
+#vis {
+  align-content: center;
 }
 
 svg {
 margin: auto;
 width: 60%;
-height: 500vh;
+height: 200vh;
 }
 
 
 
 
 
-/* Draggable List */
 
-li.draggable {
-  list-style-type: none;
-  display: inline-block;
-  background-color: transparent;
+
+/* Links */
+
+a {
   color: #DBDAD9;
-  padding: 7px;
-  margin:0 0.2em 0.2em 0;
-  border: 0.1em solid #DBDAD9;
-  border-radius:0.12em;
-  box-sizing: border-box;
-  text-decoration:none;
-  text-align:center;
-  transition: all 0.2s;
-  min-width: 110px;
+  text-decoration: underline;
+}
+
+a:hover {
   cursor: pointer;
-  font-size: .8em;
-  
-
 }
 
-li.draggable:hover {
-  color:#000000;
-  background-color:#DBDAD9;
+a:visited {
+  opacity: .7;
 }
+
 
 /* Doodads*/
+
 .reasonText {
   font-size: .5em;
 }
@@ -132,36 +183,67 @@ li.draggable:hover {
 }
 
 #tooltip {
-  width: 300px;
+  width: 20%;
   position: fixed;
   z-index: 1;
-  bottom: 40px;
+  top: 40px;
   right: 40px;
-  overflow-x: hidden;
-  overflow-y: hidden;
   padding: 30px;
   font-size: .8em;
   
 }
 
+#tooltip-stars {
+  width: 100%;
+  height: 80px;
+  margin-top: 20px;
+  background-image: url('/projects/sperm-reasons/img/5stars.png');
+  background-size: contain;
+  background-repeat:no-repeat;
+  ;
+}
+
+#tooltip-stars-blocker {
+  height:100%;
+  width:100%;
+  background-color: black;
+  opacity: .8;
+  float: right
+}
+
+
+#tooltip-extras {
+  display: none;
+}
+
 #ttHeader {
-  text-align: center;
-  font-size: 1.7em;
+  text-align: left;
+  font-size: 2.2em;
+  font-weight: 100;
+  padding-bottom: 20px;
+}
+
+#ttHeaderR {
   font-weight: 600;
 }
 
 #ttReason {
-
-  padding: 10px;
-  font-size: 1.3em;
-  font-weight: 600;
+  padding: 15px;
+  font-size: 1.4em;
+  font-weight: 300;
   background-color: #DBDAD9;
   color: black;
 }
 
-#ttContent {
-  padding-left: 10px;
-  padding-right: 10px;
+.ttRating {
+  margin: 15px;
+  padding-top: 10px;
+  font-size: 1.1em;
+}
+
+.ttExtras {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 

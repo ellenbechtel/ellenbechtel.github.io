@@ -13,7 +13,6 @@ var width = document.querySelector("#beeswarm").clientWidth;
 var height = 450;
 
 var transitionTime = .25 * 1000; // 1 second
-var color = d3.scaleOrdinal(d3.schemeCategory20);
 var centerScale = d3.scalePoint().padding(1).range([100, width-100]);
 var colorScale = d3.scaleOrdinal();
 var forceStrength = .3;
