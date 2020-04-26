@@ -116,6 +116,7 @@ d3.csv("./donors.csv", function(donors) {
       	.data(donors, function(d){ return d.ID ;});
       
     var spermiesEnter = spermies.enter().append("ellipse")
+        .attr("class", "spermie")
         .attr("rx", function(d) { return weightScale(d.weight); })
         .attr("ry", function(d) { return heightScale(d.height); })
         
@@ -241,6 +242,20 @@ d3.csv("./donors.csv", function(donors) {
         simulation.alpha(2).restart();
     };
 
+    // Spermies Filtering
+
+    function filterBubbles(currentGrouping, currentFilter) {
+        
+        // filter
+        if (currentGrouping == "all") {
+            splitBubbles(currentGrouping);
+        } else {
+            donors.filter(function(d) { return d[currentGrouping] == currentFilter});
+            splitBubbles(currentGrouping);
+        };
+
+    };
+
     // Titles
     function hideTitles() {
         svg.selectAll('.title').remove();
@@ -311,7 +326,7 @@ d3.csv("./donors.csv", function(donors) {
             // Toggle the bubble chart based on the currently clicked button.
             splitBubbles(buttonId);
 
-          });
+        });
 
         // Color Buttons
         d3.selectAll('.cbutton')
@@ -333,12 +348,21 @@ d3.csv("./donors.csv", function(donors) {
               
             // Toggle the bubble chart based on the currently clicked button.
             colorBubbles(buttonColor);
-          });
+        });
+        
+        
+        // Filter Buttons
+        d3.selectAll('.fbutton')
+            .on('click', function () {
+
+
+
+            });
 
         
       };
       
-      setupButtons()
+      setupButtons();
       
     /////////////////////////////////
     // Tooltip and Selection of Spermies
@@ -352,65 +376,58 @@ d3.csv("./donors.csv", function(donors) {
         return feet + " ft  " + rInches + " in";
     };
 
-
     // Tooltip Label Function
     function ttLabel(title, value) {
         return '<span class="info">' + title + ': </span><span class="value">' + value + '</span><br>';
     }
 
 
+
     // Tooltip
 
-    var tooltip = d3.select("#tooltip");
+    var tooltip = d3.select("#tooltip");    // the whole tooltip
+    var tooltipMain = d3.select("#tooltip-main");
+    var tooltipInstructions = d3.select("#tooltip-instructions");
+    var tooltipExtras = d3.select("#tooltip-extras");
+
+
 
     spermies.on("mouseover", function(d) {
 
-        // create html content
-        var html = '<span><h3>Available Donor Information</h3></span>'; // header
+        // Create HTML Content
 
-        if (d.donorNum) html+= ttLabel("Donor", d.donorNum);
-        if (d.bank) html += ttLabel("Bank", d.bank);        
-        if (d.price) html += ttLabel("Price per Vial", d.price) + "<br>";
-
-        if (d.donationAge) html += ttLabel("Age", d.donationAge);
-        if (d.height) html += ttLabel("Height", convertToFt(d.height));
-        if (d.weight) html += ttLabel("Weight", d.weight + " lbs");
-        if (d.ethnicity) html += ttLabel("Ethnic Origin", d.ethnicity);
-        if (d.skintone) html += ttLabel("Skintone", d.skintone);
-        if (d.race) html += ttLabel("Race", d.race);        
-        if (d.jewish) html += ttLabel("Jewish Ancestry", d.jewish);
-        if (d.religion) html += ttLabel("Religion", d.religion) + "<br>";
-
-        if (d.lookAlikes) html += ttLabel("Look Alikes", d.lookAlikes) + "<br>"; 
-        if (d.hair) html += ttLabel("Hair", d.hair + ' ' + d.hairTexture);
-        if (d.hairyChest) html += ttLabel("Hairy Chest", d.hairyChest);
-        if (d.beardColor) html += ttLabel("Beard Color", d.beardColor);
-        if (d.hairLoss) html += ttLabel("Hair Loss", d.hairLoss);
-        if (d.faceShape) html += ttLabel("Face Shape", d.faceShape);
-        if (d.dimples) html += ttLabel("Dimples", d.dimples);
-        if (d.acne) html += ttLabel("Acne", d.acne);
-        if (d.noseShape) html += ttLabel("Nose Shape", d.noseShape);
-        if (d.lips) html += ttLabel("Lips Shape", d.lips);
-        if (d.eye) html += ttLabel("Eye Color", d.eye);
-        if (d.eyebrows) html += ttLabel("Eyebrows", d.eyebrows);
-        if (d.dominantHand) html += ttLabel("Dominant Hand", d.dominantHand);
-        if (d.shoeSize) html += ttLabel("Shoe Size", d.shoeSize);
-        if (d.bloodType) html += ttLabel("Blood Type", d.bloodType) + "<br>"; 
-
-
-        if (d.degree) html += ttLabel("Degree", d.degree); 
-        if (d.occupation) html += ttLabel("Occupation", d.occupation); 
-        if (d.sign) html += ttLabel("Astrological Sign", d.sign); 
-        if (d.hobbies) html += ttLabel("Hobbies", d.hobbies); 
-        if (d.faveSubjects) html += ttLabel("Favorite Subjects", d.faveSubjects); 
-        if (d.description) html += ttLabel("Staff Description", d.description); 
-        if (d.describesHimself) html += ttLabel("Self Description", d.describesHimself); 
-        if (d.whyDonate) html += ttLabel("Donated because", d.whyDonate); 
+        // Tooltip Main
+        var html = '<span><p class="ttHeader"> Donor: ' + d.donorNum + '</p></span>'; // header
+        if (d.bank) html += '<span class="value">' + d.bank + '</span><br>'     
+        if (d.price) html += ttLabel("Price per Vial", d.price) + "<br>";    
         
+
+        // Enable actions on the mouseover
         tooltip 
-            .style("visibility","visible")
+            .style("display","block")
+            .style("position", "absolute");
+
+        // size responsiveness
+        if (width > d3.event.pageX + 250) {
+            tooltip.style("left", d3.event.pageX + 20 + "px")
+        } else { tooltip.style("left", d3.event.pageX - 350 + "px") };
+
+        if (height < d3.event.pageY + 700) {
+            tooltip.style("top", d3.event.pageY - 50 + "px")
+        } else { tooltip.style("top", d3.event.pageY - 400 + "px")};
+
+        // Insert donor name and bank
+        tooltipMain
             .html(html);
 
+        // show the instruction prompt
+        tooltipInstructions.style("display","block");
+
+
+        // hide the extras
+        tooltipExtras.style("display","none");
+
+        // opacity hover, not working
         svg.selectAll(".spermies")
             .transition()
             .duration(transitionTime/4)
@@ -421,15 +438,63 @@ d3.csv("./donors.csv", function(donors) {
             .duration(transitionTime/4)
             .attr("opacity",1);
 
+    }).on("click", function(d) {
+        
+        tooltip.style("display","block");
+
+        // Hide Instructions
+        tooltipInstructions.style("display","none");
+
+        // Tooltip Extras
+        var htmlExtras = ''; // header
+
+        if (d.donationAge) htmlExtras += ttLabel("Age", d.donationAge);
+        if (d.height) htmlExtras += ttLabel("Height", convertToFt(d.height));
+        if (d.weight) htmlExtras += ttLabel("Weight", d.weight + " lbs");
+        if (d.ethnicity) htmlExtras += ttLabel("Ethnic Origin", d.ethnicity);
+        if (d.skintone) htmlExtras += ttLabel("Skintone", d.skintone);
+        if (d.race) htmlExtras += ttLabel("Race", d.race);        
+        if (d.jewish) htmlExtras += ttLabel("Jewish Ancestry", d.jewish);
+        if (d.religion) htmlExtras += ttLabel("Religion", d.religion);
+        if (d.lookAlikes) htmlExtras += ttLabel("Look Alikes", d.lookAlikes); 
+        if (d.hair) htmlExtras += ttLabel("Hair", d.hair + ' ' + d.hairTexture);
+        if (d.hairyChest) htmlExtras += ttLabel("Hairy Chest", d.hairyChest);
+        if (d.beardColor) htmlExtras += ttLabel("Beard Color", d.beardColor);
+        if (d.hairLoss) htmlExtras += ttLabel("Hair Loss", d.hairLoss);
+        if (d.faceShape) htmlExtras += ttLabel("Face Shape", d.faceShape);
+        if (d.dimples) htmlExtras += ttLabel("Dimples", d.dimples);
+        if (d.acne) htmlExtras += ttLabel("Acne", d.acne);
+        if (d.noseShape) htmlExtras += ttLabel("Nose Shape", d.noseShape);
+        if (d.lips) htmlExtras += ttLabel("Lips Shape", d.lips);
+        if (d.eye) htmlExtras += ttLabel("Eye Color", d.eye);
+        if (d.eyebrows) htmlExtras += ttLabel("Eyebrows", d.eyebrows);
+        if (d.dominantHand) htmlExtras += ttLabel("Dominant Hand", d.dominantHand);
+        if (d.shoeSize) htmlExtras += ttLabel("Shoe Size", d.shoeSize);
+        if (d.bloodType) htmlExtras += ttLabel("Blood Type", d.bloodType); 
+        if (d.degree) htmlExtras += ttLabel("Degree", d.degree); 
+        if (d.occupation) htmlExtras += ttLabel("Occupation", d.occupation); 
+        if (d.sign) htmlExtras += ttLabel("Astrological Sign", d.sign); 
+        if (d.hobbies) htmlExtras += ttLabel("Hobbies", d.hobbies); 
+        if (d.faveSubjects) htmlExtras += ttLabel("Favorite Subjects", d.faveSubjects); 
+        if (d.description) htmlExtras += ttLabel("Staff Description", d.description); 
+        if (d.describesHimself) htmlExtras += ttLabel("Self Description", d.describesHimself); 
+        if (d.whyDonate) htmlExtras += ttLabel("Donated because", d.whyDonate);
+
+        tooltipExtras
+            .style("display","block")
+            .html(htmlExtras);
+
     }).on("mouseout", function() {
-        //tooltip.style("visibility","hidden");
+        
+        tooltip.style("display","none");
+
+        tooltipExtras.style("display","none");
+        
         svg.selectAll(".spermies")
             .transition()
             .duration(transitionTime/4)
             .attr("opacity",1);
 
-    }).on("click", function() {
-        //tooltip.style("visibility","visible");
     });
 
 

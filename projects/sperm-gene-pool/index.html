@@ -63,43 +63,52 @@
       </div>
 
 
-      <div id="vis">
+      <div id="vis">    
+
+        <div id="toolbar-wrapper">
+          <div id="toolbar-container">
         
-        <div class="banner">
-          </div>
+            <div id="colorToolbar" class="toolbar">
+              <span><h3>Color By</h3></span>
+              <button id="all" class="cbutton active">Clear</button>
+              <button id="eye" class="cbutton">Eye Color</button>
+              <button id="hair" class="cbutton">Hair Color</button>
+              <button id="skintone" class="cbutton">Skintone</button>
+            </div>
     
-
-        <div id="toolbar-container">
-        
-          <div id="tooltip" class="tooltip">
-            <h3 id="ttInit">Hover over a donor<br>to learn more about them. <br> Click to track them.
-            </h3>
-          </div>
+            <div id="groupToolbar" class="toolbar">
+              <span><h3>Sort By</h3></span>
+              <button id="all" class="gbutton active">Together</button>
+              <button id="bank" class="gbutton">Sperm Bank</button>
+              <button id="bloodType" class="gbutton">Blood Type</button>
+              <button id="height" class="gbutton">Height</button>
+              <button id="weight" class="gbutton">Weight</button>
+              <button id="race" class="gbutton">Race</button>
+              <button id="religion" class="gbutton">Religion</button>
+              <button id="jewish" class="gbutton">Jewish Ancestry</button>
+              <button id="eye" class="gbutton">Eye Color</button>
+              <button id="hair" class="gbutton">Hair Color</button>
+              <button id="skintone" class="gbutton">Skintone</button>
+            </div>
+<!-- 
+            <div id="filterToolbar" class = "toolbar">
+              <span><h3>Filter By</h3></span>
+              <button id="all" class="fbutton active">No Filter</button>
+              <select id="bank" class="fbutton">
+                <option value="all">All Sperm Banks</option>
+                <option value="euro">European Sperm Bank</option>
+                <option value="cali">California Cryobank</option>
+                <option value="fairfax">Fairfax Cryobank</option>
+                <option value="xytex">Xytex Sperm Bank</option>
+                <option value="necc">New England Cryogenic Center</option>
+              </select>
+             
+            </div> -->
   
-          <div id="colorToolbar" class="toolbar">
-            <span><h3>Color By</h3></span>
-            <button id="all" class="cbutton active">Clear</button>
-            <button id="eye" class="cbutton">Eye Color</button>
-            <button id="hair" class="cbutton">Hair Color</button>
-            <button id="skintone" class="cbutton">Skintone</button>
           </div>
-  
-          <div id="groupToolbar" class="toolbar">
-            <span><h3>Sort By</h3></span>
-            <button id="all" class="gbutton active">Together</button>
-            <button id="bank" class="gbutton">Sperm Bank</button>
-            <button id="bloodType" class="gbutton">Blood Type</button>
-            <button id="height" class="gbutton">Height</button>
-            <button id="weight" class="gbutton">Weight</button>
-            <button id="race" class="gbutton">Race</button>
-            <button id="religion" class="gbutton">Religion</button>
-            <button id="jewish" class="gbutton">Jewish Ancestry</button>
-            <button id="eye" class="gbutton">Eye Color</button>
-            <button id="hair" class="gbutton">Hair Color</button>
-            <button id="skintone" class="gbutton">Skintone</button>
-          </div>
-
         </div>
+        
+
 
         <svg id="beeswarm">
           <g id="titles"></g>
@@ -109,6 +118,11 @@
 
       </div>
       
+      <div id="tooltip" class="tooltip">
+        <div id="tooltip-main"></div>
+        <div id="tooltip-instructions"><p>Click to read more about this donor and track them.</p></div>
+        <div id="tooltip-extras"></div>
+      </div>
 
       <div class="section">
 

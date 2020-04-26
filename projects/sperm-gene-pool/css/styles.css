@@ -122,9 +122,9 @@ select {
 }
 
 svg {
-  height: 70vh;
+  height: 100vh;
   width: 100%;
-  background-color:rgba(255,255,255,0.1);
+  
 }
 
 @media (max-width: 600px) {
@@ -192,19 +192,23 @@ body::-webkit-scrollbar-thumb {
   
 }
 
-
+#toolbar-wrapper {
+  background-color:rgba(255,255,255,0.1);
+  padding-bottom: 1em;
+}
 
 #toolbar-container {
   font-size: .8em;
   color: #DBDAD9;
   max-width: 85%;
   margin: auto;
-  margin-bottom: 30px;
   display: grid;
+
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
   grid-template-areas: 
-    "groupToolbar colorToolbar tooltip";
+    "groupToolbar colorToolbar filterToolbar";
+    /* "groupToolbar colorToolbar tooltip"; */
 }
 
 
@@ -217,22 +221,36 @@ body::-webkit-scrollbar-thumb {
   grid-area: groupToolbar; 
 }
 
+#filterToolbar { 
+  grid-area: filterToolbar; 
+}
+/* 
 #tooltip { 
   grid-area: tooltip; 
-}
+} */
 
 
 .tooltip {
   margin: 10px;
   font-weight: 100;
+  font-size: .8em;
   line-height: 1.5;
-  height: 200px;
-  overflow-y: scroll;
+  padding: 20px;
+  background-color:rgba(0,0,0,0.9);
+  width: 300px;
+  /* height: 200px;
+  overflow-y: scroll; */
 
 }
 
-#ttInit {
+.ttHeader {
+  font-size: 1.3em;
+  font-weight: 500;
+}
+
+#tooltip-instructions > p {
   text-align: center;
+  font-style: italic;
   opacity: .5;
 }
 
