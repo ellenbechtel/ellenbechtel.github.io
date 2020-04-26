@@ -11,9 +11,10 @@
   <body>
       <div id="title-banner-container" class="banner">
         <div id="title-banner">
-          <h1>The Swimmers in the Gene Pool</h1>
-          <h2>Who donates genetic material<br>to the world's biggest private sperm banks?</h2>
+          <h1>Who are all the<br>Sperm Donors?</h1>
+          <h2>An exploration of what the gene pool<br>inside sperm banks really looks like.</h2>
           <p>By Ellen Bechtel, April 2020</p>
+          <p class="caption">Get ready for some weirdness!</p>
         </div>
                 
       </div>
@@ -23,23 +24,21 @@
         <div id="intro-text" class="content">
           <p>Choosing to start building a family comes with all sorts of questions, surprises, and unknowns, no matter who you are.</p>
           <p>But neither my wife nor I produce sperm.  And like lots of queers, single parents by choice, or any hopeful parent grappling with any number of fertility issues, we are starting to think about the bazillion extra decisions we have to make in the world of assisted fertility.</p>
-          <p>Foremost on our mind is one of the thorniest of those questions. If one of us chooses to biologically carry our future kid, at some point we have to ask:</p>
-          <h3>How do I choose a sperm donor?</h3>
-
+          <h3>Who's gonna be the sperm donor?</h3>
+          <p>Phew, good thing sperm banks promise high-quality options.</p>
         </div>
 
         <div class="pic-container">
-          <img class="img" src="img/xytex.png" alt="Xytex Screenshot">
-          <p class="caption">A screenshot from Xytex Cryo International's donor search webpage, where you can filter your search by physical and genetic traits, as well as information availability and education level.</p>
+          <img class="img" src="img/euro1.png" alt="Euro Homepage Screenshot">
+          <p class="caption">A screenshot from European Sperm Bank's home page, assuring good genes and medical supervision, bolstered by a stock hunky dude who may or may not be our future sperm donor.</p>
         </div>
 
         <div id="banking-text" class="content">
 
-          <p>The sperm banking business is a $3.5 billion market, and when people use sperm banks, they are buying DNA. There are genetic traits that come with that - hair color, eye color, skin color.</p>
-          <p>Different sperm banks offer different amounts of information too.  You can use a free account to browse just the basic traits of donors, or you can pay for an all-access pass that lets you see baby photos, hear audio interviews, read staff impressions, and see all sorts of family medical history.</p>
-          <h3>To me, it feels a bit weird that all this personal information is publicly available.</h3>
+          <p>The sperm banking business is a $3.5 billion market, and when people use sperm banks, they are buying DNA.  That means you can select by genetic traits like hair color, eye color, and skin color.  But you can see more than just the basics.  Most sperm banks let you see baby photos, hear audio interviews, read written samples and staff impressions, and see all sorts of family medical history.</p><br>
           <p>We’ve been fortunate enough to know some other folks who have chosen donors through a sperm bank already, and we asked them about it. They said yeah, it can feel a little weird to sift through donors who have been categorized by what they look like and their education level and their medical history.  But they also say that when the option is there, all those things can feel like important information to help them make a big decision.</p>
-    
+          <h3>To me, it still feels weird that all this personal information is publicly available.</h3>
+          <p>It's weird, but intriguing.  So I wanted to explore it.</p>
         </div>
         
 
@@ -49,14 +48,8 @@
         </div>
 
         <div id="methods-text" class="content">
-
-          <p>And yet.</p>
-          <p>I wondered. How much choice do I actually have?  Sure I can pick a donor from the ones available, but I’ve heard some reporting about <a href="https://longestshortesttime.com/episode-153-sperm-shopping-by-color/" target="_blank">how hard it is to find sperm donors of color</a>, or that there’s even a possibility that <a href="https://longestshortesttime.com/episode-208-sperm-series-i-download-an-app/" target="_blank">some white donors</a> want to make lots of white babies to propogate the white race.</p>
-          <p>I wondered, what does the gene pool actually look like?</p>
-          <p>My personal strategy to deal with the anxiety of high-stakes questions is to gather data.  So I made free accounts on five of the biggest sperm banks in the world - yes, all this data was available for free in January 2020, and probably still is.  I then instructed a little web-scraping bot to crawl all over these websites and gather whatever information about each individual donor was easily findable, and fed that data of over 1,600 donors into a force-layout diagram. </p>
-        
-          <h3>Let's take a dive into the Gene Pool.</h3>
-          <p>Use the buttons below to sort, color code, track, and reveal more information about the donors themselves.  And click on a few swimmers - er, donors - to track them and see how they compare to the rest of the gene pool.</p>
+          <p>I made free accounts on five of the biggest sperm banks in the world - yes, all this data was available for free in January 2020, and probably still is.  I then instructed a little web-scraping bot to crawl all over these websites and gather whatever information about each individual donor was easily findable, and fed that data of over 1,600 donors into a force-layout diagram. </p>
+            <p>Use the buttons below to sort, color code, track, and reveal more information about the donors themselves.  And click on a few swimmers - er, donors - to track them and see how they compare to the rest of the gene pool.</p>
         </div>
         
 
@@ -119,22 +112,21 @@
       </div>
       
       <div id="tooltip" class="tooltip">
+        <button id="xOut" onclick="xOut()">x</button>
         <div id="tooltip-main"></div>
-        <div id="tooltip-instructions"><p>Click to read more about this donor and track them.</p></div>
+        <div id="tooltip-instructions"><p>Click this donor again read more and track them.</p></div>
         <div id="tooltip-extras"></div>
+ 
       </div>
 
       <div class="section">
-
-          <div id="closing-text" class="content">
-
-          <p>For sure, this is an incredibly intimate decision.  But ya know what?  </p>
-          <h3>This decision, like the information itself, is personal.</h3>
-          <p>In the end, the kid is going to be their own person. You get to use as much or as little information as you want, and nobody gets to judge you for it. That's where I'm sticking, at least, because I have no idea where my wife and I are going to land on this.</p>
-          <p>I don't think, once we do decide, that we'll ever tell anyone the exact details of it. Because in the end, everything becomes such a crap shoot. Ultimately, how important is my choice? We have no idea and no way of checking. It’s a mystery.</p> 
-          <p>After all, my siblings and I are all genetically of the same stock, but you could not pick three more different people.</p>
-        </div>
-        
+        <div id="closing-text" class="content">
+        <p>This is an incredibly intimate decision.  But ya know what?  </p><br>
+        <h3>This decision, like the information itself, is personal.</h3>
+        <p>Sure we'll think long and hard about this.  But in the end, the kid is going to be their own person. We get to use as much or as little information as we want, and nobody gets to judge us for it.</p><br>
+        <p>I don't think, once we do decide, that we'll ever tell anyone the exact details of it. Because in the end, everything becomes such a crap shoot. Ultimately, how important is it to pick the "right" donor? How much of our future family will be nature versus nurture?  We have no idea and no way of checking. It’s a mystery.</p> <br>
+        <p>After all, my siblings and I are all genetically of the same stock, but you could not pick three more different people.</p>
+        <h3>So what the heck.  Let's do this, baby!</h3>
       </div>
 
 
@@ -143,7 +135,10 @@
 
   
       
-
+      <footer>
+        <p>Here's lookin' at you, future kid.</p>
+      </footer>
+  
      
 
         <!--

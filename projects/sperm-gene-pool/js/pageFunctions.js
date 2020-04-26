@@ -15,3 +15,4 @@ function showDiv1() {
       x.style.display = "none";
     }
   }
+

@@ -185,10 +185,9 @@ d3.csv("./donors.csv", function(donors) {
     function colorBubbles(currentColorScale) {
 
         if(currentColorScale == "all") {
-            colorScale.domain(hair).range(noColors);  // WHY IS THIS NOT WORKING??!
             spermies.transition()
                 .duration(transitionTime)
-                .style("fill", function(d) { return colorScale(d.hair); });
+                .style("fill", "white");
         } else if (currentColorScale == "eye") {
             colorScale.domain(eyes).range(eyeColors);
             spermies.transition()
@@ -485,11 +484,10 @@ d3.csv("./donors.csv", function(donors) {
             .html(htmlExtras);
 
     }).on("mouseout", function() {
-        
-        tooltip.style("display","none");
+        // tooltip.style("display","none");
 
-        tooltipExtras.style("display","none");
-        
+        // tooltipExtras.style("display","none");
+
         svg.selectAll(".spermies")
             .transition()
             .duration(transitionTime/4)
@@ -497,6 +495,10 @@ d3.csv("./donors.csv", function(donors) {
 
     });
 
-
+   
 
 });
+
+function xOut() { 
+	document.getElementById("tooltip").style.display="none"; 
+};

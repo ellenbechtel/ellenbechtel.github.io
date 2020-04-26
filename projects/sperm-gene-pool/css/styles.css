@@ -238,14 +238,15 @@ body::-webkit-scrollbar-thumb {
   padding: 20px;
   background-color:rgba(0,0,0,0.9);
   width: 300px;
-  /* height: 200px;
-  overflow-y: scroll; */
+  display: none;
 
 }
 
 .ttHeader {
   font-size: 1.3em;
   font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 #tooltip-instructions > p {
@@ -266,7 +267,10 @@ body::-webkit-scrollbar-thumb {
   line-height: 3em;
 }
 
+
+
 /* Buttons */
+
 
 .button-container {
   padding-top: 20px;
@@ -308,4 +312,25 @@ button:hover {
 .cbutton.active {
   background: #DBDAD9;
   color: #000000;
+}
+
+/* Special X Out button */
+
+#xOut {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  min-width: 30px;
+  opacity: .5;
+  border: none;
+}
+
+
+
+
+footer {
+  padding: 40px;
+  background-color: black;
+  opacity: .4;
+  text-align: right;
 }
