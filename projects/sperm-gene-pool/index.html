@@ -15,6 +15,7 @@
           <h2>An exploration of what the gene pool<br>inside sperm banks really looks like.</h2>
           <p>By Ellen Bechtel, April 2020</p>
           <p class="caption">Get ready for some weirdness!</p>
+          <p class="caption">Sorry, we're not mobile-ready yet. View on a desktop for the most fun.</p>
         </div>
                 
       </div>
@@ -24,6 +25,7 @@
         <div id="intro-text" class="content">
           <p>Choosing to start building a family comes with all sorts of questions, surprises, and unknowns, no matter who you are.</p>
           <p>But neither my wife nor I produce sperm.  And like lots of queers, single parents by choice, or any hopeful parent grappling with any number of fertility issues, we are starting to think about the bazillion extra decisions we have to make in the world of assisted fertility.</p>
+          <p>Foremost of which is...</p>
           <h3>Who's gonna be the sperm donor?</h3>
           <p>Phew, good thing sperm banks promise high-quality options.</p>
         </div>
@@ -44,12 +46,16 @@
 
         <div class="pic-container">
           <img class="img" src="img/fairfax.png" alt="Fairfax Screenshot">
-          <p class="caption">A screenshot from Fairfax Cryobank's donor search webpage, where you can not only use image recognition technology to find a donor who looks like someone, but you can also sign up for home insemination webinars.</p>
+          <p class="caption">A screenshot from Fairfax Cryobank's donor search webpage, where you can not only use image recognition technology to find a donor who looks like someone, but you can also sign up for home insemination webinars offered on Zoom thanks to COVID shutting down many Alternative Insemination clinics.</p>
         </div>
 
         <div id="methods-text" class="content">
-          <p>I made free accounts on five of the biggest sperm banks in the world - yes, all this data was available for free in January 2020, and probably still is.  I then instructed a little web-scraping bot to crawl all over these websites and gather whatever information about each individual donor was easily findable, and fed that data of over 1,600 donors into a force-layout diagram. </p>
-            <p>Use the buttons below to sort, color code, track, and reveal more information about the donors themselves.  And click on a few swimmers - er, donors - to track them and see how they compare to the rest of the gene pool.</p>
+          <img id="spermieDiagram" src="img/spermieDiagram.png"> 
+          <p>I made free accounts on five of the biggest sperm banks in the world - yes, all this data was available for free in January 2020, and probably still is.</p>
+          <p>Then I instructed a little web-scraping bot to crawl all over these websites and gather whatever information about each individual donor was easily findable, and fed that data of over 1,600 donors into a force-layout diagram where each circle is encoded with the donor's height and weight like the diagram to the right.</p>
+          <p>Use the buttons below to sort, color code, track, and reveal more information about the donors themselves. And click the spermies to track them and reveal more information about that donor.</p>
+          
+          
         </div>
         
 
@@ -83,6 +89,19 @@
               <button id="hair" class="gbutton">Hair Color</button>
               <button id="skintone" class="gbutton">Skintone</button>
             </div>
+
+            <div id="filterToolbar" class="toolbar">
+              <span><h3>Be sure to check out...</h3></span>
+              <ul>
+                <li>the <b>racial imbalance</b></li>
+                <li>how many <b>Danish, blue-eyed, blonde-haired</b> donors there are in the European Sperm Bank</li>
+                <li>how weird and anti-Semitic it is that you can filter out donors with <b>Jewish ancestry</b></li>
+                <li>the <b>price</b> difference among donors, when it's listed online</li>
+              </ul>
+             
+             
+            </div>
+            
 <!-- 
             <div id="filterToolbar" class = "toolbar">
               <span><h3>Filter By</h3></span>
@@ -121,12 +140,12 @@
 
       <div class="section">
         <div id="closing-text" class="content">
-        <p>This is an incredibly intimate decision.  But ya know what?  </p><br>
-        <h3>This decision, like the information itself, is personal.</h3>
-        <p>Sure we'll think long and hard about this.  But in the end, the kid is going to be their own person. We get to use as much or as little information as we want, and nobody gets to judge us for it.</p><br>
-        <p>I don't think, once we do decide, that we'll ever tell anyone the exact details of it. Because in the end, everything becomes such a crap shoot. Ultimately, how important is it to pick the "right" donor? How much of our future family will be nature versus nurture?  We have no idea and no way of checking. It’s a mystery.</p> <br>
-        <p>After all, my siblings and I are all genetically of the same stock, but you could not pick three more different people.</p>
-        <h3>So what the heck.  Let's do this, baby!</h3>
+        <p>This whole thing is pretty weird.</p>
+        <h3>But also important and necessary for how lots of folks - including me and my wife - are going to create a family.</h3>
+        <p>Sure we'll think long and hard about this.  But in the end, the kid is going to be their own person. We get to use as much or as little information as we want, and nobody gets to judge us for it.</p>
+        <p>I don't think, once we do decide, that we'll ever tell anyone the exact details of it. Because in the end, everything becomes such a crap shoot. Ultimately, how important is it to pick the "right" donor? How much of our future family will be nature versus nurture?  We have no idea, and no way of checking. It’s a mystery.</p>
+        <p>After all, my siblings and I are all genetically of the same stock, but you could not pick three more different people. So what the heck.</p>
+        <h3>Let's do this, baby!</h3>
       </div>
 
 
@@ -136,7 +155,7 @@
   
       
       <footer>
-        <p>Here's lookin' at you, future kid.</p>
+        <p>Here's lookin' at you, future kiddo.</p>
       </footer>
   
      

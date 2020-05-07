@@ -50,6 +50,12 @@ h4 {
   border-radius: 8px;
 }
 
+#spermieDiagram {
+  height: 200px;
+  float: right;
+  margin: 50px;
+}
+
 .caption{
   max-width: 700px;
   margin: auto;
