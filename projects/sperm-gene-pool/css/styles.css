@@ -179,6 +179,7 @@ body::-webkit-scrollbar-thumb {
 .spermies {
   padding: 1px;
   cursor: pointer;
+
 }
 
 .title {
@@ -242,7 +243,8 @@ body::-webkit-scrollbar-thumb {
   font-size: .8em;
   line-height: 1.5;
   padding: 20px;
-  background-color:rgba(0,0,0,0.9);
+  background-color:rgba(0,0,0,0.7);
+  border: 1px solid darkgray;
   width: 300px;
   display: none;
 

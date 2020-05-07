@@ -16,10 +16,10 @@ var transitionTime = .25 * 1000; // 1 second
 var centerScale = d3.scalePoint().padding(1).range([100, width-100]);
 var colorScale = d3.scaleOrdinal();
 var forceStrength = .3;
-var gravityStrength = -5;
+var gravityStrength = -6;
 var friction = 0.6;
-var yGravity = 0.2;
-var collPadding = 4;
+var yGravity = 0.3;
+var collPadding = 3;
 var iterations = 1;
 
 var margin = {
@@ -87,7 +87,7 @@ d3.csv("./donors.csv", function(donors) {
     });
     var heightScale = d3.scaleLinear()
         .domain([d3.min(heights), d3.max(heights)])
-        .range([3,10]);
+        .range([2,8]);
 
     // Weights
     var weights = [];
@@ -99,7 +99,7 @@ d3.csv("./donors.csv", function(donors) {
     });
     var weightScale = d3.scaleLinear()
         .domain([d3.min(weights), d3.max(weights)])
-        .range([2,7]);    
+        .range([2,5]);    
 
 
     donors.forEach(function(d){
@@ -123,6 +123,7 @@ d3.csv("./donors.csv", function(donors) {
         .attr("cx", function(d,i) { return width*Math.random(); })
         .attr("cy", function(d,i) { return height*Math.random(); })
         .style("fill", "#DBDAD9")
+        .style("opacity", ".9")
         .style("pointer-events", "all")
         .call(d3.drag()
             .on("start", dragstarted)
