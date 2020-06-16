@@ -1,5 +1,3 @@
-// Source Code for d3.sankey
-
 d3.sankey = function() {
     var sankey = {},
         nodeWidth = 24,
