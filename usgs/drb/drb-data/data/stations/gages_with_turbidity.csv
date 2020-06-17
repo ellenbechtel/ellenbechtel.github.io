@@ -1,0 +1,8 @@
+"","agency_cd","site_no","station_nm","site_tp_cd","dec_lat_va","dec_long_va","coord_acy_cd","dec_coord_datum_cd","alt_va","alt_acy_va","alt_datum_cd","huc_cd","data_type_cd","parm_cd","stat_cd","ts_id","loc_web_ds","medium_grp_cd","parm_grp_cd","srs_id","access_cd","begin_date","end_date","count_nu"
+"184","USGS","01434498","WEST BRANCH NEVERSINK RIVER AT CLARYVILLE NY","ST",41.92041667,-74.57438889,"1","NAD83"," 1615.75",0.01,"NAVD88","02040104","uv","63680",NA,252697,NA,"wat",NA,1640507,0,2019-08-08,2020-05-27,293
+"649","USGS","01438500","Delaware River at Montague NJ","ST",41.30916667,-74.79527778,"S","NAD83"," 369.93",0.01,"NGVD29","02040104","uv","63680",NA,256423,NA,"wat",NA,1640507,0,2019-10-02,2020-05-27,238
+"1209","USGS","01458500","Delaware River at Frenchtown NJ","ST",40.5261111,-75.065,"S","NAD83"," 99.88",0.01,"NGVD29","02040105","uv","63680",NA,222691,NA,"wat",NA,1640507,0,2014-10-01,2020-05-27,2065
+"2561","USGS","01463500","Delaware River at Trenton NJ","ST",40.22166667,-74.7780556,"S","NAD83"," 0.00",0.01,"NGVD29","02040105","uv","63680",NA,256428,NA,"wat",NA,1640507,0,2014-10-02,2020-05-27,2064
+"3914","USGS","01474500","Schuylkill River at Philadelphia, PA","ST",39.9678905,-75.1885123,"S","NAD83"," 5.74",0.1,"NGVD29","02040203","uv","63680",NA,121548,NA,"wat",NA,1640507,0,2020-03-12,2020-05-27,76
+"5007","USGS","01478245","White Clay Creek near Strickersville, PA","ST",39.7475,-75.7708333,"1","NAD83"," 120",NA,"NGVD29","02040205","uv","63680",NA,121620,NA,"wat",NA,1640507,0,2011-11-16,2020-05-27,3115
+"5617","USGS","01481000","Brandywine Creek at Chadds Ford, PA","ST",39.8698328,-75.5932623,"S","NAD83"," 150.45",0.1,"NGVD29","02040205","uv","63680",NA,121687,NA,"wat",NA,1640507,0,2007-10-01,2020-05-27,4622
