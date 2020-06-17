@@ -12,6 +12,7 @@
 
     body {
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 8pt
     }
     .node rect {
       cursor: move;
@@ -79,7 +80,7 @@ console.clear()
 
 // SVG Properties
 var width = 400;
-var height = 600;
+var height = 400;
 var margin = {
     top: 50,
     right: 50,
@@ -105,7 +106,7 @@ var sankey = d3.sankey()
     .nodePadding(10)
     .size([chartWidth, chartHeight]);
 
-var layout = 100;
+var layout = 32;
 var path = sankey.link();
 
 
@@ -198,15 +199,15 @@ d3.csv("fakeData.csv", function(error, data1) {
                 .attr("transform", function(d) {
                     return "translate(" + d.x + "," + d.y + ")";
                 })
-                // .call(d3.drag()
-                //     .subject(function(d) {
-                //         return d;
-                //     })
-                //     .on("start", function() {
-                //         this.parentNode.appendChild(this);
-                //     })
-                //     .on("drag", dragmove)
-                //     )
+                .call(d3.drag()
+                    .subject(function(d) {
+                        return d;
+                    })
+                    .on("start", function() {
+                        this.parentNode.appendChild(this);
+                    })
+                    .on("drag", dragmove)
+                    )
                 ;
 
             // Add Rectangles for Nodes

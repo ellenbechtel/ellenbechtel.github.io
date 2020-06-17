@@ -1,8 +1,29 @@
 source,target,value
-Sweat,Cannonsville Reservoir,2
-Blood,Cannonsville Reservoir,1
-Tears,Cannonsville Reservoir,1
-Cannonsville Reservoir,Elvis,1
-Cannonsville Reservoir,My Party,4
-Cannonsville Reservoir,Yolo,2
-Yolo,Little Fishy,1
+Rain,Cannonsville,1
+Rain,Pepacton,5
+Rain,Neversink,2
+Cannonsville,Upper Del,4
+Cannonsville,NYC,2
+Pepacton,Upper Del,5
+Pepacton,NYC,3
+Neversink,Upper Del,3
+Neversink,NYC,3
+Rain,Wallenpaupack,2
+Rain,Prompton,2
+Rain,Jadwin,2
+Prompton,Lackawaxen River,4
+Jadwin,Lackawaxen River,3
+Wallenpaupack Emergency,Lackawaxen River,3
+Lackawaxen River,Upper Del,6
+Upper Del,Montague,10
+Montague,Middle Del,10
+Merrill Creek, Middle Del,2
+Middle Del,Lower Del,12
+Walter,Lehigh,2
+Beltzville, Lehigh,4
+Lehigh,Lower Del,5
+Nockasomething,Trenton,1
+Lower Del,Trenton,17
+Blue Marsh,Schuylkill,8
+Trenton,Estuary,17
+Shuylkill,Estuary,9
