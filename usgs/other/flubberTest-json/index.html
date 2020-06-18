@@ -19,9 +19,9 @@
 var svg = d3.select("svg"),
     path = svg.append("path");
 
-d3.json("f1.json", function(err, topo) {
+d3.json("us.json", function(err, topo) {
   // Get a single list of coordinates for each state
-  var states = topojson.feature(topo, topo.objects.F1_Circuits_2018)
+  var states = topojson.feature(topo, topo.objects.states)
     .features.map(function(d) {
       return d.geometry.coordinates[0];
     });
