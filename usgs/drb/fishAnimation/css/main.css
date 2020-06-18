@@ -1,0 +1,240 @@
+body {
+    width:100%;
+    height:50%;
+    margin:0;
+}
+
+#sketchy {
+    width:50%;
+    text-align:center;
+    margin: 0 auto;
+
+}
+#midstripe, #cheek, #whole, #jaw, #gill1, #gill2, #butt, #arm, #backarm, #front, #back, #top  {
+    stroke: black;
+    stroke-width: 2px;
+    fill: transparent
+}
+#stripes, #stripes1, #stripes2, #stripes3, #stripes4, #stripes5, #iris  {
+    stroke: black;
+    fill: transparent;
+}
+#t, #h, #i, #s, #i2, #s2, #a, #f, #i3, #s3, #h2 {
+    stroke: black;
+    stroke-width: 3px;
+}
+#t {
+    stroke-dasharray: 200px;
+    stroke-dashoffset: -200px;
+    Animation: letter-anim .2s linear 3s forwards;
+}
+#h {
+    stroke-dasharray: 200px;
+    stroke-dashoffset: -200px;
+    Animation: letter-anim .2s linear 3.2s forwards;
+}
+#i {
+    stroke-dasharray: 200px;
+    stroke-dashoffset: -200px;
+    Animation: letter-anim .2s linear 3.4s forwards;
+}
+#s {
+    stroke-dasharray: 200px;
+    stroke-dashoffset: -200px;
+    Animation: letter-anim .2s linear 3.6s forwards;
+}
+#i2 {
+    stroke-dasharray: 200px;
+    stroke-dashoffset: -200px;
+    Animation: letter-anim .2s linear 3.8s forwards;
+}
+#s2 {
+    stroke-dasharray: 200px;
+    stroke-dashoffset: -200px;
+    Animation: letter-anim .2s linear 4s forwards;
+}
+#a {
+    stroke-dasharray: 200px;
+    stroke-dashoffset: -200px;
+    Animation: letter-anim .2s linear 4.2s forwards;
+}
+#f {
+    stroke-dasharray: 200px;
+    stroke-dashoffset: -200px;
+    Animation: letter-anim .2s linear 4.4s forwards;
+}
+#i3 {
+    stroke-dasharray: 200px;
+    stroke-dashoffset: -200px;
+    Animation: letter-anim .2s linear 4.6s forwards;
+}
+#s3 {
+    stroke-dasharray: 200px;
+    stroke-dashoffset: -200px;
+    Animation: letter-anim .2s linear 4.8s forwards;
+}
+#h2 {
+    stroke-dasharray: 200px;
+    stroke-dashoffset: -200px;
+    Animation: letter-anim .2s linear 5s forwards;
+}
+
+#stripes1 {
+    stroke-dasharray: 500px;
+    stroke-dashoffset: -500px;
+    Animation: butt-anim .25s linear 3s forwards;
+}
+#stripes2 {
+    stroke-dasharray: 500px;
+    stroke-dashoffset: -500px;
+    Animation: butt-anim .25s linear 3.15s forwards;
+}
+#stripes3 {
+    stroke-dasharray: 500px;
+    stroke-dashoffset: -500px;
+    Animation: butt-anim .25s linear 3.3s forwards;
+}
+#stripes4 {
+    stroke-dasharray: 500px;
+    stroke-dashoffset: -500px;
+    Animation: butt-anim .25s linear 3.45s forwards;
+}
+#stripes5 {
+    stroke-dasharray: 500px;
+    stroke-dashoffset: -500px;
+    Animation: butt-anim .25s linear 3.6s forwards;
+}
+#iris {
+    stroke-dasharray: 100px;
+    stroke-dashoffset: -100px;
+    Animation: butt-anim .1s linear 3.6s forwards;
+}
+#spots1, #spots2, #spots3, #spots4, #spots5, #spots6, #spots7  {
+    stroke: black;
+    stroke-width: 1px;
+    fill: transparent;
+}
+#spots5, #spots6, #spots7  {
+    stroke: red;
+    stroke-width: 1px;
+    fill: transparent;
+}
+
+#spots1 {
+    stroke-dasharray: 500px;
+    stroke-dashoffset: -500px;
+    Animation: butt-anim .2s linear 3.75s forwards;
+}
+#spots2 {
+    stroke-dasharray: 500px;
+    stroke-dashoffset: -500px;
+    Animation: butt-anim .2s linear 3.95s forwards;
+}
+#spots3 {
+    stroke-dasharray: 500px;
+    stroke-dashoffset: -500px;
+    Animation: butt-anim .2s linear 4.05s forwards;
+}
+#spots4 {
+    stroke-dasharray: 500px;
+    stroke-dashoffset: -500px;
+    Animation: butt-anim .2s linear 4.25s forwards;
+}
+#spots5 {
+    stroke-dasharray: 500px;
+    stroke-dashoffset: -500px;
+    Animation: butt-anim .2s linear 4.45s forwards;
+}
+#spots6 {
+    stroke-dasharray: 500px;
+    stroke-dashoffset: -500px;
+    Animation: butt-anim .2s linear 4.65s forwards;
+}
+#spots7 {
+    stroke-dasharray: 500px;
+    stroke-dashoffset: -500px;
+    Animation: butt-anim .2s linear 4.85s forwards;
+}
+#whole {
+    stroke-dasharray: 3000px;
+    stroke-dashoffset: -3000px;
+    Animation: whole-anim .5s linear 0s forwards;
+}
+#midstripe {
+    stroke-dasharray: 1000px;
+    stroke-dashoffset: -1000px;
+    Animation: midstripe-anim .25s linear .5s forwards;
+}
+#butt {
+    stroke-dasharray: 500px;
+    stroke-dashoffset: -500px;
+    Animation: butt-anim .25s linear .75s forwards;
+}
+#gill1 {
+    stroke-dasharray: 500px;
+    stroke-dashoffset: -500px;
+    Animation: gill1-anim .25s linear 1s forwards;
+}
+#gill2 {
+    stroke-dasharray: 500px;
+    stroke-dashoffset: -500px;
+    Animation: gill2-anim .25s linear 1.25s forwards;
+}
+#cheek {
+    stroke-dasharray: 500px;
+    stroke-dashoffset: -500px;
+    Animation: cheek-anim .25s linear 1.5s forwards;
+}
+#arm {
+    stroke-dasharray: 500px;
+    stroke-dashoffset: -500px;
+    Animation: cheek-anim .25s linear 1.75s forwards;
+}
+#backarm {
+    stroke-dasharray: 500px;
+    stroke-dashoffset: -500px;
+    Animation: cheek-anim .25s linear 2s forwards;
+}
+#front {
+    stroke-dasharray: 500px;
+    stroke-dashoffset: -500px;
+    Animation: cheek-anim .25s linear 2.25s forwards;
+}
+#back {
+    stroke-dasharray: 500px;
+    stroke-dashoffset: -500px;
+    Animation: cheek-anim .25s linear 2.5s forwards;
+}
+#top {
+    stroke-dasharray: 500px;
+    stroke-dashoffset: -500px;
+    Animation: cheek-anim .25s linear 2.75s forwards;
+}
+@keyframes whole-anim {
+    0% {stroke-dashoffset: -3000px}
+    100% {stroke-dashoffset: 0px;}
+}
+@keyframes midstripe-anim {
+    0% {stroke-dashoffset: -1000px}
+    100% {stroke-dashoffset: 0px;}
+}
+@keyframes butt-anim {
+    0% {stroke-dashoffset: -500px}
+    100% {stroke-dashoffset: 0px;}
+}
+@keyframes gill1-anim {
+    0% {stroke-dashoffset: -500px}
+    100% {stroke-dashoffset: 0px;}
+}
+@keyframes gill2-anim {
+    0% {stroke-dashoffset: -500px}
+    100% {stroke-dashoffset: 0px;}
+}
+@keyframes cheek-anim {
+    0% {stroke-dashoffset: -500px}
+    100% {stroke-dashoffset: 0px;}
+}
+@keyframes letter-anim {
+    0% {stroke-dashoffset: -100px}
+    100% {stroke-dashoffset: 0px;}
+}
