@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+}
+
+#chart {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.state {
+  fill: #F1F1F1;
+  stroke: #AAAAAA;
+  stroke-width: 2;
+}
+
+#slider {
+  padding: 20px;
+  width: 100%;
+}
+
+#selectYear {
+  width: 100%;
+}
+
+.yearLabel {
+  font-family: "Helvetica Neue", Helvetica, Arial, Helvetica, sans-serif;
+  font-size: 8.0em;
+  font-weight: 700;
+  fill: #E2E2E2;
+  cursor: default;
+}
+
+.tooltip {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  visibility: hidden;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 16pt;
+  background-color:rgba(255,255,255,0.8);
+  padding: 2px;
+  pointer-events: none;
+}

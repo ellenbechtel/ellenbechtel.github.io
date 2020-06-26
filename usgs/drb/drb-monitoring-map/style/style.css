@@ -20,11 +20,11 @@ header {
 }
 
 .header {
-  font-size: 30pt;
+  font-size: 20pt;
   text-align: center;
   color: #352418;
-  margin-top: 200px;
-  margin-bottom: 200px;
+  margin-top: 100px;
+  margin-bottom: 100px;
   margin-left: 20%;
   margin-right: 20%;
 }
@@ -216,4 +216,19 @@ svg{
   background-color:rgba(255,255,255,0.8);
   padding: 12px;
   pointer-events: none;
+}
+
+
+/* Added */
+
+.pathState {
+  fill: none;
+  stroke: goldenrod;
+  stroke-width: 1;
+}
+
+.pathDRB {
+  fill: orchid;
+  stroke: orchid;
+  stroke-width: 1;
 }

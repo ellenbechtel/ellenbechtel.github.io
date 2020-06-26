@@ -5,21 +5,18 @@
         <script src="lib/d3.js"></script>
     </head>
     <body>
-        <header>
-            <section class="header" id="intro">
-                <h1 class="title">USGS Monitoring in the DRB!</h1>
-            </section>
-        </header>
-
+    
         <main>
         
 
             <section class="chart">
                 <div id="chart"></div>
                 <div id="container">
-                   <div id="slider">
-                       <input id="selectYear" type="range" step=1>
-                   </div>
+                    <button class="button active" id="all">All</button>
+                    <button class="button" id="enhanced_gage">Enhanced Gage</button>
+                    <button class="button" id="new_gage">New Gage</button>    
+                    <button class="button" id="reactivated_gage">Reactivated Gage</button>  
+                    <button class="button" id="camera">Has Camera</button>                
                </div>             
             </section>
            
