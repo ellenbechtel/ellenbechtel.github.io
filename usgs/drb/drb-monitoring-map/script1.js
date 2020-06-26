@@ -1,5 +1,8 @@
 /* This uses D3 Version 5!!!! Promises work now.  But if we switch back to version 4, we might not have as much luck loading data.
 
+// This version has gages enter-update-exit.
+
+
 /* LOAD DATA FROM MULTIPLE FILES */
 var promises = [
     d3.csv("./data/gages.csv"),
@@ -50,8 +53,7 @@ Promise.all(promises).then(function(data) {
 
     // Draw States
     var pathState = d3.geoPath().projection(projection);
-
-    svg.selectAll(".pathState")
+    svg.select("#states").selectAll(".pathState")
         .data(states.features)
         .enter()
         .append("path")
@@ -60,10 +62,8 @@ Promise.all(promises).then(function(data) {
 
     // // Draw DRB Outline
     // var pathDRB = d3.geoPath().projection(projection);
-
     // console.log(pathDRB);
-
-    // svg.selectAll(".pathDRB")
+    // svg.select("#drbOutline").selectAll(".pathDRB")
     //     .data(drb.features)
     //     .enter()
     //     .append("path")
@@ -103,23 +103,22 @@ Promise.all(promises).then(function(data) {
     // Make a function to draw map including the enter-update-exit paradigm
     function update(thisButton) { 
 
+        // Filter Data
         var filteredGages = [];
-
         filteredGages = gages.filter(function(d) {
-            if (thisButton == "all") {
-                return gages;
-            } else {
-                return d[thisButton] == "TRUE";
-            };
+            if (thisButton == "all") { return gages; } 
+            else { return d[thisButton] == "TRUE"; };
         });
-
         console.log(filteredGages);
     
+        // Bind Data
         var c = svg.select("#gages").selectAll(".gages")
             .data(filteredGages, function(d) { return d.site_id; });
 
+        // Enter-Update-Exit
         c.enter().append("circle")
-            //.attr("class", function(d) { return d[buttonID]; })
+            .attr("id", function(d) { return d.site_id; })
+            .attr("class","gages")
             .attr("cx", function(d) { 
                 var proj = projection([d.longitude, d.latitude]);
                 return proj[0]; })
@@ -128,7 +127,6 @@ Promise.all(promises).then(function(data) {
                 return proj[1]; })
             .attr("r",0)
             .attr("opacity", 0)
-            .attr("fill","lightblue")
         .merge(c)
             .transition()
             .duration(500)
@@ -139,14 +137,16 @@ Promise.all(promises).then(function(data) {
                 var proj = projection([d.longitude, d.latitude]);
                 return proj[1]; })
             .attr("r",5)
-            .attr("opacity", 0.3)
-            .attr("fill","lightblue")
+            .attr("opacity", 0.7);
 
         c.exit()
             .transition()
             .duration(500)
             .attr("r",0)
             .remove();
+
+
+        // Make Tooltip
 
 
     };
