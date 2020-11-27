@@ -60,7 +60,9 @@ user_dailyValues <- readNWISdv(siteNumbers = userDF$site_no, parameterCd = user_
 # Now read data from closest site with date
 x <- readNWISdv("03229000", startDate = user_bday, endDate = user_bday,
                 parameterCd = user_params)
-x <- readNWISsite("03229000")
+x <- 
+  
+  readNWISsite("03229000")
 countyCdLookup(x$state_cd, x$county_cd, outputType = "fullName")
 
 
