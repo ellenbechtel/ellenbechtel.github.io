@@ -6,6 +6,8 @@
         <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
         <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
     </head>
 
     <body>
@@ -16,11 +18,15 @@
         </div>
         <div id="meat">
             <div class="content">
-                <p id="query"></p>
+                <p id="query">input your stuff here</p>
+                <input type="date" id="birthdate" value="1992-06-07">
+                <p>Input your date of birth.</p>
+                <button onclick="fetchData()">Submit</button>
+                <p id="submission"></p>
             </div>
         </div>
         <div id="potatoes">
-            <p>hehehe</p>
+
         </div>
 
         <!-- run script -->
