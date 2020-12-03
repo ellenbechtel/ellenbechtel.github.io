@@ -14,9 +14,9 @@ var birthday = '1992-06-07'; //startDT=
 var startDate = '1992-01-01';
 var endDate = '1992-12-31';
 var paramCode = '00060'; // discharge in cubic feet per second
-
 var siteType = 'ST';
 var siteStatus = "all";
+var colorScheme = ["#4f0b56","#482a70","#41498a","#3287bd","#4da4b1","#67c2a5","#8acda4","#acd7a3","#c8e19e","#e4ea99","#f7eda9","#fcde89","#ffc28a","#e5ccf5","#eeb4d1","#f79cac","#ae3a7d","#890965","#760a60","#620a5b","#420f4e"];
 
 
 
@@ -48,9 +48,9 @@ function fetchData() {
 
 
     // set the dimensions and margins of the graph, and recalculate window.innerWidth in case the window has been resized
-    var margin = {top: 20, right: 30, bottom: 0, left: 10},
+    var margin = {top: 20, right: 50, bottom: 0, left: 50},
         width = window.innerWidth - margin.left - margin.right,
-        height = 400 - margin.top - margin.bottom;
+        height = d3.min([window.innerHeight, 1000]) - margin.top - margin.bottom;
 
     // append a new svg based on size
     var svg = d3.select("#potatoes")
@@ -159,7 +159,7 @@ function fetchData() {
     ];
 
     // Print beginning and end date on the page
-    document.getElementById("submission").innerHTML = birthday + " is my birthday. <br> start = " + startDate + "<br>  End = " + endDate;
+    document.getElementById("submission").innerHTML = birthday + " is my birthday. <br> Start Date = " + startDate + "<br>  End Date = " + endDate;
     
     /////////////////////////////////
     // Parse HUC and Gages data
@@ -702,18 +702,24 @@ function fetchData() {
 
                 svg.append("g")
                     .attr("transform", "translate(0," + height*0.8 + ")")
-                    .call(d3.axisBottom(x).tickSize(-height*.7).tickValues([start, birthday, end])) // this is wrong, we need a date
+                    .call(d3.axisBottom(x)
+                        .tickSize(-height*.01)
+                        .tickFormat(d3.timeFormat("%m-%d-%Y"))
+                        .tickValues([start, birthday, end])) // this is wrong, we need a date
                     .select(".domain").remove()
 
                 // Customization
-                svg.selectAll(".tick line").attr("stroke", "#b8b8b8")
+                svg.selectAll(".tick line")
+                    .attr("stroke", "#b8b8b8")
+                    .attr("opacity",.4);
             
                 // Add X axis label:
-                svg.append("text")
-                    .attr("text-anchor", "end")
-                    .attr("x", width)
-                    .attr("y", height-30 )
-                    .text("Time (date)");
+                // svg.append("text")
+                //     .attr("text-anchor", "end")
+                //     .attr("class", "time-label")
+                //     .attr("x", width)
+                //     .attr("y", height )
+                //     .text("Time (date)");
             
                 // Add Y axis
                 var y = d3.scaleLinear()
@@ -724,7 +730,9 @@ function fetchData() {
                 // color palette
                 var color = d3.scaleOrdinal()
                     .domain(keys)
-                    .range(d3.schemeDark2);
+                    .range(colorScheme);
+
+                    console.log(color(huc01), "color");
             
                 //stack the data?
                 var stackedData = d3.stack()
@@ -737,8 +745,9 @@ function fetchData() {
                 // create a tooltip
                 var Tooltip = svg
                     .append("text")
-                    .attr("x", 0)
-                    .attr("y", 0)
+                    .attr("x", 80)
+                    .attr("y", 200)
+                    .attr("class", "tooltip")
                     .style("opacity", 0)
                     .style("font-size", 17)
             
@@ -747,7 +756,6 @@ function fetchData() {
                     Tooltip.style("opacity", 1)
                     d3.selectAll(".myArea").style("opacity", .2)
                     d3.select(this)
-                        .style("stroke", "black")
                         .style("opacity", 1)
                 }
                 var mousemove = function(d,i) {
@@ -782,95 +790,7 @@ function fetchData() {
 
 
 
-            /////////////////////////////////
-            // FAAAAKE example  
-            d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/5_OneCatSevNumOrdered_wide.csv", function(data) {
-
-            console.log(data, "other data")
-                // List of groups = header of the csv files
-                var keys2 = data.columns.slice(1)
-            
-                // // Add X axis
-                // var x = d3.scaleLinear()
-                //     .domain(d3.extent(data, function(d) { return d.year; }))
-                //     .range([ 0, width ]);
-                // svg.append("g")
-                //     .attr("transform", "translate(0," + height*0.8 + ")")
-                //     .call(d3.axisBottom(x).tickSize(-height*.7).tickValues([1900, 1925, 1975, 2000]))
-                //     .select(".domain").remove()
-
-                // // Customization
-                // svg.selectAll(".tick line").attr("stroke", "#b8b8b8")
-            
-                // // Add X axis label:
-                // svg.append("text")
-                //     .attr("text-anchor", "end")
-                //     .attr("x", width)
-                //     .attr("y", height-30 )
-                //     .text("Time (year)");
-            
-                // // Add Y axis
-                // var y = d3.scaleLinear()
-                //     .domain([-100000, 100000])
-                //     .range([ height, 0 ]);
-            
-                // // color palette
-                // var color = d3.scaleOrdinal()
-                //     .domain(keys)
-                //     .range(d3.schemeDark2);
-            
-                //stack the data?
-                var stackedData = d3.stack()
-                    .offset(d3.stackOffsetSilhouette)
-                    .keys(keys2)
-                    (data)
-                console.log(stackedData, "stacked");
-                // // create a tooltip
-                // var Tooltip = svg
-                //     .append("text")
-                //     .attr("x", 0)
-                //     .attr("y", 0)
-                //     .style("opacity", 0)
-                //     .style("font-size", 17)
-            
-                // // Three function that change the tooltip when user hover / move / leave a cell
-                // var mouseover = function(d) {
-                //     Tooltip.style("opacity", 1)
-                //     d3.selectAll(".myArea").style("opacity", .2)
-                //     d3.select(this)
-                //         .style("stroke", "black")
-                //         .style("opacity", 1)
-                // }
-                // var mousemove = function(d,i) {
-                //     grp = keys[i]
-                //     Tooltip.text(grp)
-                // }
-                // var mouseleave = function(d) {
-                //     Tooltip.style("opacity", 0)
-                //     d3.selectAll(".myArea").style("opacity", 1).style("stroke", "none")
-                // }
-            
-                // // Area generator
-                // var area = d3.area()
-                //     .x(function(d) { return x(d.data.year); })
-                //     .y0(function(d) { return y(d[0]); })
-                //     .y1(function(d) { return y(d[1]); })
-            
-                // // Show the areas
-                // svg
-                //     .selectAll("mylayers")
-                //     .data(stackedData)
-                //     .enter()
-                //     .append("path")
-                //         .attr("class", "myArea")
-                //         .style("fill", function(d) { return color(d.key); })
-                //         .attr("d", area)
-                //         .on("mouseover", mouseover)
-                //         .on("mousemove", mousemove)
-                //         .on("mouseleave", mouseleave)
-
-            // end d3.csv on fake data
-            })
+        
 
         // d3.json
         })
