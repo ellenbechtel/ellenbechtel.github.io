@@ -12,8 +12,29 @@
 
     <body>
         <div id="meat">
-            <div class="content">
-                <h1 class="spinner">Astrology of Hydrology</h1>
+            <h1 class="spinner">Astrology of Hydrology</h1>
+            <section id="scrolly">
+                <figure>
+                  <p>0</p>
+                </figure>
+        
+                <article>
+                  <div class="step" data-step="1">
+                    <p>STEP 1</p>
+                  </div>
+                  <div class="step" data-step="2">
+                    <p>STEP 2</p>
+                  </div>
+                  <div class="step" data-step="3">
+                    <p>STEP 3</p>
+                  </div>
+                  <div class="step" data-step="4">
+                    <p>STEP 4</p>
+                  </div>
+                </article>
+            </section>
+            <div class="data-section">
+                
                 <div>
                     <h2>SPACE</h2>
                     <input type="text" id="city" value="Lancaster">
@@ -23,7 +44,7 @@
                 <div>
                     <h2>TIME</h2>
                     <p id="query">input your stuff here</p>
-                    <input type="date" id="birthdate" value="1992-06-07">
+                    <input type="date" id="birthdate" value="1987-04-23">
                     <p>Input your date of birth.</p>
                     <button onclick="fetchData()">Submit</button>
                     <p id="submission"></p>
@@ -32,11 +53,21 @@
             <div id="potatoes">
             </div>
         </div>
-        
 
+
+        <!-- DataSources
+            HUC boundaries
+        https://viewer.nationalmap.gov/basic/#/  
+    
+        Daily Values
+        https://waterservices.usgs.gov/rest/DV-Test-Tool.html
+
+        -->
         <!-- run script -->
-        <script src="./script.js"></script>
-        <script src="./geocoding/geocoding.js"></script>
+        <script src="https://unpkg.com/intersection-observer"></script>
+        <script src="https://unpkg.com/scrollama"></script>
+        <script src="./scripts/streamgraph.js"></script>
+        <script src="./scripts/geocoding.js"></script>
     </body>
 </html>
 

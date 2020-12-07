@@ -18,19 +18,22 @@ body {
     background-attachment: fixed;
 }
 
-#meat .content {
+#meat .data-section {
     color: white;
     margin: 0 auto;
     padding: 20px 0;
 }
-.content {
+.data-section {
     max-width: 700px;
     margin: 0 auto;
 }
 
 h1 {
     font-size: 5em;
-    margin: 1em auto 0;
+    padding: 1em 0;
+    margin: 0 auto 0;
+    color: white;
+    text-align: center;
 }
 
 a {
@@ -44,8 +47,9 @@ a {
     fill: white;
 }
 
-.tick-label{
+.tick-label text{
     
     fill: white;
+    opacity: .2;
 
 }
