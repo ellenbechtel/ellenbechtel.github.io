@@ -159,11 +159,12 @@ function fetchData() {
     ];
 
     // Print beginning and end date on the page
-    document.getElementById("submission").innerHTML = birthday + " is my birthday. <br> Start Date = " + startDate + "<br>  End Date = " + endDate;
-    
+    document.getElementById("submission").innerHTML = "You were born on " + getYYYYMMDD(birthday) + ". <br>Pulling flow data over the month around your birth, from " + startDate + " to " + endDate + ".";
+    d3.selectAll(".streamgraph-text").style("display","block");
+
     /////////////////////////////////
     // Parse HUC and Gages data
-    //d3.csv("data/selected-gages.csv", function(gages) { // Switch for this line to use the selected gages
+    // d3.csv("data/selected-gages.csv", function(gages) { // Switch for this line to use the selected gages
 
     d3.csv("data/ref_gages.csv", function(gages) { // Switch for this line to use the climate gages
     
@@ -231,6 +232,42 @@ function fetchData() {
             var huc20 = [];
             var huc21 = [];
 
+            var HUCInfo = [
+                {no:"01",id:"huc01", name:"New England Region"},
+                {no:"02",id:"huc02", name:"Mid Atlantic Region"},
+                {no:"03",id:"huc03", name:"South Atlantic-Gulf Region"},
+                {no:"04",id:"huc04", name:"Great Lakes Region"},
+                {no:"05",id:"huc05", name:"Ohio Region"},
+                {no:"06",id:"huc06", name:"Tennessee Region"},
+                {no:"07",id:"huc07", name:"Upper Mississippi Region"},
+                {no:"08",id:"huc08", name:"Lower Mississippi"},
+                {no:"09",id:"huc09", name:"Souris-Red-Rainy Region"},
+                {no:"10",id:"huc10", name:"Missouri Region"},
+                {no:"11",id:"huc11", name:"Arkansas-White-Red Region"},
+                {no:"12",id:"huc12", name:"Texas-Gulf Region"},
+                {no:"13",id:"huc13", name:"Rio Grande Region"},
+                {no:"14",id:"huc14", name:"Upper Colorado Region"},
+                {no:"15",id:"huc15", name:"Lower Colorado Region"},
+                {no:"16",id:"huc16", name:"Great Basin Region"},
+                {no:"17",id:"huc17", name:"Pacific Northwest Region"},
+                {no:"18",id:"huc18", name:"California Region"},
+                {no:"19",id:"huc19", name:"Alaska Region"},
+                {no:"20",id:"huc20", name:"Hawaii Region"},
+                {no:"21",id:"huc21", name:"Carribbean-Puerto Rico Region"}
+            ];
+           
+            // Create functions to access any of the info given a number (01, 14, etc)
+            function getHUCname(hucIDnum){
+                console.log(hucIDnum,'num');
+                var filtered = HUCInfo.filter(function(huc) { // doing only HUC01 array
+                    return huc.no === hucIDnum;
+                })
+                console.log(filtered,'filtered');
+                if(filtered.length == 1) {
+                    return filtered[0].name;
+                }
+            }
+           
             // create function to collect all timeseries values and put them in their respective HUC array
             function getHUCArray(hucArray, huc_no) {
                 timeseries.forEach(function(gage) {
@@ -779,11 +816,12 @@ function fetchData() {
                 // create a tooltip
                 var Tooltip = svg
                     .append("text")
-                    .attr("x", 80)
-                    .attr("y", 200)
+                    .attr("x", 30)
+                    .attr("y", 100)
                     .attr("class", "tooltip")
                     .style("opacity", 0)
-                    .style("font-size", 17)
+                    .style("z-index",100)
+                    .style("font-size", 20)
             
                 // Three function that change the tooltip when user hover / move / leave a cell
                 var mouseover = function(d) {
@@ -794,7 +832,7 @@ function fetchData() {
                 }
                 var mousemove = function(d,i) {
                     grp = keys[i]
-                    Tooltip.text(grp)
+                    Tooltip.text(getHUCname(grp.slice(3,5)))
                 }
                 var mouseleave = function(d) {
                     Tooltip.style("opacity", 0)

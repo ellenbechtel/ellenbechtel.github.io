@@ -28,6 +28,14 @@ body {
     margin: 0 auto;
 }
 
+.text-section {
+    margin-bottom: 100px;
+}
+
+.streamgraph-text {
+    display: none;
+}
+
 h1 {
     font-size: 5em;
     padding: 1em 0;
@@ -37,9 +45,9 @@ h1 {
 }
 
 a {
-    color:#026043;
     text-decoration: none;
     font-weight: bold;
+    color:rgba(199,150,82,1);
   }
 
 .tooltip {
@@ -111,7 +119,7 @@ a {
   }
 
   .step.is-active p.step-header {
-    background-color: goldenrod;
+    background-color: rgba(199,150,82,1);
     color: #3b3b3b;
   }
 
@@ -120,4 +128,35 @@ a {
     padding: 1rem;
     font-size: 1.5rem;
     background-color: #3b3b3b;
+  }
+
+  /* SVG Map styling */
+
+  .cls-1, .cls-2 {
+    fill: none;
+    stroke: #999;
+    stroke-width: 0.75px;
+  }
+
+  .cls-1, .cls-4 {
+    stroke-linejoin: round;
+  }
+
+  .cls-2 {
+    stroke-miterlimit: 10;
+  }
+
+  .cls-3 {
+    opacity: 0.5;
+  }
+
+  .cls-4 {
+    fill: #5c98ff;
+    stroke: #fff;
+    stroke-linecap: round;
+    stroke-width: 2px;
+  }
+
+  .highlighted_HUC, .highlighted_HUC g, .highlighted_HUC path {
+    opacity: 1;
   }

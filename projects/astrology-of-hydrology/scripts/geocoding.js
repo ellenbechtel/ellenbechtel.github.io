@@ -2,6 +2,7 @@ function fetchLocation() {
     /////////////////////////////////
     // Get City and State, clear previously stored values
     //////////////////////////////////
+    var HUCmap = d3.select()
     var city = [];
     var state = [];
     var geocodeAPIURL = "http://open.mapquestapi.com/geocoding/v1/address?key=	NkGrSo9aZDYlEaOv3pNN3lvFxuBFmCdK&location=";
@@ -57,18 +58,32 @@ function fetchLocation() {
         // should be
         // https://waterservices.usgs.gov/nwis/dv/?format=json&bBox=-76.405669,39.938130,-76.205669,40.138130&siteStatus=all
 
-    /////////////////////////////////
-    // Compile HUC-retreiving URL
-    var nwisAPI = nwisAPIURL + birthCoord[0].west + "," + birthCoord[0].south + "," + birthCoord[0].east  + "," + birthCoord[0].north  + "&siteStatus="  + siteStatus
+        /////////////////////////////////
+        // Compile HUC-retreiving URL
+        var nwisAPI = nwisAPIURL + birthCoord[0].west + "," + birthCoord[0].south + "," + birthCoord[0].east  + "," + birthCoord[0].north  + "&siteStatus="  + siteStatus
 
-    /////////////////////////////////
-    // Call NWIS API to determine what HUC02 we're in
+        /////////////////////////////////
+        // Call NWIS API to determine what HUC02 we're in
 
-    d3.json(nwisAPI, function (error, HUCdata) {
- 
-        var birthHUC = HUCdata.value.timeSeries[0].sourceInfo.siteProperty[1].value.slice(0,2);
-        console.log(birthHUC, "birth HUC")
-    })
+        d3.json(nwisAPI, function (error, HUCdata) {
+    
+            var birthHUC = HUCdata.value.timeSeries[0].sourceInfo.siteProperty[1].value.slice(0,2);
+            console.log(birthHUC, "birth HUC")
+
+            function highlightBirthHUC(birthHUC) {
+                // compile the variable name from the input
+                var all_HUCS = d3.selectAll("#scroll-svgs").style("opacity",".1")
+                var myHUC = "";
+                console.log(birthHUC, "birth HUC inside")
+                if (birthHUC="01") {
+                    myHUC = d3.select("#_01").attr("class","highlighted_HUC")
+                } else if (birthHUC="02") {
+                    myHUC = d3.select("#_02").attr("class","highlighted_HUC")
+                }    
+            }
+            
+            highlightBirthHUC(birthHUC);
+        })
         
     });
 

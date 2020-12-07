@@ -10,9 +10,9 @@ var scroller = scrollama();
 
 // select existing SVGS even though they are all invisible
 var allsvgs = d3.selectAll(".scroll-svgs")
-var svg1 = d3.select("#bubble"); // currently this is the first svg shown
-var svg2 = d3.select("#fish");
-var svg3 = d3.select("#algae");3
+var svg1 = d3.select("#rivers"); // currently this is the first svg shown
+var svg2 = d3.select("#hucs");
+var svg3 = d3.select("#states");
 
 // generic window resize listener event
 function handleResize() {
@@ -42,7 +42,6 @@ function handleStepEnter(response) {
   });
 
   // update graphic based on step // THIS IS THE UPDATE CHART SECTION
-  figure.select("p").text(response.index + 1);
   updateChart(response.index);
 }
 
@@ -50,11 +49,11 @@ function handleStepEnter(response) {
 function updateChart(index){
   allsvgs.style("opacity","0").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out");
   if (index == 0) {
-    svg1.style("opacity","1").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
+    svg1.style("opacity",".9").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
   } else if (index == 1) {
-    svg2.style("opacity","1").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
+    svg2.style("opacity",".9").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
   } else if (index == 2) {
-    svg3.style("opacity","1").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
+    svg3.style("opacity",".9").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
   }
 }
 
