@@ -160,3 +160,13 @@ a {
   .highlighted_HUC, .highlighted_HUC g, .highlighted_HUC path {
     opacity: 1;
   }
+
+
+  /* Meet Your Watershed */
+  #meet-your-watershed {
+    display:none;
+
+  }
+  /* #active-watershed {
+    display: block;
+  } */

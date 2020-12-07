@@ -275,32 +275,59 @@
                   </div>
                 </article>
             </section>
-            <div class="data-section">
-                <h2>What the HUC</h2>
-                <p>Let us help you find yourself on the map above.</p>
-                <div class="text-section">                    
-                    <h3>Where were you born?</h3>
-                    <input type="text" id="city" value="Lancaster">
-                    <input type="text" id="state" value="PA">
-                    <button onclick="fetchLocation()">Discover</button>
-                    <p>Mattis nunc sed blandit libero volutpat. Integer eget aliquet nibh praesent. Adipiscing elit pellentesque habitant morbi tristique senectus et netus. Pharetra vel turpis nunc eget lorem dolor sed viverra.</p>
-                </div>
-                <div class="text-section">
-                    <h3>When were you born?</h3>
-                    <input type="date" id="birthdate" value="1987-04-23">
-                    <button onclick="fetchData()">Discover</button>
-                    <p id="submission"></p>
-                    <p class="streamgraph-text">Mattis nunc sed blandit libero volutpat. Integer eget aliquet nibh praesent. Adipiscing elit pellentesque habitant morbi tristique senectus et netus. Pharetra vel turpis nunc eget lorem dolor sed viverra.</p>
-                </div>
-            </div>
+            <section id="HUC-section" class="data-section">
+              <h2>Meet Your Watershed</h2>
+              <div class="text-section">                    
+                  <h3>Where were you born?</h3>
+                  <input type="text" id="city" value="Lancaster">
+                  <input type="text" id="state" value="PA">
+                  <button onclick="fetchLocation()">Discover</button>
+                  <div id="meet-your-watershed" class = "main-content">
+                    <h2 id = "HUCname"> </h2>                
+                    <img id="boundaryImage" alt="boundary outline" width=auto height="600" class = "center">
+                
+                    <h3 class = "notebook"> Definition </h3>
+                    <p id = "drainage" class = "info"> </p>
+                
+                    <h3> Tribes </h3>
+                    <p id = "tribes" class = info> </p>
+                
+                    <h3> Plant </h3>
+                    <p id = "plantText" class = "info"> </p>
+                    <p id = "plantSci" class = "sciName"> </p>
+                    <img id="plantImage" alt="plant" width=auto height="600">
+                    <p id = "plantIC" class = "credit"> </p>
+                
+                    <h3> Animal </h3>
+                    <p id = "animalText" class = "info"> </p>
+                    <p id = "animalSci" class = "sciName"> </p>
+                    <img id="animalImage" alt="animal" width=auto height="600">
+                    <p id = "animalIC" class = "credit"> </p>
+                
+                    <h3> Mineral </h3>
+                    <p id = "mineralText" class = "info"> </p>
+                    <img id="mineralImage" alt="mineral" width=auto height="600">
+                    <p id = "mineralIC" class = "credit"> </p>
+                  </div>
+              </div>
+            </section>
+            <section id="streamgraph-section" class="data-section">
+              <div class="text-section">
+                  <h3>When were you born?</h3>
+                  <input type="date" id="birthdate" value="1987-04-23">
+                  <button onclick="fetchData()">Discover</button>
+                  <p id="submission"></p>
+                  <p class="streamgraph-text">Mattis nunc sed blandit libero volutpat. Integer eget aliquet nibh praesent. Adipiscing elit pellentesque habitant morbi tristique senectus et netus. Pharetra vel turpis nunc eget lorem dolor sed viverra.</p>
+              </div>
+            </section>
             <div id="potatoes">
             </div>
-            <div class="data-section streamgraph-text">
+            <section class="data-section streamgraph-text">
               <div>
                 <p>Velit scelerisque in dictum non consectetur a. Vivamus at augue eget arcu. In egestas erat imperdiet sed euismod. Mauris in aliquam sem fringilla ut morbi. Mus mauris vitae ultricies leo integer malesuada nunc vel. Cras sed felis eget velit aliquet sagittis id consectetur purus. Viverra aliquet eget sit amet. Nullam vehicula ipsum a arcu cursus vitae congue mauris. Nunc scelerisque viverra mauris in aliquam sem. Sit amet cursus sit amet dictum sit amet. At auctor urna nunc id cursus metus. Tortor id aliquet lectus proin. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus.</p>
                 <p>Dui ut ornare lectus sit amet est placerat in. Ullamcorper malesuada proin libero nunc consequat interdum. Et malesuada fames ac turpis egestas integer. Sit amet porttitor eget dolor morbi. Molestie a iaculis at erat pellentesque adipiscing commodo. Pulvinar etiam non quam lacus suspendisse faucibus interdum posuere lorem. Sem integer vitae justo eget. Pulvinar pellentesque habitant morbi tristique senectus et. Lacus luctus accumsan tortor posuere. Hendrerit dolor magna eget est.</p>
               </div>
-            </div>
+            </section>
             <div class="data-section">
               <h2>Data Sources</h2>
               <a href="https://viewer.nationalmap.gov/basic/#/" class="cite"><p>HUC Boundaries</p></a>
