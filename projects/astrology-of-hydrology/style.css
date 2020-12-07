@@ -48,8 +48,76 @@ a {
 }
 
 .tick-label text{
-    
     fill: white;
     opacity: .2;
-
 }
+
+
+/* Scrolly CSS */
+#scrolly {
+    position: relative;
+    padding: 1rem;
+  }
+
+  article {
+    position: relative;
+    padding: 0;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  figure {
+    position: -webkit-sticky;
+    position: sticky;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    z-index: 0;
+  }
+
+  figure p {
+    text-align: center;
+    padding: 1rem;
+    position: absolute;
+    left: 50%;
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 8rem;
+    font-weight: 900;
+    color: #fff;
+  }
+
+  figure svg {
+      fill: white;
+      margin: auto;
+      text-align: center;
+      display:block; 
+  }
+
+  .step {
+    margin: 0 auto 50vh auto;
+    height: auto;
+    padding: 20px 50px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .step:last-child {
+    margin-bottom: 70vh;
+  }
+
+  .step.is-active p.step-header {
+    background-color: goldenrod;
+    color: #3b3b3b;
+  }
+
+  .step p.step-header {
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.5rem;
+    background-color: #3b3b3b;
+  }
