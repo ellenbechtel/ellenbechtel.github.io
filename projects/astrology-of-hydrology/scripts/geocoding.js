@@ -34,7 +34,7 @@ function fetchLocation() {
         {
         "HUC-Number": "01",
         "Name": "New England Region",
-        "Boundary-img": "https://water.usgs.gov/wsc/reg/01.jpg",
+        "Boundary-img": "svg/single-hucs_1.svg",
         "Tribes": "Algonkin, including Abenaki, Micmac, Pennacook, Pequot, Mohegan, Nauset, Narragansett, Nipmuc, Woronoco, and Wampanoag",
         "Plant": "Small whorled pogonia",
         "PlantSci": "Isotria medeoloides",
@@ -52,7 +52,7 @@ function fetchLocation() {
         {
         "HUC-Number": "02",
         "Name": "Mid-Atlantic Region",
-        "Boundary-img": "https://water.usgs.gov/wsc/reg/02.jpg",
+        "Boundary-img": "svg/single-hucs_2.svg",
         "Tribes": "Chickahominy, Monacan, Nansemond, Pamunkey, Rappahannock, Upper Mattaponi",
         "Plant": "Bloodroot",
         "PlantSci": "Sanguinaria",
@@ -70,7 +70,7 @@ function fetchLocation() {
         {
         "HUC-Number": "03",
         "Name": "South Atlantic-Gulf Region",
-        "Boundary-img": "https://water.usgs.gov/wsc/reg/03.jpg",
+        "Boundary-img": "svg/single-hucs_3.svg",
         "Tribes": "Choctaw, Chitimacha, Coushatta, Houma, Tunica, Muscogee (Creek), Seminole, Miccosukee, Alabama, Coushatta",
         "Plant": "Saw palmetto",
         "PlantSci": "Serenoa repens",
@@ -88,7 +88,7 @@ function fetchLocation() {
         {
         "HUC-Number": "04",
         "Name": "Great Lakes Region",
-        "Boundary-img": "https://water.usgs.gov/wsc/reg/04.jpg",
+        "Boundary-img": "svg/single-hucs_4.svg",
         "Tribes": "Santee Dakota, Menominee, Ioway, Ho-chunk, Illinois, Potawatomi, Sauk, Mascouten, Fox, Miami, Kickapoo, Shawnee, Anishinabe, Ottawa, Petun, Nipissing, Algonkin, Huron, Iroquois",
         "Plant": "Houghton's goldenrod",
         "PlantSci": "Oligoneuron houghtonii",
@@ -106,7 +106,7 @@ function fetchLocation() {
         {
         "HUC-Number": "05",
         "Name": "Ohio Region",
-        "Boundary-img": "https://water.usgs.gov/wsc/reg/05.jpg",
+        "Boundary-img": "svg/single-hucs_5.svg",
         "Tribes": "Anishinaabe/Ojibwe, Ottawa, Delaware, Iroquois including Mohawk, Oneida, Onondaga, Cayuga, Seneca, Tuscarora; Miami, Shawnee, Wyandot, Piqua, Kickapoo, Illinois, Huron, Honniasont",
         "Plant": "Appalachian filmy fern",
         "PlantSci": "Trichomanes boshianum",
@@ -124,7 +124,7 @@ function fetchLocation() {
         {
         "HUC-Number": "06",
         "Name": "Tennessee Region",
-        "Boundary-img": "https://water.usgs.gov/wsc/reg/06.jpg",
+        "Boundary-img": "svg/single-hucs_6.svg",
         "Tribes": "Quapaw, Chickasaw, Shawnee, Yuchi, Koasati, Cherokee, Chikamaka Cherokee, Etowah Cherokee, Muscogee (Creek), Natchez, Catawba",
         "Plant": "Butternut hickory",
         "PlantSci": "Carya cordiformis",
@@ -142,7 +142,7 @@ function fetchLocation() {
         {
         "HUC-Number": "07",
         "Name": "Upper Mississippi Basin Region",
-        "Boundary-img": "https://water.usgs.gov/wsc/reg/07.jpg",
+        "Boundary-img": "svg/single-hucs_7.svg",
         "Tribes": "Ibitoupa, Tiou, Choctaw, Chickasaw, Chakchiuma, Quapaw, Taposa, Chula, Yazoo, Tunica, Koroa, Natchez Grigra",
         "Plant": "Prairie aster",
         "PlantSci": "Eurybia hemispherica",
@@ -160,7 +160,7 @@ function fetchLocation() {
         {
         "HUC-Number": "08",
         "Name": "Lower Mississippi Region",
-        "Boundary-img": "https://water.usgs.gov/wsc/reg/08.jpg",
+        "Boundary-img": "svg/single-hucs_8.svg",
         "Tribes": "Choctaw, Pascagoula, Biloxi, Pensacola, Capinans/Moctobi,  Acolapissa, Houma, Natchez Grigra, Ofo/Ofogoula, Sawoki, Tiou",
         "Plant": "Green-fly orchid",
         "PlantSci": "Epidendrum magnoliae",
@@ -178,7 +178,7 @@ function fetchLocation() {
         {
         "HUC-Number": "09",
         "Name": "Souris-Red-Rainy Region",
-        "Boundary-img": "https://water.usgs.gov/wsc/reg/09.jpg",
+        "Boundary-img": "svg/single-hucs_9.svg",
         "Tribes": "Mandan, Hidatsa, Arikara, Yanktonia, Sisseton, Wahpeton, Hunkpapa and other Dakotah/Lakotah (more commonly known as the Sioux) Tribes, along with the Pembina Chippewa, Cree and Meti, Anishinaabe/Ojibwe,",
         "Plant": "Mountain holly",
         "PlantSci": "Ilex mucronata",
@@ -196,7 +196,7 @@ function fetchLocation() {
         {
         "HUC-Number": "10",
         "Name": "Missouri Region",
-        "Boundary-img": "https://water.usgs.gov/wsc/reg/10.jpg",
+        "Boundary-img": "svg/single-hucs_10.svg",
         "Tribes": "Missouria, Osage, Quapaw, Chickasaw, Illini, Ioway, Otoe-Missouria, Sac & Fox, Shawnee",
         "Plant": "Water locust",
         "PlantSci": "Gleditsia aquatica",
@@ -214,7 +214,7 @@ function fetchLocation() {
         {
         "HUC-Number": "11",
         "Name": "Arkansas-White-Red Region",
-        "Boundary-img": "https://water.usgs.gov/wsc/reg/11.jpg",
+        "Boundary-img": "svg/single-hucs_11.svg",
         "Tribes": "Binger/Caddo, Pawhuska/Osage, Quapaw, Tahlequah/Cherokee, Tunica-Biloxi",
         "Plant": "American yellowwood",
         "PlantSci": "Cladrastis kentukea",
@@ -232,7 +232,7 @@ function fetchLocation() {
         {
         "HUC-Number": "12",
         "Name": "Texas-Gulf Region",
-        "Boundary-img": "https://water.usgs.gov/wsc/reg/12.jpg",
+        "Boundary-img": "svg/single-hucs_12.svg",
         "Tribes": "Karankawa, Atakapa, Mariame, Akokisa",
         "Plant": "Purple silkyscale",
         "PlantSci": "Anthaenatia rufa",
@@ -250,7 +250,7 @@ function fetchLocation() {
         {
         "HUC-Number": "13",
         "Name": "Rio Grande Region",
-        "Boundary-img": "https://water.usgs.gov/wsc/reg/13.jpg",
+        "Boundary-img": "svg/single-hucs_13.svg",
         "Tribes": "Lipan and Mescalero Apache, Comanche, Coahuiltecan, Huastecan, Kickapoo, Tonkawa",
         "Plant": "Coulter's balsam apple",
         "PlantSci": "Echinopepon coulteri",
@@ -268,7 +268,7 @@ function fetchLocation() {
         {
         "HUC-Number": "14",
         "Name": "Upper Colorado Region",
-        "Boundary-img": "https://water.usgs.gov/wsc/reg/14.jpg",
+        "Boundary-img": "svg/single-hucs_15.svg",
         "Tribes": "Navajo, Ute, Uintah, Ouray, Goshute, Jicarilla Apache, Kewa Pueblo, Shoshone, Mescalero, Ohkay Owingeh, Paiute, Pueblo, Ysleta del Sur Pueblo",
         "Plant": "Reclined gumweed",
         "PlantSci": "Grindelia decumbens",
@@ -286,7 +286,7 @@ function fetchLocation() {
         {
         "HUC-Number": "15",
         "Name": "Lower Colorado Region",
-        "Boundary-img": "https://water.usgs.gov/wsc/reg/15.jpg",
+        "Boundary-img": "svg/single-hucs_15.svg",
         "Tribes": "Yuman, Quapaw, Mojave, Cocopa, Kamia, Halyikwamai, Alikwisa, Kohuana, Kamia, Halchidhoma",
         "Plant": "Sand reverchonia",
         "PlantSci": "Phyllanthus warnockii",
@@ -304,7 +304,7 @@ function fetchLocation() {
         {
         "HUC-Number": "16",
         "Name": "Great Basin Region",
-        "Boundary-img": "https://water.usgs.gov/wsc/reg/16.jpg",
+        "Boundary-img": "svg/single-hucs_16.svg",
         "Tribes": "Western Shoshone, Goshute, Ute, Paiute, Washoe",
         "Plant": "Beaver dam breadroot",
         "PlantSci": "Pediomelum castoreum",
@@ -322,7 +322,7 @@ function fetchLocation() {
         {
         "HUC-Number": "17",
         "Name": "Pacific Northwest Region",
-        "Boundary-img": "https://water.usgs.gov/wsc/reg/17.jpg",
+        "Boundary-img": "svg/single-hucs_17.svg",
         "Tribes": "Tlingit, Tsimshian, Haida, Kwakiutl, Bella Coola, Kwakiutl, Nuu-Chah-Nulth, Makah, Quileute-Chimakum, Kwalhioqua, Chinook, Tillamook, Kalapuya, Alsae, Siuslaw, Coos, Umpqua, Tututni-Tolowa, Kabok, Yurok, Wiyot, Hupa, Nisga'a, Haida, Gitxsan, Haisla, Heiltsuk, Wuikinuxv, Kwakwaka'wakw, Makah, Coast Salish, Chimakum, Quileute, Willapa, Da'naxda'xw",
         "Plant": "Western cow bane",
         "PlantSci": "Oxypolis occidentalis",
@@ -340,7 +340,7 @@ function fetchLocation() {
         {
         "HUC-Number": "18",
         "Name": "California Region",
-        "Boundary-img": "https://water.usgs.gov/wsc/reg/18.jpg",
+        "Boundary-img": "svg/single-hucs_18.svg",
         "Tribes": "Karok, Maidu, Cahuilleno, Mojave, Yokut, Pomo, Paiute, Modoc, Achomawi/Pit River, Atsugewi, Ahwahnechee, Cahuilla, Chumash, Chilula, Chimariko, Coso, Cupeño, Eel River Athapaskan, Esselen, Hupa, Juaneño/Acjachemen, Karok, Kato, Kawaiisu, Kitanemuk, Konkow, Kucadikadi, Kumeyaay, Luiseño, Maidu, Miwok, Mojave,Monache, Mono, Nomlaki, Ohlone, Patayan, Patwin, Pauma, Pomo, Salinan, Serrano, Shasta, Tataviam, Timbisha, Tolowa, Tongva, Tubatulabal, Wappo, Washoe, Whilkut, Wintu, Wiyot, Yana, Yokut, Yuku, Yurok",
         "Plant": "Johnson's fishhook cactus",
         "PlantSci": "Echinomastus johnsonii",
@@ -358,7 +358,7 @@ function fetchLocation() {
         {
         "HUC-Number": "19",
         "Name": "Alaska Region",
-        "Boundary-img": "https://water.usgs.gov/wsc/reg/19.jpg",
+        "Boundary-img": "svg/single-hucs_19.svg",
         "Tribes": "Aleuit, Inupiat/Northern Eskimo, Yuit/Southern Eskimo, Athabascan, Tlingit, Haida",
         "Plant": "Alaska Spiraea",
         "PlantSci": "Spiraea stevenii",
@@ -376,7 +376,7 @@ function fetchLocation() {
         {
         "HUC-Number": "20",
         "Name": "Hawaii Region",
-        "Boundary-img": "https://water.usgs.gov/wsc/reg/20.jpg",
+        "Boundary-img": "svg/single-hucs_20.svg",
         "Tribes": "Kānaka Maoli/Native Hawaiian",
         "Plant": "Hawai'i silversword/hinahina",
         "PlantSci": "Argyroxiphium sandwicense",
@@ -394,7 +394,7 @@ function fetchLocation() {
         {
         "HUC-Number": "21",
         "Name": "Puerto Rico and Caribbean",
-        "Boundary-img": "https://water.usgs.gov/wsc/reg/21.jpg",
+        "Boundary-img": "svg/single-hucs_21.svg",
         "Tribes": "Taîno, Island Carib, Guanahatabey",
         "Plant": "Sea grape",
         "PlantSci": "Coccoloba uvifera",
@@ -702,7 +702,7 @@ function fetchLocation() {
         "huc_name": "Souris-Red-Rainy Region",
         "station_nm": "Rainy River Near Boat Landing at Wheelers Point, MN",
         "site_number": 5137500,
-        "vector": ""
+        "vector": "svg/single-hucs-9.svg"
         },
         {
         "name": "Red River",
@@ -1028,6 +1028,7 @@ function fetchLocation() {
             var meet = d3.select("#meet-your-watershed").style("display","block");
             //images
             //document.getElementById("boundaryImage").src = row["Boundary-img"];
+            document.getElementById("hucImage").src = row["Boundary-img"];
             document.getElementById("plantImage").src = row["Plant-img"];
             document.getElementById("animalImage").src = row["Animal-img"];
             document.getElementById("mineralImage").src = row["Mineral-img"];
