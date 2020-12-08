@@ -994,32 +994,6 @@ function fetchLocation() {
             createRiverdivs(this_huc, rivers);
         }
 
-      
-        
-        // ANNAS
-        function get_row_by_river(river) {
-            // check river is within bounds 
-            //...
-            // create dict mapping river to row
-            let row_by_river = {}
-            hydrorows.forEach((row)=>{
-                row_by_river[row["name"]] = row;
-            });
-
-            // access dict to retrieve row using river
-            return row_by_river[river];
-        }
-
-        // function spitItOut() {
-
-        //     //text
-        //     document.getElementById("riverName").innerHTML = row["name"];
-        //     document.getElementById("hydroscope").innerHTML = row["hydroscope"];
-        // }
-        // END ANNAS
-
-
-        
 
         // Create function for population HTML with HUC info
         function spitItOut(this_row) {
@@ -1046,14 +1020,12 @@ function fetchLocation() {
             document.getElementById("mineralText").innerHTML = row["Mineral"];
             document.getElementById("mineralIC").innerHTML = row["img-cred-m"];
 
-            // append River hydroscope divs here!!!
-
-                // sdfjlsdkjflskfj
+            
         };
 
     /////////////////////////////////
     // Compile Geocoding URL
-    var geocode = geocodeAPIURL + city + "," + state;
+    var geocode = geocodeAPIURL + city + "," + state + "/";
     /////////////////////////////////
     // Call API
 
