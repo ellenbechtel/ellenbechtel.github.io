@@ -273,46 +273,56 @@
                   </div>
                 </article>
             </section>
-            <section id="HUC-section" class="data-section move-up">
-              <h2>Meet Your Watershed</h2>
-              <div class="text-section">                    
-                  <h3>Where were you born?</h3>
-                  <input type="text" id="city" value="Lancaster">
-                  <input type="text" id="state" value="PA">
+            <section id="HUC-section" class="move-up">
+              <div class="text-content">
+                <h2>Meet Your Watershed</h2>
+                <h3>Where were you born?</h3>
+                  <input type="text" id="city" value="San Francisco">
+                  <input type="text" id="state" value="CA">
                   <button onclick="fetchLocation()">Discover</button>
                   <!-- <div class="lds-ripple"><div></div><div></div></div> -->
-                  <div id="meet-your-watershed" class="main-content">
-                    <div class="flex-container">
-                      <div id="desc" class="flex-item">
-                        <h2 id = "HUCname"> </h2> 
-                        <p id = "drainage" class = "info"> </p>
-                      </div>
-                      <div id="land-ack" class="flex-item">
-                        <h3>On Whose Land</h3>
-                        <p id = "tribes" class = info> </p>
-                      </div>
-                      <div id="plant" class="flex-item">
-                        <h3>Plant</h3>
-                        <p id = "plantText" class = "info"> </p>
-                        <p id = "plantSci" class = "sciName"> </p>
-                        <img id="plantImage" alt="plant" class="flex-pic">
-                        <p id = "plantIC" class = "credit"> </p>
-                      </div>
-                      <div id="animal" class="flex-item">
-                        <h3>Animal</h3>
-                        <p id = "animalText" class = "info"> </p>
-                        <p id = "animalSci" class = "sciName"> </p>
-                        <img id="animalImage" alt="animal" class="flex-pic">
-                        <p id = "animalIC" class = "credit"> </p>
-                      </div>
-                      <div id="mineral" class="flex-item">
-                        <h3> Mineral </h3>
-                        <p id = "mineralText" class = "info"> </p>
-                        <img id="mineralImage" alt="mineral" class="flex-pic">
-                        <p id = "mineralIC" class = "credit"> </p>
-                      </div>
-                    </div>
+              </div>
+              <div id="meet-your-watershed" class="main-content">
+                <div id="watershed-info" class="flex-container">
+                  <div id="desc" class="flex-item">
+                    <h2 id = "HUCname"> </h2> 
+                    <p id = "drainage" class = "info"> </p>
                   </div>
+                  <div id="land-ack" class="flex-item">
+                    <h3>On Whose Land</h3>
+                    <p id = "tribes" class = info> </p>
+                  </div>
+                  <div id="plant" class="flex-item">
+                    <img id="plantImage" alt="plant" class="flex-pic">
+                    <p id = "plantIC" class = "credit"> </p>
+                    <h3>Plant</h3>
+                    <p id = "plantText" class = "info"> </p>
+                    <p id = "plantSci" class = "sciName"> </p>
+                  </div>
+                  <div id="animal" class="flex-item">
+                    <img id="animalImage" alt="animal" class="flex-pic">
+                    <p id = "animalIC" class = "credit"> </p>
+                    <h3>Animal</h3>
+                    <p id = "animalText" class = "info"> </p>
+                    <p id = "animalSci" class = "sciName"> </p>
+                  </div>
+                  <div id="mineral" class="flex-item">
+                    <img id="mineralImage" alt="mineral" class="flex-pic">
+                    <p id = "mineralIC" class = "credit"> </p>
+                    <h3> Mineral </h3>
+                    <p id = "mineralText" class = "info"> </p>
+                  </div>
+                  <div id="hydroscope-title" class="flex-item">
+                    <h3>Meet the Rivers</h3> 
+                    <p>And now for some totally unscientific content about the rivers in your watershed.</p>
+                    <ul id="river-list">
+                      <li>River 1</li>
+                      <li>River 2</li>
+                    </ul>
+                  </div>
+                </div>
+                <div id="hydroscopes" class="flex-container">
+                </div>
               </div>
             </section>
             <section id="streamgraph-section" class="data-section">

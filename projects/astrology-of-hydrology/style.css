@@ -8,6 +8,7 @@ html, body {
 body {
     box-sizing: border-box;
     font-size: 16px;
+    color: white;
 }
 
 #meat {
@@ -18,14 +19,12 @@ body {
     background-attachment: fixed;
 }
 
-#meat .data-section {
-    color: white;
-    padding: 20px 0;
-}
-.data-section {
+.data-section, .text-content{
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
+    color: white;
+    padding: 20px;
 }
 
 .text-section {
@@ -171,6 +170,8 @@ a {
   
   #meet-your-watershed { 
     display:none;
+    max-width: 1000px;
+    margin: 0 auto;
   }
 
   #load-warning {
@@ -179,21 +180,21 @@ a {
 
   .flex-container {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    align-content: flex-start;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-around;
   }
 
   .flex-item {
-    flex: 1 0 auto;
-    min-width: 200px;
-    max-width: 300px;
-    padding: 20px;
+    padding: 20px;  
+    min-width: 300px;
+    flex: 0 0 40%;
+    margin: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
   }
   .flex-pic {
-    width: auto;
-    height: 150px;
+    max-width: 100%;
+    height: auto;
   }
   /* Loading Ripple */
 
