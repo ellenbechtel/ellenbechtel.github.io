@@ -9,10 +9,11 @@ body {
     box-sizing: border-box;
     font-size: 16px;
     color: white;
+    line-height: 1.4;
 }
 
 #meat {
-    background-image: linear-gradient(0deg, rgba(34,20,60,1) 50%, rgba(199,150,82,1) 100%), url(path.JPG);
+    background-image: linear-gradient(0deg, rgba(34,20,60,1) 50%, rgba(199,150,82,1) 100%);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -111,7 +112,8 @@ a {
     height: auto;
     padding: 20px 50px;
     color: #fff;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.2); 
+    
   }
 
   .step:last-child {

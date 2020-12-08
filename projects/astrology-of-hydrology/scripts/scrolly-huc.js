@@ -10,8 +10,8 @@ var scroller = scrollama();
 
 // select existing SVGS even though they are all invisible
 var allsvgs = d3.selectAll("#scroll-svgs")
-var svg1 = d3.select("#rivers"); // currently this is the first svg shown
-var svg2 = d3.select("#states");
+var svg2 = d3.select("#rivers"); // currently this is the first svg shown
+var svg1 = d3.select("#states");
 var svg3 = d3.selectAll(".a-huc");
 
 // generic window resize listener event
