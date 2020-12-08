@@ -131,6 +131,10 @@ a {
     background-color: #3b3b3b;
   }
 
+  #rivers, #hucs, #states {
+    opacity: 0;
+  }
+
   /* SVG Map styling */
 
   .cls-1, .cls-2 {

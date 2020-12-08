@@ -498,7 +498,7 @@ function fetchLocation() {
 
             function highlightBirthHUC(birthHUC) {
                 // compile the variable name from the input
-                var all_HUCS = d3.selectAll("#scroll-svgs").style("opacity",".1")
+                var all_HUCS = d3.selectAll("#hucs").style("opacity",".1")
                 var myHUC = "";
                 console.log(birthHUC, "birth HUC inside")
                 if (birthHUC="01") {
