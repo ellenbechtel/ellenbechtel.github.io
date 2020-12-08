@@ -9,7 +9,7 @@ function fetchLocation() {
     var HUCmap = d3.select()
     var city = [];
     var state = [];
-    var geocodeAPIURL = "http://open.mapquestapi.com/geocoding/v1/address?key=	NkGrSo9aZDYlEaOv3pNN3lvFxuBFmCdK&location=";
+    var geocodeAPIURL = "https://open.mapquestapi.com/geocoding/v1/address?key=	NkGrSo9aZDYlEaOv3pNN3lvFxuBFmCdK&location=";
     var geocode = [];
     var nwisAPIURL = "https://waterservices.usgs.gov/nwis/dv/?format=json&bBox="
     var lat = [];
