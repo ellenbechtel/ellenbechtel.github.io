@@ -2,6 +2,7 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="style.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
@@ -11,8 +12,20 @@
     </head>
 
     <body>
+        
         <div id="meat">
-            <h1 class="spinner">Astrology of Hydrology</h1>
+          <header>
+            <h1 id="viz-title" class="spinner">Astrology of Hydrology</h1>
+            <div class="byline-container">
+              <p id="by1" class="byline">Story by Anna Campbell</p>
+              <p id="by2" class="byline">Code by Ellen Bechtel</p>
+              <p id="by3" class="byline">Last Update Dec 8, 2020</p>
+              <svg id="arrow-down" xmlns="http://www.w3.org/2000/svg" width="308.4" height="247.1" viewBox="0 0 308.4 247.1">
+                <polygon class="cls-1" points="154.2 61 0 0 0 62 154.2 123 308.4 62 308.4 0 154.2 61"/>
+                <polygon class="cls-1" points="154.2 185.1 0 124.1 0 186.1 154.2 247.1 308.4 186.1 308.4 124.1 154.2 185.1"/>
+              </svg>
+            </div>            
+          </header>
             <section id="scrolly">
                 <figure>
                   <svg id="scroll-svgs" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="100%" width="100%" viewBox="0 0 1100 750">
@@ -264,11 +277,9 @@
                     <p>If you look at a map of the United States, the outlines reveal a secret about how we misinterpret landscape. New Hampshire, Vermont, California, Arizona, and Indiana are carved out by the Connecticut, Colorado, and Ohio Rivers, respectively.</p>
                   </div>
                   <div class="step" data-step="2">
-                    <p class="step-header">STEP 2</p>
                     <p>Most state boundaries are not delineated by a river, and are instead marked with straight lines. But this method leaves out an important truth: nature rarely follows straight lines.</p>
                   </div>
                   <div class="step" data-step="3">
-                    <p class="step-header">STEP 3</p>
                     <p>When we need to divide land into sections for purposes of reference, government and stewardship, we could instead turn to hydrology. What if we used the flow of lakes, streams and rivers to define the landscape around us––and ourselves?</p>
                   </div>
                   <div class="step" data-step="4">
@@ -276,7 +287,6 @@
                     <p>The USGS defines several hydrologically related regions across the country, defined by their <a href = “https://water.usgs.gov/GIS/huc.html”>HUC</a> (pronounced "huck"). A HUC is essentially a watershed, all water in each HUC drains to the same place. Each HUC can be further subdivided into subregions, accounting units, and cataloging units.</p>
                   </div>
                   <div class="step" data-step="5">
-                    <p class="step-header">STEP 5</p>
                     <p>There's a lot of technical hydrology to dive into, but this system of HUCS is an important reminder that there are other ways of marking out who we are.</p>
                     <p>Cultures throughout history have recognized and honored the connection between mankind and water. The Hawaiian people, for example, divide land into ahupu’a’as, adjacent watersheds flowing from mauka (hillside) to makai (seaside). These districts supported a wide variety of sustainable resource extraction and care bound by a common land ethic.</p>
                     <p>Just as Earth was positioned in a particular pattern of relationship to other distant celestial bodies at the moment of your birth, the water table around you was busy rising, falling, merging, forking, flowing, evaporating, and supporting life in the place where you were born. Enter your information below for a peek into your home watershed as monitored by the United States Geological Survey (USGS).</p>
@@ -343,15 +353,15 @@
                   <input type="date" id="birthdate" value="1987-04-23">
                   <button onclick="fetchData()">Discover</button>
                   <p id="submission"></p>
-                  <p class="streamgraph-text">Mattis nunc sed blandit libero volutpat. Integer eget aliquet nibh praesent. Adipiscing elit pellentesque habitant morbi tristique senectus et netus. Pharetra vel turpis nunc eget lorem dolor sed viverra.</p>
+                  <p>Streamflow is a measurement of the volume of water passing a certain place at a certain time. The USGS has been measuring streamflow on thousands of bodies of water for decades through a process called <a href = “https://www.usgs.gov/mission-areas/water-resources/science/streamgaging-basics?qt-science_center_objects=0#qt-science_center_objects”> streamgaging. </a> Gages measure stream “stage,” or the height of the water against the gage itself, as well as the “discharge,” or total volume of water passing through the gage. </p>
               </div>
             </section>
             <div id="potatoes">
             </div>
             <section class="data-section streamgraph-text">
-              <div>
-                <p>Velit scelerisque in dictum non consectetur a. Vivamus at augue eget arcu. In egestas erat imperdiet sed euismod. Mauris in aliquam sem fringilla ut morbi. Mus mauris vitae ultricies leo integer malesuada nunc vel. Cras sed felis eget velit aliquet sagittis id consectetur purus. Viverra aliquet eget sit amet. Nullam vehicula ipsum a arcu cursus vitae congue mauris. Nunc scelerisque viverra mauris in aliquam sem. Sit amet cursus sit amet dictum sit amet. At auctor urna nunc id cursus metus. Tortor id aliquet lectus proin. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus.</p>
-                <p>Dui ut ornare lectus sit amet est placerat in. Ullamcorper malesuada proin libero nunc consequat interdum. Et malesuada fames ac turpis egestas integer. Sit amet porttitor eget dolor morbi. Molestie a iaculis at erat pellentesque adipiscing commodo. Pulvinar etiam non quam lacus suspendisse faucibus interdum posuere lorem. Sem integer vitae justo eget. Pulvinar pellentesque habitant morbi tristique senectus et. Lacus luctus accumsan tortor posuere. Hendrerit dolor magna eget est.</p>
+              <div class="streamgraph-text">
+                
+                <p>By studying stage and flow data at gage sites around the country, we can get a holistic picture of how the water table changes over time and space. This is what the flow through the 21 HUCs across the United States looked like during the month surrounding your birthday.</p>
               </div>
             </section>
             <div class="data-section">
