@@ -1,4 +1,8 @@
 function fetchLocation() {
+
+    // First give a loading warning
+
+    d3.select(".lds-ripple").style("display","inline-block");
     /////////////////////////////////
     // Get City and State, clear previously stored values
     //////////////////////////////////
@@ -424,12 +428,10 @@ function fetchLocation() {
         // Create function for population HTML with HUC info
         function spitItOut(this_row) {
             let row = get_row_by_huc(this_row); // ENTER DEMO HUC HERE
-            console.log(row, "spit out"); //check
             // whole section
             var meet = d3.select("#meet-your-watershed").style("display","block");
-
             //images
-            document.getElementById("boundaryImage").src = row["Boundary-img"];
+            //document.getElementById("boundaryImage").src = row["Boundary-img"];
             document.getElementById("plantImage").src = row["Plant-img"];
             document.getElementById("animalImage").src = row["Animal-img"];
             document.getElementById("mineralImage").src = row["Mineral-img"];
@@ -497,15 +499,54 @@ function fetchLocation() {
             console.log(birthHUC, "birth HUC")
 
             function highlightBirthHUC(birthHUC) {
+                
                 // compile the variable name from the input
-                var all_HUCS = d3.selectAll("#hucs").style("opacity",".1")
+                var all_HUCS = d3.selectAll(".a-huc").style("opacity",".1")
                 var myHUC = "";
                 console.log(birthHUC, "birth HUC inside")
-                if (birthHUC="01") {
-                    myHUC = d3.select("#_01").attr("class","highlighted_HUC")
-                } else if (birthHUC="02") {
-                    myHUC = d3.select("#_02").attr("class","highlighted_HUC")
-                }    
+                if (birthHUC == 1) {
+                    myHUC = d3.select("#huc1").style("opacity","1")
+                } else if (birthHUC == 2) {
+                    myHUC = d3.select("#huc2").style("opacity","1")
+                } else if (birthHUC == 3) {
+                    myHUC = d3.select("#huc3").style("opacity","1")
+                } else if (birthHUC == 4) {
+                    myHUC = d3.select("#huc4").style("opacity","1")
+                } else if (birthHUC == 5) {
+                    myHUC = d3.select("#huc5").style("opacity","1")
+                } else if (birthHUC == 6) {
+                    myHUC = d3.select("#huc6").style("opacity","1")
+                } else if (birthHUC == 7) {
+                    myHUC = d3.select("#huc7").style("opacity","1")
+                } else if (birthHUC == 8) {
+                    myHUC = d3.select("#huc8").style("opacity","1")
+                } else if (birthHUC == 9) {
+                    myHUC = d3.select("#huc9").style("opacity","1")
+                } else if (birthHUC == 10) {
+                    myHUC = d3.select("#huc10").style("opacity","1")
+                } else if (birthHUC == 11) {
+                    myHUC = d3.select("#huc11").style("opacity","1")
+                } else if (birthHUC == 12) {
+                    myHUC = d3.select("#huc12").style("opacity","1")
+                } else if (birthHUC == 13) {
+                    myHUC = d3.select("#huc13").style("opacity","1")
+                } else if (birthHUC == 14) {
+                    myHUC = d3.select("#huc14").style("opacity","1")
+                } else if (birthHUC == 15) {
+                    myHUC = d3.select("#huc15").style("opacity","1")
+                } else if (birthHUC == 16) {
+                    myHUC = d3.select("#huc16").style("opacity","1")
+                } else if (birthHUC == 17) {
+                    myHUC = d3.select("#huc17").style("opacity","1")
+                } else if (birthHUC == 18) {
+                    myHUC = d3.select("#huc18").style("opacity","1")
+                } else if (birthHUC == 19) {
+                    myHUC = d3.select("#huc19").style("opacity","1")
+                } else if (birthHUC == 20) {
+                    myHUC = d3.select("#huc20").style("opacity","1")
+                } else if (birthHUC == 21) {
+                    myHUC = d3.select("#huc21").style("opacity","1")
+                } 
             }
             
             highlightBirthHUC(birthHUC);

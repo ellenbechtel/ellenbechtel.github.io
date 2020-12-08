@@ -12,7 +12,7 @@ var scroller = scrollama();
 var allsvgs = d3.selectAll("#scroll-svgs")
 var svg1 = d3.select("#rivers"); // currently this is the first svg shown
 var svg2 = d3.select("#states");
-var svg3 = d3.select("#hucs");
+var svg3 = d3.selectAll(".a-huc");
 
 // generic window resize listener event
 function handleResize() {
