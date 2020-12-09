@@ -4,6 +4,7 @@ function fetchLocation() {
 
     d3.select(".lds-ripple").style("display","block");
     d3.select("#streamgraph-section").style("display","block");
+    document.getElementById("button1").innerHTML = "Discover Again";    
     
     /////////////////////////////////
     // Get City and State, clear previously stored values

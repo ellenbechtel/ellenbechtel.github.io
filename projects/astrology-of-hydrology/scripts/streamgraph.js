@@ -35,6 +35,7 @@ function fetchData() {
     d3.select("svg.move-up").remove();
     d3.select("#streamgraph-section").style("padding-bottom",0); // reduce size of this section
     d3.select("#data-sources").style("display","block"); // also display the data section now that the graph is loading
+    document.getElementById("button2").innerHTML = "Discover Again"; 
 
     // Also clear all the important stored variables
     var birthday = '';

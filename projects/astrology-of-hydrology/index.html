@@ -1,7 +1,8 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="style.css"/>
+        <link rel="stylesheet" href="style/style.css"/>
+        <link rel="stylesheet" href="style/style.scss"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
@@ -285,7 +286,7 @@
                     <p>When we need to divide land into sections for purposes of reference, government and stewardship, we could instead turn to hydrology. What if we used the flow of lakes, streams and rivers to define the landscape around us––and ourselves?</p>
                   </div>
                   <div class="step" data-step="4">
-                    <p class="step-header">Meet your Hydrologic Unit</p>
+                    <p class="yellow-header">Meet your Hydrologic Unit</p>
                     <p>The USGS defines several hydrologically related regions across the country, defined by their <a href = “https://water.usgs.gov/GIS/huc.html”>HUC</a> (pronounced "huck"). A HUC is essentially a watershed, all water in each HUC drains to the same place. Each HUC can be further subdivided into subregions, accounting units, and cataloging units.</p>
                   </div>
                   <div class="step" data-step="5">
@@ -305,7 +306,7 @@
                     <input class="form-field" type="text" id="city" placeholder="City" value="Lancaster">
                     <input class="form-field" type="text" id="state" placeholder="State" value="PA">
                   </div>
-                  <button onclick="fetchLocation()">Discover</button>
+                  <button id="button1" onclick="fetchLocation()">Discover</button>
                   <!-- <div class="lds-ripple"><div></div><div></div></div> -->
                 </div>
               </div>
@@ -361,7 +362,7 @@
                 <div class="form-flex">
                   <input class="form-field" type="date" id="birthdate" placeholder="1987-04-23" value="1987-04-23">
                 </div>
-                  <button onclick="fetchData()">Discover</button>
+                  <button id="button2" onclick="fetchData()">Discover</button>
                   <p id="load" class="italic"></p>
                   <p id="submission"></p>
               </div>
