@@ -32,7 +32,7 @@ function fetchData() {
 
     /////////////////////////////////
     // Clear anything that was inside the svg element before (only useful when you reload)   
-    d3.selectAll("svg").remove();
+    d3.select("svg.move-up").remove();
     d3.select("#streamgraph-section").style("padding-bottom",0); // reduce size of this section
     d3.select("#data-sources").style("display","block"); // also display the data section now that the graph is loading
 
@@ -98,6 +98,9 @@ function fetchData() {
     var n = d.toDateString();
     return n;
    }
+
+   d3.select("#start-date-span").html(getLongDate(start));
+   d3.select("#end-date-span").html(getLongDate(end));
 
     allDates = [
         getYYYYMMDD(start), 
@@ -169,7 +172,8 @@ function fetchData() {
     ];
 
     // Print beginning and end date on the page
-    document.getElementById("submission").innerHTML = "You were born on <span class='emph'>" + getLongDate(birthday) + ".</span> So we'll pull daily flow data from the month around your birth, starting at " + getLongDate(start) + " and spanning to " + getLongDate(end) + ".";
+    document.getElementById("submission").innerHTML = "The chart below is centered on that date, <span class='emph'>" + getLongDate(birthday) + ".</span> We've pulled daily flow data for the surrounding month, starting at " + getLongDate(start) + " and ending on " + getLongDate(end) + ".";
+    document.getElementById("load").innerHTML = "<span id='loading-warning'>Loading may take a moment.</span>"
     d3.selectAll(".streamgraph-text").style("display","block");
 
     /////////////////////////////////
@@ -807,7 +811,7 @@ function fetchData() {
             
                 // Add Y axis
                 var y = d3.scaleLinear()
-                    .domain([-500000, 500000])
+                    .domain([-300000, 300000])
                     .range([ height, 0 ]);
             
                 // color palette
@@ -822,39 +826,11 @@ function fetchData() {
                     (birthdayFlow)
                     console.log(stackedData,"stacked")
                 
-
-                // create chart title
-
-                var chartTitle = svg
-                    .append("text")
-                    .attr("x", 30)
-                    .attr("y", height-80)
-                    .attr("class", "chart-title")
-                    .style("z-index",98)
-                    .text("Streamflow across HUCs over the month of your birth");
-                  
-                var chartSubTitle = svg
-                    .append("text")
-                    .attr("x", 30)
-                    .attr("y", height-50)
-                    .attr("class", "chart-subtitle")
-                    .style("z-index",99)
-                    .text("Flow measured in cubic feet per second (cf/s). Timespan from " + getLongDate(start) + " to " + getLongDate(end));
-                var chartData = svg
-                    .append("text")
-                    .attr("x", 30)
-                    .attr("y", height-30)
-                    .attr("class", "chart-subtitle")
-                    .style("z-index",99)
-                    .text("Data pulled from the U.S. Geological Survey's National Water Information System API");
-            
-             
-                    
                 // create a tooltip
                 var Tooltip = svg
                     .append("text")
                     .attr("x", 30)
-                    .attr("y", 100)
+                    .attr("y", height*0.8 + 11)
                     .attr("class", "tooltip")
                     .style("opacity", 0)
                     .style("z-index",100)

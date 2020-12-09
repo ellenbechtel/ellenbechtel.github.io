@@ -21,8 +21,10 @@
               <p id="by2" class="byline">Code by Ellen Bechtel</p>
               <p id="by3" class="byline">Last Update Dec 8, 2020</p>
               <svg id="arrow-down" xmlns="http://www.w3.org/2000/svg" width="308.4" height="247.1" viewBox="0 0 308.4 247.1">
-                <polygon class="cls-1" points="154.2 61 0 0 0 62 154.2 123 308.4 62 308.4 0 154.2 61"/>
-                <polygon class="cls-1" points="154.2 185.1 0 124.1 0 186.1 154.2 247.1 308.4 186.1 308.4 124.1 154.2 185.1"/>
+                <g id="arrow-down-group">
+                  <polygon class="cls-1" points="154.2 61 0 0 0 62 154.2 123 308.4 62 308.4 0 154.2 61"/>
+                  <polygon class="cls-1" points="154.2 185.1 0 124.1 0 186.1 154.2 247.1 308.4 186.1 308.4 124.1 154.2 185.1"/>
+                </g>                
               </svg>
             </div>            
           </header>
@@ -273,10 +275,10 @@
         
                 <article>
                   <div class="step" data-step="1">
-                    <p class="step-header">Notice the Rivers</p>
-                    <p>If you look at a map of the United States, the outlines reveal a secret about how we misinterpret landscape. New Hampshire, Vermont, California, Arizona, and Indiana are carved out by the Connecticut, Colorado, and Ohio Rivers, respectively.</p>
+                    <p>If you look at a map of the United States, the outlines reveal a secret about how we misinterpret landscape.</p>
                   </div>
                   <div class="step" data-step="2">
+                    <p>New Hampshire, Vermont, California, Arizona, and Indiana are carved out by the Connecticut, Colorado, and Ohio Rivers, respectively.</p>
                     <p>Most state boundaries are not delineated by a river, and are instead marked with straight lines. But this method leaves out an important truth: nature rarely follows straight lines.</p>
                   </div>
                   <div class="step" data-step="3">
@@ -297,11 +299,15 @@
             <section id="HUC-section">
               <div class="text-content">
                 <h2 class="yellow-header">Meet Your Watershed</h2>
-                <h3>Where were you born?</h3>
-                  <input type="text" id="city" value="San Francisco">
-                  <input type="text" id="state" value="CA">
+                <div class="input-group">
+                  <p class="prompt">Where were you born?</p>
+                  <div class="form-flex">
+                    <input class="form-field" type="text" id="city" placeholder="City" value="Lancaster">
+                    <input class="form-field" type="text" id="state" placeholder="State" value="PA">
+                  </div>
                   <button onclick="fetchLocation()">Discover</button>
                   <!-- <div class="lds-ripple"><div></div><div></div></div> -->
+                </div>
               </div>
               <div id="meet-your-watershed" class="main-content">
                 <div id="watershed-info" class="flex-container">
@@ -312,7 +318,7 @@
                   </div>
                   <div id="land-ack" class="flex-item">
                     <img id="nlImage" alt="map of native land" class="flex-pic">
-                    <p id = "nlIC" class = "credit">Native-Land.ca</p>
+                    <p id = "nlIC" class = "credit"><a href="https://native-land.ca/">Native-Land.ca</a></p>
                     <h3 class="card-title">On Whose Land</h3>
                     <p id = "tribes" class = info> </p>
                   </div>
@@ -335,12 +341,13 @@
                     <p id = "mineralText" class = "info"> </p>
                   </div>
                   <div id="hydroscope-title" class="flex-item">
-                    <h3 class="card-title">Meet the Rivers</h3> 
-                    <p>And now for some totally unscientific content about the rivers in your watershed.</p>
+                    <h3 class="card-title">Meet Some of the Major Rivers</h3> 
+                    
                     <ul id="river-list">
                       <li>River 1</li>
                       <li>River 2</li>
                     </ul>
+                    <p>Keep reading to find out what lessons, or rather, <span class="scope italic">hydroscopes</span>, each river has to share with you.</p>
                   </div>
                 </div>
                 <div id="hydroscopes" class="flex-container">
@@ -349,19 +356,27 @@
             </section>
             <section id="streamgraph-section" class="data-section text-content">
               <h2 class="yellow-header">The Flow of Your Birth</h2>
-              <div class="text-section">
-                  <h3>When were you born?</h3>
-                  <input type="date" id="birthdate" value="1987-04-23">
+              <div class="text-section input-group">
+                <p class="prompt">When were you born?</p>
+                <div class="form-flex">
+                  <input class="form-field" type="date" id="birthdate" placeholder="1987-04-23" value="1987-04-23">
+                </div>
                   <button onclick="fetchData()">Discover</button>
+                  <p id="load" class="italic"></p>
                   <p id="submission"></p>
-                  <p>Here is a streamgraph of the total flow in each HUC. Streamflow - which hydrologists call "discharge" and measure in cubic-feet-per-second - is a measurement of the volume of water passing a certain place at a certain time. The USGS has been measuring streamflow on thousands of rivers and bodies of water for decades through a process called <a href = “https://www.usgs.gov/mission-areas/water-resources/science/streamgaging-basics?qt-science_center_objects=0#qt-science_center_objects”> streamgaging. </a> The gages tapped for this dataset have been vetted by the USGS as good places to measure long-term hydrologic changes across the country. </p>
               </div>
             </section>
-            <div id="potatoes">
-            </div>
+            <div id="potatoes"></div>
             <section class="data-section streamgraph-text">
+              <div class="chart-labels">
+                <h3 class="chart-title">Streamflow across HUCs over the month of your birth</h3>
+                <p class="chart-subtitle">Flow measured in cubic feet per second (cf/s).</p>
+                <p class="chart-subtitle">Timespan from <span id="start-date-span"></span> to <span id="end-date-span"></span></p>
+                <p class="chart-subtitle">Data pulled from the U.S. Geological Survey's <a href="https://waterservices.usgs.gov/">National Water Information System API</a></p>
+              </div>
               <div>
-                <p>By studying stage and flow data at gage sites around the country, we can get a holistic picture of how the water table changes over time and space. This is what the flow through the 21 HUCs across the United States looked like during the month surrounding your birthday.</p>
+                <p class="text-chunk">Here is a streamgraph of the total flow in each HUC. Streamflow - which hydrologists call "discharge" and measure in cubic-feet-per-second - is a measurement of the volume of water passing a certain place at a certain time. The USGS has been measuring streamflow on thousands of rivers and bodies of water for decades through a process called <a href = “https://www.usgs.gov/mission-areas/water-resources/science/streamgaging-basics?qt-science_center_objects=0#qt-science_center_objects”> streamgaging. </a> The gages tapped for this dataset have been vetted by the USGS as good places to measure long-term hydrologic changes across the country. </p>
+                <p class="text-chunk">By studying stage and flow data at gage sites around the country, we can get a holistic picture of how the water table changes over time and space. This is what the flow through the 21 HUCs across the United States looked like during the month surrounding your birthday.</p>
               </div>
             </section>
             <div class="data-section" id="data-sources">

@@ -447,7 +447,7 @@ function fetchLocation() {
     var hydrorows = [
         {
         "name": "Arkansas River",
-        "hydroscope": "When French traders sought to exchange goods with Canadian Native tribes along the Arkansas River, they learned that the birchbark canoes they had been using to the North were too light. Instead, they learned to make dugout canoes called pirogues from the surrounding cottonwood trees.<br><br>You may need to learn from the people and setting around you to adjust a strategy you've used in the past. The Arkansas River's path has changed over time, and so will yours.",
+        "hydroscope": "When French traders sought to exchange goods with Canadian Native tribes along the Arkansas River, they learned that the birchbark canoes they had been using to the North were too light. Instead, they learned to make dugout canoes called pirogues from the surrounding cottonwood trees.<br><br><span class='scope'>You may need to learn from the people and setting around you to adjust a strategy you've used in the past. The Arkansas River's path has changed over time, and so will yours.</span>",
         "huc": 11,
         "huc_name": "Arkansas-White-Red Region",
         "station_nm": "Arkansas River at Pine Bluff, AR",
@@ -456,7 +456,7 @@ function fetchLocation() {
         },
         {
         "name": "Bear River",
-        "hydroscope": "The Bear River makes almost a full U-turn, and it is the longest river in North America that doesn't ultimately reach the sea.<br><br>Don't be discouraged when you feel you are retracing old steps, or not bound for the same destination as others. You are simply on an unconventional path to success.",
+        "hydroscope": "The Bear River makes almost a full U-turn, and it is the longest river in North America that doesn't ultimately reach the sea.<br><br><span class='scope'>Don't be discouraged when you feel you are retracing old steps, or not bound for the same destination as others. You are simply on an unconventional path to success.</span>",
         "huc": 16,
         "huc_name": "Great Basin Region",
         "station_nm": "Bear River Near Corinne, UT",
@@ -465,7 +465,7 @@ function fetchLocation() {
         },
         {
         "name": "Brazos River",
-        "hydroscope": "The Brazos River's full name means \"The River of the Arms of God\", and it is sometimes used to mark the boundary between East and West Texas. In 2012, the lower Brazos received 33.4 million pounds of toxic waste from natural gas, fracking, and agricultural chemicals in the area.<br><br>Remember that most issues are not black and white. It is more important to keep your body and spirit clean and healthy than spend time and energy putting up walls. You can wield immense personal power when you surrender to the bigger picture.",
+        "hydroscope": "The Brazos River's full name means \"The River of the Arms of God\", and it is sometimes used to mark the boundary between East and West Texas. In 2012, the lower Brazos received 33.4 million pounds of toxic waste from natural gas, fracking, and agricultural chemicals in the area.<br><br><span class='scope'>Remember that most issues are not black and white. It is more important to keep your body and spirit clean and healthy than spend time and energy putting up walls. You can wield immense personal power when you surrender to the bigger picture.</span>",
         "huc": 12,
         "huc_name": "Texas-Gulf Region",
         "station_nm": "Brazos River at Giww Flood Gates near Freeport, TX",
@@ -474,7 +474,7 @@ function fetchLocation() {
         },
         {
         "name": "Charles River",
-        "hydroscope": "The Native name for the Charles River is \"Quinobequin\", which means \"meandering\"; this river doubles back on itself several times. The nation's very first mills and industrial canals were diverted from it. The Charles River directly supported a booming economy, but at the price of its purity; efforts to improve the water quality of the river persist today, and swimmers may not enter it without a special permit.<br><br>Despite taking what others may consider to be a meandering route, you are a very productive person.  As you begin new ventures, plan how you will take care of yourself, lest you lose sight of the simple pleasures in life.",
+        "hydroscope": "The Native name for the Charles River is \"Quinobequin\", which means \"meandering\"; this river doubles back on itself several times. The nation's very first mills and industrial canals were diverted from it. The Charles River directly supported a booming economy, but at the price of its purity; efforts to improve the water quality of the river persist today, and swimmers may not enter it without a special permit.<br><br><span class='scope'>Despite taking what others may consider to be a meandering route, you are a very productive person.  As you begin new ventures, plan how you will take care of yourself, lest you lose sight of the simple pleasures in life.</span>",
         "huc": 1,
         "huc_name": "New England Region",
         "station_nm": "Charles River at First St at Cambridge, MA",
@@ -483,7 +483,7 @@ function fetchLocation() {
         },
         {
         "name": "Chehalis River",
-        "hydroscope": "The Chehalis River has flooded several times, closing highways and even bringing Amtrak trains to a halt. During the Ice Age, glacial runoff fed it much larger.<br><br>You may be given to the occasional dramatic display. Pay attention to what triggers these, as you may be in an unsuitable environment. Remember that you have the power to shift the landscape to your liking. You come from a very powerful lineage of people.",
+        "hydroscope": "The Chehalis River has flooded several times, closing highways and even bringing Amtrak trains to a halt. During the Ice Age, glacial runoff fed it much larger.<br><br><span class='scope'>You may be given to the occasional dramatic display. Pay attention to what triggers these, as you may be in an unsuitable environment. Remember that you have the power to shift the landscape to your liking. You come from a very powerful lineage of people.</span>",
         "huc": 17,
         "huc_name": "Pacific Northwest Region",
         "station_nm": "Chehalis River Below Wishkah River at Hoquiam, WA",
@@ -492,7 +492,7 @@ function fetchLocation() {
         },
         {
         "name": "Colorado River",
-        "hydroscope": "The Colorado River is one of the most controlled, dammed, and utilized rivers in the world.  Intensive water consumption has dried up the lower 100 miles of the river almost entirely.<br><br>Be careful not to overtax your resources, especially in the final stretch of a phase or project. It is good to be practical, but remember that it is possible to build so much inflexible infrastructure in one's life that it blocks a natural flow of wellness, prosperity, and intuition.",
+        "hydroscope": "The Colorado River is one of the most controlled, dammed, and utilized rivers in the world.  Intensive water consumption has dried up the lower 100 miles of the river almost entirely.<br><br><span class='scope'>Be careful not to overtax your resources, especially in the final stretch of a phase or project. It is good to be practical, but remember that it is possible to build so much inflexible infrastructure in one's life that it blocks a natural flow of wellness, prosperity, and intuition.</span>",
         "huc": 15,
         "huc_name": "Lower Colorado Region",
         "station_nm": "Colorado River at Section 18S, AZ",
@@ -501,7 +501,7 @@ function fetchLocation() {
         },
         {
         "name": "Colorado River of Texas",
-        "hydroscope": "The Colorado River of Texas is home to several man-made lakes and dams, but its mouth is located at Matagorda Bay, a marshy inlet which supports a seaport, ghost town, series of rice fields, and an enormous number of birds, fish, and invertebrates.<br><br>Whatever you are seeking now, there is fertile ground for it in your future. Be patient and don't force it.",
+        "hydroscope": "The Colorado River of Texas is home to several man-made lakes and dams, but its mouth is located at Matagorda Bay, a marshy inlet which supports a seaport, ghost town, series of rice fields, and an enormous number of birds, fish, and invertebrates.<br><br><span class='scope'>Whatever you are seeking now, there is fertile ground for it in your future. Be patient and don't force it.</span>",
         "huc": 12,
         "huc_name": "Texas-Gulf Region",
         "station_nm": "Colorado River near Wadsworth, TX",
@@ -510,7 +510,7 @@ function fetchLocation() {
         },
         {
         "name": "Columbia River",
-        "hydroscope": "The Columbia River connects many cultures in the Pacific Northwest, and is home to various species of fish which migrate between fresh and salt water, quite a rare quality in animals.<br><br>You are more adaptable and social than most, with a tendency to be a bridge between groups and navigate transitions with ease.",
+        "hydroscope": "The Columbia River connects many cultures in the Pacific Northwest, and is home to various species of fish which migrate between fresh and salt water, quite a rare quality in animals.<br><br><span class='scope'>You are more adaptable and social than most, with a tendency to be a bridge between groups and navigate transitions with ease.</span>",
         "huc": 17,
         "huc_name": "Pacific Northwest Region",
         "station_nm": "Columbia River at Port Westward, Near Quincy, OR",
@@ -519,7 +519,7 @@ function fetchLocation() {
         },
         {
         "name": "Connecticut River",
-        "hydroscope": "The Connecticut River has been the at the center of centuries of border disputes, between tribes, colonies, states, and eventually even countries.<br><br>People might fight over their rights to your time and talent. Don't sweat it - carve your own course.",
+        "hydroscope": "The Connecticut River has been the at the center of centuries of border disputes, between tribes, colonies, states, and eventually even countries.<br><br><span class='scope'>People might fight over their rights to your time and talent. Don't sweat it - carve your own course.</span>",
         "huc": 1,
         "huc_name": "New England Region",
         "station_nm": "Connecticut River at Old Lyme, CT",
@@ -528,7 +528,7 @@ function fetchLocation() {
         },
         {
         "name": "Delaware River",
-        "hydroscope": "The Delaware is a famous river, and rightly so: as well as being the site of major historical events, this river has supported shipping, viticulture, and several dredging projects to form canals that would make it more suitable for these activities. The river has also suffered major oil spills over the years.<br><br>You may be prone to overtaxing yourself, or under a significant amount of stress at the moment. Don't reshape yourself too drastically to meet these demands, but dig deeper to find the calm and strength you need to carry out your projects. Perhaps you could drop a commitment or two.",
+        "hydroscope": "The Delaware is a famous river, and rightly so: as well as being the site of major historical events, this river has supported shipping, viticulture, and several dredging projects to form canals that would make it more suitable for these activities. The river has also suffered major oil spills over the years.<br><br><span class='scope'>You may be prone to overtaxing yourself, or under a significant amount of stress at the moment. Don't reshape yourself too drastically to meet these demands, but dig deeper to find the calm and strength you need to carry out your projects. Perhaps you could drop a commitment or two.</span>",
         "huc": 2,
         "huc_name": "Mid Atlantic Region",
         "station_nm": "Delaware River at Chester, PA",
@@ -537,7 +537,7 @@ function fetchLocation() {
         },
         {
         "name": "Eel River",
-        "hydroscope": "The Eel River, or Taanchow River to the Kato people, changes every day. Because of earthquakes and extreme weather, its course and flow rates are quite variable. This river is greatly affected by agriculture and industry, but was designated off-limits to new dams in 1981 under the Wild and Scenic River program.<br><br>You may find your circumstances to be turbulent, or notice that you have frequent changes of heart. You may need to implement some protective measures in your life to give you the stability you need to thrive under these conditions.",
+        "hydroscope": "The Eel River, or Taanchow River to the Kato people, changes every day. Because of earthquakes and extreme weather, its course and flow rates are quite variable. This river is greatly affected by agriculture and industry, but was designated off-limits to new dams in 1981 under the Wild and Scenic River program.<br><br><span class='scope'>You may find your circumstances to be turbulent, or notice that you have frequent changes of heart. You may need to implement some protective measures in your life to give you the stability you need to thrive under these conditions.</span>",
         "huc": 18,
         "huc_name": "California Region",
         "station_nm": "Eel River at Fernbridge, CA",
@@ -546,7 +546,7 @@ function fetchLocation() {
         },
         {
         "name": "Guadalupe River",
-        "hydroscope": "The Guadalupe River is home to the southernmost run of Chinook salmon in the United States.<br><br>You may find yourself in a unique position, gifted with a special treasure or talent but not feeling as if you quite fit in to the group that's formed around it. Recent DNA sequencing proved that these salmon have been native to this watershed for centuries. Whatever you've been blessed with, there is no need to worry about whether it is truly yours.",
+        "hydroscope": "The Guadalupe River is home to the southernmost run of Chinook salmon in the United States.<br><br><span class='scope'>You may find yourself in a unique position, gifted with a special treasure or talent but not feeling as if you quite fit in to the group that's formed around it. Recent DNA sequencing proved that these salmon have been native to this watershed for centuries. Whatever you've been blessed with, there is no need to worry about whether it is truly yours.</span>",
         "huc": 12,
         "huc_name": "Texas-Gulf Region",
         "station_nm": "Guadalupe River at Sh 35 near Tivoli, TX",
@@ -555,7 +555,7 @@ function fetchLocation() {
         },
         {
         "name": "Hoh River",
-        "hydroscope": "The Hoh River is fed by glaciers, whose fine sediment lend it a slate blue color in places.<br><br>You may be inclined toward the occasional bout of the \"blues\", or phases where you feel something is clouding your vision. The Hoh's color returns to normal as it is joined by tributaries. Joining forces with those who are headed in the same direction may help you achieve clarity.",
+        "hydroscope": "The Hoh River is fed by glaciers, whose fine sediment lend it a slate blue color in places.<br><br><span class='scope'>You may be inclined toward the occasional bout of the \"blues\", or phases where you feel something is clouding your vision. The Hoh's color returns to normal as it is joined by tributaries. Joining forces with those who are headed in the same direction may help you achieve clarity.</span>",
         "huc": 17,
         "huc_name": "Pacific Northwest Region",
         "station_nm": "Hoh River at Us Highway 101 Near Forks, WA",
@@ -564,7 +564,7 @@ function fetchLocation() {
         },
         {
         "name": "Hudson River",
-        "hydroscope": "The Hudson River starts as Feldspar Brook, before it is joined by the Opalescent River, which in turn becomes Calamity Brook. Despite being one of America's most iconic rivers, it is not known by its common name until well along its course.<br><br>You may be destined to live through a series of identities in this lifetime. Embrace these changes with grace, and if you ever doubt your consistency, know that it is precisely your multifaceted nature that makes you who you are.",
+        "hydroscope": "The Hudson River starts as Feldspar Brook, before it is joined by the Opalescent River, which in turn becomes Calamity Brook. Despite being one of America's most iconic rivers, it is not known by its common name until well along its course.<br><br><span class='scope'>You may be destined to live through a series of identities in this lifetime. Embrace these changes with grace, and if you ever doubt your consistency, know that it is precisely your multifaceted nature that makes you who you are.</span>",
         "huc": 2,
         "huc_name": "Mid Atlantic Region",
         "station_nm": "Hudson River at Pier 84 at New York, NY",
@@ -573,7 +573,7 @@ function fetchLocation() {
         },
         {
         "name": "Humboldt River",
-        "hydroscope": "The Humboldt River is almost 100 miles longer than formal estimates have previously held, because it sports so many twists and turns.<br><br>There is almost certainly more to you than meets the eye, but don't worry about proving it; it will become obvious in due time.",
+        "hydroscope": "The Humboldt River is almost 100 miles longer than formal estimates have previously held, because it sports so many twists and turns.<br><br><span class='scope'>There is almost certainly more to you than meets the eye, but don't worry about proving it; it will become obvious in due time.</span>",
         "huc": 16,
         "huc_name": "Great Basin Region",
         "station_nm": "Humboldt River near Rye Patch, NV",
@@ -582,7 +582,7 @@ function fetchLocation() {
         },
         {
         "name": "James River",
-        "hydroscope": "The James River, first called the Powhatan River by the Native American Powhatan Confederacy, once served as a major trade route for tobacco and produce, but eventually fell victim to a large spill of insecticide which contaminated the river and damaged many local economies. You may have much luck and success in the material world; be careful not to become so protective of it that it damages your community.",
+        "hydroscope": "The James River, first called the Powhatan River by the Native American Powhatan Confederacy, once served as a major trade route for tobacco and produce, but eventually fell victim to a large spill of insecticide which contaminated the river and damaged many local economies.<br><br><span class='scope'>You may have much luck and success in the material world; be careful not to become so protective of it that it damages your community.</span>",
         "huc": 2,
         "huc_name": "Mid Atlantic Region",
         "station_nm": "James River at Jamestown Ferry Pier, VA",
@@ -591,7 +591,7 @@ function fetchLocation() {
         },
         {
         "name": "Jordan River",
-        "hydroscope": "The Jordan River is regulated by pumps at its headwaters. Originally a cold-water fishery supporting several native species of fish, the waters have warmed up common carp now rule its waters. The Jordan is a key resource for another group of animals, however, providing food, water, and habitat to the thousands of migrating birds that migrate up and down the flyways of the Great Basin.<br><br>If one avenue has \"dried up,\" you may need to look in unexpected places––or put in a bit of elbow grease––to find new motivation and community.",
+        "hydroscope": "The Jordan River is regulated by pumps at its headwaters. Originally a cold-water fishery supporting several native species of fish, the waters have warmed up common carp now rule its waters. The Jordan is a key resource for another group of animals, however, providing food, water, and habitat to the thousands of migrating birds that migrate up and down the flyways of the Great Basin.<br><br><span class='scope'>If one avenue has \"dried up,\" you may need to look in unexpected places––or put in a bit of elbow grease––to find new motivation and community.</span>",
         "huc": 16,
         "huc_name": "Great Basin Region",
         "station_nm": "Jordan River @ Cudahy Lane near Salt Lake City, UT",
@@ -600,7 +600,7 @@ function fetchLocation() {
         },
         {
         "name": "Kennebec River",
-        "hydroscope": "The Kennebec is a fairly still and calm river––it has no rapids at all––and because of its accessibility and connection to the Atlantic Ocean, several ships have been built there. It brings to mind the John A. Shedd quote: \"A ship in harbor is safe, but that is not what ships are built for.\"<br><br>You may be destined for great deeds and adventures beyond the calm waters of your comfort zone. Don't worry; you were built for them.",
+        "hydroscope": "The Kennebec is a fairly still and calm river––it has no rapids at all––and because of its accessibility and connection to the Atlantic Ocean, several ships have been built there. It brings to mind the John A. Shedd quote: \"A ship in harbor is safe, but that is not what ships are built for.\"<br><br><span class='scope'>You may be destined for great deeds and adventures beyond the calm waters of your comfort zone. Don't worry; you were built for them.</span>",
         "huc": 1,
         "huc_name": "New England Region",
         "station_nm": "Kennebec River at Gardiner, ME",
@@ -609,7 +609,7 @@ function fetchLocation() {
         },
         {
         "name": "Kern River",
-        "hydroscope": "The Fort Tejon earthquake in 1857 completely switched the direction of the Kern River, temporarily stranding fish on its banks. It is still treacherous in places, and sometimes known as the \"killer Kern.\" Tubing and rafting are popular activities along its turbulent rapids.<br><br>You may find yourself navigating unexpected and even dangerous conditions in your life. Prioritize your own safety, but don't shy away from the occasional adrenaline rush. Just make sure to resume in your original direction when whatever event is shaking things up has passed.",
+        "hydroscope": "The Fort Tejon earthquake in 1857 completely switched the direction of the Kern River, temporarily stranding fish on its banks. It is still treacherous in places, and sometimes known as the \"killer Kern.\" Tubing and rafting are popular activities along its turbulent rapids.<br><br><span class='scope'>You may find yourself navigating unexpected and even dangerous conditions in your life. Prioritize your own safety, but don't shy away from the occasional adrenaline rush. Just make sure to resume in your original direction when whatever event is shaking things up has passed.</span>",
         "huc": 18,
         "huc_name": "California Region",
         "station_nm": "Kern River near Bakersfield, CA",
@@ -618,7 +618,7 @@ function fetchLocation() {
         },
         {
         "name": "Klamath River",
-        "hydroscope": "The Klamath River has been called an \"upside down river,\" because unlike most rivers, it begins in the desert and flows through the mountains before reaching the sea. It boasts many of the longest free-flowing stretches of river along the west coast of the United States.<br><br>Sometimes it will be necessary for you to defy expectations and norms to find your freedom.",
+        "hydroscope": "The Klamath River has been called an \"upside down river,\" because unlike most rivers, it begins in the desert and flows through the mountains before reaching the sea. It boasts many of the longest free-flowing stretches of river along the west coast of the United States.<br><br><span class='scope'>Sometimes it will be necessary for you to defy expectations and norms to find your freedom.</span>",
         "huc": 18,
         "huc_name": "California Region",
         "station_nm": "Klamath River near Klamath, CA",
@@ -636,7 +636,7 @@ function fetchLocation() {
         },
         {
         "name": "Merrimack River",
-        "hydroscope": "Over the years, the Merrimack has supported a great deal of trade and industry. Massachusetts and New Hampshire are working together to add infiltration wells to increase the amount of drinking water that this historically polluted river can provide.<br><br>Through collaboration, you may be able to rescue something that was once lost.",
+        "hydroscope": "Over the years, the Merrimack has supported a great deal of trade and industry. Massachusetts and New Hampshire are working together to add infiltration wells to increase the amount of drinking water that this historically polluted river can provide.<br><br><span class='scope'>Through collaboration, you may be able to rescue something that was once lost.</span>",
         "huc": 1,
         "huc_name": "New England Region",
         "station_nm": "Merrimack River 0.3 Miles U.S.Rt 125 at Haverhill, ME",
@@ -645,7 +645,7 @@ function fetchLocation() {
         },
         {
         "name": "Mississippi River",
-        "hydroscope": "The Mississippi embayment is home to some of the best crop soil in the country. Yet it is precisely the high levels of nutrient and chemical runoff from all the agricultural activity it supports that form the Gulf of Mexico Dead Zone.<br><br>You may have been given a great gift, but take care not to welcome anything toxic into your life. You will thrive best when you can learn to consider the needs of those far downstream of you.",
+        "hydroscope": "The Mississippi embayment is home to some of the best crop soil in the country. Yet it is precisely the high levels of nutrient and chemical runoff from all the agricultural activity it supports that form the Gulf of Mexico Dead Zone.<br><br><span class='scope'>You may have been given a great gift, but take care not to welcome anything toxic into your life. You will thrive best when you can learn to consider the needs of those far downstream of you.</span>",
         "huc": 8,
         "huc_name": "Lower Mississippi Region",
         "station_nm": "Mississippi River at Baton Rouge, LA",
@@ -654,7 +654,7 @@ function fetchLocation() {
         },
         {
         "name": "Missouri River",
-        "hydroscope": "The Missouri River is seen as a tributary of the Mississippi, but on its own, it is much longer and carries almost the same amount of water.<br><br>You may need to learn what to do when others try to take credit for your work, or you feel as though you are living in someone else's shadow. For now, stand tall on your own merit; eventually, you will effortlessly join forces with whatever is troubling you.",
+        "hydroscope": "The Missouri River is seen as a tributary of the Mississippi, but on its own, it is much longer and carries almost the same amount of water.<br><br><span class='scope'>You may need to learn what to do when others try to take credit for your work, or you feel as though you are living in someone else's shadow. For now, stand tall on your own merit; eventually, you will effortlessly join forces with whatever is troubling you.</span>",
         "huc": 10,
         "huc_name": "Missouri Region",
         "station_nm": "Missouri River at St. Charles, MO",
@@ -663,7 +663,7 @@ function fetchLocation() {
         },
         {
         "name": "Mobile River",
-        "hydroscope": "There are over 100 species of freshwater snail that are endemic to the Mobile River Basin––that means they are found nowhere else in the world! However, extensive damming has created many more shallow shoals than occur naturally, negatively impacting the river's rich biodiversity.<br><br>You may believe you are ordinary or insignificant, but if given a closer look, your talents and traits are incredibly unique. Don't let the actions or words of others drain you of your depth.",
+        "hydroscope": "There are over 100 species of freshwater snail that are endemic to the Mobile River Basin––that means they are found nowhere else in the world! However, extensive damming has created many more shallow shoals than occur naturally, negatively impacting the river's rich biodiversity.<br><br><span class='scope'>You may believe you are ordinary or insignificant, but if given a closer look, your talents and traits are incredibly unique. Don't let the actions or words of others drain you of your depth.</span>",
         "huc": 3,
         "huc_name": "South Atlantic-Gulf Region",
         "station_nm": "Mobile River at River Mile 31.0 at Bucks, AL",
@@ -672,7 +672,7 @@ function fetchLocation() {
         },
         {
         "name": "Neches River",
-        "hydroscope": "Much of the habitat of the upper Neches is protected with Wildlife Refuges, Wilderness Areas, and Natural Preserves, while more industrial activities take place downstream, close to the river's mouth which empties into a port.<br><br>When you put your own needs and connection to the natural world first, you are able to be an effective channel for work, play, and positive change.",
+        "hydroscope": "Much of the habitat of the upper Neches is protected with Wildlife Refuges, Wilderness Areas, and Natural Preserves, while more industrial activities take place downstream, close to the river's mouth which empties into a port.<br><br><span class='scope'>When you put your own needs and connection to the natural world first, you are able to be an effective channel for work, play, and positive change.</span>",
         "huc": 12,
         "huc_name": "Texas-Gulf Region",
         "station_nm": "Neches River Saltwater Barrier at Beaumont, TX",
@@ -681,7 +681,7 @@ function fetchLocation() {
         },
         {
         "name": "Nueces River",
-        "hydroscope": "Beautiful pecan trees line the banks of the Nueces, whose name is Spanish for nuts.<br><br>Pecans historically symbolize health and wealth, and you will have plenty of both if you can relax and truly accept what the tides of good fortune have to bring.",
+        "hydroscope": "Beautiful pecan trees line the banks of the Nueces, whose name is Spanish for nuts.<br><br><span class='scope'>Pecans historically symbolize health and wealth, and you will have plenty of both if you can relax and truly accept what the tides of good fortune have to bring.</span>",
         "huc": 12,
         "huc_name": "Texas-Gulf Region",
         "station_nm": "Nueces River at Calallen, TX",
@@ -690,7 +690,7 @@ function fetchLocation() {
         },
         {
         "name": "Ohio River",
-        "hydroscope": "The Ohio River is known as a \"climactic transition area,\" as it transits between subtropical and continental climate zones. This means that part of the river regularly freezes, but its other end where it meets the Mississippi, it never does. This river supported major trade routes for the Iroquoian and Mississippian Native tribes.<br><br>You may feel you have two different \"faces\" at times, but this can be a great gift in the context of communication and exchange.",
+        "hydroscope": "The Ohio River is known as a \"climactic transition area,\" as it transits between subtropical and continental climate zones. This means that part of the river regularly freezes, but its other end where it meets the Mississippi, it never does. This river supported major trade routes for the Iroquoian and Mississippian Native tribes.<br><br><span class='scope'>You may feel you have two different \"faces\" at times, but this can be a great gift in the context of communication and exchange.</span>",
         "huc": 5,
         "huc_name": "Ohio Region",
         "station_nm": "Ohio River at Olmstead Buoy 3, IL",
@@ -699,7 +699,7 @@ function fetchLocation() {
         },
         {
         "name": "Piscataqua River",
-        "hydroscope": "The Piscataqua is a tidal river, with its Abenaki name loosely translated to \"branch with strong current.\"<br><br>You may feel exceptionally sensitive to the rise and fall of the emotions of others or conditions in the world, what some call an \"empath.\" This may feel like a curse at first, but when given proper care and attention, it can become a great superpower. Tune in to what the universal tides are trying to communicate.",
+        "hydroscope": "The Piscataqua is a tidal river, with its Abenaki name loosely translated to \"branch with strong current.\"<br><br><span class='scope'>You may feel exceptionally sensitive to the rise and fall of the emotions of others or conditions in the world, what some call an \"empath.\" This may feel like a curse at first, but when given proper care and attention, it can become a great superpower. Tune in to what the universal tides are trying to communicate.</span>",
         "huc": 1,
         "huc_name": "New England Region",
         "station_nm": "Piscataqua River",
@@ -708,7 +708,7 @@ function fetchLocation() {
         },
         {
         "name": "Potomac River",
-        "hydroscope": "After mining, agriculture and sewage runoff decimated the Potomac in the 1800s, the development wastewater treatment plants and the restriction of sources of phosphorous under the Clean Water Act had banished the massive algal blooms that had come to curse the river. While the river is still vulnerable to human pressures, especially due to metals, pesticides, and invasive species, it is important to remember how far we've come in protecting it so we can build on our success.<br><br>Cherish your wins, especially when it comes to eliminating toxic elements from your life, and continue your quest for holistic self-care.",
+        "hydroscope": "After mining, agriculture and sewage runoff decimated the Potomac in the 1800s, the development wastewater treatment plants and the restriction of sources of phosphorous under the Clean Water Act had banished the massive algal blooms that had come to curse the river. While the river is still vulnerable to human pressures, especially due to metals, pesticides, and invasive species, it is important to remember how far we've come in protecting it so we can build on our success.<br><br><span class='scope'>Cherish your wins, especially when it comes to eliminating toxic elements from your life, and continue your quest for holistic self-care.</span>",
         "huc": 2,
         "huc_name": "Mid Atlantic Region",
         "station_nm": "Potomac River at Cameron St Dock at Alexandria, VA",
@@ -717,7 +717,7 @@ function fetchLocation() {
         },
         {
         "name": "Presumpscot River",
-        "hydroscope": "The Presumpscot River Preserve has been protected for twenty years by the State of Maine and the City of Portland. The river also supports hydroelectric power downstream.<br><br>You're doing a good job protecting something valuable while also staying productive. Way to go!",
+        "hydroscope": "The Presumpscot River Preserve has been protected for twenty years by the State of Maine and the City of Portland. The river also supports hydroelectric power downstream.<br><br><span class='scope'>You're doing a good job protecting something valuable while also staying productive. Way to go!</span>",
         "huc": 1,
         "huc_name": "New England Region",
         "station_nm": "Presumpscot River at Westbrook, ME",
@@ -726,7 +726,7 @@ function fetchLocation() {
         },
         {
         "name": "Rainy River",
-        "hydroscope": "The International Game Fish Association All-Tackle world record was set along this river, by a man named Joel Anderson, who caught a white sucker that weighed almost seven pounds.<br><br>Sometimes you may feel like a big fish in a small pond. You are actually just a pretty big fish overall. Celebrate your accomplishments.",
+        "hydroscope": "The International Game Fish Association All-Tackle world record was set along this river, by a man named Joel Anderson, who caught a white sucker that weighed almost seven pounds.<br><br><span class='scope'>Sometimes you may feel like a big fish in a small pond. You are actually just a pretty big fish overall. Celebrate your accomplishments.</span>",
         "huc": 9,
         "huc_name": "Souris-Red-Rainy Region",
         "station_nm": "Rainy River Near Boat Landing at Wheelers Point, MN",
@@ -735,7 +735,7 @@ function fetchLocation() {
         },
         {
         "name": "Red River",
-        "hydroscope": "Clay and silt containing iron oxides give the Red River its color––it is almost literally \"rusty.\"<br><br>If there is an old skill, pleasure, or relationship that has become rusty, it may be a good time to breathe some life back into it.",
+        "hydroscope": "Clay and silt containing iron oxides give the Red River its color––it is almost literally \"rusty.\"<br><br><span class='scope'>If there is an old skill, pleasure, or relationship that has become rusty, it may be a good time to breathe some life back into it.</span>",
         "huc": 11,
         "huc_name": "Arkansas-White-Red Region",
         "station_nm": "Red River north of Simmesport, LA",
@@ -744,7 +744,7 @@ function fetchLocation() {
         },
         {
         "name": "Red River of the North",
-        "hydroscope": "This river has been enormously prone to flooding, including ancient \"paleofloods\" which have left visible traces of their dramatic effects on local landscapes. Floods symbolize cleansing, and in some Hindu mythology, a deluge signifies a transition into a new epoch, during which deities try to help humans preserve knowledge for future generations.<br><br>You may be having an \"Interstellar\" moment: is the future telling you to hold on to some piece of knowledge or wisdom through a great transition?",
+        "hydroscope": "This river has been enormously prone to flooding, including ancient \"paleofloods\" which have left visible traces of their dramatic effects on local landscapes. Floods symbolize cleansing, and in some Hindu mythology, a deluge signifies a transition into a new epoch, during which deities try to help humans preserve knowledge for future generations.<br><br><span class='scope'>You may be having an \"Interstellar\" moment: is the future telling you to hold on to some piece of knowledge or wisdom through a great transition?</span>",
         "huc": 9,
         "huc_name": "Souris-Red-Rainy Region",
         "station_nm": "Red River Of The North at Pembina, ND",
@@ -753,7 +753,7 @@ function fetchLocation() {
         },
         {
         "name": "Richelieu River",
-        "hydroscope": "This river was originally called \"Masoliantekw\" in Abenaki, meaning \"water where there is plenty of food.\" The Richelieu River has since been the site of many battles among the Iroquois, French, British, and Americans.<br><br>It may be tempting to fight over resources; remember that conflict arises when we forget that there is enough for everyone.",
+        "hydroscope": "This river was originally called \"Masoliantekw\" in Abenaki, meaning \"water where there is plenty of food.\" The Richelieu River has since been the site of many battles among the Iroquois, French, British, and Americans.<br><br><span class='scope'>It may be tempting to fight over resources; remember that conflict arises when we forget that there is enough for everyone.</span>",
         "huc": 4,
         "huc_name": "Great Lakes Region",
         "station_nm": "Richelieu River (Lake Champlain) at Rouses Point Bridge, NY",
@@ -762,7 +762,7 @@ function fetchLocation() {
         },
         {
         "name": "Rio Grande",
-        "hydroscope": "The Rio Grande's watershed is massive, but it's even bigger when you count the many \"endorheic\" basins that lie adjacent to the river. An endorheic basin is essentially a closed lake or swamp with no outflow to rivers or the sea. Instead, the water may evaporate and fill with rainfall seasonally.<br><br>You may occasionally feel isolated or siloed from others.  Remember that connection comes in many forms and is not always apparent right away. If you feel lonely, remember that you are made of the same minerals, and living under the same sun, moon and stars as everyone on Earth. Seasonal changes, physical and metaphorical, are also shared.",
+        "hydroscope": "The Rio Grande's watershed is massive, but it's even bigger when you count the many \"endorheic\" basins that lie adjacent to the river. An endorheic basin is essentially a closed lake or swamp with no outflow to rivers or the sea. Instead, the water may evaporate and fill with rainfall seasonally.<br><br><span class='scope'>You may occasionally feel isolated or siloed from others.  Remember that connection comes in many forms and is not always apparent right away. If you feel lonely, remember that you are made of the same minerals, and living under the same sun, moon and stars as everyone on Earth. Seasonal changes, physical and metaphorical, are also shared.</span>",
         "huc": 13,
         "huc_name": "Rio Grande Region",
         "station_nm": "Rio Grande near San Benito, TX",
@@ -771,7 +771,7 @@ function fetchLocation() {
         },
         {
         "name": "Rogue River",
-        "hydroscope": "The Rogue River is home to many beaver, an animal that symbolizes hope, collaboration, wealth, wisdom, and success in many cultures. However, when European explorers and settlers began trapping beaver for their pelts along the Rogue, violent conflict ensued.<br><br>The reckless pursuit of wealth or comfort might lead to a devastating battle that renders its winnings meaningless. Remember that true success requires collaboration.",
+        "hydroscope": "The Rogue River is home to many beaver, an animal that symbolizes hope, collaboration, wealth, wisdom, and success in many cultures. However, when European explorers and settlers began trapping beaver for their pelts along the Rogue, violent conflict ensued.<br><br><span class='scope'>The reckless pursuit of wealth or comfort might lead to a devastating battle that renders its winnings meaningless. Remember that true success requires collaboration.</span>",
         "huc": 17,
         "huc_name": "Pacific Northwest Region",
         "station_nm": "Rogue River at Hwy 101 Bridge, at Wedderburn, OR",
@@ -780,7 +780,7 @@ function fetchLocation() {
         },
         {
         "name": "Sabine River",
-        "hydroscope": "Bald cypress trees grow along the the Sabine River, or Río de Sabinas, which derives its name from the Spanish word for cypress.  For ancient Europeans and Muslims, cypress represented grief, mourning, and the underworld. However, in ancient Israel, these trees represented healing and eternal life because were known to endure extreme and unfavorable conditions.<br><br>You may be entering or exiting a period of your life requiring great resilience.  Let yourself mourn for what is lost, but never doubt your inner strength.",
+        "hydroscope": "Bald cypress trees grow along the the Sabine River, or Río de Sabinas, which derives its name from the Spanish word for cypress.  For ancient Europeans and Muslims, cypress represented grief, mourning, and the underworld. However, in ancient Israel, these trees represented healing and eternal life because were known to endure extreme and unfavorable conditions.<br><br><span class='scope'>You may be entering or exiting a period of your life requiring great resilience.  Let yourself mourn for what is lost, but never doubt your inner strength.</span>",
         "huc": 12,
         "huc_name": "Texas-Gulf Region",
         "station_nm": "Sabine River (At Navy Pier) at Orange, TX",
@@ -789,7 +789,7 @@ function fetchLocation() {
         },
         {
         "name": "Saco River",
-        "hydroscope": "In the 1600s, Squandro, a Sokokis Native and purported magician, led a tribe that lived in peace with white settlers along the Saco River for decades, until three white sailors arrived on a ship from England and drowned Squandro's son. Squandro then cursed the river, saying that it would \"claim three lives a year, until all white men fled its banks.\" The legend of this \"Saco curse\" lives on to this day. The man-made branch of the Saco is called \"Canal River,\" but the \"Old Course\" of the river remains.<br><br>There may be something buried in your past that is still affecting you: a path you didn't take, a promise you broke, a devastating loss. But if your life is peaceful and productive now, it may be best to leave well enough alone.",
+        "hydroscope": "In the 1600s, Squandro, a Sokokis Native and purported magician, led a tribe that lived in peace with white settlers along the Saco River for decades, until three white sailors arrived on a ship from England and drowned Squandro's son. Squandro then cursed the river, saying that it would \"claim three lives a year, until all white men fled its banks.\" The legend of this \"Saco curse\" lives on to this day. The man-made branch of the Saco is called \"Canal River,\" but the \"Old Course\" of the river remains.<br><br><span class='scope'>There may be something buried in your past that is still affecting you: a path you didn't take, a promise you broke, a devastating loss. But if your life is peaceful and productive now, it may be best to leave well enough alone.</span>",
         "huc": 1,
         "huc_name": "New England Region",
         "station_nm": "Saco River at Camp Ellis Near Saco, ME",
@@ -798,7 +798,7 @@ function fetchLocation() {
         },
         {
         "name": "Sacramento River",
-        "hydroscope": "Due to its wide, marshy outlet, animals from the Pacific Ocean have occasionally been found lost in the Sacramento River, such as Humphrey the humpback whale. In 1985, Humphrey made it almost 70 miles up the river before being rescued by scientists who played recordings of humpback whale sounds to lure him back to the sea.<br><br>If something doesn't feel quite right, you may not be where you belong. Occasionally, you may need to enlist others' help to bring you back to yourself. That's okay; you're an adventurer at heart!",
+        "hydroscope": "Due to its wide, marshy outlet, animals from the Pacific Ocean have occasionally been found lost in the Sacramento River, such as Humphrey the humpback whale. In 1985, Humphrey made it almost 70 miles up the river before being rescued by scientists who played recordings of humpback whale sounds to lure him back to the sea.<br><br><span class='scope'>If something doesn't feel quite right, you may not be where you belong. Occasionally, you may need to enlist others' help to bring you back to yourself. That's okay; you're an adventurer at heart!</span>",
         "huc": 18,
         "huc_name": "California Region",
         "station_nm": "Sacramento River at Rio Vista, CA",
@@ -807,7 +807,7 @@ function fetchLocation() {
         },
         {
         "name": "Saint Lawrence River",
-        "hydroscope": "The Saint Lawrence is a tidal river, home to many populations of resident whales, such as belugas, sperm whales, minke whales, fin whales, blue whales, and North Atlantic right whales.  These magnificent animals represent compassion, solitude, and creativity.<br><br>When in doubt, seek a safe harbor for these ideals to flourish.",
+        "hydroscope": "The Saint Lawrence is a tidal river, home to many populations of resident whales, such as belugas, sperm whales, minke whales, fin whales, blue whales, and North Atlantic right whales.  These magnificent animals represent compassion, solitude, and creativity.<br><br><span class='scope'>When in doubt, seek a safe harbor for these ideals to flourish.</span>",
         "huc": 4,
         "huc_name": "Great Lakes Region",
         "station_nm": "St. Lawrence River at Cornwall Ont near Massena, NY",
@@ -816,7 +816,7 @@ function fetchLocation() {
         },
         {
         "name": "Salinas River",
-        "hydroscope": "Between 2013 and 2016, the Salinas River's final stretch dried up for the first time in known history; previously, the river flowed continuously year-round. In 2017, heavy rainfall broke the drought, and the river's flow returned to normal. The Salinas provides a migration channel for many forms of wildlife, and nourishes fertile cropland and magnificent vineyards along its path through the Salinas Valley.<br><br>If you find yourself in a \"dry spell\" in motivation, money, or love, remember that it's not permanent.  Soon, the winds will shift, and inspiration will be flowing once again.",
+        "hydroscope": "Between 2013 and 2016, the Salinas River's final stretch dried up for the first time in known history; previously, the river flowed continuously year-round. In 2017, heavy rainfall broke the drought, and the river's flow returned to normal. The Salinas provides a migration channel for many forms of wildlife, and nourishes fertile cropland and magnificent vineyards along its path through the Salinas Valley.<br><br><span class='scope'>If you find yourself in a \"dry spell\" in motivation, money, or love, remember that it's not permanent.  Soon, the winds will shift, and inspiration will be flowing once again.</span>",
         "huc": 18,
         "huc_name": "California Region",
         "station_nm": "Salinas River near Spreckels, CA",
@@ -825,7 +825,7 @@ function fetchLocation() {
         },
         {
         "name": "San Joaquin",
-        "hydroscope": "The San Joaquin river was once a wide inland sea, and it now supports almost $15 billion worth of crop production in its river basin.<br><br>Things may look very differently for you now than they once did. Trust the journey.",
+        "hydroscope": "The San Joaquin river was once a wide inland sea, and it now supports almost $15 billion worth of crop production in its river basin.<br><br><span class='scope'>Things may look very differently for you now than they once did. Trust the journey.</span>",
         "huc": 18,
         "huc_name": "California Region",
         "station_nm": "San Joaquin River at Jersey Point, CA",
@@ -834,7 +834,7 @@ function fetchLocation() {
         },
         {
         "name": "Santa Clara River",
-        "hydroscope": "The Santa Clara River is home to stickleback, steelhead, and pond turtles.  Lithe pronghorn antelope once roamed its banks, symbolizing speed, stealth, and instinct. Pronghorns aren't common along the river today, but willow flycatchers are: these darty songbirds perch high atop tree branches and dive dramatically to catch insects in midair.<br><br>You may feel that an era of nimble maneuvers is behind you. It will come around again, likely in a different form.",
+        "hydroscope": "The Santa Clara River is home to stickleback, steelhead, and pond turtles.  Lithe pronghorn antelope once roamed its banks, symbolizing speed, stealth, and instinct. Pronghorns aren't common along the river today, but willow flycatchers are: these darty songbirds perch high atop tree branches and dive dramatically to catch insects in midair.<br><br><span class='scope'>You may feel that an era of nimble maneuvers is behind you. It will come around again, likely in a different form.</span>",
         "huc": 18,
         "huc_name": "California Region",
         "station_nm": "Santa Clara River Near Haines, CA",
@@ -843,7 +843,7 @@ function fetchLocation() {
         },
         {
         "name": "Savannah River",
-        "hydroscope": "The Savannah River was formed where two other rivers, the Tugaloo and the Seneca, merged. Today, this combined headwater is hidden beneath a lake.<br><br>Your parents or family members may be very different from one another, but it is this beautiful confluence of opposites that makes you who you are. Don't lose touch with your roots.",
+        "hydroscope": "The Savannah River was formed where two other rivers, the Tugaloo and the Seneca, merged. Today, this combined headwater is hidden beneath a lake.<br><br><span class='scope'>Your parents or family members may be very different from one another, but it is this beautiful confluence of opposites that makes you who you are. Don't lose touch with your roots.</span>",
         "huc": 3,
         "huc_name": "South Atlantic-Gulf Region",
         "station_nm": "Savannah River (I-95) Near Port Wentworth, GA",
@@ -852,7 +852,7 @@ function fetchLocation() {
         },
         {
         "name": "Seekonk River",
-        "hydroscope": "The Seekonk River banks are home to phragmites grasses, willow, oak, and beech.  Some consider willow bark the original painkiller, and symbolizes healing and recovery from pain, and the oak is an international emblem of strength and survival.<br><br>When life hands you lemons, call on the wisdom of the natural world to find your inner strength. Phragmites reeds can be used to make flutes; making music or pursuing another creative hobby can help get you through this challenging time.",
+        "hydroscope": "The Seekonk River banks are home to phragmites grasses, willow, oak, and beech.  Some consider willow bark the original painkiller, and symbolizes healing and recovery from pain, and the oak is an international emblem of strength and survival.<br><br><span class='scope'>When life hands you lemons, call on the wisdom of the natural world to find your inner strength. Phragmites reeds can be used to make flutes; making music or pursuing another creative hobby can help get you through this challenging time.</span>",
         "huc": 1,
         "huc_name": "New England Region",
         "station_nm": "Seekonk River at Henderson Bridge, RI",
@@ -861,7 +861,7 @@ function fetchLocation() {
         },
         {
         "name": "Skagit River",
-        "hydroscope": "The Savannah River was formed where two other rivers, the Tugaloo and the Seneca, merged. Today, this combined headwater is hidden beneath a lake.<br><br>Your parents or family members may be very different from one another, but it is this beautiful confluence of opposites that makes you who you are. Don't lose touch with your roots.",
+        "hydroscope": "The Savannah River was formed where two other rivers, the Tugaloo and the Seneca, merged. Today, this combined headwater is hidden beneath a lake.<br><br><span class='scope'>Your parents or family members may be very different from one another, but it is this beautiful confluence of opposites that makes you who you are. Don't lose touch with your roots.</span>",
         "huc": 17,
         "huc_name": "Pacific Northwest Region",
         "station_nm": "Skagit River Near Mount Vernon, WA",
@@ -870,7 +870,7 @@ function fetchLocation() {
         },
         {
         "name": "Souris River",
-        "hydroscope": "The flow of the Souris River varies greatly with the seasons; most of its volume comes from snowmelt and spring showers.<br><br>You may be prone to relationships, personality traits, or even types of work that change with the seasons. Embracing this about yourself will allow you to find your own rhythm of consistency.",
+        "hydroscope": "The flow of the Souris River varies greatly with the seasons; most of its volume comes from snowmelt and spring showers.<br><br><span class='scope'>You may be prone to relationships, personality traits, or even types of work that change with the seasons. Embracing this about yourself will allow you to find your own rhythm of consistency.</span>",
         "huc": 9,
         "huc_name": "Souris-Red-Rainy Region",
         "station_nm": "Souris River near Westhope, ND",
@@ -879,7 +879,7 @@ function fetchLocation() {
         },
         {
         "name": "Susquehanna River",
-        "hydroscope": "The Susquehanna is one of the oldest rivers in the world, dating from before two pre-continents slammed together! The Susquehanna has supported generations of tribes and traders with its plentiful oyster beds. Oysters are fantastic natural water filters, absorbing sediment and toxins out of the water.<br><br>If you feel you've lost touch with the ancient source of wisdom within you, try filtering out some noise or \"pollution\" from your life.",
+        "hydroscope": "The Susquehanna is one of the oldest rivers in the world, dating from before two pre-continents slammed together! The Susquehanna has supported generations of tribes and traders with its plentiful oyster beds. Oysters are fantastic natural water filters, absorbing sediment and toxins out of the water.<br><br><span class='scope'>If you feel you've lost touch with the ancient source of wisdom within you, try filtering out some noise or \"pollution\" from your life.</span>",
         "huc": 2,
         "huc_name": "Mid Atlantic Region",
         "station_nm": "Susquehanna River at Conowingo, MD",
@@ -888,7 +888,7 @@ function fetchLocation() {
         },
         {
         "name": "Suwannee River",
-        "hydroscope": "Fifty-five springs feed the Suwannee as it winds through the Southeast. It also boasts Florida's only whitewater rapids.<br><br>You may take inspiration from many sources, and transform it into something striking and magical. Indulge your creative side.",
+        "hydroscope": "Fifty-five springs feed the Suwannee as it winds through the Southeast. It also boasts Florida's only whitewater rapids.<br><br><span class='scope'>You may take inspiration from many sources, and transform it into something striking and magical. Indulge your creative side.</span>",
         "huc": 3,
         "huc_name": "South Atlantic-Gulf Region",
         "station_nm": "Suwannee River at Manatee Springs near Old Town, FL",
@@ -897,7 +897,7 @@ function fetchLocation() {
         },
         {
         "name": "Tennessee River",
-        "hydroscope": "The Tennessee, or Cherokee, River follows a U-shaped course. This river is a mighty waterway, and its unique shape and geography have made it a strategic military location as well as part of the \"Great Loop\" recreational route.<br><br>You may have the occasional moment of déja vú, but don't be discouraged if you feel you are retracing old steps.  Sometimes you have to go backwards, and see your own patterns for what they are, to forge ahead.",
+        "hydroscope": "The Tennessee, or Cherokee, River follows a U-shaped course. This river is a mighty waterway, and its unique shape and geography have made it a strategic military location as well as part of the \"Great Loop\" recreational route.<br><br><span class='scope'>You may have the occasional moment of déja vú, but don't be discouraged if you feel you are retracing old steps.  Sometimes you have to go backwards, and see your own patterns for what they are, to forge ahead.</span>",
         "huc": 6,
         "huc_name": "Tennessee Region",
         "station_nm": "Tennessee River at Mile 5.3 near Paducah, KY",
@@ -906,7 +906,7 @@ function fetchLocation() {
         },
         {
         "name": "Upper Colorado River",
-        "hydroscope": "One of the longest rivers in the U.S., the Colorado supports elk, moose, bears, cougars, almost 30 dams, and some 40 million people.<br><br>You are destined for a rich and busy life, filled with color and variety. Don't be alarmed as your social circle widens and narrows just like the Colorado. Those who are truly aligned with you will find you and stick by you.",
+        "hydroscope": "One of the longest rivers in the U.S., the Colorado supports elk, moose, bears, cougars, almost 30 dams, and some 40 million people.<br><br><span class='scope'>You are destined for a rich and busy life, filled with color and variety. Don't be alarmed as your social circle widens and narrows just like the Colorado. Those who are truly aligned with you will find you and stick by you.</span>",
         "huc": 14,
         "huc_name": "Upper Colorado Region",
         "station_nm": "Colorado River Ab Dirty Devil River near Hite, UT",
@@ -915,7 +915,7 @@ function fetchLocation() {
         },
         {
         "name": "Upper Mississippi River",
-        "hydroscope": "The headwaters of the Mississippi are located at Lake Itasca, a small glacial lake in Northern Minnesota. This lake is only some 20 feet deep; looking at it, you'd be hard-pressed to tell it was the source of the nation's most iconic river.<br><br>You have great potential within you; do not underestimate yourself, or let yourself be underestimated by others.",
+        "hydroscope": "The headwaters of the Mississippi are located at Lake Itasca, a small glacial lake in Northern Minnesota. This lake is only some 20 feet deep; looking at it, you'd be hard-pressed to tell it was the source of the nation's most iconic river.<br><br><span class='scope'>You have great potential within you; do not underestimate yourself, or let yourself be underestimated by others.</span>",
         "huc": 7,
         "huc_name": "Upper Mississippi Region",
         "station_nm": "Mississippi River at Thebes, IL",
@@ -924,7 +924,7 @@ function fetchLocation() {
         },
         {
         "name": "Warroad River",
-        "hydroscope": "After a diversion of the Warroad River's main channel caused flooding and damage to local roads, a watershed district project moved it back to its original path, and the hazard was eliminated.<br><br>When in doubt, stick with your first instinct –– it is often correct. Trusting your intuition can save you time and money in the long run.",
+        "hydroscope": "After a diversion of the Warroad River's main channel caused flooding and damage to local roads, a watershed district project moved it back to its original path, and the hazard was eliminated.<br><br><span class='scope'>When in doubt, stick with your first instinct –– it is often correct. Trusting your intuition can save you time and money in the long run.</span>",
         "huc": 9,
         "huc_name": "Souris-Red-Rainy Region",
         "station_nm": "Warroad River Near Highway 11 at Warroad, MN",
@@ -933,7 +933,7 @@ function fetchLocation() {
         },
         {
         "name": "Weber River",
-        "hydroscope": "A rare plant species called \"hidden wirelettuce,\" with beautiful bright-pink flowers, is found along––and only along––the Weber River's corridor.<br><br>You have something special to share with the world. Protect what makes you unique.",
+        "hydroscope": "A rare plant species called \"hidden wirelettuce,\" with beautiful bright-pink flowers, is found along––and only along––the Weber River's corridor.<br><br><span class='scope'>You have something special to share with the world. Protect what makes you unique.</span>",
         "huc": 16,
         "huc_name": "Great Basin Region",
         "station_nm": "Weber River Near Plain City, UT",
@@ -942,7 +942,7 @@ function fetchLocation() {
         },
         {
         "name": "White River",
-        "hydroscope": "The White River's headwaters are \"fast and furious\" during winter and spring rains, and calm the rest of the year.<br><br>You may be prone to similarly furious bursts of work, love, or inspiration. Ride these waves with grace, but when the rush is over, don't lose your spark in the rhythm of everyday life.",
+        "hydroscope": "The White River's headwaters are \"fast and furious\" during winter and spring rains, and calm the rest of the year.<br><br><span class='scope'>You may be prone to similarly furious bursts of work, love, or inspiration. Ride these waves with grace, but when the rush is over, don't lose your spark in the rhythm of everyday life.</span>",
         "huc": 11,
         "huc_name": "Arkansas-White-Red Region",
         "station_nm": "White River near Augusta, AR",

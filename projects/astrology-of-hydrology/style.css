@@ -11,15 +11,13 @@ body {
     font-size: 16px;
     color: white;
     line-height: 1.4;
-}
-
-#meat {
     background-image: linear-gradient(0deg, rgba(34,20,60,1) 50%, rgba(199,150,82,1) 100%);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
 #viz-title {
   opacity: 0;
   animation: fade forwards ease-in-out;
@@ -61,15 +59,18 @@ body {
   animation: fade forwards ease-in-out;
   animation-duration: 2s;
   animation-delay: 1.4s;
+
 }
 
 #arrow-down polygon {
-  stroke: white;
-  stroke-width: 1px;
-  box-shadow: 2 2 0 0 rgba(0, 0, 0, 1);
-  animation: pulse 2s infinite;
+  stroke: rgba(199,150,82,1);
+  stroke-width: 3px; 
+  fill: rgba(34,20,60,.5)
 }
 
+#arrow-down-group {
+   animation: pulse 2s infinite;
+}
 
 .data-section, .text-content{
     max-width: 700px;
@@ -114,6 +115,11 @@ h3 {
   font-size: 1.5rem;
 }
 
+.text-chunk {
+  background-color: rgba(0, 0, 0, 0.2); 
+  padding: 30px 50px;
+}
+
 a {
     text-decoration: none;
     font-weight: bold;
@@ -121,7 +127,7 @@ a {
   }
 
 .tooltip {
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: bold;
     fill: white;
 }
@@ -132,7 +138,13 @@ a {
 }
 
 .move-up {
-  margin-top: -140px;
+  z-index: -1;
+}
+
+.chart-labels {
+  max-width: 600px;
+  padding: 0 30px;
+  margin: -100px auto 2em auto;
 }
 
 .chart-title {
@@ -146,6 +158,82 @@ a {
   font-size: .8em;
   font-style: italic;
   opacity: .7;
+  text-align: right;
+}
+
+/* Inputs */
+
+.prompt {
+  font-size: 1em;
+  font-weight: 100;
+  opacity: .7;
+  font-style: italic;
+}
+.input-group {
+  position: relative;
+  padding: 15px 0 0;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.input-group .prompt {
+  text-align:center;
+  margin-bottom: 2em;
+}
+.form-flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-around;
+  margin-bottom: 2em;
+}
+.form-field {
+  flex: 0 0 48%;
+  font-family: inherit;
+  width: 48%;
+  border: 0;
+  border-bottom: 2px solid rgba(199,150,82,1);
+  outline: 0;
+  font-size: 1.5em;
+  color: white;
+  padding: 7px 20px 5px 5px;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+/* Buttons */
+
+button {
+  display: block;
+  padding: 0.5em 1.2em;
+  border: 0.1em solid rgba(199,150,82,1);;
+  margin: 10px auto 2em auto;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: 300;
+  color: rgba(199,150,82,1);
+  text-align: center;
+  transition: all 0.2s;
+  background-color: rgba(199,150,82,0);
+  outline: none;
+  position: relative;
+  transition: all 0.3s ease 0s;
+}
+button:hover{
+  color: rgba(34,20,60,1);
+  background-color: rgba(199,150,82,1);
+  border: 0.1em solid rgba(199,150,82,1);
+}
+.button:active {
+  top: 5px;
+}
+@media screen and (max-width: 500px) {
+   button {
+    display: block;
+    margin: 0.4em auto;
+  }
 }
 
 /* Scrolly CSS */
@@ -286,6 +374,7 @@ a {
   .flex-pic {
     max-width: 100%;
     height: auto;
+    opacity: .8;
   }
 
   .card-title {
@@ -306,7 +395,19 @@ a {
     font-weight: bold;
     color: rgba(199,150,82,1);
   }
+
+  .scope {
+    color: rgba(199,150,82,1);
+  }
+  .italic {
+    font-style: italic;
+  }
   /* Loading Ripple */
+
+  #loading-warning {
+    animation: fade-out .5s ease-in-out forwards;
+    animation-delay: 1s;
+  }
 
   .lds-ripple {
     display: none;
@@ -350,11 +451,20 @@ a {
       opacity: 1;
     }
   }
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
 
   @keyframes pulse {
     0% {
       /* transform: translate(0 20); */
-      transform: scale(0.95);
+      transform: scale(0.8);
       box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
     }
   
@@ -366,7 +476,7 @@ a {
   
     100% {
       /* transform: translate(0 0); */
-      transform: scale(0.95);
+      transform: scale(0.8);
       box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     }
   }
