@@ -351,13 +351,13 @@ button:hover{
   #HUC-section{
     padding-bottom: 40vh;
   } 
-  #meet-your-watershed { 
+  #watershed-content-container { 
     display:none;
     max-width: 1000px;
     margin: 0 auto;
   }
 
-  #load-warning {
+  #load-warning, .streamgraph-title {
     display:none;
   }
 

@@ -12,7 +12,11 @@ body {
   background-position: 50% 50%;
   font-family: 'Barlow', sans-serif;
   font-weight: 100;
-  
+}
+
+#intro-line {
+  text-align: center;
+  margin: 10vh auto 0 auto;
 }
 
 h1 { 

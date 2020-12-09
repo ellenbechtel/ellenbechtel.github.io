@@ -36,7 +36,9 @@ function fetchData() {
     d3.select("#streamgraph-section").style("padding-bottom",0); // reduce size of this section
     d3.select("#data-sources").style("display","block"); // also display the data section now that the graph is loading
     document.getElementById("button2").innerHTML = "Discover Again"; 
-
+    d3.selectAll(".streamgraph-text").style("display","block");
+    d3.select(".streamgraph-title").style("display","block");
+    
     // Also clear all the important stored variables
     var birthday = '';
     var start = '';
@@ -175,7 +177,7 @@ function fetchData() {
     // Print beginning and end date on the page
     document.getElementById("submission").innerHTML = "The chart below is centered on that date, <span class='emph'>" + getLongDate(birthday) + ".</span> We've pulled daily flow data for the surrounding month, starting at " + getLongDate(start) + " and ending on " + getLongDate(end) + ".";
     document.getElementById("load").innerHTML = "<span id='loading-warning'>Loading may take a moment.</span>"
-    d3.selectAll(".streamgraph-text").style("display","block");
+    
 
     /////////////////////////////////
     // Parse HUC and Gages data

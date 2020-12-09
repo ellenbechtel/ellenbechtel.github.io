@@ -1028,7 +1028,7 @@ function fetchLocation() {
         function spitItOut(this_row) {
             let row = get_row_by_huc(this_row); // ENTER DEMO HUC HERE
             // whole section
-            var meet = d3.select("#meet-your-watershed").style("display","block");
+            var meet = d3.select("#watershed-content-container").style("display","block");
             //images
             
             document.getElementById("nlImage").src = row["NL-img"];
