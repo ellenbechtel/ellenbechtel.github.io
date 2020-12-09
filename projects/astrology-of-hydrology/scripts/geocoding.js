@@ -9,7 +9,9 @@ function fetchLocation() {
     var HUCmap = d3.select()
     var city = [];
     var state = [];
-    var geocodeAPIURL = "https://open.mapquestapi.com/geocoding/v1/address?key=	NkGrSo9aZDYlEaOv3pNN3lvFxuBFmCdK&location=";
+    var geocodeAPIURL = "https://maps.googleapis.com/maps/api/geocode/json?address="; // New Google API URL
+    // Old Mapquest API URL// "https://open.mapquestapi.com/geocoding/v1/address?key=NkGrSo9aZDYlEaOv3pNN3lvFxuBFmCdK&location=";
+    var key = "&key=AIzaSyCLfNu4XdJ_VqyDS3DIlq5DqAKp04S2g8Q";
     var geocode = [];
     var nwisAPIURL = "https://waterservices.usgs.gov/nwis/dv/?format=json&bBox="
     var lat = [];
@@ -24,7 +26,11 @@ function fetchLocation() {
     console.log(city,state);  
 
 
+    // MAPQUEST FORMAT
     // http://open.mapquestapi.com/geocoding/v1/address?key=KEY&location=Washington,DC
+
+    // GOOGLE FORMAT
+    // https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=YOUR_API_KEY
 
     /////////////////////////////////
     // Get data for Meet Your Watershed blocks
@@ -1047,15 +1053,15 @@ function fetchLocation() {
 
     /////////////////////////////////
     // Compile Geocoding URL
-    var geocode = geocodeAPIURL + city + "," + state + "/";
+    var geocode = geocodeAPIURL + "+" + city + ",+" + state + key;
+
     /////////////////////////////////
     // Call API
-
     d3.json(geocode, function(error, apiData) { 
         console.log(apiData, "lat long");
 
-        lat = apiData.results[0].locations[0].latLng.lat;
-        long = apiData.results[0].locations[0].latLng.lng;
+        lat = apiData.results[0].geometry.location.lat;
+        long = apiData.results[0].geometry.location.lng;
         console.log(lat,"lat", long, "long");
         
         birthCoord.push({
@@ -1091,9 +1097,9 @@ function fetchLocation() {
         // Call NWIS API to determine what HUC02 we're in
 
         d3.json(nwisAPI, function (error, HUCdata) {
-    
+            console.log(HUCdata, "HUC data")
             var birthHUC = HUCdata.value.timeSeries[0].sourceInfo.siteProperty[1].value.slice(0,2);
-            console.log(birthHUC, "birth HUC")
+            
 
             function highlightBirthHUC(birthHUC) {
                 
