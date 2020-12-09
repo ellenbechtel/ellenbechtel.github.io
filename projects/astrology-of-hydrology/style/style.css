@@ -312,8 +312,14 @@ button:hover{
     background-color: #3b3b3b;
   }
 
-  #rivers, .a-huc, #states {
+  #rivers, .a-huc, #states, #huc-names {
     opacity: 0;
+  }
+
+  .huc-label {
+    font-size: .7em;
+    font-weight: 100;
+    background-color: white;
   }
 
   /* SVG Map styling */
@@ -337,7 +343,7 @@ button:hover{
   }
 
   .cls-4 {
-    fill: #5c98ff;
+    fill: rgb(77, 164, 177);
     stroke: #fff;
     stroke-linecap: round;
     stroke-width: 2px;

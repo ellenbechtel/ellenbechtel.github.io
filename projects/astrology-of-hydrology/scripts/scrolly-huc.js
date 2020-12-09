@@ -10,9 +10,10 @@ var scroller = scrollama();
 
 // select existing SVGS even though they are all invisible
 var allsvgs = d3.selectAll("#scroll-svgs")
-var svg2 = d3.select("#rivers"); // currently this is the first svg shown
-var svg1 = d3.select("#states");
-var svg3 = d3.selectAll(".a-huc");
+var riversSVG = d3.select("#rivers"); // currently this is the first svg shown
+var statesSVG = d3.select("#states");
+var hucOutlinesSVG = d3.selectAll(".a-huc");
+var hucLabels = d3.select("#huc-names");
 
 // generic window resize listener event
 function handleResize() {
@@ -36,29 +37,34 @@ function updateChart(index){
   // allsvgs.style("opacity","0").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out");
   if (index === 0) {
     console.log(index, "0")
-    svg1.style("opacity","1").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
-    svg2.style("opacity","0").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
-    svg3.style("opacity","0").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
+    statesSVG.style("opacity","1").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
+    riversSVG.style("opacity","0").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
+    hucOutlinesSVG.style("opacity","0").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
+    hucLabels.style("opacity","0").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
   } else if (index === 1) {
     console.log(index, "1")
-    svg1.style("opacity",".7").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
-    svg2.style("opacity",".8").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
-    svg3.style("opacity","0").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
+    statesSVG.style("opacity",".7").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
+    riversSVG.style("opacity",".8").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
+    hucOutlinesSVG.style("opacity","0").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
+    hucLabels.style("opacity","0").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
   } else if (index === 2) {
     console.log(index,"2")
-    svg1.style("opacity","0").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
-    svg2.style("opacity",".8").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
-    svg3.style("opacity","0").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
+    statesSVG.style("opacity","0").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
+    riversSVG.style("opacity",".8").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
+    hucOutlinesSVG.style("opacity","0").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
+    hucLabels.style("opacity","0").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
   } else if (index === 3) {
     console.log(index,"2")
-    svg1.style("opacity","0").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
-    svg2.style("opacity",".8").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
-    svg3.style("opacity",".7").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
+    statesSVG.style("opacity","0").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
+    riversSVG.style("opacity",".8").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
+    hucOutlinesSVG.style("opacity",".7").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
+    hucLabels.style("opacity","0").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
   } else if (index === 4) {
     console.log(index,"2")
-    svg1.style("opacity",".1").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
-    svg2.style("opacity","0").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
-    svg3.style("opacity",".7").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
+    statesSVG.style("opacity",".05").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
+    riversSVG.style("opacity","0").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
+    hucOutlinesSVG.style("opacity",".7").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
+    hucLabels.style("opacity","1").style("transition","opacity .25s ease-in-out").style("-moz-transition","opacity .25s ease-in-out").style("-webkit-transition","opacity .25s ease-in-out")
   }
 }
 

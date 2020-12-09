@@ -1,0 +1,33 @@
+<svg id="Layer_4" data-name="Layer 4" xmlns="http://www.w3.org/2000/svg" width="1000" height="750" viewBox="0 0 1000 750">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 12px;
+        font-family: Montserrat-Thin, Montserrat;
+        font-weight: 200;
+      }
+
+    </style>
+  </defs>
+  <text class="cls-1" transform="translate(894.2 233.1)">New England</text>
+  <text class="cls-1" transform="translate(833.5 336.7)">Mid Atlantic</text>
+  <text class="cls-1" transform="translate(679.2 529.2)">South Atlantic -Gulf</text>
+  <text class="cls-1" transform="translate(683.7 458.4)">Tennessee</text>
+  <text class="cls-1" transform="translate(719.6 373.1)">Ohio</text>
+  <text class="cls-1" transform="translate(680.1 236.7)">Great Lakes</text>
+  <text class="cls-1" transform="translate(590 289.9)">Upper Mississippi</text>
+  <text class="cls-1" transform="translate(486.5 161.8)">Souris-Red-Rainy</text>
+  <text class="cls-1" transform="translate(425.4 267)">Missouri</text>
+  <text class="cls-1" transform="translate(431.7 436.9)">Arkansas-White-Red</text>
+  <text class="cls-1" transform="translate(489.1 557.2)">Texas Gulf</text>
+  <text class="cls-1" transform="translate(339.4 530.3)">Rio Grande</text>
+  <text class="cls-1" transform="translate(319.4 358.1)">Upper Colorado</text>
+  <text class="cls-1" transform="translate(192.4 311.5)">Great Basin</text>
+  <text class="cls-1" transform="translate(165.3 190.4)">Pacific Northwest</text>
+  <text class="cls-1" transform="translate(88.9 379.4)">California</text>
+  <text class="cls-1" transform="translate(157.9 626.2)">Alaska</text>
+  <text class="cls-1" transform="translate(870.4 576.2)">Puerto Rico</text>
+  <text class="cls-1" transform="translate(279 704.4)">Hawaii</text>
+  <text class="cls-1" transform="translate(249.2 467.7)">Lower</text>
+  <text class="cls-1" transform="translate(602.6 499)">Upper<tspan x="-12.3" y="14.4">Mississippi</tspan></text>
+</svg>
