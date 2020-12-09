@@ -294,9 +294,9 @@
                   </div>
                 </article>
             </section>
-            <section id="HUC-section" class="move-up">
+            <section id="HUC-section">
               <div class="text-content">
-                <h2>Meet Your Watershed</h2>
+                <h2 class="yellow-header">Meet Your Watershed</h2>
                 <h3>Where were you born?</h3>
                   <input type="text" id="city" value="San Francisco">
                   <input type="text" id="state" value="CA">
@@ -307,36 +307,35 @@
                 <div id="watershed-info" class="flex-container">
                   <div id="desc" class="flex-item">
                     <img id="hucImage" alt="huc" class="flex-pic">
-                    <h2 id = "HUCname"> </h2> 
+                    <h3 id = "HUCname" class="card-title"> </h3> 
                     <p id = "drainage" class = "info"> </p>
                   </div>
                   <div id="land-ack" class="flex-item">
                     <img id="nlImage" alt="map of native land" class="flex-pic">
-                    <h3>On Whose Land</h3>
+                    <p id = "nlIC" class = "credit">Native-Land.ca</p>
+                    <h3 class="card-title">On Whose Land</h3>
                     <p id = "tribes" class = info> </p>
                   </div>
                   <div id="plant" class="flex-item">
                     <img id="plantImage" alt="plant" class="flex-pic">
                     <p id = "plantIC" class = "credit"> </p>
-                    <h3>Plant</h3>
-                    <p id = "plantText" class = "info"> </p>
-                    <p id = "plantSci" class = "sciName"> </p>
+                    <h3 class="card-title">Native Plant</h3>
+                    <p class="info"><span id="plantText" ></span>, <span id="plantSci" class="sciName"></span></p>
                   </div>
                   <div id="animal" class="flex-item">
                     <img id="animalImage" alt="animal" class="flex-pic">
                     <p id = "animalIC" class = "credit"> </p>
-                    <h3>Animal</h3>
-                    <p id = "animalText" class = "info"> </p>
-                    <p id = "animalSci" class = "sciName"> </p>
+                    <h3 class="card-title">Native Animal</h3>
+                    <p class="info"><span id = "animalText"></span>, <span id = "animalSci" class = "sciName"></span></p>
                   </div>
                   <div id="mineral" class="flex-item">
                     <img id="mineralImage" alt="mineral" class="flex-pic">
                     <p id = "mineralIC" class = "credit"> </p>
-                    <h3> Mineral </h3>
+                    <h3 class="card-title">Special Mineral</h3>
                     <p id = "mineralText" class = "info"> </p>
                   </div>
                   <div id="hydroscope-title" class="flex-item">
-                    <h3>Meet the Rivers</h3> 
+                    <h3 class="card-title">Meet the Rivers</h3> 
                     <p>And now for some totally unscientific content about the rivers in your watershed.</p>
                     <ul id="river-list">
                       <li>River 1</li>
@@ -348,30 +347,32 @@
                 </div>
               </div>
             </section>
-            <section id="streamgraph-section" class="data-section">
+            <section id="streamgraph-section" class="data-section text-content">
+              <h2 class="yellow-header">The Flow of Your Birth</h2>
               <div class="text-section">
                   <h3>When were you born?</h3>
                   <input type="date" id="birthdate" value="1987-04-23">
                   <button onclick="fetchData()">Discover</button>
                   <p id="submission"></p>
-                  <p>Streamflow is a measurement of the volume of water passing a certain place at a certain time. The USGS has been measuring streamflow on thousands of bodies of water for decades through a process called <a href = “https://www.usgs.gov/mission-areas/water-resources/science/streamgaging-basics?qt-science_center_objects=0#qt-science_center_objects”> streamgaging. </a> Gages measure stream “stage,” or the height of the water against the gage itself, as well as the “discharge,” or total volume of water passing through the gage. </p>
+                  <p>Here is a streamgraph of the total flow in each HUC. Streamflow - which hydrologists call "discharge" and measure in cubic-feet-per-second - is a measurement of the volume of water passing a certain place at a certain time. The USGS has been measuring streamflow on thousands of rivers and bodies of water for decades through a process called <a href = “https://www.usgs.gov/mission-areas/water-resources/science/streamgaging-basics?qt-science_center_objects=0#qt-science_center_objects”> streamgaging. </a> The gages tapped for this dataset have been vetted by the USGS as good places to measure long-term hydrologic changes across the country. </p>
               </div>
             </section>
             <div id="potatoes">
             </div>
             <section class="data-section streamgraph-text">
-              <div class="streamgraph-text">
-                
+              <div>
                 <p>By studying stage and flow data at gage sites around the country, we can get a holistic picture of how the water table changes over time and space. This is what the flow through the 21 HUCs across the United States looked like during the month surrounding your birthday.</p>
               </div>
             </section>
-            <div class="data-section">
-              <h2>Data Sources</h2>
-              <a href="https://viewer.nationalmap.gov/basic/#/" class="cite"><p>HUC Boundaries</p></a>
-              <a href="https://waterservices.usgs.gov/rest/DV-Test-Tool.html" class="cite"><p>Daily Values NWIS API</p></a>
-              <a href="https://water.usgs.gov/wsc/a_api/wbd/region01/01.html" class="cite"><p>Science in Your Watershed</p></a>
-              <a href="https://maps.waterdata.usgs.gov/mapper/index.html" class="cite"><p>NWIS Gage Mapper</p></a>
-              <a href="https://www.arlis.org/docs/vol1/F/795833123.pdf" class="cite"><p>Hydro-Climatic Gage Network</p></a>
+            <div class="data-section" id="data-sources">
+              <h2 class="yellow-header">Data Sources</h2>
+              <div class="text-content">
+                <a href="https://viewer.nationalmap.gov/basic/#/" class="cite"><p>HUC Boundaries</p></a>
+                <a href="https://waterservices.usgs.gov/rest/DV-Test-Tool.html" class="cite"><p>Daily Values NWIS API</p></a>
+                <a href="https://water.usgs.gov/wsc/a_api/wbd/region01/01.html" class="cite"><p>Science in Your Watershed</p></a>
+                <a href="https://maps.waterdata.usgs.gov/mapper/index.html" class="cite"><p>NWIS Gage Mapper</p></a>
+                <a href="https://www.arlis.org/docs/vol1/F/795833123.pdf" class="cite"><p>Hydro-Climatic Gage Network</p></a>
+              </div>
             </div>
         </div>
         

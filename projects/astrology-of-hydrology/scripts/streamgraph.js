@@ -29,9 +29,12 @@ var colorScheme = ["#4f0b56","#482a70","#41498a","#3287bd","#4da4b1","#67c2a5","
 
 function fetchData() {
 
+
     /////////////////////////////////
     // Clear anything that was inside the svg element before (only useful when you reload)   
     d3.selectAll("svg").remove();
+    d3.select("#streamgraph-section").style("padding-bottom",0); // reduce size of this section
+    d3.select("#data-sources").style("display","block"); // also display the data section now that the graph is loading
 
     // Also clear all the important stored variables
     var birthday = '';
@@ -55,6 +58,7 @@ function fetchData() {
     // append a new svg based on size
     var svg = d3.select("#potatoes")
         .append("svg")
+        .classed("move-up","true")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
@@ -87,6 +91,12 @@ function fetchData() {
    function getYYYYMMDD(d0){
        var d = new Date(d0)
        return new Date(d.getTime() - d.getTimezoneOffset() * 60 * 1000).toISOString().split('T')[0]
+   }
+
+   function getLongDate(d0) {
+    var d = new Date(d0)
+    var n = d.toDateString();
+    return n;
    }
 
     allDates = [
@@ -159,7 +169,7 @@ function fetchData() {
     ];
 
     // Print beginning and end date on the page
-    document.getElementById("submission").innerHTML = "You were born on " + getYYYYMMDD(birthday) + ". <br>Pulling flow data over the month around your birth, from " + startDate + " to " + endDate + ".";
+    document.getElementById("submission").innerHTML = "You were born on <span class='emph'>" + getLongDate(birthday) + ".</span> So we'll pull daily flow data from the month around your birth, starting at " + getLongDate(start) + " and spanning to " + getLongDate(end) + ".";
     d3.selectAll(".streamgraph-text").style("display","block");
 
     /////////////////////////////////
@@ -233,36 +243,34 @@ function fetchData() {
             var huc21 = [];
 
             var HUCInfo = [
-                {no:"01",id:"huc01", name:"New England Region"},
-                {no:"02",id:"huc02", name:"Mid Atlantic Region"},
-                {no:"03",id:"huc03", name:"South Atlantic-Gulf Region"},
-                {no:"04",id:"huc04", name:"Great Lakes Region"},
-                {no:"05",id:"huc05", name:"Ohio Region"},
-                {no:"06",id:"huc06", name:"Tennessee Region"},
-                {no:"07",id:"huc07", name:"Upper Mississippi Region"},
-                {no:"08",id:"huc08", name:"Lower Mississippi"},
-                {no:"09",id:"huc09", name:"Souris-Red-Rainy Region"},
-                {no:"10",id:"huc10", name:"Missouri Region"},
-                {no:"11",id:"huc11", name:"Arkansas-White-Red Region"},
-                {no:"12",id:"huc12", name:"Texas-Gulf Region"},
-                {no:"13",id:"huc13", name:"Rio Grande Region"},
-                {no:"14",id:"huc14", name:"Upper Colorado Region"},
-                {no:"15",id:"huc15", name:"Lower Colorado Region"},
-                {no:"16",id:"huc16", name:"Great Basin Region"},
-                {no:"17",id:"huc17", name:"Pacific Northwest Region"},
-                {no:"18",id:"huc18", name:"California Region"},
-                {no:"19",id:"huc19", name:"Alaska Region"},
-                {no:"20",id:"huc20", name:"Hawaii Region"},
-                {no:"21",id:"huc21", name:"Carribbean-Puerto Rico Region"}
+                {no:"01",id:"huc01", name:"New England Region", src: "svg/single-hucs_1.svg"},
+                {no:"02",id:"huc02", name:"Mid Atlantic Region", src: "svg/single-hucs_2.svg"},
+                {no:"03",id:"huc03", name:"South Atlantic-Gulf Region", src: "svg/single-hucs_3.svg"},
+                {no:"04",id:"huc04", name:"Great Lakes Region", src: "svg/single-hucs_4.svg"},
+                {no:"05",id:"huc05", name:"Ohio Region", src: "svg/single-hucs_5.svg"},
+                {no:"06",id:"huc06", name:"Tennessee Region", src: "svg/single-hucs_6.svg"},
+                {no:"07",id:"huc07", name:"Upper Mississippi Region", src: "svg/single-hucs_7.svg"},
+                {no:"08",id:"huc08", name:"Lower Mississippi", src: "svg/single-hucs_8.svg"},
+                {no:"09",id:"huc09", name:"Souris-Red-Rainy Region", src: "svg/single-hucs_9.svg"},
+                {no:"10",id:"huc10", name:"Missouri Region", src: "svg/single-hucs_10.svg"},
+                {no:"11",id:"huc11", name:"Arkansas-White-Red Region", src: "svg/single-hucs_11.svg"},
+                {no:"12",id:"huc12", name:"Texas-Gulf Region", src: "svg/single-hucs_12.svg"},
+                {no:"13",id:"huc13", name:"Rio Grande Region", src: "svg/single-hucs_13.svg"},
+                {no:"14",id:"huc14", name:"Upper Colorado Region", src: "svg/single-hucs_14.svg"},
+                {no:"15",id:"huc15", name:"Lower Colorado Region", src: "svg/single-hucs_15.svg"},
+                {no:"16",id:"huc16", name:"Great Basin Region", src: "svg/single-hucs_16.svg"},
+                {no:"17",id:"huc17", name:"Pacific Northwest Region", src: "svg/single-hucs_17.svg"},
+                {no:"18",id:"huc18", name:"California Region", src: "svg/single-hucs_18.svg"},
+                {no:"19",id:"huc19", name:"Alaska Region", src: "svg/single-hucs_19.svg"},
+                {no:"20",id:"huc20", name:"Hawaii Region", src: "svg/single-hucs_20.svg"},
+                {no:"21",id:"huc21", name:"Carribbean-Puerto Rico Region", src: "svg/single-hucs_21.svg"}
             ];
            
             // Create functions to access any of the info given a number (01, 14, etc)
             function getHUCname(hucIDnum){
-                console.log(hucIDnum,'num');
                 var filtered = HUCInfo.filter(function(huc) { // doing only HUC01 array
                     return huc.no === hucIDnum;
                 })
-                console.log(filtered,'filtered');
                 if(filtered.length == 1) {
                     return filtered[0].name;
                 }
@@ -781,7 +789,7 @@ function fetchData() {
                     .call(d3.axisBottom(x)
                         .tickSize(-height*.01)
                         .tickFormat(d3.timeFormat("%B %d, %Y"))
-                        .tickValues([start, birthday, end])) // this is wrong, we need a date
+                        .tickValues([birthday])) // this is wrong, we need a date
                     .select(".domain").remove()
 
                 // Customization
@@ -812,7 +820,36 @@ function fetchData() {
                     .offset(d3.stackOffsetSilhouette)
                     .keys(keys)
                     (birthdayFlow)
+                    console.log(stackedData,"stacked")
                 
+
+                // create chart title
+
+                var chartTitle = svg
+                    .append("text")
+                    .attr("x", 30)
+                    .attr("y", height-80)
+                    .attr("class", "chart-title")
+                    .style("z-index",98)
+                    .text("Streamflow across HUCs over the month of your birth");
+                  
+                var chartSubTitle = svg
+                    .append("text")
+                    .attr("x", 30)
+                    .attr("y", height-50)
+                    .attr("class", "chart-subtitle")
+                    .style("z-index",99)
+                    .text("Flow measured in cubic feet per second (cf/s). Timespan from " + getLongDate(start) + " to " + getLongDate(end));
+                var chartData = svg
+                    .append("text")
+                    .attr("x", 30)
+                    .attr("y", height-30)
+                    .attr("class", "chart-subtitle")
+                    .style("z-index",99)
+                    .text("Data pulled from the U.S. Geological Survey's National Water Information System API");
+            
+             
+                    
                 // create a tooltip
                 var Tooltip = svg
                     .append("text")
@@ -821,12 +858,11 @@ function fetchData() {
                     .attr("class", "tooltip")
                     .style("opacity", 0)
                     .style("z-index",100)
-                    .style("font-size", 20)
             
                 // Three function that change the tooltip when user hover / move / leave a cell
                 var mouseover = function(d) {
                     Tooltip.style("opacity", 1)
-                    d3.selectAll(".myArea").style("opacity", .2)
+                    d3.selectAll(".flow").style("opacity", .2)
                     d3.select(this)
                         .style("opacity", 1)
                 }
@@ -836,7 +872,7 @@ function fetchData() {
                 }
                 var mouseleave = function(d) {
                     Tooltip.style("opacity", 0)
-                    d3.selectAll(".myArea").style("opacity", 1).style("stroke", "none")
+                    d3.selectAll(".flow").style("opacity", 1).style("stroke", "none")
                 }
             
                 // Area generator
@@ -853,7 +889,7 @@ function fetchData() {
                     .data(stackedData)
                     .enter()
                     .append("path")
-                        .attr("class", "myArea")
+                        .attr("class", "flow")
                         .style("fill", function(d) { return color(d.key); })
                         .attr("d", area)
                         .on("mouseover", mouseover)
