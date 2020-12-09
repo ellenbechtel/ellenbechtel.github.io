@@ -11,7 +11,7 @@ body {
     font-size: 16px;
     color: white;
     line-height: 1.4;
-    background-image: linear-gradient(0deg, rgba(34,20,60,1) 50%, rgba(199,150,82,1) 100%);
+    background-image: linear-gradient(0deg, rgba(34,20,60,1) 60%, rgba(199,150,82,1) 97%);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -90,6 +90,7 @@ body {
 }
 #data-sources {
   display: none; /* start out hidden */
+  max-width: 1000px;
 }
 .streamgraph-text {
     display: none;
@@ -117,7 +118,7 @@ h3 {
 }
 
 .text-chunk {
-  background-color: rgba(0, 0, 0, 0.2); 
+  background-color: rgba(34,20,60,1); 
   padding: 30px 50px;
 }
 
@@ -287,11 +288,11 @@ button:hover{
   }
 
   .step {
-    margin: 0 auto 70vh auto;
+    margin: 0 auto 100vh auto;
     height: auto;
     padding: 20px 50px;
     color: #fff;
-    background-color: rgba(0, 0, 0, 0.2); 
+    background-color: rgba(34,20,60,1); 
     
   }
 
@@ -373,7 +374,7 @@ button:hover{
     min-width: 300px;
     flex: 0 0 40%;
     margin: 10px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(34,20,60,1);
   }
   .flex-pic {
     max-width: 100%;
@@ -382,6 +383,9 @@ button:hover{
   }
 
   .card-title {
+    text-align: center;
+  }
+  .info {
     text-align: center;
   }
   .credit {
