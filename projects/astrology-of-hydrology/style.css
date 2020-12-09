@@ -200,7 +200,9 @@ a {
   background: transparent;
   transition: border-color 0.2s;
 }
-
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
 /* Buttons */
 
 button {
