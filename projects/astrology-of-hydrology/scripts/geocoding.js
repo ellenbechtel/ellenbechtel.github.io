@@ -14,7 +14,8 @@ function fetchLocation() {
     var state = [];
     var geocodeAPIURL = "https://maps.googleapis.com/maps/api/geocode/json?address="; // New Google API URL
     // Old Mapquest API URL// "https://open.mapquestapi.com/geocoding/v1/address?key=NkGrSo9aZDYlEaOv3pNN3lvFxuBFmCdK&location=";
-    var key = "&key=AIzaSyCLfNu4XdJ_VqyDS3DIlq5DqAKp04S2g8Q";
+    // var key = "&key=AIzaSyCLfNu4XdJ_VqyDS3DIlq5DqAKp04S2g8Q";
+    var key = config.key;
     var geocode = [];
     var nwisAPIURL = "https://waterservices.usgs.gov/nwis/dv/?format=json&bBox="
     var lat = [];
