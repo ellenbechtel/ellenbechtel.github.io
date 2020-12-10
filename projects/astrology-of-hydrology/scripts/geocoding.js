@@ -27,8 +27,7 @@ function fetchLocation() {
 
     city = document.getElementById("city").value;    
     state = document.getElementById("state").value;  
-    
-    console.log(city,state);  
+
 
 
     // MAPQUEST FORMAT
@@ -985,8 +984,6 @@ function fetchLocation() {
                 var this_river = river.name;                
                 riverNames.push(this_river);
             })
-            //console.log(riverNames, " array of river names inside the createRiverDivs function")
-
             riverSummary.selectAll(".river-item")
                 .data(riverNames)
                 .enter()
@@ -1017,11 +1014,10 @@ function fetchLocation() {
 
         // Create funciton for getting the rivers in that huc
         function getRivers (this_huc) {
-            console.log(this_huc, "input HUC");
+        
             var rivers = hydrorows.filter(function(river) {
                 return river.huc == +this_huc;
             })
-            console.log(rivers, "resulting river array!")
             createRiverdivs(this_huc, rivers);
         }
 
@@ -1060,11 +1056,11 @@ function fetchLocation() {
     /////////////////////////////////
     // Call API
     d3.json(geocode, function(error, apiData) { 
-        console.log(apiData, "lat long");
+   
 
         lat = apiData.results[0].geometry.location.lat;
         long = apiData.results[0].geometry.location.lng;
-        console.log(lat,"lat", long, "long");
+      
         
         birthCoord.push({
             "lat": lat, 
@@ -1084,7 +1080,6 @@ function fetchLocation() {
             "west": (long-.5).toFixed(4)
         })
 
-        console.log(birthCoord, "inside",  birthCoordBIG, "big");
         // https://waterservices.usgs.gov/nwis/dv/?format=json&bBox=-76.4057,39.9381,-76.2057,40.1381,&siteStatus=,all
         // should be
         // https://waterservices.usgs.gov/nwis/dv/?format=json&bBox=-76.405669,39.938130,-76.205669,40.138130&siteStatus=all
@@ -1094,12 +1089,11 @@ function fetchLocation() {
         var nwisAPI = [];// clear existing values
         nwisAPI = nwisAPIURL + birthCoord[0].west + "," + birthCoord[0].south + "," + birthCoord[0].east  + "," + birthCoord[0].north  + "&siteStatus="  + siteStatus
 
-        console.log(nwisAPI,"API call")
         /////////////////////////////////
         // Call NWIS API to determine what HUC02 we're in
 
         d3.json(nwisAPI, function (error, HUCdata) {
-            console.log(HUCdata, "HUC data")
+           
             var birthHUC = HUCdata.value.timeSeries[0].sourceInfo.siteProperty[1].value.slice(0,2);
             
 
@@ -1108,7 +1102,7 @@ function fetchLocation() {
                 // compile the variable name from the input
                 var all_HUCS = d3.selectAll(".a-huc").style("opacity",".1")
                 var myHUC = "";
-                console.log(birthHUC, "birth HUC inside")
+                
                 if (birthHUC == 1) {
                     myHUC = d3.select("#huc1").style("opacity","1")
                 } else if (birthHUC == 2) {
