@@ -222,12 +222,29 @@ h3 {
   padding: 30px 50px;
 }
 
-a {
+a, a:link {
     text-decoration: none;
     font-weight: bold;
     color:rgba(199,150,82,1);
   }
+a:visited{
+  color:rgba(199,150,82,.8);
+}
 
+a:hover {
+  cursor: pointer;
+  text-decoration: solid;
+  text-decoration-thickness: .01em;
+  text-underline-offset: 3px;
+  text-decoration-style: wavy;
+}
+
+a:active{
+  text-decoration-thickness: .01em;
+  text-underline-offset:3px;
+  text-decoration: solid;
+  text-decoration-style: wavy;
+}
 .tooltip {
     font-size: 1em;
     font-weight: bold;
@@ -502,9 +519,11 @@ button:hover{
 
   .card-title {
     text-align: center;
+  
   }
   .info {
     text-align: center;
+    
   }
   .credit {
     font-size: .7em;

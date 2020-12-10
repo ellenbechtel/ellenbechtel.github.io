@@ -457,16 +457,16 @@
                 <!-- <button id="saveButton">Download Image</button> -->
               </div>
               <div>
-                <p class="text-chunk">Here is a streamgraph of the total flow in each HUC. Streamflow - which hydrologists call "discharge" and measure in cubic-feet-per-second - is a measurement of the volume of water passing a certain place at a certain time. Precipitation and weather events lead to greater flow as water from higher in the watershed flows down into rivers and then downstream.<br><br>The USGS has been measuring streamflow on thousands of rivers and bodies of water for decades through a process called <a href = “https://labs.waterdata.usgs.gov/visualizations/gages-through-the-ages/index.html#/”> streamgaging. </a> The gages tapped for this dataset have been vetted by the USGS as good places to measure long-term hydrologic changes across the country. </p>
-                <p class="text-chunk">By studying stage and flow data at gage sites around the country, we can get a holistic picture of how the water table changes over time and space. This is what the flow through the 21 HUCs across the United States looked like during the month surrounding your birthday.<br><br>Cultures throughout history have recognized and honored the connection between mankind and water. The Hawaiian people, for example, divide land into ahupua'as, adjacent watersheds flowing from mauka (hillside) to makai (seaside). These districts supported a wide variety of sustainable resource extraction and care bound by a common land ethic. If we seek to understand what truly connects us and develop sustainable practices for the next generation, we must listen to what water is telling us.</p>
-                <p class="text-chunk italic"><span class="emph">No man ever steps in the same river twice, for it is not the same river, and he is not the same man.</span> ––Heraclitus</p>
+                <p class="text-chunk">Here is a streamgraph of the total flow in each HUC. Streamflow - which hydrologists call "discharge" and measure in cubic-feet-per-second - is a measurement of the volume of water passing a certain place at a certain time. Precipitation and weather events lead to greater flow as water from higher in the watershed flows down into rivers and then downstream.<br><br>The USGS has been measuring streamflow on thousands of rivers and bodies of water for decades through a process called <a href = “https://labs.waterdata.usgs.gov/visualizations/gages-through-the-ages/index.html#/”> streamgaging. </a> The gages tapped for this dataset have been vetted by the USGS as good places to measure long-term hydrologic changes across the country.<br><br>By studying stage and flow data at gage sites around the country, we can get a holistic picture of how the water table changes over time and space. This is what the flow through the 21 HUCs across the United States looked like during the month surrounding your birthday.</p>
+                <p class="text-chunk">Cultures throughout history have recognized and honored the connection between mankind and water. The Hawaiian people, for example, divide land into ahupua'as, adjacent watersheds flowing from mauka (hillside) to makai (seaside). These districts supported a wide variety of sustainable resource extraction and care bound by a common land ethic. If we seek to understand what truly connects us and develop sustainable practices for the next generation, we must listen to what water is telling us.</p>
+                <h3 class="text-chunk italic"><span class="emph">No man ever steps in the same river twice, for it is not the same river, and he is not the same man.</span><br>––Heraclitus</h3>
               </div>
             </section>
             <div class="data-section" id="data-sources">
               <h2 class="yellow-header">Data Sources</h2>
               <div class="flex-container">
                 <div class="flex-item">
-                  <h3 class="card-title">Watershed Resouces</h3>
+                  <h3 class="card-title">Watershed Resources</h3>
                   <a href="https://viewer.nationalmap.gov/basic/#/" target="_blank" class="cite"><p>National Map Viewer - HUC Boundaries</p></a>
                   <a href="https://waterservices.usgs.gov/rest/DV-Test-Tool.html" target="_blank" class="cite"><p>Daily Values NWIS API</p></a>
                   <a href="https://water.usgs.gov/wsc/a_api/wbd/region01/01.html" target="_blank" class="cite"><p>Science in Your Watershed</p></a>
@@ -476,15 +476,15 @@
                 <div class="flex-item">
                   <h3 class="card-title">About the HUC Data</h3>
                   <p>The map of HUCs is taken from the <a href="https://viewer.nationalmap.gov/basic/#/" target="_blank">USGS National Map Viewer</a> and aggregated at the HUC02 level, which is the "Region" level.  Each HUC is subdivided further into HUC04 (larger regions), HUC06, HUC08, HUC10, and HUC12 (very small creeks) codes.</p>
+                  <p>We used the <a href="https://developers.google.com/maps/documentation/geocoding/overview" target="_blank">Google Geocoding API</a> to locate the GPS coordinates of your birth location, then used those coordinates to query the <a href="https://waterservices.usgs.gov/rest/DV-Test-Tool.html" target="_blank">National Water Information System API</a> to find out what HUC those coordinates were in.</p>
                 </div>
                 <div class="flex-item">
                   <h3 class="card-title">About the Watershed Information</h3>
-                  <p>We used the <a href="https://developers.google.com/maps/documentation/geocoding/overview" target="_blank">Google Geocoding API</a> to locate the GPS coordinates of your birth location, then used those coordinates to query the <a href="https://waterservices.usgs.gov/rest/DV-Test-Tool.html" target="_blank">National Water Information System API</a> to find out what HUC those coordinates were in.</p>
-                  <p>Information about your watershed was gleaned from broad overviews of the region and should not be taken as special endorsement of any particular plant, animal, or mineral.</p>
+                  <p>Information about your watershed was gleaned from broad overviews of the region, and is far from comprehensive. Learn more about the indigenous history, flora, fauna, minerals in your HUC using <a href = “https://native-land.ca” target="_blank">Native Land Digital</a>, <a href="https://mol.org" target="_blank">Map of Life</a>, <a href="https://www.inaturalist.org/" target="_blank">iNaturalist</a>, the National Wildlife Federation’s <a href="https://www.nwf.org/natureguides/" target="_blank">Nature Guides</a>, and the <a href =“https://mrdata.usgs.gov/geology/state/map-us.html“ target="_blank">USGS Mineral Resource Explorer.</a></p>
                 </div>
                 <div class="flex-item">
                   <h3 class="card-title">About the Hydroscopes</h3>
-                  <p>This is information is meant to be...fun.  Don't take us too seriously on this part.  We do think that we can learn lessons from our relationships with rivers and all our non-human kin, but that's something that's your responsibility.</p>
+                  <p>This page is meant to be fun! We can certainly learn very real lessons from our relationships with rivers, geography, and all of nature, but astrology is not a science. The astrology of hydrology is a toy, not a tool. Please use it as such.</p>
                 </div>
                 <div class="flex-item">
                   <h3 class="card-title">About the Streamgraph Data</h3>
