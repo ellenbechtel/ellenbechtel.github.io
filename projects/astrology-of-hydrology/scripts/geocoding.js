@@ -3,7 +3,8 @@ function fetchLocation() {
     // First give a loading warning
 
     d3.select(".lds-ripple").style("display","block");
-    d3.select("#streamgraph-section").style("display","block");
+    d3.select("#streamgraph-section").style("display","block").style("transition","all .5s");
+    var watershedContainer = d3.select("#watershed-content-container").style("display","block").style("opacity","0");
     document.getElementById("button1").innerHTML = "Discover Again";    
     
     /////////////////////////////////
@@ -14,8 +15,8 @@ function fetchLocation() {
     var state = [];
     var geocodeAPIURL = "https://maps.googleapis.com/maps/api/geocode/json?address="; // New Google API URL
     // Old Mapquest API URL// "https://open.mapquestapi.com/geocoding/v1/address?key=NkGrSo9aZDYlEaOv3pNN3lvFxuBFmCdK&location=";
-    // var key = "&key=AIzaSyCLfNu4XdJ_VqyDS3DIlq5DqAKp04S2g8Q";
-    var key = config.key;
+    var key = "&key=AIzaSyCLfNu4XdJ_VqyDS3DIlq5DqAKp04S2g8Q";
+    //var key = config.key;
     var geocode = [];
     var nwisAPIURL = "https://waterservices.usgs.gov/nwis/dv/?format=json&bBox="
     var lat = [];
@@ -1028,8 +1029,6 @@ function fetchLocation() {
         // Create function for population HTML with HUC info
         function spitItOut(this_row) {
             let row = get_row_by_huc(this_row); // ENTER DEMO HUC HERE
-            // whole section
-            var meet = d3.select("#watershed-content-container").style("display","block");
             //images
             
             document.getElementById("nlImage").src = row["NL-img"];
@@ -1051,7 +1050,7 @@ function fetchLocation() {
             document.getElementById("mineralText").innerHTML = row["Mineral"];
             document.getElementById("mineralIC").innerHTML = row["img-cred-m"];
 
-            
+            watershedContainer.style("opacity","1").style("transition","all .5s");
         };
 
     /////////////////////////////////

@@ -26,7 +26,6 @@ body {
 }
 
 .byline-container {
-  width: 400px;
   margin: 23vh auto 0 auto;
   padding: 0 100px;
   text-align: center;
@@ -104,6 +103,15 @@ h1 {
     color: white;
     text-align: center;
 }
+@media screen and (max-width: 650px) {
+  h1 { font-size: 5em; }
+}
+@media screen and (max-width: 500px) {
+  h1 { font-size: 4em; }
+}
+@media screen and (max-width: 400px) {
+  h1 { font-size: 3em; }
+}
 
 h3 {
   font-size: 1.5em;
@@ -151,9 +159,11 @@ a {
 
 .chart-title {
   fill: white;
-  font-size: 1.5em;
+  font-size: 1.1em;
   font-weight: bold;
-  opacity: .7;
+  opacity: 0;
+  text-align: center;
+
 }
 .chart-subtitle{
   fill: white;
@@ -189,19 +199,26 @@ a {
   align-items: stretch;
   justify-content: space-around;
   margin-bottom: 2em;
+  padding: 0 10px; 
 }
 .form-field {
-  flex: 0 0 48%;
   font-family: inherit;
-  width: 48%;
   border: 0;
   border-bottom: 2px solid rgba(199,150,82,1);
   outline: 0;
   font-size: 1.5em;
   color: white;
-  padding: 7px 20px 5px 5px;
+  padding: 20px 20px 5px 5px;
   background: transparent;
   transition: border-color 0.2s;
+}
+
+#city, #state {
+  flex: 0 0 45%;
+}
+
+#birthdate {
+  flex: 0 0 80%;
 }
 ::-webkit-calendar-picker-indicator {
   filter: invert(1);
@@ -293,7 +310,9 @@ button:hover{
     padding: 20px 50px;
     color: #fff;
     background-color: rgba(34,20,60,1); 
-    
+    /* border: 20px solid rgba(0,0,0,.2); 
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box; */
   }
 
   .step:last-child {
@@ -366,6 +385,7 @@ button:hover{
 
   #load-warning, .streamgraph-title {
     display:none;
+    opacity: 0;
   }
 
   .flex-container {
