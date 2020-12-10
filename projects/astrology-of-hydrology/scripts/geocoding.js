@@ -5,7 +5,7 @@ function fetchLocation() {
     d3.select(".lds-ripple").style("display","block");
     d3.select("#streamgraph-section").style("display","block").style("transition","all .5s");
     var watershedContainer = d3.select("#watershed-content-container").style("display","block").style("opacity","0");
-    document.getElementById("button1").innerHTML = "Discover Again";    
+    document.getElementById("button1").innerHTML = "Search Again";    
     
     /////////////////////////////////
     // Get City and State, clear previously stored values

@@ -35,7 +35,7 @@ function fetchData() {
     d3.select("svg.move-up").remove();
     d3.select("#streamgraph-section").style("padding-bottom",0); // reduce size of this section
     d3.select("#data-sources").style("display","block"); // also display the data section now that the graph is loading
-    document.getElementById("button2").innerHTML = "Discover Again"; 
+    document.getElementById("button2").innerHTML = "Search Again"; 
     d3.selectAll(".streamgraph-text").style("display","block");
     d3.select(".streamgraph-title").style("display","block").style("opacity","1").style("transition","all .5s");
     d3.select(".chart-title").style("display","block").style("opacity","1").style("transition","all .5s");
@@ -829,7 +829,7 @@ function fetchData() {
                     .offset(d3.stackOffsetSilhouette)
                     .keys(keys)
                     (birthdayFlow)
-                    console.log(stackedData,"stacked")
+                
                 
                 // create a tooltip
                 var Tooltip = svg
