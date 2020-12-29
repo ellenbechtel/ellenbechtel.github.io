@@ -185,14 +185,16 @@ function fetchData() {
     // Parse HUC and Gages data
     // d3.csv("data/selected-gages.csv", function(gages) { // Switch for this line to use the selected gages
 
-    d3.csv("data/ref_gages.csv", function(gages) { // Switch for this line to use the climate gages
+    d3.csv("data/ref_gages.csv", function(gages) { // Switch for this line to use the climate gages 
     
+        // console.log(gages, "gages");
         // get list of site numbers to add to the url
         var gageSites = gages.map(function(g) { return g.site_no; });
 
         /////////////////////////////////
         // Compile API
 
+        
         // URL chunks
         var urlCounty = "&countyCd=" + countyCd;
         var urlSites = "&sites=" + gageSites; 
@@ -299,6 +301,8 @@ function fetchData() {
                     }); 
                 });
             };
+
+
             
             // Get huc arrays for all hucs
             getHUCArray(huc01,01);
@@ -324,8 +328,8 @@ function fetchData() {
             getHUCArray(huc21,21);
             
             // Create function that sums all the flow measurements in a single huc and assigns the total value to that day's total measurement
-            //01
-            function getTotalFlow(hucArray) {
+    
+            function getTotalFlow(hucArray, hucIDString) {
                 if (hucArray.length >= 1) {
                     for (var i = 0; i <= allDates.length-1; i++) {
                         // in the first step, allDates[0] is YYYY-MM-DD of start date
@@ -340,415 +344,32 @@ function fetchData() {
                         var totalFlow = Math.floor(flows.reduce(function(accumulator,flow) {
                             return accumulator + flow;
                         }))
-                        birthdayFlow[i].huc01 = totalFlow; // This property selection is the only thing that's different! There's gotta be a more elegant way to do this, by writing a reusable function
+                        birthdayFlow[i][hucIDString] = totalFlow; // This property selection is the only thing that's different! There's gotta be a more elegant way to do this, by writing a reusable function
                     }
                 }
             };           
-            getTotalFlow(huc01);  
+            getTotalFlow(huc01,"huc01");          
+            getTotalFlow(huc02,"huc02");
+            getTotalFlow(huc03,"huc03");
+            getTotalFlow(huc04,"huc04");
+            getTotalFlow(huc05,"huc05");
+            getTotalFlow(huc06,"huc06");
+            getTotalFlow(huc07,"huc07");
+            getTotalFlow(huc08,"huc08");
+            getTotalFlow(huc09,"huc09");
+            getTotalFlow(huc10,"huc10");
+            getTotalFlow(huc11,"huc11");
+            getTotalFlow(huc12,"huc12");
+            getTotalFlow(huc13,"huc13");
+            getTotalFlow(huc14,"huc14");
+            getTotalFlow(huc15,"huc15");
+            getTotalFlow(huc16,"huc16");
+            getTotalFlow(huc17,"huc17");
+            getTotalFlow(huc18,"huc18");
+            getTotalFlow(huc19,"huc19");
+            getTotalFlow(huc20,"huc20");
+            getTotalFlow(huc21,"huc21");
 
-            //02
-            function getTotalFlow02(hucArray) {
-                if (hucArray.length >= 1) {
-                    for (var i = 0; i <= allDates.length-1; i++) {
-                        // in the first step, allDates[0] is YYYY-MM-DD of start date
-    
-                        var todaysMeasurements = hucArray.filter(function(measurement) { // doing only HUC01 array
-                            return measurement.dateTime === allDates[i];
-                        })
-                        var flows = todaysMeasurements.map(function(flows) {
-                            return +flows.value;
-                        })
-                        var totalFlow = Math.floor(flows.reduce(function(accumulator,flow) {
-                            return accumulator + flow;
-                        }))
-                        birthdayFlow[i].huc02 = totalFlow; // This property selection is the only thing that's different! There's gotta be a more elegant way to do this, by writing a reusable function
-                    }
-                }
-            };           
-            getTotalFlow02(huc02);  
-            //03
-            function getTotalFlow03(hucArray) {
-                if (hucArray.length >= 1) {
-                    for (var i = 0; i <= allDates.length-1; i++) {
-                        // in the first step, allDates[0] is YYYY-MM-DD of start date
-    
-                        var todaysMeasurements = hucArray.filter(function(measurement) { // doing only HUC01 array
-                            return measurement.dateTime === allDates[i];
-                        })
-                        var flows = todaysMeasurements.map(function(flows) {
-                            return +flows.value;
-                        })
-                        var totalFlow = Math.floor(flows.reduce(function(accumulator,flow) {
-                            return accumulator + flow;
-                        }))
-                        birthdayFlow[i].huc03 = totalFlow; // This property selection is the only thing that's different! There's gotta be a more elegant way to do this, by writing a reusable function
-                    }
-                }
-            };           
-            getTotalFlow03(huc03);  
-            //04
-            function getTotalFlow04(hucArray) {
-                if (hucArray.length >= 1) {
-                    for (var i = 0; i <= allDates.length-1; i++) {
-                        // in the first step, allDates[0] is YYYY-MM-DD of start date
-    
-                        var todaysMeasurements = hucArray.filter(function(measurement) { // doing only HUC01 array
-                            return measurement.dateTime === allDates[i];
-                        })
-                        var flows = todaysMeasurements.map(function(flows) {
-                            return +flows.value;
-                        })
-                        var totalFlow = Math.floor(flows.reduce(function(accumulator,flow) {
-                            return accumulator + flow;
-                        }))
-                        birthdayFlow[i].huc04 = totalFlow; // This property selection is the only thing that's different! There's gotta be a more elegant way to do this, by writing a reusable function
-                    }
-                }
-            };           
-            getTotalFlow04(huc04); 
-            //05
-            function getTotalFlow05(hucArray) {
-                if (hucArray.length >= 1) {
-                    for (var i = 0; i <= allDates.length-1; i++) {
-                        // in the first step, allDates[0] is YYYY-MM-DD of start date
-    
-                        var todaysMeasurements = hucArray.filter(function(measurement) { // doing only HUC01 array
-                            return measurement.dateTime === allDates[i];
-                        })
-                        var flows = todaysMeasurements.map(function(flows) {
-                            return +flows.value;
-                        })
-                        var totalFlow = Math.floor(flows.reduce(function(accumulator,flow) {
-                            return accumulator + flow;
-                        }))
-                        birthdayFlow[i].huc05 = totalFlow; // This property selection is the only thing that's different! There's gotta be a more elegant way to do this, by writing a reusable function
-                    }
-                }
-            };           
-            getTotalFlow05(huc05); 
-            //06
-            function getTotalFlow06(hucArray) {
-                if (hucArray.length >= 1) {
-                    for (var i = 0; i <= allDates.length-1; i++) {
-                        // in the first step, allDates[0] is YYYY-MM-DD of start date
-    
-                        var todaysMeasurements = hucArray.filter(function(measurement) { // doing only HUC01 array
-                            return measurement.dateTime === allDates[i];
-                        })
-                        var flows = todaysMeasurements.map(function(flows) {
-                            return +flows.value;
-                        })
-                        var totalFlow = Math.floor(flows.reduce(function(accumulator,flow) {
-                            return accumulator + flow;
-                        }))
-                        birthdayFlow[i].huc06 = totalFlow; // This property selection is the only thing that's different! There's gotta be a more elegant way to do this, by writing a reusable function
-                    }
-                }
-            };           
-            getTotalFlow06(huc06); 
-            //07
-            function getTotalFlow07(hucArray) {
-                if (hucArray.length >= 1) {
-                    for (var i = 0; i <= allDates.length-1; i++) {
-                        // in the first step, allDates[0] is YYYY-MM-DD of start date
-    
-                        var todaysMeasurements = hucArray.filter(function(measurement) { // doing only HUC01 array
-                            return measurement.dateTime === allDates[i];
-                        })
-                        var flows = todaysMeasurements.map(function(flows) {
-                            return +flows.value;
-                        })
-                        var totalFlow = Math.floor(flows.reduce(function(accumulator,flow) {
-                            return accumulator + flow;
-                        }))
-                        birthdayFlow[i].huc07 = totalFlow; // This property selection is the only thing that's different! There's gotta be a more elegant way to do this, by writing a reusable function
-                    }
-                }
-            };           
-            getTotalFlow07(huc07); 
-            //08
-            function getTotalFlow08(hucArray) {
-                if (hucArray.length >= 1) {
-                    for (var i = 0; i <= allDates.length-1; i++) {
-                        // in the first step, allDates[0] is YYYY-MM-DD of start date
-    
-                        var todaysMeasurements = hucArray.filter(function(measurement) { // doing only HUC01 array
-                            return measurement.dateTime === allDates[i];
-                        })
-                        var flows = todaysMeasurements.map(function(flows) {
-                            return +flows.value;
-                        })
-                        var totalFlow = Math.floor(flows.reduce(function(accumulator,flow) {
-                            return accumulator + flow;
-                        }))
-                        birthdayFlow[i].huc08 = totalFlow; // This property selection is the only thing that's different! There's gotta be a more elegant way to do this, by writing a reusable function
-                    }
-                }
-            };           
-            getTotalFlow08(huc08); 
-            //09
-            function getTotalFlow09(hucArray) {
-                if (hucArray.length >= 1) {
-                    for (var i = 0; i <= allDates.length-1; i++) {
-                        // in the first step, allDates[0] is YYYY-MM-DD of start date
-    
-                        var todaysMeasurements = hucArray.filter(function(measurement) { // doing only HUC01 array
-                            return measurement.dateTime === allDates[i];
-                        })
-                        var flows = todaysMeasurements.map(function(flows) {
-                            return +flows.value;
-                        })
-                        var totalFlow = Math.floor(flows.reduce(function(accumulator,flow) {
-                            return accumulator + flow;
-                        }))
-                        birthdayFlow[i].huc09 = totalFlow; // This property selection is the only thing that's different! There's gotta be a more elegant way to do this, by writing a reusable function
-                    }
-                }
-            };           
-            getTotalFlow09(huc09); 
-            //10
-            function getTotalFlow10(hucArray) {
-                if (hucArray.length >= 1) {
-                    for (var i = 0; i <= allDates.length-1; i++) {
-                        // in the first step, allDates[0] is YYYY-MM-DD of start date
-    
-                        var todaysMeasurements = hucArray.filter(function(measurement) { // doing only HUC01 array
-                            return measurement.dateTime === allDates[i];
-                        })
-                        var flows = todaysMeasurements.map(function(flows) {
-                            return +flows.value;
-                        })
-                        var totalFlow = Math.floor(flows.reduce(function(accumulator,flow) {
-                            return accumulator + flow;
-                        }))
-                        birthdayFlow[i].huc10 = totalFlow; // This property selection is the only thing that's different! There's gotta be a more elegant way to do this, by writing a reusable function
-                    }
-                }
-            };           
-            getTotalFlow10(huc10); 
-            //11
-            function getTotalFlow11(hucArray) {
-                if (hucArray.length >= 1) {
-                    for (var i = 0; i <= allDates.length-1; i++) {
-                        // in the first step, allDates[0] is YYYY-MM-DD of start date
-    
-                        var todaysMeasurements = hucArray.filter(function(measurement) { // doing only HUC01 array
-                            return measurement.dateTime === allDates[i];
-                        })
-                        var flows = todaysMeasurements.map(function(flows) {
-                            return +flows.value;
-                        })
-                        var totalFlow = Math.floor(flows.reduce(function(accumulator,flow) {
-                            return accumulator + flow;
-                        }))
-                        birthdayFlow[i].huc11 = totalFlow; // This property selection is the only thing that's different! There's gotta be a more elegant way to do this, by writing a reusable function
-                    }
-                }
-            };           
-            getTotalFlow11(huc11); 
-            //12
-            function getTotalFlow12(hucArray) {
-                if (hucArray.length >= 1) {
-                    for (var i = 0; i <= allDates.length-1; i++) {
-                        // in the first step, allDates[0] is YYYY-MM-DD of start date
-    
-                        var todaysMeasurements = hucArray.filter(function(measurement) { // doing only HUC01 array
-                            return measurement.dateTime === allDates[i];
-                        })
-                        var flows = todaysMeasurements.map(function(flows) {
-                            return +flows.value;
-                        })
-                        var totalFlow = Math.floor(flows.reduce(function(accumulator,flow) {
-                            return accumulator + flow;
-                        }))
-                        birthdayFlow[i].huc12 = totalFlow; // This property selection is the only thing that's different! There's gotta be a more elegant way to do this, by writing a reusable function
-                    }
-                }
-            };           
-            getTotalFlow12(huc12); 
-            //13
-            function getTotalFlow13(hucArray) {
-                if (hucArray.length >= 1) {
-                    for (var i = 0; i <= allDates.length-1; i++) {
-                        // in the first step, allDates[0] is YYYY-MM-DD of start date
-    
-                        var todaysMeasurements = hucArray.filter(function(measurement) { // doing only HUC01 array
-                            return measurement.dateTime === allDates[i];
-                        })
-                        var flows = todaysMeasurements.map(function(flows) {
-                            return +flows.value;
-                        })
-                        var totalFlow = Math.floor(flows.reduce(function(accumulator,flow) {
-                            return accumulator + flow;
-                        }))
-                        birthdayFlow[i].huc13 = totalFlow; // This property selection is the only thing that's different! There's gotta be a more elegant way to do this, by writing a reusable function
-                    }
-                }
-            };           
-            getTotalFlow13(huc13); 
-            //14
-            function getTotalFlow14(hucArray) {
-                if (hucArray.length >= 1) {
-                    for (var i = 0; i <= allDates.length-1; i++) {
-                        // in the first step, allDates[0] is YYYY-MM-DD of start date
-    
-                        var todaysMeasurements = hucArray.filter(function(measurement) { // doing only HUC01 array
-                            return measurement.dateTime === allDates[i];
-                        })
-                        var flows = todaysMeasurements.map(function(flows) {
-                            return +flows.value;
-                        })
-                        var totalFlow = Math.floor(flows.reduce(function(accumulator,flow) {
-                            return accumulator + flow;
-                        }))
-                        birthdayFlow[i].huc14 = totalFlow; // This property selection is the only thing that's different! There's gotta be a more elegant way to do this, by writing a reusable function
-                    }
-                }
-            };           
-            getTotalFlow14(huc14); 
-            //15
-            function getTotalFlow15(hucArray) {
-                if (hucArray.length >= 1) {
-                    for (var i = 0; i <= allDates.length-1; i++) {
-                        // in the first step, allDates[0] is YYYY-MM-DD of start date
-    
-                        var todaysMeasurements = hucArray.filter(function(measurement) { // doing only HUC01 array
-                            return measurement.dateTime === allDates[i];
-                        })
-                        var flows = todaysMeasurements.map(function(flows) {
-                            return +flows.value;
-                        })
-                        var totalFlow = Math.floor(flows.reduce(function(accumulator,flow) {
-                            return accumulator + flow;
-                        }))
-                        birthdayFlow[i].huc15 = totalFlow; // This property selection is the only thing that's different! There's gotta be a more elegant way to do this, by writing a reusable function
-                    }
-                }
-            };           
-            getTotalFlow15(huc15);
-            //16
-            function getTotalFlow16(hucArray) {
-                if (hucArray.length >= 1) {
-                    for (var i = 0; i <= allDates.length-1; i++) {
-                        // in the first step, allDates[0] is YYYY-MM-DD of start date
-    
-                        var todaysMeasurements = hucArray.filter(function(measurement) { // doing only HUC01 array
-                            return measurement.dateTime === allDates[i];
-                        })
-                        var flows = todaysMeasurements.map(function(flows) {
-                            return +flows.value;
-                        })
-                        var totalFlow = Math.floor(flows.reduce(function(accumulator,flow) {
-                            return accumulator + flow;
-                        }))
-                        birthdayFlow[i].huc16 = totalFlow; // This property selection is the only thing that's different! There's gotta be a more elegant way to do this, by writing a reusable function
-                    }
-                }
-            };           
-            getTotalFlow16(huc16);
-            //17
-            function getTotalFlow17(hucArray) {
-                if (hucArray.length >= 1) {
-                    for (var i = 0; i <= allDates.length-1; i++) {
-                        // in the first step, allDates[0] is YYYY-MM-DD of start date
-    
-                        var todaysMeasurements = hucArray.filter(function(measurement) { // doing only HUC01 array
-                            return measurement.dateTime === allDates[i];
-                        })
-                        var flows = todaysMeasurements.map(function(flows) {
-                            return +flows.value;
-                        })
-                        var totalFlow = Math.floor(flows.reduce(function(accumulator,flow) {
-                            return accumulator + flow;
-                        }))
-                        birthdayFlow[i].huc17 = totalFlow; // This property selection is the only thing that's different! There's gotta be a more elegant way to do this, by writing a reusable function
-                    }
-                }
-            };           
-            getTotalFlow17(huc17);
-            //18
-            function getTotalFlow18(hucArray) {
-                if (hucArray.length >= 1) { 
-                    for (var i = 0; i <= allDates.length-1; i++) {
-                        // in the first step, allDates[0] is YYYY-MM-DD of start date
-    
-                        var todaysMeasurements = hucArray.filter(function(measurement) { // doing only HUC01 array
-                            return measurement.dateTime === allDates[i];
-                        })
-                        var flows = todaysMeasurements.map(function(flows) {
-                            return +flows.value;
-                        })
-                        var totalFlow = Math.floor(flows.reduce(function(accumulator,flow) {
-                            return accumulator + flow;
-                        }))
-                        birthdayFlow[i].huc18 = totalFlow; // This property selection is the only thing that's different! There's gotta be a more elegant way to do this, by writing a reusable function
-                    }
-                 } 
-            };           
-            getTotalFlow18(huc18);
-            //19
-            function getTotalFlow19(hucArray) {
-                if (hucArray.length >= 1) {
-                    for (var i = 0; i <= allDates.length-1; i++) {
-                        // in the first step, allDates[0] is YYYY-MM-DD of start date
-    
-                        var todaysMeasurements = hucArray.filter(function(measurement) { // doing only HUC01 array
-                            return measurement.dateTime === allDates[i];
-                        })
-                        var flows = todaysMeasurements.map(function(flows) {
-                            return +flows.value;
-                        })
-                        var totalFlow = Math.floor(flows.reduce(function(accumulator,flow) {
-                            return accumulator + flow;
-                        }))
-                        birthdayFlow[i].huc19 = totalFlow; // This property selection is the only thing that's different! There's gotta be a more elegant way to do this, by writing a reusable function
-                    }
-                }
-            };           
-            getTotalFlow19(huc19);
-            //20
-            function getTotalFlow20(hucArray) {
-                if (hucArray.length >= 1) { 
-                    for (var i = 0; i <= allDates.length-1; i++) {
-                        // in the first step, allDates[0] is YYYY-MM-DD of start date
-
-                        var todaysMeasurements = hucArray.filter(function(measurement) { // doing only HUC01 array
-                            return measurement.dateTime === allDates[i];
-                        })
-                        var flows = todaysMeasurements.map(function(flows) {
-                            return +flows.value;
-                        })
-                        var totalFlow = Math.floor(flows.reduce(function(accumulator,flow) {
-                            return accumulator + flow;
-                        }))
-                        birthdayFlow[i].huc20 = totalFlow; // This property selection is the only thing that's different! There's gotta be a more elegant way to do this, by writing a reusable function
-                    }
-                }
-            };           
-            getTotalFlow20(huc20);
-            //21
-            function getTotalFlow21(hucArray) {
-                if (hucArray.length >= 1) { 
-                    for (var i = 0; i <= allDates.length-1; i++) {
-                        // in the first step, allDates[0] is YYYY-MM-DD of start date
-    
-                        var todaysMeasurements = hucArray.filter(function(measurement) { // doing only HUC01 array
-                            return measurement.dateTime === allDates[i];
-                        })
-                        var flows = todaysMeasurements.map(function(flows) {
-                            return +flows.value;
-                        })
-                        var totalFlow = Math.floor(flows.reduce(function(accumulator,flow) {
-                            return accumulator + flow;
-                        }))
-                        birthdayFlow[i].huc21 = totalFlow; // This property selection is the only thing that's different! There's gotta be a more elegant way to do this, by writing a reusable function
-                    }
-                }
-            };           
-            getTotalFlow21(huc21);
-           
-        
-            
             // add a property that lists all the column titles, which will be used in the stacking function
             birthdayFlow.columns = [
                 "dateFull",
@@ -777,7 +398,7 @@ function fetchData() {
             ];
 
             // See the final resulting dataset we need to make a streamgraph!!
-            console.log(birthdayFlow, "birthday flow!")
+            // console.log(birthdayFlow, "birthday flow!")
             
 
             /////////////////////////////////
@@ -790,7 +411,7 @@ function fetchData() {
                 // Add X axis
                 var x = d3.scaleTime()
                     .domain([start, end])
-                    .range([ 0, width ]);
+                    .range([ 0, width]);
 
                 svg.append("g")
                     .attr("class","tick-label")
@@ -858,15 +479,14 @@ function fetchData() {
             
                 // Area generator
                 var area = d3.area()
-                    .x(function(d) { return x(d.data.dateFull); 
-                    })
+                    .x(function(d) { return x(d.data.dateFull); })
                     .y0(function(d) { return y(d[0]); })
                     .y1(function(d) { return y(d[1]); })
                     .curve(d3.curveMonotoneX)
             
                 // Show the areas
                 svg
-                    .selectAll("mylayers")
+                    .selectAll("myLayer")
                     .data(stackedData)
                     .enter()
                     .append("path")
@@ -877,6 +497,19 @@ function fetchData() {
                         .on("mousemove", mousemove)
                         .on("mouseleave", mouseleave);
 
+
+                // d3.selectAll("path")
+                //     .transition()
+                //     .duration(1000)
+                //     .attr("d",area)
+                // d3.selectAll(".tick-label")
+                //     .transition()
+                //     .duration(1)
+                //     .call(d3.axisBottom(x)
+                //         .tickSize(-height*.01)
+                //         .tickFormat(d3.timeFormat("%B %d, %Y"))
+                //         .tickValues([birthday]))
+                //         .select(".domain").remove()
 
             /////////////////////////////////
             // Export the Chart as an Image

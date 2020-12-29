@@ -453,7 +453,7 @@ function fetchLocation() {
         "huc": 11,
         "huc_name": "Arkansas-White-Red Region",
         "station_nm": "Arkansas River at Pine Bluff, AR",
-        "site_number": 7263650,
+        "site_number": "07263650",
         "vector": ""
         },
         {
@@ -462,7 +462,7 @@ function fetchLocation() {
         "huc": 16,
         "huc_name": "Great Basin Region",
         "station_nm": "Bear River Near Corinne, UT",
-        "site_number": 10126000,
+        "site_number": "10126000",
         "vector": ""
         },
         {
@@ -471,7 +471,7 @@ function fetchLocation() {
         "huc": 12,
         "huc_name": "Texas-Gulf Region",
         "station_nm": "Brazos River at Giww Flood Gates near Freeport, TX",
-        "site_number": 8117300,
+        "site_number": "08117300",
         "vector": ""
         },
         {
@@ -480,7 +480,7 @@ function fetchLocation() {
         "huc": 1,
         "huc_name": "New England Region",
         "station_nm": "Charles River at First St at Cambridge, MA",
-        "site_number": 1104705,
+        "site_number": "01104705",
         "vector": ""
         },
         {
@@ -489,7 +489,7 @@ function fetchLocation() {
         "huc": 17,
         "huc_name": "Pacific Northwest Region",
         "station_nm": "Chehalis River Below Wishkah River at Hoquiam, WA",
-        "site_number": 12038400,
+        "site_number": "12038400",
         "vector": ""
         },
         {
@@ -498,7 +498,7 @@ function fetchLocation() {
         "huc": 15,
         "huc_name": "Lower Colorado Region",
         "station_nm": "Colorado River at Section 18S, AZ",
-        "site_number": 330131114364101,
+        "site_number": "330131114364101",
         "vector": ""
         },
         {
@@ -507,7 +507,7 @@ function fetchLocation() {
         "huc": 12,
         "huc_name": "Texas-Gulf Region",
         "station_nm": "Colorado River near Wadsworth, TX",
-        "site_number": 8162501,
+        "site_number": "08162501",
         "vector": ""
         },
         {
@@ -516,7 +516,7 @@ function fetchLocation() {
         "huc": 17,
         "huc_name": "Pacific Northwest Region",
         "station_nm": "Columbia River at Port Westward, Near Quincy, OR",
-        "site_number": 14246900,
+        "site_number": "14246900",
         "vector": ""
         },
         {
@@ -525,7 +525,7 @@ function fetchLocation() {
         "huc": 1,
         "huc_name": "New England Region",
         "station_nm": "Connecticut River at Old Lyme, CT",
-        "site_number": 1194796,
+        "site_number": "01194796",
         "vector": ""
         },
         {
@@ -534,7 +534,7 @@ function fetchLocation() {
         "huc": 2,
         "huc_name": "Mid Atlantic Region",
         "station_nm": "Delaware River at Chester, PA",
-        "site_number": 1477050,
+        "site_number": "01477050",
         "vector": ""
         },
         {
@@ -543,7 +543,7 @@ function fetchLocation() {
         "huc": 18,
         "huc_name": "California Region",
         "station_nm": "Eel River at Fernbridge, CA",
-        "site_number": 11479560,
+        "site_number": "11479560",
         "vector": ""
         },
         {
@@ -552,7 +552,7 @@ function fetchLocation() {
         "huc": 12,
         "huc_name": "Texas-Gulf Region",
         "station_nm": "Guadalupe River at Sh 35 near Tivoli, TX",
-        "site_number": 8188810,
+        "site_number": "08188810",
         "vector": ""
         },
         {
@@ -561,7 +561,7 @@ function fetchLocation() {
         "huc": 17,
         "huc_name": "Pacific Northwest Region",
         "station_nm": "Hoh River at Us Highway 101 Near Forks, WA",
-        "site_number": 12041200,
+        "site_number": "12041200",
         "vector": ""
         },
         {
@@ -570,7 +570,7 @@ function fetchLocation() {
         "huc": 2,
         "huc_name": "Mid Atlantic Region",
         "station_nm": "Hudson River at Pier 84 at New York, NY",
-        "site_number": 1376515,
+        "site_number": "01376515",
         "vector": ""
         },
         {
@@ -579,7 +579,7 @@ function fetchLocation() {
         "huc": 16,
         "huc_name": "Great Basin Region",
         "station_nm": "Humboldt River near Rye Patch, NV",
-        "site_number": 10335000,
+        "site_number": "10335000",
         "vector": ""
         },
         {
@@ -588,7 +588,7 @@ function fetchLocation() {
         "huc": 2,
         "huc_name": "Mid Atlantic Region",
         "station_nm": "James River at Jamestown Ferry Pier, VA",
-        "site_number": 2042770,
+        "site_number": "02042770",
         "vector": ""
         },
         {
@@ -597,7 +597,7 @@ function fetchLocation() {
         "huc": 16,
         "huc_name": "Great Basin Region",
         "station_nm": "Jordan River @ Cudahy Lane near Salt Lake City, UT",
-        "site_number": 10172600,
+        "site_number": "10172600",
         "vector": ""
         },
         {
@@ -606,7 +606,7 @@ function fetchLocation() {
         "huc": 1,
         "huc_name": "New England Region",
         "station_nm": "Kennebec River at Gardiner, ME",
-        "site_number": 1049505,
+        "site_number": "01049505",
         "vector": ""
         },
         {
@@ -615,7 +615,7 @@ function fetchLocation() {
         "huc": 18,
         "huc_name": "California Region",
         "station_nm": "Kern River near Bakersfield, CA",
-        "site_number": 11194000,
+        "site_number": "11194000",
         "vector": ""
         },
         {
@@ -624,7 +624,7 @@ function fetchLocation() {
         "huc": 18,
         "huc_name": "California Region",
         "station_nm": "Klamath River near Klamath, CA",
-        "site_number": 11530500,
+        "site_number": "11530500",
         "vector": ""
         },
         {
@@ -633,7 +633,7 @@ function fetchLocation() {
         "huc": 11,
         "huc_name": "Arkansas-White-Red Region",
         "station_nm": "Little Red River at Judsonia, AR",
-        "site_number": 7076634,
+        "site_number": "07076634",
         "vector": ""
         },
         {
@@ -642,7 +642,7 @@ function fetchLocation() {
         "huc": 1,
         "huc_name": "New England Region",
         "station_nm": "Merrimack River 0.3 Miles U.S.Rt 125 at Haverhill, ME",
-        "site_number": 1100693,
+        "site_number": "01100693",
         "vector": ""
         },
         {
@@ -651,7 +651,7 @@ function fetchLocation() {
         "huc": 8,
         "huc_name": "Lower Mississippi Region",
         "station_nm": "Mississippi River at Baton Rouge, LA",
-        "site_number": 7374000,
+        "site_number": "07374000",
         "vector": ""
         },
         {
@@ -660,7 +660,7 @@ function fetchLocation() {
         "huc": 10,
         "huc_name": "Missouri Region",
         "station_nm": "Missouri River at St. Charles, MO",
-        "site_number": 6935965,
+        "site_number": "06935965",
         "vector": ""
         },
         {
@@ -669,7 +669,7 @@ function fetchLocation() {
         "huc": 3,
         "huc_name": "South Atlantic-Gulf Region",
         "station_nm": "Mobile River at River Mile 31.0 at Bucks, AL",
-        "site_number": 2470629,
+        "site_number": "02470629",
         "vector": ""
         },
         {
@@ -678,7 +678,7 @@ function fetchLocation() {
         "huc": 12,
         "huc_name": "Texas-Gulf Region",
         "station_nm": "Neches River Saltwater Barrier at Beaumont, TX",
-        "site_number": 8041780,
+        "site_number": "08041780",
         "vector": ""
         },
         {
@@ -687,7 +687,7 @@ function fetchLocation() {
         "huc": 12,
         "huc_name": "Texas-Gulf Region",
         "station_nm": "Nueces River at Calallen, TX",
-        "site_number": 8211500,
+        "site_number": "08211500",
         "vector": ""
         },
         {
@@ -696,7 +696,7 @@ function fetchLocation() {
         "huc": 5,
         "huc_name": "Ohio Region",
         "station_nm": "Ohio River at Olmstead Buoy 3, IL",
-        "site_number": 370812089055901,
+        "site_number": "370812089055901",
         "vector": ""
         },
         {
@@ -705,7 +705,7 @@ function fetchLocation() {
         "huc": 1,
         "huc_name": "New England Region",
         "station_nm": "Piscataqua River",
-        "site_number": 430521070453501,
+        "site_number": "430521070453501",
         "vector": ""
         },
         {
@@ -714,7 +714,7 @@ function fetchLocation() {
         "huc": 2,
         "huc_name": "Mid Atlantic Region",
         "station_nm": "Potomac River at Cameron St Dock at Alexandria, VA",
-        "site_number": 165258890,
+        "site_number": "0165258890",
         "vector": ""
         },
         {
@@ -723,7 +723,7 @@ function fetchLocation() {
         "huc": 1,
         "huc_name": "New England Region",
         "station_nm": "Presumpscot River at Westbrook, ME",
-        "site_number": 1064118,
+        "site_number": "01064118",
         "vector": ""
         },
         {
@@ -732,7 +732,7 @@ function fetchLocation() {
         "huc": 9,
         "huc_name": "Souris-Red-Rainy Region",
         "station_nm": "Rainy River Near Boat Landing at Wheelers Point, MN",
-        "site_number": 5137500,
+        "site_number": "05137500",
         "vector": "svg/single-hucs-9.svg"
         },
         {
@@ -741,7 +741,7 @@ function fetchLocation() {
         "huc": 11,
         "huc_name": "Arkansas-White-Red Region",
         "station_nm": "Red River north of Simmesport, LA",
-        "site_number": 7355690,
+        "site_number": "07355690",
         "vector": ""
         },
         {
@@ -750,7 +750,7 @@ function fetchLocation() {
         "huc": 9,
         "huc_name": "Souris-Red-Rainy Region",
         "station_nm": "Red River Of The North at Pembina, ND",
-        "site_number": 5102490,
+        "site_number": "05102490",
         "vector": ""
         },
         {
@@ -759,7 +759,7 @@ function fetchLocation() {
         "huc": 4,
         "huc_name": "Great Lakes Region",
         "station_nm": "Richelieu River (Lake Champlain) at Rouses Point Bridge, NY",
-        "site_number": 42950000,
+        "site_number": "042950000",
         "vector": ""
         },
         {
@@ -768,7 +768,7 @@ function fetchLocation() {
         "huc": 13,
         "huc_name": "Rio Grande Region",
         "station_nm": "Rio Grande near San Benito, TX",
-        "site_number": 8473700,
+        "site_number": "08473700",
         "vector": ""
         },
         {
@@ -777,7 +777,7 @@ function fetchLocation() {
         "huc": 17,
         "huc_name": "Pacific Northwest Region",
         "station_nm": "Rogue River at Hwy 101 Bridge, at Wedderburn, OR",
-        "site_number": 14378430,
+        "site_number": "14378430",
         "vector": ""
         },
         {
@@ -786,7 +786,7 @@ function fetchLocation() {
         "huc": 12,
         "huc_name": "Texas-Gulf Region",
         "station_nm": "Sabine River (At Navy Pier) at Orange, TX",
-        "site_number": 8030540,
+        "site_number": "8030540",
         "vector": ""
         },
         {
@@ -795,7 +795,7 @@ function fetchLocation() {
         "huc": 1,
         "huc_name": "New England Region",
         "station_nm": "Saco River at Camp Ellis Near Saco, ME",
-        "site_number": 432742070225401,
+        "site_number": "432742070225401",
         "vector": ""
         },
         {
@@ -804,7 +804,7 @@ function fetchLocation() {
         "huc": 18,
         "huc_name": "California Region",
         "station_nm": "Sacramento River at Rio Vista, CA",
-        "site_number": 11455420,
+        "site_number": "11455420",
         "vector": ""
         },
         {
@@ -813,7 +813,7 @@ function fetchLocation() {
         "huc": 4,
         "huc_name": "Great Lakes Region",
         "station_nm": "St. Lawrence River at Cornwall Ont near Massena, NY",
-        "site_number": 4264331,
+        "site_number": "04264331",
         "vector": ""
         },
         {
@@ -822,7 +822,7 @@ function fetchLocation() {
         "huc": 18,
         "huc_name": "California Region",
         "station_nm": "Salinas River near Spreckels, CA",
-        "site_number": 11152500,
+        "site_number": "11152500",
         "vector": ""
         },
         {
@@ -831,7 +831,7 @@ function fetchLocation() {
         "huc": 18,
         "huc_name": "California Region",
         "station_nm": "San Joaquin River at Jersey Point, CA",
-        "site_number": 11337190,
+        "site_number": "11337190",
         "vector": ""
         },
         {
@@ -840,7 +840,7 @@ function fetchLocation() {
         "huc": 18,
         "huc_name": "California Region",
         "station_nm": "Santa Clara River Near Haines, CA",
-        "site_number": 341859119053301,
+        "site_number": "341859119053301",
         "vector": ""
         },
         {
@@ -849,7 +849,7 @@ function fetchLocation() {
         "huc": 3,
         "huc_name": "South Atlantic-Gulf Region",
         "station_nm": "Savannah River (I-95) Near Port Wentworth, GA",
-        "site_number": 2198840,
+        "site_number": "0198840",
         "vector": ""
         },
         {
@@ -858,7 +858,7 @@ function fetchLocation() {
         "huc": 1,
         "huc_name": "New England Region",
         "station_nm": "Seekonk River at Henderson Bridge, RI",
-        "site_number": 414945071224100,
+        "site_number": "414945071224100",
         "vector": ""
         },
         {
@@ -867,7 +867,7 @@ function fetchLocation() {
         "huc": 17,
         "huc_name": "Pacific Northwest Region",
         "station_nm": "Skagit River Near Mount Vernon, WA",
-        "site_number": 12200500,
+        "site_number": "12200500",
         "vector": ""
         },
         {
@@ -876,7 +876,7 @@ function fetchLocation() {
         "huc": 9,
         "huc_name": "Souris-Red-Rainy Region",
         "station_nm": "Souris River near Westhope, ND",
-        "site_number": 5124000,
+        "site_number": "05124000",
         "vector": ""
         },
         {
@@ -885,7 +885,7 @@ function fetchLocation() {
         "huc": 2,
         "huc_name": "Mid Atlantic Region",
         "station_nm": "Susquehanna River at Conowingo, MD",
-        "site_number": 1578310,
+        "site_number": "01578310",
         "vector": ""
         },
         {
@@ -894,7 +894,7 @@ function fetchLocation() {
         "huc": 3,
         "huc_name": "South Atlantic-Gulf Region",
         "station_nm": "Suwannee River at Manatee Springs near Old Town, FL",
-        "site_number": 2323567,
+        "site_number": "02323567",
         "vector": ""
         },
         {
@@ -903,7 +903,7 @@ function fetchLocation() {
         "huc": 6,
         "huc_name": "Tennessee Region",
         "station_nm": "Tennessee River at Mile 5.3 near Paducah, KY",
-        "site_number": 370221088314100,
+        "site_number": "370221088314100",
         "vector": ""
         },
         {
@@ -912,7 +912,7 @@ function fetchLocation() {
         "huc": 14,
         "huc_name": "Upper Colorado Region",
         "station_nm": "Colorado River Ab Dirty Devil River near Hite, UT",
-        "site_number": 9328990,
+        "site_number": "09328990",
         "vector": ""
         },
         {
@@ -921,7 +921,7 @@ function fetchLocation() {
         "huc": 7,
         "huc_name": "Upper Mississippi Region",
         "station_nm": "Mississippi River at Thebes, IL",
-        "site_number": 7022000,
+        "site_number": "07022000",
         "vector": ""
         },
         {
@@ -930,7 +930,7 @@ function fetchLocation() {
         "huc": 9,
         "huc_name": "Souris-Red-Rainy Region",
         "station_nm": "Warroad River Near Highway 11 at Warroad, MN",
-        "site_number": 5140515,
+        "site_number": "05140515",
         "vector": ""
         },
         {
@@ -939,7 +939,7 @@ function fetchLocation() {
         "huc": 16,
         "huc_name": "Great Basin Region",
         "station_nm": "Weber River Near Plain City, UT",
-        "site_number": 10141000,
+        "site_number": "10141000",
         "vector": ""
         },
         {
@@ -948,7 +948,7 @@ function fetchLocation() {
         "huc": 11,
         "huc_name": "Arkansas-White-Red Region",
         "station_nm": "White River near Augusta, AR",
-        "site_number": 7074850,
+        "site_number": "07074850",
         "vector": ""
         }];
     /////////////////////////////////
@@ -996,7 +996,7 @@ function fetchLocation() {
                 return river.huc == this_huc;
             })
 
-            var html = function(d) { return "<div class='vector flex-pic'></div><h3 class='card-title'>" + d.name + "</h3><p>" + d.hydroscope + "</p>"; };
+            var html = function(d) { return "<div class='vector flex-pic'></div><h3 class='card-title'>" + d.name + "</h3><p>" + d.hydroscope + "</p><p><a href='https://waterdata.usgs.gov/monitoring-location/" + d.site_number + "/#parameterCode=00065'><button>View Live Conditions on this River</button></a></p>"; };
                                    
             hydroscopeContainer.selectAll("flex-item hydroscope")
                 .data(filteredHydroscopes, function(d) {
@@ -1029,22 +1029,22 @@ function fetchLocation() {
             
             document.getElementById("nlImage").src = row["NL-img"];
             document.getElementById("hucImage").src = row["Boundary-img"];
-            document.getElementById("plantImage").src = row["Plant-img"];
-            document.getElementById("animalImage").src = row["Animal-img"];
-            document.getElementById("mineralImage").src = row["Mineral-img"];
+            // document.getElementById("plantImage").src = row["Plant-img"];
+            // document.getElementById("animalImage").src = row["Animal-img"];
+            // document.getElementById("mineralImage").src = row["Mineral-img"];
     
             //text
             document.getElementById("HUCname").innerHTML = row["Name"];
             document.getElementById("drainage").innerHTML = row["Drainage"];
             document.getElementById("tribes").innerHTML = row["Tribes"];
-            document.getElementById("plantText").innerHTML = row["Plant"];
-            document.getElementById("plantSci").innerHTML = row["PlantSci"];
-            document.getElementById("plantIC").innerHTML = row["img-cred-p"];
-            document.getElementById("animalText").innerHTML = row["Animal"];
-            document.getElementById("animalSci").innerHTML = row["AnimalSci"];
-            document.getElementById("animalIC").innerHTML = row["img-cred-a"];
-            document.getElementById("mineralText").innerHTML = row["Mineral"];
-            document.getElementById("mineralIC").innerHTML = row["img-cred-m"];
+            // document.getElementById("plantText").innerHTML = row["Plant"];
+            // document.getElementById("plantSci").innerHTML = row["PlantSci"];
+            // document.getElementById("plantIC").innerHTML = row["img-cred-p"];
+            // document.getElementById("animalText").innerHTML = row["Animal"];
+            // document.getElementById("animalSci").innerHTML = row["AnimalSci"];
+            // document.getElementById("animalIC").innerHTML = row["img-cred-a"];
+            // document.getElementById("mineralText").innerHTML = row["Mineral"];
+            // document.getElementById("mineralIC").innerHTML = row["img-cred-m"];
 
             watershedContainer.style("opacity","1").style("transition","all .5s");
         };
