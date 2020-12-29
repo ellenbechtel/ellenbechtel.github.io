@@ -207,7 +207,7 @@ function fetchData() {
 
         // Compile the URL
         sitey = emptyAPI + urlSites + urlStartDate + urlEndDate + urlStatCD + urlParam;
-    
+ 
         /////////////////////////////////
         // Call API
         d3.json(sitey, function(error, apiData) {
