@@ -996,7 +996,7 @@ function fetchLocation() {
                 return river.huc == this_huc;
             })
 
-            var html = function(d) { return "<div class='vector flex-pic'></div><h3 class='card-title'>" + d.name + "</h3><p>" + d.hydroscope + "</p><p><a href='https://waterdata.usgs.gov/monitoring-location/" + d.site_number + "/#parameterCode=00065'><button>View Live Conditions on this River</button></a></p>"; };
+            var html = function(d) { return "<div class='vector flex-pic'></div><h3 class='card-title'>" + d.name + "</h3><p>" + d.hydroscope + "</p><p><a href='https://waterdata.usgs.gov/monitoring-location/' target='_blank'" + d.site_number + "/#parameterCode=00065'><button>View Live Conditions on this River</button></a></p>"; };
                                    
             hydroscopeContainer.selectAll("flex-item hydroscope")
                 .data(filteredHydroscopes, function(d) {
