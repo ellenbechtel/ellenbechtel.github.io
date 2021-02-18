@@ -1,0 +1,15 @@
+body {
+    font-family: sans-serif;
+}
+
+.glyph {
+    background-color: aquamarine;
+    margin: 10px;
+
+}
+
+.movieLabel {
+    fill: white;
+    stroke: none;
+    text-anchor: middle;
+}
