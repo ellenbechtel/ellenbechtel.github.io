@@ -1,15 +1,79 @@
+/* Import */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;600;800;900&display=swap');
+
+
 body {
-    font-family: sans-serif;
+    font-family: 'Nunito-Sans', sans-serif;
+    font-weight: 200;
+    font-size: 13px;
 }
 
+h1{ 
+    font-size: 3em;
+}
+
+#header {
+    text-align: center;
+    margin: 20vh 0;
+}
+
+#audience-explainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "imdb-label rt-label";
+    text-align: center;
+    margin: 0 0 10vh 0;
+}
+.audience-label {
+    font-size: 3em;
+    font-weight: 900;
+}
+#imdb-label { grid-area: imdb-label; }
+#rt-label { grid-area: rt-label; }
+
+#chart {
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+}
+
+
 .glyph {
-    background-color: orchid;
+    background-color: none;
     margin: 10px;
 
 }
 
+.top {
+    z-index: 4;
+    -webkit-animation: wiggle 5s ease-in-out infinite;
+    -moz-animation: wiggle 5s ease-in-out infinite;
+    animation: wiggle 5s ease-in-out infinite;
+}
+
+.critic-triangle {
+    fill: black;
+    opacity: .9;
+}
+
 .movieLabel {
-    fill: white;
+    fill: black;
     stroke: none;
     text-anchor: middle;
+}
+
+
+/* Animation key frames */
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+   80% { transform: rotate(0deg); }
+   85% { transform: rotate(5deg); }
+   90% { transform: rotate(-5deg); }
+   94% { transform: rotate(3deg); }
+   98% { transform: rotate(-3deg); }
+  100% { transform: rotate(0deg); }
 }

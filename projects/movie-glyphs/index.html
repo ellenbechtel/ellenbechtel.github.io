@@ -14,12 +14,26 @@
         <link rel="apple-touch-icon" href="../../img/favicon/apple-touch-icon.png"/>
         <link rel="shortcut icon" href="../../img/favicon/android-chrome-192x192.png"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;600;800;900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css"/>
         <title>Movie Glyphs</title>
         <script src="https://d3js.org/d3.v5.min.js"></script>
     </head>
     <body>
-        <h1>Making Glyphs of Some Famous Movies</h1>
+        <div id="header">
+            <h1>Which Audience Liked it Better?</h1>
+            <h2>And did the Critics agree?</h2>
+        </div>
+        
+        <div id="audience-explainer">
+            <p class="audience-label" id="imdb-label">
+                Meh
+            </p>
+            <p class="audience-label" id="rt-label">
+                Wow!
+            </p>
+        </div>
         <div id="chart"></div>
 
         <script src="./script.js"></script>
