@@ -35,6 +35,16 @@ h1{
 #imdb-label { grid-area: imdb-label; }
 #rt-label { grid-area: rt-label; }
 
+#triangle-explainer {
+    text-align: center;
+}
+
+#triangle-explainer-svg{
+    width: 200px;
+    height: 200px;
+    transform-origin: 50% 50%;
+}
+
 #chart {
     max-width: 700px;
     margin: auto;
@@ -50,16 +60,43 @@ h1{
 
 .top {
     z-index: 4;
-    -webkit-animation: wiggle 5s ease-in-out infinite;
-    -moz-animation: wiggle 5s ease-in-out infinite;
-    animation: wiggle 5s ease-in-out infinite;
+   
+}
+.explainer-triangle {
+    opacity: .3;
+}
+.triangle {
+    opacity: .5;
+}
+
+.RT-audience-rating {
+    /* stroke: black;
+    stroke-width: 1px; */
+}
+.imdb-rating {
+    /* stroke: black;
+    stroke-width: 1px; */
+}
+
+.wiggle {
+    transform-origin: 50% 50%;
+    -webkit-animation: wiggle 6s ease-in-out infinite;
+    -moz-animation: wiggle 6s ease-in-out infinite;
+    animation: wiggle 6s ease-in-out infinite;
 }
 
 .critic-triangle {
-    fill: black;
-    opacity: .9;
+    stroke: white;
+    stroke-width: 1px;
+
 }
 
+.axis-line {
+    stroke: black;
+    stroke-width: 1px;
+    stroke-linecap: round;
+
+}
 .movieLabel {
     fill: black;
     stroke: none;
@@ -70,10 +107,10 @@ h1{
 /* Animation key frames */
 @keyframes wiggle {
     0% { transform: rotate(0deg); }
-   80% { transform: rotate(0deg); }
-   85% { transform: rotate(5deg); }
-   90% { transform: rotate(-5deg); }
-   94% { transform: rotate(3deg); }
-   98% { transform: rotate(-3deg); }
+   93% { transform: rotate(0deg); }
+   95% { transform: rotate(5deg); }
+   97% { transform: rotate(-5deg); }
+   98% { transform: rotate(1deg); }
+   99% { transform: rotate(-1deg); }
   100% { transform: rotate(0deg); }
 }

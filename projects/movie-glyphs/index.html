@@ -22,20 +22,29 @@
     </head>
     <body>
         <div id="header">
-            <h1>Which Audience Liked it Better?</h1>
-            <h2>And did the Critics agree?</h2>
+            <h1>What did Critics think of the Movie?</h1>
+            <h2>And did the peons agree?</h2>
         </div>
         
+       
+        </div>
         <div id="audience-explainer">
             <p class="audience-label" id="imdb-label">
-                Meh
+                Meh...
             </p>
             <p class="audience-label" id="rt-label">
                 Wow!
             </p>
         </div>
+        <div id="triangle-explainer">
+            <svg id="triangle-explainer-svg">
+                <path d="M 100 43.5 l 26 113 l -52 0 z" class="explainer-triangle wiggle" id="critic-triangle-ex"></path>
+                <path d="M 100 43.5 l 26 113 l -52 0 z" class="explainer-triangle" id="imdb-triangle-ex"></path>
+                <path d="M 100 43.5 l 26 113 l -52 0 z" class="explainer-triangle" id="rt-triangle-ex"></path>
+            </svg>
+            
         <div id="chart"></div>
 
-        <script src="./script.js"></script>
+        <script src="./scripts/script.js"></script>
     </body>
 </html>
