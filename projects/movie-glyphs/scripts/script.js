@@ -7,7 +7,7 @@
 // SET STATIC VARIABLES
 //////////////////////////////////
 
-// Mini Egg SVGs
+// Mini SVGS
 var margin = {top: 30, right: 30, bottom: 30, left: 30};
 var width = 200;
 var height = 200;
@@ -141,9 +141,15 @@ Promise.all(promises).then(function(data) {
         .selectAll("glyph")
         .data(movies)
         .enter()
+        // .append("div")
+        //     .attr("width", width)
+        //     .attr("height", height)
+        //     // .style("position","relative")
+        //     .attr("class", "particle-div")
         .append("svg")
             .attr("width", width)
             .attr("height", height)
+            // .style("position","absolute")
             .attr("class", "glyph")
             .attr("id", function(d,i) {
                 return "svg_" + i;
@@ -151,8 +157,7 @@ Promise.all(promises).then(function(data) {
 
     // deconstruct the data for each movie svg
     d3.selectAll(".glyph").each(function(d,i) { // d is each movie data point
-        // console.log("d",d);
-        
+          
         // select the svg we're working on
         var this_svg = d3.select(this); 
 
@@ -265,6 +270,59 @@ Promise.all(promises).then(function(data) {
                     return arc({innerRadius: axisLengthScale(m.imdbRatingsCount)-1, outerRadius: axisLengthScale(m.imdbRatingsCount)});
                 });
 
+        /////////////////////////////////
+        // make shooting stars for the $$$
+
+        var noise = {
+            noisinessX: 1,
+            noisinessY: 1,
+            upperLimit: 100,
+            lowerLimit: 100,
+            end: 1,
+            padding: 40,
+            radMin: .5,
+            radMax: 1
+        }
+        d.sparkles = []; // declare an array as a property
+
+        // function to see if a number is even
+        function isEven(num) {
+            if (num % 2 == 0) {
+                return -1;
+            } else { return 1; };
+        }
+        
+        // function to make random number
+        function getRandom(min, max) {
+            return Math.floor(min + Math.random()*(max + 1 - min))
+        }
+
+        for (i = 0; i < +d.revenueMillions; i++) {
+            d.sparkles.push({
+                i: i,
+                x: Math.round(getRandom(-width-noise.padding,width-noise.padding)),
+                y: Math.round(getRandom(0,(height/2)-noise.padding)),
+                r: Math.round(getRandom(noise.radMin, noise.radMax))
+            });
+        }
+    
+        // console.log(d, "Sparkles")
+
+        var sparkles = gBackground.selectAll("circle")
+            .data(d.sparkles)
+            .enter()
+            .append("circle")
+                .attr("class","sparkle")
+                .attr('cx', function(m) {
+                    return m.x;
+                }).attr('cy', function(m) {
+                    return m.y;
+                }).attr('r', function(m){
+                    return m.r;
+                }).style("opacity", function(m){
+                    return Math.random()/m.r;
+                });
+
 
 
         /////////////////////////////////
@@ -289,41 +347,7 @@ Promise.all(promises).then(function(data) {
         //         return `M ${x} ${y} l 0 -${axisLengthScale(m.imdbRatingsCount)}` // axisLengthScale(m.imdbRatingsCount)
         //     }).attr("class","axis-line");
 
-
-        /////////////////////////////////
-        // make shooting stars for the $$$
-
-        var noise = {
-            noisinessX: 1,
-            noisinessY: 1,
-            upperLimit: 100,
-            lowerLimit: 100,
-            end: 1
-        }
-        d.sparkles = []; // declare an array as a property
-
-        // function to see if a number is even
-        function isEven(num) {
-            if (num % 2 == 0) {
-                return -1;
-            } else { return 1; };
-        }
-        
-        // function to make random number
-        function getRandom(min, max) {
-            return Math.floor(min + Math.random()*(max + 1 - min))
-        }
-
-        for (i = 0; i < +d.revenueMillions; i++) {
-            d.sparkles.push({
-                i: i,
-                x: isEven(i) * (width/2 + getRandom(0,width/2)),
-                y: Math.round(height-(height/2 + triHeightScale(d.imdbScore)/2) + getRandom(0,(height/2 + triHeightScale(d.budgetMillions)/2)))
-            });
-        }
-    
-        console.log(d, "Sparkles")
-       
+   
 
 
 
@@ -394,6 +418,12 @@ Promise.all(promises).then(function(data) {
             })
             .style("filter","url(#glow)");
 
+        /////////////////////////////////
+        // Add Hover interactivity
+        //////////////////////////////////
+
+        
+
 
         /////////////////////////////////
         // General SVG Elements
@@ -412,7 +442,16 @@ Promise.all(promises).then(function(data) {
 
 
     })
+    d3.selectAll(".particle-div").on('mouseover', function(d){ // this part adds interactivity
+ 
+        // select the svg we're working on
+        var this_particleDiv = d3.select(this); 
+        return this_particleDiv.attr("id","particle-js")
 
-    
+    }).on("mouseout", function(d) { // this removes interactivity
+         // select the svg we're working on
+         var this_particleDiv = d3.select(this); 
+         return this_particleDiv.attr("id","")
+    });
 
 })
