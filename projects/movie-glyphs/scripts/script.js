@@ -52,7 +52,7 @@ Promise.all(promises).then(function(data) {
     var counts = movies.map(function(movie) { return +movie.imdbRatingsCount;})
     var axisLengthScale = d3.scaleLinear()
         .domain([d3.min(counts), d3.max(counts)])
-        .range([10, height-20]);
+        .range([40, width/2]);
 
 
     // scale for budgetMillions (Triangle Height)
@@ -64,15 +64,20 @@ Promise.all(promises).then(function(data) {
     console.log("min", triHeightScale(d3.min(budgets)), "max", triHeightScale(d3.max(budgets)))
 
     // scale for average audience score (including IMDB and Rotten Tomatoes)
-    var avgs = movies.map(function(movie) { return +movie.avgAudienceRating; });
-    var avgRatingScale = d3.scaleSequential()
-        .domain([d3.min(avgs),d3.max(avgs)])
-        .interpolator(d3.interpolateWarm);
+    // var avgs = movies.map(function(movie) { return +movie.avgAudienceRating; });
+    // var avgRatingScale = d3.scaleSequential()
+    //     .domain([d3.min(avgs),d3.max(avgs)])
+    //     .interpolator(d3.interpolateWarm);
 
     // new color scale for critic scoring
     var criticScores = movies.map(function(movie) { return +movie.criticScoreRT; });
     var criticScale = d3.scaleSequential()
         .domain([d3.min(criticScores),d3.max(criticScores)])
+        .interpolator(d3.interpolatePlasma);
+
+    // recreate the color scale for the angles of the linear gradient on the background dial
+    var dialGradientScale = d3.scaleSequential()
+        .domain([0,100])
         .interpolator(d3.interpolatePlasma);
 
     // scale for rating tilting
@@ -82,7 +87,31 @@ Promise.all(promises).then(function(data) {
     var ratings = [].concat(imdbRatings, rtRatings, rtCriticRatings);
     var tiltScale = d3.scaleLinear()
         .domain([d3.min(ratings), d3.max(ratings)])
-        .range([-60,60]);
+        .range([-90,90]);
+
+        // avg rating is 82, median is 87. imbd median is 84.5.  rotten tomatoes audience rating median is 91. RT Critic median is 87.
+
+
+        // find median of rating array
+        const findMedian = (arr = []) => {
+            const sorted = arr.slice().sort((a, b) => {
+               return a - b;
+            });
+            if(sorted.length % 2 === 0){
+               const first = sorted[sorted.length / 2 - 1];
+               const second = sorted[sorted.length / 2];
+               return (first + second) / 2;
+            }
+            else{
+               const mid = Math.floor(sorted.length / 2);
+               return sorted[mid];
+            };
+         };
+        //  console.log("median",findMedian(rtCriticRatings));
+
+
+    
+
 
     // scale for difference between IMBD and Rotten Tomatoes Audience score
     // var diffs = movies.map(function(movie) { return +movie.ratingDiff; });
@@ -97,6 +126,8 @@ Promise.all(promises).then(function(data) {
     var triBaseScale = d3.scaleLinear()
         .domain([d3.min(runtimes), d3.max(runtimes)])
         .range([10, width/2-10]);
+
+        
 
     // scale for budgetMillions
     // scale for revenueMillions
@@ -137,6 +168,7 @@ Promise.all(promises).then(function(data) {
         /////////////////////////////////
         // Create Groups
         //////////////////////////////////
+        var gBackground = this_svg.append('g').attr("id", "gBackground");
         var gIMDB= this_svg.append('g').attr("id","gIMDB");
         var gRT = this_svg.append('g').attr("id","gRT");
         var gWiggle = this_svg.append('g').attr("id","gWiggle").attr("class","wiggle");
@@ -148,7 +180,7 @@ Promise.all(promises).then(function(data) {
         //////////////////////////////////
 
         /////////////////////////////////
-        // Create Filter
+        // Create Blur Filter
        
         var glowRange = 7;
 
@@ -171,6 +203,69 @@ Promise.all(promises).then(function(data) {
         feMerge.append("feMergeNode")
             .attr("in","SourceGraphic");
 
+        /////////////////////////////////
+        // Create Pattern for Dial Arc Gradients
+
+        var gradient = defs.append("linearGradient")
+            .attr("id", "svgGradient")
+            .attr("x1", "0%")
+            .attr("x2", "100%")
+            .attr("y1", "0%")
+            .attr("y2", "0%");
+
+        gradient.append("stop")
+            .attr('class', 'start')
+            .attr("offset", "00%")
+            .attr("stop-color", dialGradientScale(0))
+            .attr("stop-opacity", 1);
+         
+        gradient.append("stop")
+            .attr("offset", "20%")
+            .attr("stop-color", dialGradientScale(20));
+        
+        gradient.append("stop")
+            .attr("offset", "40%")
+            .attr("stop-color", dialGradientScale(40));
+
+        gradient.append("stop")
+            .attr("offset", "60%")
+            .attr("stop-color", dialGradientScale(60));
+
+        gradient.append("stop")
+            .attr("offset", "80%")
+            .attr("stop-color", dialGradientScale(80));
+
+        gradient.append("stop")
+            .attr('class', 'end')
+            .attr("offset", "100%")
+            .attr("stop-color", dialGradientScale(100));
+
+
+
+
+        /////////////////////////////////
+        // make center line in the background
+        // gBackground.append('path')
+        //     .attr('d', function(m) {
+        //         return `M ${width/2} ${height/2} l 0 -${axisLengthScale(m.imdbRatingsCount)}` // axisLengthScale(m.imdbRatingsCount)
+        //     }).attr("class","axis-line");
+
+        var arc = d3.arc()
+            .startAngle(-(Math.PI/2))
+            .endAngle(Math.PI/2);
+            // .innerRadius(0);
+            // .outerRadius(width/3);
+
+        gBackground.attr("transform", `translate(${width/2},${height/2})`)
+            .append("path")
+                .attr("class","backgroundArc")
+                .attr("fill", "url(#svgGradient)")
+                // .attr("stroke", "url(#svgGradient)")
+                .attr("d", function(m){
+                    return arc({innerRadius: axisLengthScale(m.imdbRatingsCount)-1, outerRadius: axisLengthScale(m.imdbRatingsCount)});
+                });
+
+
 
         /////////////////////////////////
         // make critic triangle shadow
@@ -188,11 +283,11 @@ Promise.all(promises).then(function(data) {
                 return criticScale(m.criticScoreRT);
             });
 
-        gCritic.append('path')
-            .attr('d', function(m) {
-                var x = width/2, y = height/2 + (Math.floor(triHeightScale(m.budgetMillions))/2) - 2; // adjust by two pixels to keep it inside the triangle
-                return `M ${x} ${y} l 0 -${axisLengthScale(m.imdbRatingsCount)}` // axisLengthScale(m.imdbRatingsCount)
-            }).attr("class","axis-line");
+        // gCritic.append('path')
+        //     .attr('d', function(m) {
+        //         var x = width/2, y = height/2 - 2; // adjust by two pixels to keep it inside the triangle
+        //         return `M ${x} ${y} l 0 -${axisLengthScale(m.imdbRatingsCount)}` // axisLengthScale(m.imdbRatingsCount)
+        //     }).attr("class","axis-line");
 
 
         /////////////////////////////////

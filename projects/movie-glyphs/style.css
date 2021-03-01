@@ -85,10 +85,13 @@ h1{
     animation: wiggle 6s ease-in-out infinite;
 }
 
+.backgroundArc {
+    /* stroke-width:1px; */
+}
+
 .critic-triangle {
     stroke: white;
     stroke-width: 1px;
-
 }
 
 .axis-line {
