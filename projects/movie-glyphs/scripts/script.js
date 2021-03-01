@@ -220,24 +220,24 @@ Promise.all(promises).then(function(data) {
 
         gradient.append("stop")
             .attr('class', 'start')
-            .attr("offset", "00%")
+            .attr("offset", "0%")
             .attr("stop-color", dialGradientScale(0))
             .attr("stop-opacity", 1);
          
         gradient.append("stop")
-            .attr("offset", "20%")
+            .attr("offset", "10%")
             .attr("stop-color", dialGradientScale(20));
         
         gradient.append("stop")
-            .attr("offset", "40%")
+            .attr("offset", "30%")
             .attr("stop-color", dialGradientScale(40));
 
         gradient.append("stop")
-            .attr("offset", "60%")
+            .attr("offset", "70%")
             .attr("stop-color", dialGradientScale(60));
 
         gradient.append("stop")
-            .attr("offset", "80%")
+            .attr("offset", "90%")
             .attr("stop-color", dialGradientScale(80));
 
         gradient.append("stop")

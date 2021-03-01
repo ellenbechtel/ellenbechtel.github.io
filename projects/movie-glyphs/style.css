@@ -15,6 +15,7 @@ h1{
 }
 
 .explainer-label {
+    fill: #e2e2e2;
     font-weight: 900;
     font-size: 3em;
 }
