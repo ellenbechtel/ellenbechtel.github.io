@@ -345,7 +345,7 @@ var nest = d3.nest()
     })
    .entries(vcData);
 
-var finalData = {name: "Visual Cognition", values: nest};
+var finalData = {key: "Visual Cognition", values: nest};
 
 console.log(finalData,"final")
 
@@ -376,6 +376,39 @@ svg.selectAll('path')
   .attr("stroke", '#ccc')
 
 
+// Tooltip
+
+var tooltip = d3.select("#dendrogram")
+  .append("div")
+  .style("opacity",1)
+  .attr("class", "tooltip")
+
+// hover
+var mouseover = function(d){
+  tooltip.style("opacity",1)
+  d3.select(this)
+    .style("stroke", "black")
+    .style("opacity", 1);
+};
+
+// mouse move
+var mousemove = function(d) {
+  console.log(d, "d")
+  tooltip
+    .html(d.data.key)
+    .style("left", (d3.mouse(this)[0]+70) + "px")
+    .style("top", (d3.mouse(this)[1]) + "px")
+}
+var mouseleave = function(d) {
+  tooltip
+    .style("opacity", 0)
+  d3.select(this)
+    .style("stroke", "none")
+    .style("opacity", 0.8)
+}
+
+
+
 // Add a circle for each node.
 svg.selectAll("g")
   .data(root.descendants())
@@ -388,8 +421,9 @@ svg.selectAll("g")
     .attr("r", rad)
     .style("fill", fill)
     .attr("stroke", stroke)
-    .style("stroke-width", strokeWidth);
-
-
+    .style("stroke-width", strokeWidth)
+  .on("mouseover", mouseover)
+  .on("mousemove", mousemove)
+  .on("mouseleave", mouseleave);
 
 

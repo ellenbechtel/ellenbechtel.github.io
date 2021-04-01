@@ -17,3 +17,14 @@
     stroke: #ccc;
     stroke-width: 1.5px;
   }
+
+  /* Tooltip */
+
+  .tooltip {
+    background-color: white;
+    border: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
