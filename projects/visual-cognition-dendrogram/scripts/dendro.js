@@ -377,11 +377,14 @@ svg.selectAll('path')
 
 
 // Tooltip
-
 var tooltip = d3.select("#dendrogram")
   .append("div")
   .style("opacity",1)
   .attr("class", "tooltip")
+
+// Extra Content
+var details = d3.select("#details")
+  .style("opacity",1)
 
 // hover
 var mouseover = function(d){
@@ -393,18 +396,26 @@ var mouseover = function(d){
 
 // mouse move
 var mousemove = function(d) {
-  console.log(d, "d")
+
   tooltip
     .html(d.data.key)
     .style("left", (d3.mouse(this)[0]+70) + "px")
     .style("top", (d3.mouse(this)[1]) + "px")
 }
+
+// mouse leave
 var mouseleave = function(d) {
   tooltip
     .style("opacity", 0)
   d3.select(this)
     .style("stroke", "none")
     .style("opacity", 0.8)
+}
+
+// click
+var click = function(d){
+  console.log(d, "d")
+  details.html(d.data.key);
 }
 
 
@@ -424,6 +435,7 @@ svg.selectAll("g")
     .style("stroke-width", strokeWidth)
   .on("mouseover", mouseover)
   .on("mousemove", mousemove)
-  .on("mouseleave", mouseleave);
+  .on("mouseleave", mouseleave)
+  .on("click", click);
 
 
