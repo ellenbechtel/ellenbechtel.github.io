@@ -9,6 +9,7 @@ html, body {
 
 body {
     box-sizing: border-box;
+    font-weight: 100;
 }
 
 
@@ -153,12 +154,10 @@ footer .end-circle {
   nav > div {
     margin: 0 auto;
     max-width: 960px;
-    position: relative;
   }
   
   nav > div > a {
     color: #444;
-    line-height: 20px;
     margin: 0 0 0 20px;
   }
 
@@ -251,7 +250,7 @@ button{
 
 .accordion:after {
   content: '\002B';
-  font-weight: bold;
+  /* font-weight: bold; */
   margin-left: 5px;
 }
 
@@ -357,10 +356,11 @@ margin: 0 60px 0; /* this should be the base case, or on a computer screen */
 
 .content h2 {
     font-family: 'Montserrat', sans-serif;;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 55px;
     line-height: 1.1em;
     text-align: left;
+    font-weight: 400;
   }
 
 @media (max-width: 960px) {
@@ -376,7 +376,7 @@ margin: 0 60px 0; /* this should be the base case, or on a computer screen */
 .content h3 a,
 .content h3 a:hover {
     font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
+    font-weight: 400;
     font-size: 1.6em;
     line-height: 1.3;
     letter-spacing: 2px;
@@ -434,7 +434,7 @@ margin: 0 60px 0; /* this should be the base case, or on a computer screen */
 
 .content h4 {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
+    font-weight: 100;
     font-size: 1.4em;
     line-height: 1.4;
     color: #444;
@@ -447,7 +447,7 @@ margin: 0 60px 0; /* this should be the base case, or on a computer screen */
 
 .content p {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
+    font-weight: 100;
     line-height: 1.6;
     color: #444;
     max-width: 600px; /* this is causing problems on mobile */
@@ -456,7 +456,7 @@ margin: 0 60px 0; /* this should be the base case, or on a computer screen */
   .content .meta {
     font-family: 'Montserrat', sans-serif;
     font-size: .7em;
-    font-weight: inherit;
+    font-weight: 100;
     line-height: 1.7;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -467,7 +467,7 @@ margin: 0 60px 0; /* this should be the base case, or on a computer screen */
   .reserve {
     font-family: 'Montserrat', sans-serif;
     font-size: 19px;
-    font-weight: bold;
+    /* font-weight: bold; */
     line-height: 1.7;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -743,7 +743,7 @@ section .header .content p {
     cursor:pointer;
     color:#ffffff;
     font-size: 1.2em;
-    font-weight:bold;
+    font-weight:inherit;
     padding:13px 32px;
     text-decoration:none;
     text-shadow:0px 1px 0px #444;
@@ -760,7 +760,7 @@ section .header .content p {
   /* Photos */
 
   #covid .header {
-    background-image: linear-gradient(90deg, rgba(13,38,18,.4) 0%, rgba(199,150,82,.3) 100%), url(photos/rock.jpg);
+    background-image: linear-gradient(90deg, rgba(13,38,18,.4) 0%, rgba(199,150,82,.3) 100%), url(photos/rock.JPG);
   }
 
 #schedule .header {
