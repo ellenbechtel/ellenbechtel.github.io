@@ -51,7 +51,7 @@ body.full {
   text-align: center;
   position: relative;
   width: inherit;
-  background-image: linear-gradient(90deg, rgba(47,97,46,.3) 0%, rgba(199,150,82,.5) 100%), url(photos/sunset.JPG);
+  background-image: linear-gradient(90deg, rgba(13,38,18,.3) 0%, rgba(199,150,82,.5) 100%), url(photos/sunset.JPG);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -270,7 +270,9 @@ button{
 
 
 /* Other*/
-
+li {
+  padding: 5px;
+}
 
   section {
     width: 100%;
@@ -304,7 +306,7 @@ section .header:before {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: linear-gradient(90deg, rgba(47,97,46,.2) 0%, rgba(199,150,82,.3) 100%);
+  background-image: linear-gradient(90deg, rgba(13,38,18,.2) 0%, rgba(199,150,82,.3) 100%);
 }
 
 @media (min-width: 961px) {
@@ -735,7 +737,7 @@ section .header .content p {
 
   .reserve {
     box-shadow: 0px 10px 14px -7px #444;
-    background:linear-gradient(90deg, rgba(47,97,46,.9) 0%, rgba(199,150,82,.9) 100%);
+    background:linear-gradient(90deg, rgba(13,38,18,.9) 0%, rgba(199,150,82,.9) 100%);
     border-radius:12px;
     display:inline-block;
     cursor:pointer;
@@ -747,7 +749,7 @@ section .header .content p {
     text-shadow:0px 1px 0px #444;
   }
   .reserve:hover {
-    background:linear-gradient(90deg, rgba(107,180,94) 0%, rgba(199,150,82) 100%);
+    background:linear-gradient(90deg, rgba(13,38,18) 0%, rgba(199,150,82) 100%);
   }
   .reserve:active {
     position:relative;
@@ -757,29 +759,33 @@ section .header .content p {
 
   /* Photos */
 
-#details .header {
-    background-image: linear-gradient(90deg, rgba(107,180,94,.2) 0%, rgba(199,150,82,.3) 100%), url(photos/boat.jpeg); 
+  #covid .header {
+    background-image: linear-gradient(90deg, rgba(13,38,18,.4) 0%, rgba(199,150,82,.3) 100%), url(photos/rock.jpg);
+  }
+
+#schedule .header {
+    background-image: linear-gradient(90deg, rgba(13,38,18,.4) 0%, rgba(199,150,82,.3) 100%), url(photos/boat.jpeg); 
     background-size: 100%; /* probably will have to play around with this and other background stuff */
   }
   
   #location .header {
-    background-image: linear-gradient(90deg, rgba(107,180,94,.2) 0%, rgba(199,150,82,.3) 100%), url(photos/redhill.JPG);
+    background-image: linear-gradient(90deg, rgba(13,38,18,.4) 0%, rgba(199,150,82,.3) 100%), url(photos/redhill.JPG);
   }
   
   #lodging .header {
-    background-image: linear-gradient(90deg, rgba(107,180,94,.2) 0%, rgba(199,150,82,.3) 100%), url(photos/genevapoint.JPG);
+    background-image: linear-gradient(90deg, rgba(13,38,18,.4) 0%, rgba(199,150,82,.3) 100%), url(photos/genevapoint.JPG);
   }
   
   #rsvp .header {
-    background-image: linear-gradient(90deg, rgba(107,180,94,.2) 0%, rgba(199,150,82,.3) 100%), url(photos/edies.jpg);
+    background-image: linear-gradient(90deg, rgba(13,38,18,.4) 0%, rgba(199,150,82,.3) 100%), url(photos/edies.jpg);
   }
   
   #family .header {
-    background-image: linear-gradient(90deg, rgba(107,180,94,.2) 0%, rgba(199,150,82,.3) 100%), url(photos/oscar.jpeg);
+    background-image: linear-gradient(90deg, rgba(13,38,18,.4) 0%, rgba(199,150,82,.3) 100%), url(photos/oscar.jpeg);
   }
   
   #gifts .header {
-    background-image: linear-gradient(90deg, rgba(107,180,94,.2) 0%, rgba(199,150,82,.3) 100%), url(photos/path.JPG);
+    background-image: linear-gradient(90deg, rgba(13,38,18,.4) 0%, rgba(199,150,82,.3) 100%), url(photos/path.JPG);
   }
 
   .break{
