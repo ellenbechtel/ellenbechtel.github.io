@@ -1,35 +1,247 @@
-.node {
+/* IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Waiting+for+the+Sunrise&display=swap');
+
+/*  General Styling */
+
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: 'Lato', sans-serif;
+  font-size: 16pt;
+  font-weight: 100;
+}
+
+
+body {
+  box-sizing: border-box;
+  line-height: 1.4;
+  background-image: linear-gradient(0deg, rgba(237,246,249,.3) 30%, rgba(255,221,210,.3) 97%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.content {
+  max-width: 800px;
+  margin: auto;
+  border-radius: 3px;
+  padding: 20px;
+
+}
+
+h1{
+  font-size: 3em;
+  font-family: 'Waiting for the Sunrise', 'Lato', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Waiting for the Sunrise', 'Lato', sans-serif;
+  font-size: 1.6em;
+  text-transform: uppercase;
+}
+
+p{
+  font-size: 1em;
+  font-weight: 100;
+}
+
+.yay{
+  color: #d9664a;
+  fill: #d9664a;
+}
+.byline{
+  font-weight: 100;
+  text-align: center;
+  margin: auto;
+}
+
+/* Link styling */
+a, a:link {
+
+  font-weight: 300;
+  color:#d9664a;
+}
+a:visited{
+color:#8a3a26;
+}
+
+a:hover {
+  cursor: pointer;
+  text-decoration: solid;
+}
+
+a:active{
+  text-decoration: solid;
+}
+
+a:focus {
+  outline: 3px solid #d9664a;
+}
+
+/* Buttons */
+.button-container {
+  display: flex;
+  text-align: center;
+  margin: auto;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-around;
+}
+
+button {
+  text-transform: uppercase;
+  padding: 0.5em 1.2em;
+  border: 0.1em solid #d9664a;;
+  margin: 10px auto 2em auto;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-size: .7em;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  color: #d9664a;
+  text-align: center;
+  transition: all 0.2s;
+  background-color: rgba(199,150,82,0);
+  outline: none;
+  position: relative;
+  transition: all 0.3s ease 0s;
+}
+button:hover{
+  color: white;
+  background-color: #d9664a;
+  border: 0.1em solid #d9664a;
+  cursor: pointer;
+}
+.button:active {
+  top: 5px;
+}
+@media screen and (max-width: 500px) {
+   button {
+    display: block;
+    margin: 0.4em auto;
+  }
+}
+
+/* Sliders */
+.input-label {
+  font-size: .8em;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #d9664a;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #d9664a;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* General Chart Styling */
+#dendrogram {
+  text-align: center;
+}
+#dendrogram-svg {
+  position: relative;
+}
+
+/* Dendrogram Styling */
+
+  .node {
     cursor: pointer;
+    fill: black;
   }
   
-  .node circle {
-    fill: #fff;
-    stroke: steelblue;
-    stroke-width: 1.5px;
-  }
-  
-  .node text {
-    font: 10px sans-serif;
+  .node-label {
+    font-size: 10px;
+    stroke: none;
+    opacity: 1;
   }
   
   .link {
     fill: none;
-    stroke: #ccc;
-    stroke-width: 1.5px;
+    stroke: lightgrey;
+    stroke-width: .5px;
   }
 
+  .visited {
+    opacity: .8;
+    stroke-width: 0;
+  }
+
+  .background-circle{ 
+    stroke: #eeeeee;
+    stroke-width: 1px;
+    fill:none;
+  }
   /* Tooltip */
 
   .tooltip {
+    position: absolute;
     background-color: white;
     border: solid;
-    border-width: 2px;
-    border-radius: 5px;
-    padding: 5px;
+    border-width: .5px;
+    border-radius: 2px;
+    padding: 10px 20px;
+    pointer-events: none;
+
   }
 
 /* Details */
   #details {
-    background-color: orchid;
-    height: 100px;
+    background-color: lightgrey;
   }

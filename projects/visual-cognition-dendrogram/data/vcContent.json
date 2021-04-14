@@ -1,303 +1,344 @@
-[
+{
+"depth": 1,
+  "name": "Visual Cognition",
+  "description":"lsdkfjlsdkfjds",
+  "children": [
     {
-      "Tier_1": "Visual Channel",
-      "Tier_2": "V1",
-      "Tier_3": "",
-      "Image URL": "",
-      "VC_Name": "Form"
+      "depth": 2,
+      "name": "Visual Channel",
+      "description":"lsdkfjlsdkfjds",
+      "children": [
+        {
+          "depth": 3,
+          "name": "V1",
+          "description":"lsdkfjlsdkfjds",
+          "children": [
+            {
+              "depth": 4,
+              "name": "V1 Pathway"
+            },
+            {
+              "depth": 4,
+              "name": "Form",
+              "description":"laksdjflaskdfj"
+            },
+            {
+              "depth": 4,
+              "name": "Seeing Color",
+              "description":"laksdjflaskdfj"
+            },
+            {
+              "depth": 4,
+              "name": "Seeing Movement",
+              "description":"laksdjflaskdfj"
+            }
+          ]
+        },
+        {
+          "depth": 3,
+          "name": "Visual Hierarchy",
+          "description":"lsdkfjlsdkfjds",
+          "children": [
+            {
+              "depth": 4,
+              "name": "Color1",
+              "description":"laksdjflaskdfj"
+            },
+            {
+              "depth": 4,
+              "name": "Orientation",
+              "description":"laksdjflaskdfj"
+            },
+            {
+              "depth": 4,
+              "name": "Size",
+              "description":"laksdjflaskdfj"
+            },
+            {
+              "depth": 4,
+              "name": "Motion",
+              "description":"laksdjflaskdfj"
+            },
+            {
+              "depth": 4,
+              "name": "Depth",
+              "description":"laksdjflaskdfj"
+            }
+          ]
+        }
+      ]
     },
     {
-      "Tier_1": "Visual Channel",
-      "Tier_2": "V1",
-      "Tier_3": "",
-      "Image URL": "",
-      "VC_Name": "Color"
+      "depth": 2,
+      "name": "Data Type",
+      "description":"lsdkfjlsdkfjds",
+      "children": [
+        {
+          "depth": 3,
+          "name": "Qualitative Data",
+          "description":"lsdkfjlsdkfjds",
+          "children": [
+            {
+              "depth": 4,
+              "name": "Nominal Data",
+              "description": "kajsdfhksjkdfosd"
+            },
+            {
+              "depth": 4,
+              "name": "Ordinal Data",
+              "description":"laksdjflaskdfj"
+            }
+          ]
+        },
+        {
+          "depth": 3,
+          "name": "Quantitative Data",
+          "description":"lsdkfjlsdkfjds",
+          "children": [
+            {
+              "depth": 4,
+              "name": "Discrete Data",
+              "description":"laksdjflaskdfj"
+            },
+            {
+              "depth": 4,
+              "name": "Continuous Data",
+              "description":"laksdjflaskdfj"
+            }
+          ]
+        }
+      ]
     },
     {
-      "Tier_1": "Visual Channel",
-      "Tier_2": "V1",
-      "Tier_3": "",
-      "Image URL": "",
-      "VC_Name": "Movement1"
+      "depth": 2,
+      "name": "Color",
+      "description":"lsdkfjlsdkfjds",
+      "children": [
+        {
+          "depth": 3,
+          "name": "Dimensions",
+          "description":"lsdkfjlsdkfjds",
+          "children": [
+            {
+              "depth": 4,
+              "name": "Hue",
+              "description":"laksdjflaskdfj"
+            },
+            {
+              "depth": 4,
+              "name": "Saturation",
+              "description":"laksdjflaskdfj"
+            },
+            {
+              "depth": 4,
+              "name": "Brightness",
+              "description":"laksdjflaskdfj"
+            }
+          ]
+        },
+        {
+          "depth": 3,
+          "name": "Discriminability",
+          "description":"lsdkfjlsdkfjds",
+          "children": [
+            {
+              "depth": 4,
+              "name": "Circles",
+              "description":"laksdjflaskdfj"
+            },
+            {
+              "depth": 4,
+              "name": "Rectangles",
+              "description":"laksdjflaskdfj"
+            },
+            {
+              "depth": 4,
+              "name": "Lines",
+              "description":"laksdjflaskdfj"
+            }
+          ]
+        }
+      ]
     },
     {
-      "Tier_1": "Visual Channel",
-      "Tier_2": "Visual Hierarchy",
-      "Tier_3": "",
-      "Image URL": "",
-      "VC_Name": "Color1"
+      "depth": 2,
+      "name": "Attention",
+      "description":"lsdkfjlsdkfjds",
+      "children": [
+        {
+          "depth": 3,
+          "name": "FOMO",
+          "description":"lsdkfjlsdkfjds",
+          "children": [
+            {
+              "depth": 4,
+              "name": "FOMO1"
+            }
+          ]
+        },
+        {
+          "depth": 3,
+          "name": "Disturbing",
+          "description":"lsdkfjlsdkfjds",
+          "children": [
+            {
+              "depth": 4,
+              "name": "Transition Point",
+              "description":"laksdjflaskdfj"
+            },
+            {
+              "depth": 4,
+              "name": "Symbol",
+              "description":"laksdjflaskdfj"
+            },
+            {
+              "depth": 4,
+              "name": "Color2",
+              "description":"laksdjflaskdfj"
+            }
+          ]
+        },
+        {
+          "depth": 3,
+          "name": "Physiological Network",
+          "description":"lsdkfjlsdkfjds",
+          "children": [
+            {
+              "depth": 4,
+              "name": "Network",
+              "description":"laksdjflaskdfj"
+            },
+            {
+              "depth": 4,
+              "name": "Alerting",
+              "description":"laksdjflaskdfj"
+            }
+          ]
+        },
+        {
+          "depth": 3,
+          "name": "Inattention Blindness",
+          "description":"lsdkfjlsdkfjds",
+          "children": [
+            {
+              "depth": 4,
+              "name": "Blindness",
+              "description":"laksdjflaskdfj"
+            },
+            {
+              "depth": 4,
+              "name": "Orienting",
+              "description":"laksdjflaskdfj"
+            },
+            {
+              "depth": 4,
+              "name": "Executing",
+              "description":"laksdjflaskdfj"
+            },
+            {
+              "depth": 4,
+              "name": "You See What You Seek",
+              "description":"laksdjflaskdfj"
+            }
+          ]
+        }
+      ]
     },
     {
-      "Tier_1": "Visual Channel",
-      "Tier_2": "Visual Hierarchy",
-      "Tier_3": "",
-      "Image URL": "",
-      "VC_Name": "Orientation"
-    },
-    {
-      "Tier_1": "Visual Channel",
-      "Tier_2": "Visual Hierarchy",
-      "Tier_3": "",
-      "Image URL": "",
-      "VC_Name": "Size"
-    },
-    {
-      "Tier_1": "Visual Channel",
-      "Tier_2": "Visual Hierarchy",
-      "Tier_3": "",
-      "Image URL": "",
-      "VC_Name": "Motion"
-    },
-    {
-      "Tier_1": "Visual Channel",
-      "Tier_2": "Visual Hierarchy",
-      "Tier_3": "",
-      "Image URL": "",
-      "VC_Name": "Depth"
-    },
-    {
-      "Tier_1": "Data Type",
-      "Tier_2": "Qualitative Data",
-      "Tier_3": "Nominal data",
-      "Image URL": "",
-      "VC_Name": "Gender"
-    },
-    {
-      "Tier_1": "Data Type",
-      "Tier_2": "Qualitative Data",
-      "Tier_3": "Nominal data",
-      "Image URL": "",
-      "VC_Name": "Hair color"
-    },
-    {
-      "Tier_1": "Data Type",
-      "Tier_2": "Qualitative Data",
-      "Tier_3": "Nominal data",
-      "Image URL": "",
-      "VC_Name": "Ethnicity"
-    },
-    {
-      "Tier_1": "Data Type",
-      "Tier_2": "Qualitative Data",
-      "Tier_3": "Ordinal data",
-      "Image URL": "",
-      "VC_Name": "First, Second"
-    },
-    {
-      "Tier_1": "Data Type",
-      "Tier_2": "Qualitative Data",
-      "Tier_3": "Ordinal data",
-      "Image URL": "",
-      "VC_Name": "Letter grade"
-    },
-    {
-      "Tier_1": "Data Type",
-      "Tier_2": "Qualitative Data",
-      "Tier_3": "Ordinal data",
-      "Image URL": "",
-      "VC_Name": "Economic status"
-    },
-    {
-      "Tier_1": "Data Type",
-      "Tier_2": "Quantitative Data",
-      "Tier_3": "Discrete data",
-      "Image URL": "",
-      "VC_Name": "Students number"
-    },
-    {
-      "Tier_1": "Data Type",
-      "Tier_2": "Quantitative Data",
-      "Tier_3": "Discrete data",
-      "Image URL": "",
-      "VC_Name": "Workers number"
-    },
-    {
-      "Tier_1": "Data Type",
-      "Tier_2": "Quantitative Data",
-      "Tier_3": "Discrete data",
-      "Image URL": "",
-      "VC_Name": "Population"
-    },
-    {
-      "Tier_1": "Data Type",
-      "Tier_2": "Quantitative Data",
-      "Tier_3": "Continuous data",
-      "Image URL": "",
-      "VC_Name": "Height of children "
-    },
-    {
-      "Tier_1": "Data Type",
-      "Tier_2": "Quantitative Data",
-      "Tier_3": "Continuous data",
-      "Image URL": "",
-      "VC_Name": "Speed of cars"
-    },
-    {
-      "Tier_1": "Color",
-      "Tier_2": "Color Dimensions",
-      "Tier_3": "",
-      "Image URL": "",
-      "VC_Name": "Hue"
-    },
-    {
-      "Tier_1": "Color",
-      "Tier_2": "Color Dimensions",
-      "Tier_3": "",
-      "Image URL": "",
-      "VC_Name": "Satuation"
-    },
-    {
-      "Tier_1": "Color",
-      "Tier_2": "Color Dimensions",
-      "Tier_3": "",
-      "Image URL": "",
-      "VC_Name": "Brightness"
-    },
-    {
-      "Tier_1": "Color",
-      "Tier_2": "Color Discriminability",
-      "Tier_3": "",
-      "Image URL": "",
-      "VC_Name": "Color perceptions differ"
-    },
-    {
-      "Tier_1": "Color",
-      "Tier_2": "Color Discriminability",
-      "Tier_3": "Mark types",
-      "Image URL": "",
-      "VC_Name": "Circles"
-    },
-    {
-      "Tier_1": "Color",
-      "Tier_2": "Color Discriminability",
-      "Tier_3": "Mark types",
-      "Image URL": "",
-      "VC_Name": "Rectangular"
-    },
-    {
-      "Tier_1": "Color",
-      "Tier_2": "Color Discriminability",
-      "Tier_3": "Mark types",
-      "Image URL": "",
-      "VC_Name": "Lines"
-    },
-    {
-      "Tier_1": "Color",
-      "Tier_2": "Color Discriminability",
-      "Tier_3": "Robust",
-      "Image URL": "",
-      "VC_Name": "Identifiable"
-    },
-    {
-      "Tier_1": "Attention",
-      "Tier_2": "",
-      "Tier_3": "",
-      "Image URL": "",
-      "VC_Name": "Fomo"
-    },
-    {
-      "Tier_1": "Attention",
-      "Tier_2": "Disturbing",
-      "Tier_3": "Transition point",
-      "Image URL": "",
-      "VC_Name": "Symbol"
-    },
-    {
-      "Tier_1": "Attention",
-      "Tier_2": "Disturbing",
-      "Tier_3": "Transition point",
-      "Image URL": "",
-      "VC_Name": "Color2"
-    },
-    {
-      "Tier_1": "Attention",
-      "Tier_2": "Physiological network",
-      "Tier_3": "",
-      "Image URL": "",
-      "VC_Name": "Alerting"
-    },
-    {
-      "Tier_1": "Attention",
-      "Tier_2": "Inattention blindness",
-      "Tier_3": "",
-      "Image URL": "",
-      "VC_Name": "Orienting"
-    },
-    {
-      "Tier_1": "Attention",
-      "Tier_2": "Inattention blindness",
-      "Tier_3": "",
-      "Image URL": "",
-      "VC_Name": "Executing"
-    },
-    {
-      "Tier_1": "Attention",
-      "Tier_2": "Inattention blindness",
-      "Tier_3": "",
-      "Image URL": "",
-      "VC_Name": "You see what you seek"
-    },
-    {
-      "Tier_1": "Motion",
-      "Tier_2": "Internal",
-      "Tier_3": "Eye movement",
-      "Image URL": "",
-      "VC_Name": "Capture objects"
-    },
-    {
-      "Tier_1": "Motion",
-      "Tier_2": "Internal",
-      "Tier_3": "Gesture",
-      "Image URL": "",
-      "VC_Name": "Understand contents"
-    },
-    {
-      "Tier_1": "Motion",
-      "Tier_2": "Internal",
-      "Tier_3": "Mind",
-      "Image URL": "",
-      "VC_Name": "Decode informtion"
-    },
-    {
-      "Tier_1": "Motion",
-      "Tier_2": "Extenal",
-      "Tier_3": "",
-      "Image URL": "",
-      "VC_Name": "Movement2"
-    },
-    {
-      "Tier_1": "Motion",
-      "Tier_2": "Extenal",
-      "Tier_3": "Variable changing",
-      "Image URL": "",
-      "VC_Name": "Color3"
-    },
-    {
-      "Tier_1": "Motion",
-      "Tier_2": "Extenal",
-      "Tier_3": "Variable changing",
-      "Image URL": "",
-      "VC_Name": "Brightness"
-    },
-    {
-      "Tier_1": "Motion",
-      "Tier_2": "Extenal",
-      "Tier_3": "Variable changing",
-      "Image URL": "",
-      "VC_Name": "Shapw"
-    },
-    {
-      "Tier_1": "Motion",
-      "Tier_2": "Extenal",
-      "Tier_3": "Variable changing",
-      "Image URL": "",
-      "VC_Name": "Size"
-    },
-    {
-      "Tier_1": "Motion",
-      "Tier_2": "Extenal",
-      "Tier_3": "Spatial",
-      "Image URL": "",
-      "VC_Name": "Enhance conceptual inference"
+      "depth": 2,
+      "name": "Motion",
+      "description":"lsdkfjlsdkfjds",
+      "children": [
+        {
+          "depth": 3,
+          "name": "Internal",
+          "description":"lsdkfjlsdkfjds",
+          "children": [
+            {
+              "depth": 4,
+              "name": "Eye Movement",
+              "description":"lsdkfjlsdkfjds",
+              "children": [
+                {
+                  "depth": 5,
+                  "name": "Movement",
+                  "description":"lsdkfjlsdkfjds",
+                  "children": []
+                },
+                {
+                  "depth": 5,
+                  "name": "Capturing Objects",
+                  "description":"lsdkfjlsdkfjds",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "depth": 4,
+              "name": "Gesture",
+              "description":"lsdkfjlsdkfjds",
+              "children": [
+                {
+                  "depth": 5,
+                  "name": "Understanding Contents",
+                  "description":"lsdkfjlsdkfjds",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "depth": 4,
+              "name": "Mind",
+              "description":"lsdkfjlsdkfjds",
+              "children": [
+                {
+                  "depth": 5,
+                  "name": "Decoding Information",
+                  "description":"lsdkfjlsdkfjds",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "depth": 3,
+          "name": "External",
+          "description":"lsdkfjlsdkfjds",
+          "children": [
+            {
+              "depth": 4,
+              "name": "Movement2",
+              "description":"laksdjflaskdfj"
+            },
+            {
+              "depth": 4,
+              "name": "Color3",
+              "description":"laksdjflaskdfj"
+            },
+            {
+              "depth": 4,
+              "name": "Brightness2",
+              "description":"laksdjflaskdfj"
+            },
+            {
+              "depth": 4,
+              "name": "Shape2",
+              "description":"laksdjflaskdfj"
+            },
+            {
+              "depth": 4,
+              "name": "Size2",
+              "description":"laksdjflaskdfj"
+            },
+            {
+              "depth": 4,
+              "name": "Spatial",
+              "description":"laksdjflaskdfj"
+            }
+          ]
+        }
+      ]
     }
-   ]
+  ]
+}
