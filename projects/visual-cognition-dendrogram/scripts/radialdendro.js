@@ -1,7 +1,7 @@
 var width = d3.min([window.innerWidth, 700]),
 height = d3.min([window.innerWidth, 700]),
 radius = width/2,
-maxRad = 10,
+maxRad = 12,
 distance = 70, // radial spread
 duration = 100,
 depth = 5;
@@ -28,6 +28,7 @@ var details = d3.select("#details")
   .style("opacity",1);
 var topic = d3.select("#topic");
 var topicDesc = d3.select("#topic-description");
+var topicImg = document.getElementById("topic-image");
 
 // Draw SVG and G
 var svg = d3.select("#dendrogram")
@@ -99,7 +100,6 @@ var nodeSvg, linkSvg, nodeEnter, linkEnter;
         //root.children.forEach(collapse);
         update(root);
     });
-
 
 function update(source) {
     //root = treeMap(root);
@@ -221,8 +221,18 @@ function update(source) {
 };
 
 function click(d) {
-    topic.text(d.data.name);
-    topicDesc.text(d.data.description);
+    var prompt = d3.select("#prompt").style("display","none");
+
+    var t = {
+        name: d.data.name,
+        description: d.data.description,
+        img: d.data.img
+    };
+
+    topic.text(t.name);
+    topicDesc.text(t.description);
+    // topicImg.src(t.img);
+    
 
   if (d.children) {
     d._children = d.children;
@@ -284,22 +294,10 @@ var mouseleave = function(d) {
       .attr("class", "visited")
   };
 
+// Reset Button
+var resetButton = d3.select("#reset-button")
+  .on("click", test);
 
-
-// Buttons
-var nodeLabels = g.selectAll("node-label");
-var checkBox = document.getElementById("node-label-toggle")
-    .on("click", nodeLabelToggle);
-
-var nodeLabelToggle = function() {
-    // Get the checkbox
-
-    // If the checkbox is checked, display the output text
-    if (checkBox.checked == true){
-        console.log("hey");
-        nodeLabels.style("opacity","1");
-    } else {
-        console.log("nope");
-        nodeLabels.style("opacity","0");
-    }
-  }
+var test = function(d) {
+    console.log("test!");
+}

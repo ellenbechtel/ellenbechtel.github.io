@@ -25,6 +25,19 @@
             <h1>A Dendrogram of<br><span class="yay">Visual Cognition</span></h1>
             <p class="byline">By Yuke and Ellen</p>
         </div>
+       
+        <div class="chart content">
+            <div id="dendrogram"></div>
+        </div>
+
+        <div id="details" class="content">
+            <p id="prompt">Click on a node to learn more</p>
+            <h2 id="topic"></h2>
+            <div id="topic-container">
+                <p id="topic-description"></p>
+                <div><img id="topic-image" src=""></div>
+            </div>            
+        </div>
         <div id="settings" class="content">
             <h2>Settings</h2>
             <div class="button-container">
@@ -43,25 +56,11 @@
                     </label>
                 </div>
                 <div class="input-container">
-                    <p class="input-label">Other Setting</p>
-                    <label class="switch">
-                        <input type="checkbox" checked>
-                        <span class="slider round"></span>
-                    </label>
+                    <p class="input-label">Reset</p>
+                    <button id="reset-button">Expand All</button>
                 </div>
-                  
-                <!-- <button id="node-label-button">Show Node Labels</button>
-                <button id="other-button">do something else</button> -->
             </div>
       
-        </div>
-        <div class="chart content">
-            <div id="dendrogram"></div>
-        </div>
-
-        <div id="details" class="content">
-            <h2>More about <span id="topic"></span></h2>
-            <p id="topic-description"></p>
         </div>
         <div id="footnotes" class="content">
             <h2>Resources</h2>
@@ -72,6 +71,6 @@
 
     </body>
     <!-- <script src="./data/vsContent.json"></script> -->
-    <script src="./scripts/buttons.js"></script>
     <script src="./scripts/radialdendro.js"></script>
+    <script src="./scripts/buttons.js"></script>
 </html>
