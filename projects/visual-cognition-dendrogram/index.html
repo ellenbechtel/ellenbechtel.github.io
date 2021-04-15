@@ -19,50 +19,64 @@
         <link rel="stylesheet" href="style.css"/>
         <title>Visual Cognition Dendrogram</title>
         <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="https://unpkg.com/intersection-observer"></script>
+        <script src="https://unpkg.com/scrollama"></script>
     </head>
     <body>
         <div id="header" class="content">
             <h1>A Dendrogram of<br><span class="yay">Visual Cognition</span></h1>
             <p class="byline">By Yuke and Ellen</p>
         </div>
-        <div id="settings" class="content">
-            <div class="button-container">
-                <h2>Settings</h2>
-                <div class="input-container">
-                    <p class="input-label">Node Labels</p>
-                    <label class="switch">
-                        <input type="checkbox" id="node-label-toggle" checked>
-                        <span class="slider round"></span>
-                    </label>
+        <section id="scrolly">
+            <article>
+                <div class="step" data-step="1" data-scrollama-index="0">
+                    <div id="details" class="content">
+                        <p id="prompt">Click on a node to learn more</p>
+                        <h2 id="topic" class="yay"></h2>
+                        <div id="topic-container">
+                            <p id="topic-description"></p>
+                            <div><img id="topic-image" src=""></div>
+                        </div>            
+                    </div>
                 </div>
-                <div class="input-container">
-                    <p class="input-label">Background Circles</p>
-                    <label class="switch">
-                        <input type="checkbox" id="background-circle-toggle" checked>
-                        <span class="slider round"></span>
-                    </label>
+                <div class="step" data-step="2" data-scrollama-index="1"></div>
+            </article>
+            <figure>
+                <div class="chart content">
+                    <div id="dendrogram"></div>
+                    <div id="tooltip"></div>
                 </div>
-                <div class="input-container">
-                    <p class="input-label">Reset</p>
-                    <button id="reset-button">Expand All</button>
-                </div>
-            </div>
+                <div id="settings" class="content">
+                    <div class="button-container">
+                        <h2>Settings</h2>
+                        <div class="input-container">
+                            <p class="input-label">Node Labels</p>
+                            <label class="switch">
+                                <input type="checkbox" id="node-label-toggle" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="input-container">
+                            <p class="input-label">Background Circles</p>
+                            <label class="switch">
+                                <input type="checkbox" id="background-circle-toggle" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="input-container">
+                            <p class="input-label">Reset</p>
+                            <button id="reset-button">Expand All</button>
+                        </div>
+                    </div>
+            </figure>
+        </section>
+        
       
         </div>
        
-        <div class="chart content">
-            <div id="dendrogram"></div>
-            <div id="tooltip"></div>
-        </div>
+        
 
-        <div id="details" class="content">
-            <p id="prompt">Click on a node to learn more</p>
-            <h2 id="topic" class="yay"></h2>
-            <div id="topic-container">
-                <p id="topic-description"></p>
-                <div><img id="topic-image" src=""></div>
-            </div>            
-        </div>
+        
       
         <div id="footnotes" class="content">
             <h2>Resources</h2>
@@ -72,7 +86,7 @@
         
 
     </body>
-    <!-- <script src="./data/vsContent.json"></script> -->
+    <script src="./scripts/scrolly.js"></script>
     <script src="./scripts/radialdendro.js"></script>
     <script src="./scripts/buttons.js"></script>
 </html>
