@@ -324,28 +324,17 @@ var mouseleave = function(d) {
 
 
 
+
+// Buttons
+
+// expand all button
 var resetButton = d3.select("#reset-button")
   .on("click", expandAll);
 
+// node label toggle
+var toggle = true;
 
+d3.select("#node-label-toggle").on("click", function() {
+    d3.selectAll(".node-label").style("opacity", +(toggle = !toggle));
+})
 
-
-  // Buttons
-var nodeLabels = d3.selectAll(".node-label");
-console.log("node",nodeLabels);
-
-var checkBox = d3.select("#node-label-toggle")
-    .on("click", nodeLabelToggle);
-
-function nodeLabelToggle() {
-    // Get the checkbox
-
-    // If the checkbox is checked, display the output text
-    if (checkBox._groups[0][0].checked == true){
-        console.log("hey",nodeLabels);
-        nodeLabels.style("opacity","1");
-    } else {
-        console.log("nope",nodeLabels);
-        nodeLabels.style("opacity","0");
-    }
-  };
