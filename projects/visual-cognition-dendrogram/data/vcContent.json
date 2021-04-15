@@ -7,13 +7,13 @@
     {
       "depth": 2,
       "name": "Visual Channel",
-      "img": "img/images-01.svg",
+      "img": "./img/images-01.svg",
       "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas maecenas pharetra convallis posuere morbi leo. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Arcu odio ut sem nulla pharetra diam sit amet. Egestas tellus rutrum tellus pellentesque eu. Vel facilisis volutpat est velit. Amet consectetur adipiscing elit duis tristique sollicitudin.",
       "children": [
         {
           "depth": 3,
           "name": "V1",
-          "img": "img/images-01.svg",
+          "img": "./img/images-02.svg",
           "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas maecenas pharetra convallis posuere morbi leo. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Arcu odio ut sem nulla pharetra diam sit amet. Egestas tellus rutrum tellus pellentesque eu. Vel facilisis volutpat est velit. Amet consectetur adipiscing elit duis tristique sollicitudin.",
           "children": [
             {
@@ -23,19 +23,19 @@
             {
               "depth": 4,
               "name": "Form",
-              "img": "img/images-01.svg",
+              "img": "./img/images-02.svg",
               "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
             },
             {
               "depth": 4,
               "name": "Seeing Color",
-              "img": "img/images-01.svg",
+              "img": "./img/images-02.svg",
               "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
             },
             {
               "depth": 4,
               "name": "Seeing Movement",
-              "img": "img/images-01.svg",
+              "img": "./img/images-01.svg",
               "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
             }
           ]
@@ -43,37 +43,37 @@
         {
           "depth": 3,
           "name": "Visual Hierarchy",
-          "img": "img/images-01.svg",
+          "img": "./img/images-02.svg",
           "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas maecenas pharetra convallis posuere morbi leo. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Arcu odio ut sem nulla pharetra diam sit amet. Egestas tellus rutrum tellus pellentesque eu. Vel facilisis volutpat est velit. Amet consectetur adipiscing elit duis tristique sollicitudin.",
           "children": [
             {
               "depth": 4,
               "name": "Color1",
-              "img": "img/images-01.svg",
+              "img": "./img/images-02.svg",
               "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
             },
             {
               "depth": 4,
               "name": "Orientation",
-              "img": "img/images-01.svg",
+              "img": "./img/images-02.svg",
               "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
             },
             {
               "depth": 4,
               "name": "Size",
-              "img": "img/images-01.svg",
+              "img": "./img/images-02.svg",
               "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
             },
             {
               "depth": 4,
               "name": "Motion",
-              "img": "img/images-01.svg",
+              "img": "./img/images-01.svg",
               "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
             },
             {
               "depth": 4,
               "name": "Depth",
-              "img": "img/images-01.svg",
+              "img": "./img/images-02.svg",
               "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
             }
           ]
@@ -83,25 +83,25 @@
     {
       "depth": 2,
       "name": "Data Type",
-      "img": "img/images-01.svg",
+      "img": "./img/images-01.svg",
       "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas maecenas pharetra convallis posuere morbi leo. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Arcu odio ut sem nulla pharetra diam sit amet. Egestas tellus rutrum tellus pellentesque eu. Vel facilisis volutpat est velit. Amet consectetur adipiscing elit duis tristique sollicitudin.",
       "children": [
         {
           "depth": 3,
           "name": "Qualitative Data",
-          "img": "img/images-01.svg",
+          "img": "./img/images-03.svg",
           "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas maecenas pharetra convallis posuere morbi leo. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Arcu odio ut sem nulla pharetra diam sit amet. Egestas tellus rutrum tellus pellentesque eu. Vel facilisis volutpat est velit. Amet consectetur adipiscing elit duis tristique sollicitudin.",
           "children": [
             {
               "depth": 4,
               "name": "Nominal Data",
-              "img": "img/images-01.svg",
+              "img": "./img/images-03.svg",
               "description": "kajsdfhksjkdfosd"
             },
             {
               "depth": 4,
               "name": "Ordinal Data",
-              "img": "img/images-01.svg",
+              "img": "./img/images-03.svg",
               "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
             }
           ]
@@ -109,19 +109,19 @@
         {
           "depth": 3,
           "name": "Quantitative Data",
-          "img": "img/images-01.svg",
+          "img": "./img/images-03.svg",
           "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas maecenas pharetra convallis posuere morbi leo. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Arcu odio ut sem nulla pharetra diam sit amet. Egestas tellus rutrum tellus pellentesque eu. Vel facilisis volutpat est velit. Amet consectetur adipiscing elit duis tristique sollicitudin.",
           "children": [
             {
               "depth": 4,
               "name": "Discrete Data",
-              "img": "img/images-01.svg",
+              "img": "./img/images-03.svg",
               "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
             },
             {
               "depth": 4,
               "name": "Continuous Data",
-              "img": "img/images-01.svg",
+              "img": "./img/images-03.svg",
               "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
             }
           ]
@@ -131,31 +131,31 @@
     {
       "depth": 2,
       "name": "Color",
-      "img": "img/images-01.svg",
+      "img": "./img/images-01.svg",
       "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas maecenas pharetra convallis posuere morbi leo. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Arcu odio ut sem nulla pharetra diam sit amet. Egestas tellus rutrum tellus pellentesque eu. Vel facilisis volutpat est velit. Amet consectetur adipiscing elit duis tristique sollicitudin.",
       "children": [
         {
           "depth": 3,
           "name": "Dimensions",
-          "img": "img/images-01.svg",
+          "img": "./img/images-03.svg",
           "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas maecenas pharetra convallis posuere morbi leo. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Arcu odio ut sem nulla pharetra diam sit amet. Egestas tellus rutrum tellus pellentesque eu. Vel facilisis volutpat est velit. Amet consectetur adipiscing elit duis tristique sollicitudin.",
           "children": [
             {
               "depth": 4,
               "name": "Hue",
-              "img": "img/images-01.svg",
+              "img": "./img/images-03.svg",
               "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
             },
             {
               "depth": 4,
               "name": "Saturation",
-              "img": "img/images-01.svg",
+              "img": "./img/images-04.svg",
               "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
             },
             {
               "depth": 4,
               "name": "Brightness",
-              "img": "img/images-01.svg",
+              "img": "./img/images-04.svg",
               "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
             }
           ]
@@ -163,25 +163,25 @@
         {
           "depth": 3,
           "name": "Discriminability",
-          "img": "img/images-01.svg",
+          "img": "./img/images-04.svg",
           "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas maecenas pharetra convallis posuere morbi leo. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Arcu odio ut sem nulla pharetra diam sit amet. Egestas tellus rutrum tellus pellentesque eu. Vel facilisis volutpat est velit. Amet consectetur adipiscing elit duis tristique sollicitudin.",
           "children": [
             {
               "depth": 4,
               "name": "Circles",
-              "img": "img/images-01.svg",
+              "img": "./img/images-04.svg",
               "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
             },
             {
               "depth": 4,
               "name": "Rectangles",
-              "img": "img/images-01.svg",
+              "img": "./img/images-04.svg",
               "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
             },
             {
               "depth": 4,
               "name": "Lines",
-              "img": "img/images-01.svg",
+              "img": "./img/images-04.svg",
               "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
             }
           ]
@@ -191,13 +191,13 @@
     {
       "depth": 2,
       "name": "Attention",
-      "img": "img/images-01.svg",
+      "img": "./img/images-01.svg",
       "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas maecenas pharetra convallis posuere morbi leo. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Arcu odio ut sem nulla pharetra diam sit amet. Egestas tellus rutrum tellus pellentesque eu. Vel facilisis volutpat est velit. Amet consectetur adipiscing elit duis tristique sollicitudin.",
       "children": [
         {
           "depth": 3,
           "name": "FOMO",
-          "img": "img/images-01.svg",
+          "img": "./img/images-04.svg",
           "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas maecenas pharetra convallis posuere morbi leo. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Arcu odio ut sem nulla pharetra diam sit amet. Egestas tellus rutrum tellus pellentesque eu. Vel facilisis volutpat est velit. Amet consectetur adipiscing elit duis tristique sollicitudin.",
           "children": [
             {
@@ -209,25 +209,25 @@
         {
           "depth": 3,
           "name": "Disturbing",
-          "img": "img/images-01.svg",
+          "img": "./img/images-04.svg",
           "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas maecenas pharetra convallis posuere morbi leo. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Arcu odio ut sem nulla pharetra diam sit amet. Egestas tellus rutrum tellus pellentesque eu. Vel facilisis volutpat est velit. Amet consectetur adipiscing elit duis tristique sollicitudin.",
           "children": [
             {
               "depth": 4,
               "name": "Transition Point",
-              "img": "img/images-01.svg",
+              "img": "./img/images-05.svg",
               "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
             },
             {
               "depth": 4,
               "name": "Symbol",
-              "img": "img/images-01.svg",
+              "img": "./img/images-05.svg",
               "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
             },
             {
               "depth": 4,
               "name": "Color2",
-              "img": "img/images-01.svg",
+              "img": "./img/images-05.svg",
               "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
             }
           ]
@@ -235,19 +235,19 @@
         {
           "depth": 3,
           "name": "Physiological Network",
-          "img": "img/images-01.svg",
+          "img": "./img/images-05.svg",
           "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas maecenas pharetra convallis posuere morbi leo. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Arcu odio ut sem nulla pharetra diam sit amet. Egestas tellus rutrum tellus pellentesque eu. Vel facilisis volutpat est velit. Amet consectetur adipiscing elit duis tristique sollicitudin.",
           "children": [
             {
               "depth": 4,
               "name": "Network",
-              "img": "img/images-01.svg",
+              "img": "./img/images-05.svg",
               "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
             },
             {
               "depth": 4,
               "name": "Alerting",
-              "img": "img/images-01.svg",
+              "img": "./img/images-06.svg",
               "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
             }
           ]
@@ -255,31 +255,31 @@
         {
           "depth": 3,
           "name": "Inattention Blindness",
-          "img": "img/images-01.svg",
+          "img": "./img/images-06.svg",
           "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas maecenas pharetra convallis posuere morbi leo. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Arcu odio ut sem nulla pharetra diam sit amet. Egestas tellus rutrum tellus pellentesque eu. Vel facilisis volutpat est velit. Amet consectetur adipiscing elit duis tristique sollicitudin.",
           "children": [
             {
               "depth": 4,
               "name": "Blindness",
-              "img": "img/images-01.svg",
+              "img": "./img/images-06.svg",
               "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
             },
             {
               "depth": 4,
               "name": "Orienting",
-              "img": "img/images-01.svg",
+              "img": "./img/images-06.svg",
               "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
             },
             {
               "depth": 4,
               "name": "Executing",
-              "img": "img/images-01.svg",
+              "img": "./img/images-06.svg",
               "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
             },
             {
               "depth": 4,
               "name": "You See What You Seek",
-              "img": "img/images-01.svg",
+              "img": "./img/images-07.svg",
               "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
             }
           ]
@@ -289,32 +289,32 @@
     {
       "depth": 2,
       "name": "Motion",
-      "img": "img/images-01.svg",
+      "img": "./img/images-07.svg",
       "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas maecenas pharetra convallis posuere morbi leo. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Arcu odio ut sem nulla pharetra diam sit amet. Egestas tellus rutrum tellus pellentesque eu. Vel facilisis volutpat est velit. Amet consectetur adipiscing elit duis tristique sollicitudin.",
       "children": [
         {
           "depth": 3,
           "name": "Internal",
-          "img": "img/images-01.svg",
+          "img": "./img/images-07.svg",
           "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas maecenas pharetra convallis posuere morbi leo. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Arcu odio ut sem nulla pharetra diam sit amet. Egestas tellus rutrum tellus pellentesque eu. Vel facilisis volutpat est velit. Amet consectetur adipiscing elit duis tristique sollicitudin.",
           "children": [
             {
               "depth": 4,
               "name": "Eye Movement",
-              "img": "img/images-01.svg",
+              "img": "./img/images-07.svg",
               "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas maecenas pharetra convallis posuere morbi leo. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Arcu odio ut sem nulla pharetra diam sit amet. Egestas tellus rutrum tellus pellentesque eu. Vel facilisis volutpat est velit. Amet consectetur adipiscing elit duis tristique sollicitudin.",
               "children": [
                 {
                   "depth": 5,
                   "name": "Movement",
-                  "img": "img/images-01.svg",
+                  "img": "./img/images-07.svg",
                   "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas maecenas pharetra convallis posuere morbi leo. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Arcu odio ut sem nulla pharetra diam sit amet. Egestas tellus rutrum tellus pellentesque eu. Vel facilisis volutpat est velit. Amet consectetur adipiscing elit duis tristique sollicitudin.",
                   "children": []
                 },
                 {
                   "depth": 5,
                   "name": "Capturing Objects",
-                  "img": "img/images-01.svg",
+                  "img": "./img/images-07.svg",
                   "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas maecenas pharetra convallis posuere morbi leo. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Arcu odio ut sem nulla pharetra diam sit amet. Egestas tellus rutrum tellus pellentesque eu. Vel facilisis volutpat est velit. Amet consectetur adipiscing elit duis tristique sollicitudin.",
                   "children": []
                 }
@@ -323,13 +323,13 @@
             {
               "depth": 4,
               "name": "Gesture",
-              "img": "img/images-01.svg",
+              "img": "./img/images-07.svg",
               "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas maecenas pharetra convallis posuere morbi leo. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Arcu odio ut sem nulla pharetra diam sit amet. Egestas tellus rutrum tellus pellentesque eu. Vel facilisis volutpat est velit. Amet consectetur adipiscing elit duis tristique sollicitudin.",
               "children": [
                 {
                   "depth": 5,
                   "name": "Understanding Contents",
-                  "img": "img/images-01.svg",
+                  "img": "./img/images-08.svg",
                   "description":"lsdkfjlsdkfjds",
                   "children": []
                 }
@@ -338,13 +338,13 @@
             {
               "depth": 4,
               "name": "Mind",
-              "img": "img/images-01.svg",
+              "img": "./img/images-08.svg",
               "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas maecenas pharetra convallis posuere morbi leo. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Arcu odio ut sem nulla pharetra diam sit amet. Egestas tellus rutrum tellus pellentesque eu. Vel facilisis volutpat est velit. Amet consectetur adipiscing elit duis tristique sollicitudin.",
               "children": [
                 {
                   "depth": 5,
                   "name": "Decoding Information",
-                  "img": "img/images-01.svg",
+                  "img": "./img/images-01.svg",
                   "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas maecenas pharetra convallis posuere morbi leo. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Arcu odio ut sem nulla pharetra diam sit amet. Egestas tellus rutrum tellus pellentesque eu. Vel facilisis volutpat est velit. Amet consectetur adipiscing elit duis tristique sollicitudin.",
                   "children": []
                 }
@@ -355,43 +355,43 @@
         {
           "depth": 3,
           "name": "External",
-          "img": "img/images-01.svg",
+          "img": "./img/images-03.svg",
           "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas maecenas pharetra convallis posuere morbi leo. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Arcu odio ut sem nulla pharetra diam sit amet. Egestas tellus rutrum tellus pellentesque eu. Vel facilisis volutpat est velit. Amet consectetur adipiscing elit duis tristique sollicitudin.",
           "children": [
             {
               "depth": 4,
               "name": "Movement2",
-              "img": "img/images-01.svg",
+              "img": "./img/images-08.svg",
               "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
             },
             {
               "depth": 4,
               "name": "Color3",
-              "img": "img/images-01.svg",
+              "img": "./img/images-08.svg",
               "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
             },
             {
               "depth": 4,
               "name": "Brightness2",
-              "img": "img/images-01.svg",
+              "img": "./img/images-08.svg",
               "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
             },
             {
               "depth": 4,
               "name": "Shape2",
-              "img": "img/images-01.svg",
+              "img": "./img/images-08.svg",
               "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
             },
             {
               "depth": 4,
               "name": "Size2",
-              "img": "img/images-01.svg",
+              "img": "./img/images-08.svg",
               "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
             },
             {
               "depth": 4,
               "name": "Spatial",
-              "img": "img/images-01.svg",
+              "img": "./img/images-08.svg",
               "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
             }
           ]

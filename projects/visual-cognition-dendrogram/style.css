@@ -252,3 +252,12 @@ input:checked + .slider:before {
     align-items: stretch;
     justify-content: space-around;
   }
+
+  #topic-description {
+    min-width: 200px;
+  }
+
+  #topic-image {
+    min-width: 100px;
+    height: auto;
+  }

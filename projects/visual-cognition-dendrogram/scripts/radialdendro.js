@@ -28,7 +28,7 @@ var details = d3.select("#details")
   .style("opacity",1);
 var topic = d3.select("#topic");
 var topicDesc = d3.select("#topic-description");
-var topicImg = document.getElementById("topic-image");
+var topicImg = d3.select("#topic-image");
 
 // Draw SVG and G
 var svg = d3.select("#dendrogram")
@@ -236,7 +236,7 @@ function click(d) {
 
     topic.text(t.name);
     topicDesc.text(t.description);
-    // topicImg.src(t.img);
+    topicImg.attr("src",t.img);
     
 
   if (d.children) {
