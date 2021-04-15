@@ -107,6 +107,7 @@ var nodeSvg, linkSvg, nodeEnter, linkEnter;
     });
 
 function update(source) {
+    console.log("it ran!")
     //root = treeMap(root);
     nodes = treeMap(root).descendants();
     //console.log(nodes);
@@ -158,7 +159,6 @@ function update(source) {
 
     nodeSvg.select("circle")
         .style("fill", color);
-
 
     nodeUpdate.select("text")
         .style("fill-opacity", 1);
@@ -249,6 +249,23 @@ function click(d) {
   update(d);
 }
 
+function expand(d){   
+    console.log(d, "yo!")
+    var children = (d.children)?d.children:d._children;
+    if (d._children) {        
+        d.children = d._children;
+        d._children = null;       
+    }
+    if(children)
+      children.forEach(expand);
+}
+
+function expandAll(){
+    expand(root); 
+    update(root);
+}
+
+
 function color(d) {
   return d._children ? colors.collapsed // collapsed package
       : d.children ? colors.expanded // expanded package
@@ -279,7 +296,7 @@ var mouseover = function(d){
     tooltip.text(d.name)
         .style("opacity",1);
     d3.select(this)
-      .style("stroke", "black")
+      .style("stroke", colors.highlight)
       .style("fill", colors.highlight)
       .style("opacity", 1);
   };
@@ -289,8 +306,8 @@ var mousemove = function(d) {
     tooltip
         .style("left", (d3.event.pageX + 5) + "px")
         .style("top", (d3.event.pageY + 20) + "px");
-    d3.selectAll(".node")
-        style("opacity", .5);
+    // d3.selectAll(".node")
+    //     .style("opacity", .5);
     d3.select(this)
         .style("stroke", "black")
         .style("fill", colors.highlight)
@@ -307,19 +324,14 @@ var mouseleave = function(d) {
 
 
 
-var test = function() {
-    console.log("ANYTHING!");
-}
-
-// // Reset Button
-// var resetButton = d3.select("#reset-button")
-//     .on("click", update());
+var resetButton = d3.select("#reset-button")
+  .on("click", expandAll);
 
 
 
 
   // Buttons
-var nodeLabels = svg.selectAll(".node-label");
+var nodeLabels = d3.selectAll(".node-label");
 console.log("node",nodeLabels);
 
 var checkBox = d3.select("#node-label-toggle")
