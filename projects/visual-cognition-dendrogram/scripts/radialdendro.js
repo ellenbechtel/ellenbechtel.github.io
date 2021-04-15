@@ -65,9 +65,13 @@ function connector(d) {
 
 
 
+
+
 var treeMap = d3.tree()
     .size([width/2,height/2]), // this is how much of the circumference the outer ring of nodes takes up
     root;
+
+
 var nodeSvg, linkSvg, nodeEnter, linkEnter;
 
     d3.json("data/vcContent.json",function(error,treeData){
@@ -99,6 +103,7 @@ var nodeSvg, linkSvg, nodeEnter, linkEnter;
         
         //root.children.forEach(collapse);
         update(root);
+
     });
 
 function update(source) {
@@ -138,7 +143,7 @@ function update(source) {
 
 
     nodeEnter.append("text")
-        .attr("dy", ".15em")
+        .attr("dy", ".1em")
         .attr("x", function(d) { return d.x < 180 === !d.children ? 10 : -10; })
         .attr("class","node-label")
         .style("text-anchor", function(d) { return d.x < 180 === !d.children ? "start" : "end"; })
@@ -284,6 +289,12 @@ var mousemove = function(d) {
     tooltip
         .style("left", (d3.event.pageX + 5) + "px")
         .style("top", (d3.event.pageY + 20) + "px");
+    d3.selectAll(".node")
+        style("opacity", .5);
+    d3.select(this)
+        .style("stroke", "black")
+        .style("fill", colors.highlight)
+        .style("opacity", 1);
 };
   
 // mouse leave
@@ -294,10 +305,35 @@ var mouseleave = function(d) {
       .attr("class", "visited")
   };
 
-// Reset Button
-var resetButton = d3.select("#reset-button")
-  .on("click", test);
 
-var test = function(d) {
-    console.log("test!");
+
+var test = function() {
+    console.log("ANYTHING!");
 }
+
+// // Reset Button
+// var resetButton = d3.select("#reset-button")
+//     .on("click", update());
+
+
+
+
+  // Buttons
+var nodeLabels = svg.selectAll(".node-label");
+console.log("node",nodeLabels);
+
+var checkBox = d3.select("#node-label-toggle")
+    .on("click", nodeLabelToggle);
+
+function nodeLabelToggle() {
+    // Get the checkbox
+
+    // If the checkbox is checked, display the output text
+    if (checkBox._groups[0][0].checked == true){
+        console.log("hey",nodeLabels);
+        nodeLabels.style("opacity","1");
+    } else {
+        console.log("nope",nodeLabels);
+        nodeLabels.style("opacity","0");
+    }
+  };

@@ -209,7 +209,7 @@ input:checked + .slider:before {
   .node-label {
     font-size: 10px;
     stroke: none;
-    opacity: 0;
+    opacity:.2;
   }
   
   .link {
@@ -242,7 +242,7 @@ input:checked + .slider:before {
   }
 
 /* Details */
-  #details {
+  #details, #settings {
     background-color: lightgrey;
   }
 
