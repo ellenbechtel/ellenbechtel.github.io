@@ -224,7 +224,7 @@ input:checked + .slider:before {
   }
 
   .background-circle{ 
-    stroke: #eeeeee;
+    stroke: lightgrey;
     stroke-width: 1px;
     fill:none;
   }
