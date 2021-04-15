@@ -20,7 +20,7 @@ var i = 0;
 
 
 // Extra Content
-var tooltip = d3.select("#dendrogram")
+var tooltip = d3.select("#tooltip")
   .append("div")
     .style("opacity",0)
     .attr("class", "tooltip");
@@ -338,3 +338,9 @@ d3.select("#node-label-toggle").on("click", function() {
     d3.selectAll(".node-label").style("opacity", +(toggle = !toggle));
 })
 
+// background circle toggle
+var toggleCirc = true;
+
+d3.select("#background-circle-toggle").on("click", function() {
+    d3.selectAll(".background-circle").style("opacity", +(toggleCirc = !toggleCirc));
+})
