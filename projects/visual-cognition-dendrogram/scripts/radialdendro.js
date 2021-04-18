@@ -1,15 +1,17 @@
-var width = d3.min([window.innerWidth, 700]),
-height = d3.min([window.innerWidth, 700]),
+var width = 550,
+height = width,
 radius = width/2,
-maxRad = 12,
-distance = 70, // radial spread
+maxRad = 20,
+distance = 40, // radial spread
 duration = 100,
 depth = 5;
 
+console.log(width, "width")
+
 // colors for nodes
 var colors = {
-    collapsed: "#666666",
-    expanded: "#cccccc",
+    collapsed: "black",
+    expanded: "black",
     leaf: "#000000",
     highlight: "#d9664a"
 }
@@ -35,7 +37,9 @@ var svg = d3.select("#dendrogram")
     .append("svg")
     .attr("width",width)
     .attr("height",height)
-    .attr("id","#dendrogram-svg");
+    .attr("viewBox", `0 0 ${width} ${height}`)
+    .attr("id","dendrogram-svg")
+    .attr("class", "svg-content-responsive");
 
 // Draw background circles
 var gBackground = svg.append("g")
@@ -68,7 +72,7 @@ function connector(d) {
 
 
 var treeMap = d3.tree()
-    .size([width/2,height/2]), // this is how much of the circumference the outer ring of nodes takes up
+    .size([width/1.5,height/1.5]), // this is how much of the circumference the outer ring of nodes takes up
     root;
 
 
@@ -130,17 +134,15 @@ function update(source) {
         .append("g")
         //.attr("class", function(d) { return "node" + (d.children ? " node--internal" : " node--leaf"); })
         .attr("class", "node")
-        .attr("transform", function(d) { return "translate(" + project(d.x, d.y) + ")"; })
-        //.attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
-        .on("click",click)
-        .on("mouseover", function(d) { return "minu"; });
+        .attr("transform", function(d) { return "translate(" + project(d.x, d.y) + ")"; });
 
     nodeEnter.append("circle")
-        .attr("r", function(d){ return maxRad/d.data.depth })
+        .attr("r", function(d){ return maxRad/(2*d.data.depth) })
         .style("fill", color)
         .on("mouseover", mouseover)
         .on("mousemove", mousemove)
-        .on("mouseleave", mouseleave);
+        .on("mouseleave", mouseleave)
+        .on("click",click);
 
 
     nodeEnter.append("text")
@@ -225,32 +227,9 @@ function update(source) {
         .remove();
 };
 
-function click(d) {
-    var prompt = d3.select("#prompt").style("display","none");
 
-    var t = {
-        name: d.data.name,
-        description: d.data.description,
-        img: d.data.img
-    };
-
-    topic.text(t.name);
-    topicDesc.text(t.description);
-    topicImg.attr("src",t.img);
-    
-
-  if (d.children) {
-    d._children = d.children;
-    d.children = null;
-  } else {
-    d.children = d._children;
-    d._children = null;
-  }
-  update(d);
-}
 
 function expand(d){   
-    console.log(d, "yo!")
     var children = (d.children)?d.children:d._children;
     if (d._children) {        
         d.children = d._children;
@@ -291,14 +270,41 @@ function project(x, y) {
   return [radius * Math.cos(angle), radius * Math.sin(angle)];
 }
 
+// click
+function click(d) {
+    var prompt = d3.select("#prompt").style("display","none");
+    console.log(d,"d")
+    var t = {
+        name: d.data.name,
+        description: d.data.description,
+        img: d.data.img
+    };
+
+    topic.text(t.name);
+    topicDesc.text(t.description);
+    topicImg.attr("src",t.img);
+    
+
+  if (d.children) {
+    d._children = d.children;
+    d.children = null;
+  } else {
+    d.children = d._children;
+    d._children = null;
+  }
+  update(d);
+
+  d3.selectAll("circle").classed("active", false);
+  d3.select(this).classed("active", true);
+}
+
 // hover
 var mouseover = function(d){
     tooltip.text(d.name)
         .style("opacity",1);
     d3.select(this)
-      .style("stroke", colors.highlight)
-      .style("fill", colors.highlight)
-      .style("opacity", 1);
+      .style("stroke", "black")
+      .style("fill", colors.highlight);
   };
 
 // mouse move
@@ -310,8 +316,7 @@ var mousemove = function(d) {
     //     .style("opacity", .5);
     d3.select(this)
         .style("stroke", "black")
-        .style("fill", colors.highlight)
-        .style("opacity", 1);
+        .style("fill", colors.highlight);
 };
   
 // mouse leave
@@ -319,7 +324,7 @@ var mouseleave = function(d) {
     tooltip
       .style("opacity", 0)
     d3.select(this)
-      .attr("class", "visited")
+      .style("stroke-width", 0);
   };
 
 
