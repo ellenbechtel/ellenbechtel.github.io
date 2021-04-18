@@ -310,8 +310,8 @@ var mouseover = function(d){
 // mouse move
 var mousemove = function(d) {
     tooltip
-        .style("left", (d3.event.pageX + 5) + "px")
-        .style("top", (d3.event.pageY + 20) + "px");
+        .style("left", (d3.event.pageX + 8) + "px")
+        .style("top", (d3.event.pageY) + "px");
     // d3.selectAll(".node")
     //     .style("opacity", .5);
     d3.select(this)
