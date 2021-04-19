@@ -80,7 +80,7 @@ p{
 }
 @media only screen and (min-width: 1025px){
   .main {
-    flex: 2;
+    flex: 1.5;
   }
   .sidebar {
     flex: 1;
@@ -242,7 +242,7 @@ input:checked + .slider:before {
   }
   
   .node-label {
-    font-size: 7px;
+    font-size: 9px;
     stroke: none;
     /* opacity:0; */
   }
@@ -287,6 +287,7 @@ input:checked + .slider:before {
     stroke: lightgrey;
     stroke-width: 1px;
     fill:none;
+    cursor: pointer;
   }
   /* Tooltip */
 

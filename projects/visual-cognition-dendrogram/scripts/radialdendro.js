@@ -1,9 +1,10 @@
-var width = 550,
+var width = 600,
 height = width,
 radius = width/2,
 maxRad = 20,
 distance = 40, // radial spread
 duration = 100,
+selectedDepth,
 depth = 5;
 
 console.log(width, "width")
@@ -49,7 +50,9 @@ var gBackground = svg.append("g")
 for (i=0; i<depth; i++) {
     gBackground.append("circle")
         .attr("class","background-circle")
-        .attr("r", distance*i);
+        .attr("id", i)
+        .attr("r", distance*i)
+        .on("click", collapseTo);
 };
 
 // Get ready to draw the tree!
@@ -72,7 +75,7 @@ function connector(d) {
 
 
 var treeMap = d3.tree()
-    .size([width/1.5,height/1.5]), // this is how much of the circumference the outer ring of nodes takes up
+    .size([width/1.7,height/1.7]), // this is how much of the circumference the outer ring of nodes takes up
     root;
 
 
@@ -97,15 +100,10 @@ var nodeSvg, linkSvg, nodeEnter, linkEnter;
         root.x0 = height / 2;
         root.y0 = 0;
 
-        function collapse(d) {
-            if (d.children) {
-                d._children = d.children;
-                d._children.forEach(collapse);
-                d.children = null;
-            }
-        };
-        
-        //root.children.forEach(collapse);
+
+
+
+
         update(root);
 
     });
@@ -228,6 +226,29 @@ function update(source) {
 };
 
 
+//testing using depth to open at a specified level
+function collapseLevel(d, selectedDepth) {
+    console.log(d, selectedDepth, "inside");
+
+    if (d.children && d.depth > selectedDepth) { // dynamically set the selectedDepth by clicking on the background circles
+        d._children = d.children;
+        d._children.forEach(collapseLevel);
+        d.children = null;
+    } else if (d.children && d.depth < selectedDepth){
+        d.children.forEach(collapseLevel);
+    }
+};
+
+async function collapseTo(d) {
+    let selectedDepth = await d3.select(this).attr("id");
+
+    console.log(selectedDepth, "level")
+    root.children.forEach(collapseLevel); //iterate each node and collapse excluding node zero
+    // update(root);
+}
+
+
+
 
 function expand(d){   
     var children = (d.children)?d.children:d._children;
@@ -249,20 +270,6 @@ function color(d) {
   return d._children ? colors.collapsed // collapsed package
       : d.children ? colors.expanded // expanded package
       : colors.leaf; // leaf node
-}
-
-
-function flatten (root) {
-  // hierarchical data to flat data for force layout
-  var nodes = [];
-  function recurse(node) {
-    if (node.children) node.children.forEach(recurse);
-    if (!node.id) node.id = ++i;
-    else ++i;
-    nodes.push(node);
-  }
-  recurse(root);
-  return nodes;
 }
 
 function project(x, y) {
