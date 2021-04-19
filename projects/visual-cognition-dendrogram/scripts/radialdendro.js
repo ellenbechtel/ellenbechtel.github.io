@@ -78,41 +78,39 @@ var treeMap = d3.tree()
     .size([width/1.7,height/1.7]), // this is how much of the circumference the outer ring of nodes takes up
     root;
 
-
 var nodeSvg, linkSvg, nodeEnter, linkEnter;
 
-    d3.json("data/vcContent.json",function(error,treeData){
-        if(error) throw error;
-
-    
-        root = d3.hierarchy(treeData,function(d){
-            return d.children;
-        });
-
-        console.log(treeData, "turns into ", root);
-
-        root.each(function (d) {
-            d.name = d.data.name; //transferring name to a name variable
-            d.id = i; //Assigning numerical Ids
-            i += i;
-        });
-
-        root.x0 = height / 2;
-        root.y0 = 0;
+d3.json("data/vcContent.json",function(error,treeData){
+    if(error) throw error;
 
 
-
-
-
-        update(root);
-
+    root = d3.hierarchy(treeData,function(d){
+        return d.children;
     });
 
+    console.log(treeData, "turns into ", root);
+
+    root.each(function (d) {
+        d.name = d.data.name; //transferring name to a name variable
+        d.id = i; //Assigning numerical Ids
+        i += i;
+    });
+
+    root.x0 = height / 2;
+    root.y0 = 0;
+
+
+
+
+
+    update(root);
+
+});
+
 function update(source) {
-    console.log("it ran!")
-    //root = treeMap(root);
+
     nodes = treeMap(root).descendants();
-    //console.log(nodes);
+    console.log(nodes, "nodes");
     //links = root.descendants().slice(1);
     links = nodes.slice(1);
     //console.log(links);
@@ -121,7 +119,6 @@ function update(source) {
 
     // Normalize for fixed-depth.
     nodes.forEach(function(d) { d.y = d.depth * distance; });
-
     nodeSvg = g.selectAll(".node")
         .data(nodes,function(d) { return d.id || (d.id = ++i); });
        
@@ -150,7 +147,16 @@ function update(source) {
         .attr("x", function(d) { return d.x < 180 === !d.children ? 10 : -10; })
         .attr("class","node-label")
         .style("text-anchor", function(d) { return d.x < 180 === !d.children ? "start" : "end"; })
-        .style("opacity", 0)
+        .style("opacity", function(d) {
+            // console.log(d, "inside")
+            if (d.children) { 
+                return 0;
+            } else if (d.children = null) {
+                return 1;
+            } else {
+                return 1;
+            }
+        })
         .attr("transform", function(d) { return "rotate(" + (d.x < 180 ? d.x - 90 : d.x + 90) + ")"; }) // adjust this as needed for text rotation
         .text(function(d) {  return d.data.name; });
 
@@ -283,7 +289,7 @@ function project(x, y) {
 // click
 function click(d) {
     var prompt = d3.select("#prompt").style("display","none");
-    console.log(d,"d")
+    console.log(d,"click!!!!")
     var t = {
         name: d.data.name,
         description: d.data.description,
@@ -295,7 +301,7 @@ function click(d) {
     topicImg.attr("src",t.img);
     
 
-  if (d.children) {
+  if (d.children) { // this system uses a system of toggling data between .children and ._children. Ha!
     d._children = d.children;
     d.children = null;
   } else {
@@ -350,13 +356,14 @@ var resetButton = d3.select("#reset-button")
 var toggle = false;
 
 d3.select("#node-label-toggle").on("click", function() {
-    if (toggle === false) {
-        var visibility = "hidden";
-    } else if (toggle === true) {
-        var visibility = "visible"
-    }
+    // if (toggle === false) {
+    //     var visibility = "hidden";
+    // } else if (toggle === true) {
+    //     var visibility = "visible"
+    // }
     //  d3.selectAll(".node-label").style("visibility", +(visibility = !visibility));
     d3.selectAll(".node-label").style("opacity", +(toggle = !toggle));
+    console.log(toggle,'toggle')
 })
 
 // background circle toggle

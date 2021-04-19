@@ -8,13 +8,13 @@
       "depth": 2,
       "name": "Visual Queries",
       "img": "./img/images-01.svg",
-      "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas maecenas pharetra convallis posuere morbi leo. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Arcu odio ut sem nulla pharetra diam sit amet. Egestas tellus rutrum tellus pellentesque eu. Vel facilisis volutpat est velit. Amet consectetur adipiscing elit duis tristique sollicitudin.",
+      "description":"Visual query is a process whereby a problem is addressed through a pattern search.",
       "children": [
         {
           "depth": 3,
           "name": "Problem Components",
           "img": "./img/images-02.svg",
-          "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas maecenas pharetra convallis posuere morbi leo. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Arcu odio ut sem nulla pharetra diam sit amet. Egestas tellus rutrum tellus pellentesque eu. Vel facilisis volutpat est velit. Amet consectetur adipiscing elit duis tristique sollicitudin.",
+          "description":"Problem components are formulated into questions (or hypotheses) that can be answered (or tested) by means of pattern discovery.",
           "children": [
             {
               "depth": 4,
@@ -28,43 +28,43 @@
           "depth": 3,
           "name": "Visual Thinking",
           "img": "./img/images-02.svg",
-          "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas maecenas pharetra convallis posuere morbi leo. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Arcu odio ut sem nulla pharetra diam sit amet. Egestas tellus rutrum tellus pellentesque eu. Vel facilisis volutpat est velit. Amet consectetur adipiscing elit duis tristique sollicitudin."
+          "description":"Visual thinking consists of a series of acts of attention, driving eye movements and tuning our pattern-finding circuits."
         },
         {
           "depth": 3,
           "name": "Visual Searching",
           "img": "./img/images-02.svg",
-          "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas maecenas pharetra convallis posuere morbi leo. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Arcu odio ut sem nulla pharetra diam sit amet. Egestas tellus rutrum tellus pellentesque eu. Vel facilisis volutpat est velit. Amet consectetur adipiscing elit duis tristique sollicitudin.",
+          "description":"Visual search is a goal oriented activity that involves the active scanning of the environment in order to locate a particular target among irrelevant non-targets, or distractors.",
           "children": [
             {
               "depth": 4,
               "name": "A-Priori Salience",
               "img": "./img/images-02.svg",
-              "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
+              "description":"Some patterns are inherently salient and almost impossible to ignore."
             },
             {
               "depth": 4,
               "name": "Task Driven",
               "img": "./img/images-02.svg",
-              "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
+              "description":"When we search for a pattern, our low level perceptual machinery is re-tuned to make this kind of information stand out more strongly. "
             },
             {
               "depth": 4,
               "name": "Knowledge",
               "img": "./img/images-02.svg",
-              "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
+              "description":"Knowledge is the awareness or familiarity gained by experience of a fact or situation."
             },
             {
               "depth": 4,
               "name": "Spatial Working Memory",
               "img": "./img/images-01.svg",
-              "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
+              "description":"Spatial memory is a cognitive process that enables a person to remember different locations as well as spatial relations between objects."
             },
             {
               "depth": 4,
               "name": "Implementation Guidelines",
               "img": "./img/images-02.svg",
-              "description":"Nunc sed id semper risus in hendrerit gravida rutrum. Ornare massa eget egestas purus viverra. Velit euismod in pellentesque massa placerat duis ultricies lacus. Magna eget est lorem ipsum. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Nibh sed pulvinar proin gravida hendrerit. At quis risus sed vulputate odio ut enim blandit volutpat."
+              "description":"Guidelines meant to assist the designer in creating preceptually efficient visualizations."
             }
           ]
         },
