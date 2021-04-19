@@ -5,7 +5,7 @@ maxRad = 20,
 distance = 40, // radial spread
 duration = 100,
 selectedDepth,
-depth = 5;
+depth = 6;
 
 console.log(width, "width")
 
@@ -143,11 +143,14 @@ function update(source) {
         .on("click",click);
 
 
-    nodeEnter.append("text")
+    nodeEnter.append('g')
+        .attr("class","node-label-group")    
+    .append("text")
         .attr("dy", ".1em")
         .attr("x", function(d) { return d.x < 180 === !d.children ? 10 : -10; })
         .attr("class","node-label")
         .style("text-anchor", function(d) { return d.x < 180 === !d.children ? "start" : "end"; })
+        .style("opacity", 0)
         .attr("transform", function(d) { return "rotate(" + (d.x < 180 ? d.x - 90 : d.x + 90) + ")"; }) // adjust this as needed for text rotation
         .text(function(d) {  return d.data.name; });
 
@@ -242,9 +245,9 @@ function collapseLevel(d, selectedDepth) {
 async function collapseTo(d) {
     let selectedDepth = await d3.select(this).attr("id");
 
-    console.log(selectedDepth, "level")
+    console.log(selectedDepth, "level", root)
     root.children.forEach(collapseLevel); //iterate each node and collapse excluding node zero
-    // update(root);
+    update(root);
 }
 
 
@@ -344,9 +347,15 @@ var resetButton = d3.select("#reset-button")
   .on("click", expandAll);
 
 // node label toggle
-var toggle = true;
+var toggle = false;
 
 d3.select("#node-label-toggle").on("click", function() {
+    if (toggle === false) {
+        var visibility = "hidden";
+    } else if (toggle === true) {
+        var visibility = "visible"
+    }
+    //  d3.selectAll(".node-label").style("visibility", +(visibility = !visibility));
     d3.selectAll(".node-label").style("opacity", +(toggle = !toggle));
 })
 

@@ -239,12 +239,15 @@ input:checked + .slider:before {
   .node {
     cursor: pointer;
     fill: black;
+    z-index: 10000;
   }
   
+  .node-label-group {
+    z-index: -1;
+  }
   .node-label {
     font-size: 9px;
     stroke: none;
-    /* opacity:0; */
   }
   
   .link {
@@ -285,16 +288,15 @@ input:checked + .slider:before {
 
   .background-circle{ 
     stroke: lightgrey;
-    stroke-width: 1px;
+    stroke-width: 3px;
+    stroke-opacity: 0.4;
     fill:none;
     cursor: pointer;
   }
   /* Tooltip */
 
   .tooltip {
-    text-transform: uppercase;
-    color: #d9664a;
-    font-family: "Waiting for the Sunrise", "Lato", sans-serif;
+    font-family: "Lato", sans-serif;
     position: absolute;
     background-color: white;
     padding: 10px 20px;
