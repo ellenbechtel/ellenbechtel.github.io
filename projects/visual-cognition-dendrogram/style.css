@@ -246,7 +246,8 @@ input:checked + .slider:before {
     z-index: -1;
   }
   .node-label {
-    font-size: 9px;
+    font-size: 4px;
+    font-weight: 300;
     stroke: none;
   }
   
