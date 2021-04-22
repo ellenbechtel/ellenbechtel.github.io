@@ -119,7 +119,7 @@
         {
           "depth": 3,
           "name": "Primary Visual Cortex (V1)",
-          "img": "./img/images-03.svg",
+          "img": "./img/3Whatwecaneasilysee.png",
           "description":"The primary visual cortex (area V1) is the first stage of visual cortical processing.",
           "children": [
             {
@@ -159,13 +159,13 @@
         {
           "depth": 3,
           "name": "What We Can Bias For",
-          "img": "./img/images-03.svg",
+          "img": "./img/13visualchannel.png",
           "description":"What stands out? We couldn't miss out if something pop up from others.",
           "children": [
             {
               "depth": 4,
               "name": "Color",
-              "img": "./img/images-03.svg",
+              "img": "./img/11color.png",
               "description":"The color of elements, patterns, visual graphics, etc."
             },
             {
@@ -473,7 +473,7 @@
         {
           "depth": 3,
           "name": "Color Processing",
-          "img": "./img/images-04.svg",
+          "img": "./img/processing.gif",
           "description":"Color is a sensation, not a property of the physical world. Our eyes and brain help us to know: 'This is a red apple!'."
         },
         {
@@ -663,7 +663,7 @@
                 {
                   "depth": 5,
                   "name": "Form of symbolic Processing",
-                  "img": "./img/images-07.svg",
+                  "img": "./img/processing.gif",
                   "description":"The process of cognitive modeling makes use of computational architectures, as we have seen for symbol processing and connectionist frameworks."
                 }
               ]
