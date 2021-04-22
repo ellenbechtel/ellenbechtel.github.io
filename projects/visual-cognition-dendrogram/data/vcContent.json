@@ -1,13 +1,13 @@
 {
 "depth": 1,
   "name": "Visual Cognition",
-  "img": "",
+  "img": "./img/1VisualThinking.png",
   "description":"Visual thinking consists of a series of acts of attention, driving eye movements and tuning our pattern-finding circuits.",
   "children": [
     {
       "depth": 2,
       "name": "Visual Queries",
-      "img": "./img/images-01.svg",
+      "img": "./img/7VisualQueries.png",
       "description":"Visual querying is a process whereby a problem is addressed through a pattern search.",
       "children": [
         {
@@ -19,7 +19,7 @@
             {
               "depth": 4,
               "name": "Eye Movement",
-              "img": "./img/images-02.svg",
+              "img": "./img/8EyeMovement.png",
               "description":"We are seeking out what we need."
             }
           ]
@@ -27,13 +27,13 @@
         {
           "depth": 3,
           "name": "Visual Searching",
-          "img": "./img/images-02.svg",
+          "img": "./img/9VisualSearching.png",
           "description":"Visual search is a goal oriented activity that involves the active scanning of the environment in order to locate a particular target among irrelevant non-targets, or distractors.",
           "children": [
             {
               "depth": 4,
               "name": "A-Priori Salience",
-              "img": "./img/images-02.svg",
+              "img": "./img/10A-PrioriSalience.png",
               "description":"Some patterns are inherently salient and almost impossible to ignore."
             },
             {
@@ -93,7 +93,7 @@
     {
       "depth": 2,
       "name": "What We Can Easily See",
-      "img": "./img/images-01.svg",
+      "img": "./img/3Whatwecaneasilysee.png",
       "description":"Chapter 2 from Visual Thinking for Design - Colin Ware. What do we see exactly when we see something with the help of our eyes, brain, and intentions to search for something?",
       "children": [
         {
@@ -125,19 +125,19 @@
             {
               "depth": 4,
               "name": "Form",
-              "img": "./img/images-03.svg",
+              "img": "./img/5Bottom-UpInformationProcessing.png",
               "description":"The form of elements, patterns, visual graphics, etc."
             },
             {
               "depth": 4,
               "name": "Color",
-              "img": "./img/images-03.svg",
+              "img": "./img/5Bottom-UpInformationProcessing.png",
               "description":"The color differences of elements, patterns, visual graphics, etc."
             },
             {
               "depth": 4,
               "name": "Movement",
-              "img": "./img/images-03.svg",
+              "img": "./img/5Bottom-UpInformationProcessing.png",
               "description":"The movement of elements, patterns, visual graphics, etc."
             }
           ]
@@ -145,13 +145,13 @@
         {
           "depth": 3,
           "name": "What and Where System",
-          "img": "./img/images-03.svg",
+          "img": "./img/12WhatandWhereSystem.png",
           "description":"The what pathway sweeps forward from V1 and V2 along the lower edge of the brain on each side, processing information about the identity of an object. The where pathway sweeps forward higher up on the brain and processes information about where objects in the world are located.",
           "children": [
             {
               "depth": 4,
               "name": "Identify and recognize objects information",
-              "img": "./img/images-03.svg",
+              "img": "./img/6Top-downContextualProcessing.png",
               "description":"The 'WHAT' and 'WHERE' channels do this for us."
             }
           ]
@@ -199,7 +199,7 @@
     {
       "depth": 2,
       "name": "Visual Channel",
-      "img": "./img/images-01.svg",
+      "img": "./img/4VisualChannel.png",
       "description":"A visual channel is a way to control the appearance of marks, there are many different visual channels, such as position, color, shape, and size, etc..",
       "children": [
         {
@@ -349,37 +349,37 @@
         {
           "depth": 3,
           "name": "Data Types",
-          "img": "./img/images-04.svg",
+          "img": "./img/14Datatype.png",
           "description":"Data types may differ in certain circumstances. But it can help designers making choices on the methodology of coding data.",
           "children": [
             {
               "depth": 4,
               "name": "Qualitative Data",
-              "img": "./img/images-04.svg",
+              "img": "./img/14Datatype.png",
               "description":"Describes qualities or characteristics.",
               "children": [
                 {
                   "depth": 5,
                   "name": "Nominal Data",
-                  "img": "./img/images-04.svg",
+                  "img": "./img/14Datatype.png",
                   "description":"Used for naming or labelling variables, without any quantitative value.",
                   "children": [
                     {
                       "depth": 6,
                       "name": "Gender",
-                      "img": "./img/images-04.svg",
+                      "img": "./img/14Datatype.png",
                       "description":"It's not a binary!  There are many, and each has a name. Woman, man, non-binary, two-spirit, etc."
                     },
                     {
                       "depth": 6,
                       "name": "Hair Color",
-                      "img": "./img/images-04.svg",
+                      "img": "./img/14Datatype.png",
                       "description":"The characteristics of hair."
                     },
                     {
                       "depth": 6,
                       "name": "Race or Ethnicity",
-                      "img": "./img/images-04.svg",
+                      "img": "./img/14Datatype.png",
                       "description":"Black, White, Asian, Hispanic, etc. "
                     }
                   ]
@@ -387,19 +387,19 @@
                 {
                   "depth": 5,
                   "name": "Ordinal Data",
-                  "img": "./img/images-04.svg",
+                  "img": "./img/14Datatype.png",
                   "description":"Categorical data. Having clear sequence and in a well-ordered sequence",
                   "children": [
                     {
                       "depth": 6,
                       "name": "First, Second, Third, etc.",
-                      "img": "./img/images-04.svg",
+                      "img": "./img/14Datatype.png",
                       "description":"Well, this is the most ordinal datasets ever."
                     },
                     {
                       "depth": 6,
                       "name": "Letter Grades",
-                      "img": "./img/images-04.svg",
+                      "img": "./img/14Datatype.png",
                       "description":"Human made ordered letter and this is also a ordinal dataset."
                     }
                   ]
@@ -409,25 +409,25 @@
             {
               "depth": 4,
               "name": "Quantitative Data",
-              "img": "./img/images-04.svg",
+              "img": "./img/14Datatype.png",
               "description":"Their value is measured in the form of numbers or counts.",
               "children": [
                 {
                   "depth": 5,
                   "name": "Discrete Data",
-                  "img": "./img/images-04.svg",
+                  "img": "./img/14Datatype.png",
                   "description":"Discrete data is information that can only take certain values, usually whole numbers or integers.",
                   "children": [
                     {
                       "depth": 6,
                       "name": "Number of Students in a Class",
-                      "img": "./img/images-04.svg",
+                      "img": "./img/14Datatype.png",
                       "description":"We've got 17 people in one course."
                     },
                     {
                       "depth": 6,
                       "name": "Number of Workers in a Company",
-                      "img": "./img/images-04.svg",
+                      "img": "./img/14Datatype.png",
                       "description":"They've got 108 people in this company."
                     }                    
                   ]
@@ -435,25 +435,25 @@
                 {
                   "depth": 5,
                   "name": "Continuous Data",
-                  "img": "./img/images-04.svg",
+                  "img": "./img/14Datatype.png",
                   "description":"Continuous data is data that can take any numerical value.",
                   "children": [
                     {
                       "depth": 6,
                       "name": "Height of Children",
-                      "img": "./img/images-04.svg",
+                      "img": "./img/14Datatype.png",
                       "description":"Last year, I was 160 cm; this year, I'm 164.5 cm!"
                     },
                     {
                       "depth": 6,
                       "name": "Square footage of a Home",
-                      "img": "./img/images-04.svg",
+                      "img": "./img/14Datatype.png",
                       "description":"Multiply the length by the width: 2,860.5 square feet."
                     },
                     {
                       "depth": 6,
                       "name": "Speed of Cars",
-                      "img": "./img/images-04.svg",
+                      "img": "./img/14Datatype.png",
                       "description":"Travelled an average of 45.66 miles per hour."
                     }
                   ]
@@ -549,7 +549,7 @@
         {
           "depth": 3,
           "name": "Color Discriminability",
-          "img": "./img/images-06.svg",
+          "img": "./img/2Colordiscriminability.png",
           "description":"How often color differences were perceived?",
           "children": [
             {
@@ -803,13 +803,13 @@
             {
               "depth": 4,
               "name": "Gesture",
-              "img": "./img/images-07.svg",
+              "img": "./img/15Gestures.png",
               "description":"A gesture is a form of non-verbal communication or non-vocal communication in which visible bodily actions communicate particular messages.",
               "children": [
                 {
                   "depth": 5,
                   "name": "Understanding Contents",
-                  "img": "./img/images-08.svg",
+                  "img": "./img/15Gestures.png",
                   "description":"How do we understand the contents of gestures? We see the movement of hands, faces, or any part of our body, and decode those movements into understandable information."
                 }
               ]
@@ -905,7 +905,7 @@
     {
       "depth": 2,
       "name": "Narrative",
-      "img": "./img/images-07.svg",
+      "img": "./img/16NarrativeDiagrams.png",
       "description":"Narratives can be presented through a sequence of written or spoken words, still or moving images, or any combination of these.",
       "children": [
         {
@@ -923,7 +923,7 @@
             {
               "depth": 4,
               "name": "Gesture",
-              "img": "./img/images-07.svg",
+              "img": "./img/15Gesture.png",
               "description":"A gesture is a form of non-verbal communication or non-vocal communication in which visible bodily actions communicate particular messages."
             }
           ]
@@ -1021,7 +1021,7 @@
             {
               "depth": 4,
               "name": "Scribbling",
-              "img": "./img/images-08.svg",
+              "img": "./img/17Scribbling.png",
               "description":"The action of writing or drawing something carelessly or hurriedly."
             },
             {
@@ -1033,13 +1033,13 @@
             {
               "depth": 4,
               "name": "Diagrams",
-              "img": "./img/images-08.svg",
+              "img": "./img/17Scribbling.png",
               "description":"A diagram is a symbolic representation of information using visualization techniques."
             },
             {
               "depth": 4,
               "name": "Sketches",
-              "img": "./img/images-08.svg",
+              "img": "./img/17Scribbling.png",
               "description":"A rough or unfinished drawing or painting, often made to assist in making a more finished picture."
             }
           ]

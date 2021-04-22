@@ -80,7 +80,7 @@ p{
 }
 @media only screen and (min-width: 1025px){
   .main {
-    flex: 1.5;
+    flex: 1.2;
   }
   .sidebar {
     flex: 1;
@@ -340,5 +340,7 @@ input:checked + .slider:before {
 
   #topic-image {
     min-width: 100px;
+    width: 100%;
+  
     height: auto;
   }

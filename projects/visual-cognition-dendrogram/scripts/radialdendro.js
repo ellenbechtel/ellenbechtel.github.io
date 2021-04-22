@@ -110,7 +110,6 @@ d3.json("data/vcContent.json",function(error,treeData){
 function update(source) {
 
     nodes = treeMap(root).descendants();
-    console.log(nodes, "nodes");
     //links = root.descendants().slice(1);
     links = nodes.slice(1);
     //console.log(links);
@@ -237,7 +236,6 @@ function update(source) {
 
 //testing using depth to open at a specified level
 function collapseLevel(d, selectedDepth) {
-    console.log(d, selectedDepth, "inside");
 
     if (d.children && d.depth > selectedDepth) { // dynamically set the selectedDepth by clicking on the background circles
         d._children = d.children;
@@ -248,11 +246,11 @@ function collapseLevel(d, selectedDepth) {
     }
 };
 
-async function collapseTo(d) {
+async function collapseTo() {
     let selectedDepth = await d3.select(this).attr("id");
-
-    console.log(selectedDepth, "level", root)
+    console.log(selectedDepth, "level, and ", root);
     root.children.forEach(collapseLevel); //iterate each node and collapse excluding node zero
+    console.log(root, "after forEach")
     update(root);
 }
 
