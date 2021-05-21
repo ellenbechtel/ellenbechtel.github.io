@@ -319,9 +319,11 @@ Promise.all(promises).then(function(data) {
                     return m.y;
                 }).attr('r', function(m){
                     return m.r;
-                }).style("opacity", function(m){
+                }).style("fill","white")
+                .style("opacity", function(m){
                     return Math.random()/m.r;
                 });
+
 
 
 

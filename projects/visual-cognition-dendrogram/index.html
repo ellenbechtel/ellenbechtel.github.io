@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-EZ9B0VEZ16"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-EZ9B0VEZ16');
+        </script>
+        <link rel="icon" type="image/png" href="../../img/favicon/favicon.png">
+        <link rel="apple-touch-icon" href="../../img/favicon/apple-touch-icon.png"/>
+        <link rel="shortcut icon" href="../../img/favicon/android-chrome-192x192.png"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;600;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css"/>
+        <title>Visual Cognition Dendrogram</title>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+    </head>
+    <body>
+        <div id="header" class="content">
+            <h1>A Dendrogram of<br><span class="yay">Visual Cognition</span></h1>
+        </div>
+        <div class="content">
+            <h2>About</h2>
+            <p>Below is a radial dendrogram - a mind map - of the Visual Cognition course taught by Carmen Hull at Northeastern University in the spring of 2021. We've structured the content in this way to provide a sense of how all the concepts are nested.  But of course, there are hundreds of interconnections between all the topics and we're excited for you to learn more about it!</p>
+            <h2>Instructions</h2>
+            <p><span class="yay">Hover</span> over a node to preview a topic.</p>
+            <p><span class="yay">Click</span>  on a node to activate the details panel.</p>
+            <p><span class="yay">Click</span>  on a background circle to see all nodes at that depth within the dendrogram.</p>
+            <p>Use the <span class="yay">Settings Panel</span> to adjust the display and make it easier to navigate.  And if you want to start over, you can always hit the "EXPAND ALL" button to reset.</p>
+        </div>
+
+       
+        <div class="parent">
+            <div class="column main">
+                <div class="chart">
+                    <div id="dendrogram"></div>
+                    <div id="tooltip" class="fade"></div>
+                </div>
+            </div>
+            <div class="column sidebar">
+                <div id="details" class="content">
+                    <h2 id="prompt">Click on a node to learn more</h2>
+                    <h2 id="topic" class="yay"></h2>
+                    <div id="topic-container">
+                        <p id="topic-description"></p>
+                        <div><img id="topic-image" src=""></div>
+                    </div>            
+                </div>
+                <div id="settings" class="content">
+                    <h2>Settings</h2>
+                    <div class="button-container">
+                        <div class="input-container">
+                            <p class="input-label">Node Labels</p>
+                            <label class="switch">
+                                <input type="checkbox" id="node-label-toggle" unchecked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="input-container">
+                            <p class="input-label">Background Circles</p>
+                            <label class="switch">
+                                <input type="checkbox" id="background-circle-toggle" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="input-container">
+                            <button id="reset-button">Expand All</button>
+                        </div>
+                    </div>
+              
+                </div>
+            </div>
+        </div>
+
+
+
+       
+      
+        <div id="footnotes" class="content">
+            <h2>Resources</h2>
+            <p>Ware, Colin. <a href="https://books.google.com/books?hl=en&lr=&id=WBlUgKhMbdsC&oi=fnd&pg=PP1&ots=U3TzzNgDn1&sig=Dw5VlWdPmivFXi1CGLs7yeRpaJo#v=onepage&q&f=false" target="_blank">Visual Thinking for Design</a> (Morgan Kaufmann Series in Interactive Technologies). 1st ed., Morgan Kaufmann, 2008</p>
+            <h2>Designed by</h2>
+            <p>Yuke Li, 2021 MFA Candidate</p>
+            <p>Ellen Bechtel, 2021 MS Candidate</p>
+            <p>For Visual Cognition, taught by Carmen Hull, April 2021</p>
+        </div>
+      
+        
+
+    </body>
+    <!-- <script src="./data/vsContent.json"></script> -->
+    <script src="./scripts/radialdendro.js"></script>
+    <script src="./scripts/buttons.js"></script>
+</html>

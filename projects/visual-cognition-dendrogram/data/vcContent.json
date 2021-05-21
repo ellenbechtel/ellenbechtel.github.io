@@ -1,0 +1,1050 @@
+{
+"depth": 1,
+  "name": "Visual Cognition",
+  "img": "./img/1VisualThinking.png",
+  "description":"Visual thinking consists of a series of acts of attention, driving eye movements and tuning our pattern-finding circuits.",
+  "children": [
+    {
+      "depth": 2,
+      "name": "Visual Queries",
+      "img": "./img/7VisualQueries.png",
+      "description":"Visual querying is a process whereby a problem is addressed through a pattern search.",
+      "children": [
+        {
+          "depth": 3,
+          "name": "Problem Components",
+          "img": "./img/images-02.svg",
+          "description":"Problem components are formulated into questions (or hypotheses) that can be answered (or tested) by means of pattern discovery.",
+          "children": [
+            {
+              "depth": 4,
+              "name": "Eye Movement",
+              "img": "./img/8EyeMovement.png",
+              "description":"We are seeking out what we need."
+            }
+          ]
+        },
+        {
+          "depth": 3,
+          "name": "Visual Searching",
+          "img": "./img/9VisualSearching.png",
+          "description":"Visual search is a goal oriented activity that involves the active scanning of the environment in order to locate a particular target among irrelevant non-targets, or distractors.",
+          "children": [
+            {
+              "depth": 4,
+              "name": "A-Priori Salience",
+              "img": "./img/10A-PrioriSalience.png",
+              "description":"Some patterns are inherently salient and almost impossible to ignore."
+            },
+            {
+              "depth": 4,
+              "name": "Task Driven",
+              "img": "./img/images-02.svg",
+              "description":"When we search for a pattern, our low level perceptual machinery is re-tuned to make this kind of information stand out more strongly. "
+            },
+            {
+              "depth": 4,
+              "name": "Knowledge",
+              "img": "./img/images-02.svg",
+              "description":"Knowledge is the awareness or familiarity gained by experience of a fact or situation."
+            },
+            {
+              "depth": 4,
+              "name": "Spatial Working Memory",
+              "img": "./img/images-01.svg",
+              "description":"Spatial memory is a cognitive process that enables a person to remember different locations as well as spatial relations between objects."
+            },
+            {
+              "depth": 4,
+              "name": "Implementation Guidelines",
+              "img": "./img/images-02.svg",
+              "description":"Guidelines are meant to assist the designer in creating preceptually efficient visualizations."
+            }
+          ]
+        },
+        {
+          "depth": 3,
+          "name": "Visual Creating",
+          "img": "./img/images-02.svg",
+          "description":"Similar to imaging, we can create something avisual based on what is in our brain."
+        },
+        {
+          "depth": 3,
+          "name": "Visual Perceiving",
+          "img": "./img/images-02.svg",
+          "description":"Visual perception is the brain's ability to receive, interpret, and act upon visual stimuli.",
+          "children": [
+            {
+              "depth": 4,
+              "name": "Visual Channel",
+              "img": "./img/images-02.svg",
+              "description":"A visual channel is a way to control the appearance of marks, there are many different visual channels, such as position, color, shape, and size, etc."
+            },
+            {
+              "depth": 4,
+              "name": "Verbal and Acoustic Channel",
+              "img": "./img/images-02.svg",
+              "description":"The Verbal Channel is made up of the words we say and the way that we say them. This channel can be collaborated with the visual channel together to be more narrative."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "depth": 2,
+      "name": "What We Can Easily See",
+      "img": "./img/3Whatwecaneasilysee.png",
+      "description":"Chapter 2 from Visual Thinking for Design - Colin Ware. What do we see exactly when we see something with the help of our eyes, brain, and intentions to search for something?",
+      "children": [
+        {
+          "depth": 3,
+          "name": "Eye Movement",
+          "img": "./img/images-03.svg",
+          "description":"Eye movement includes the voluntary or involuntary movement of the eyes, helping in acquiring, fixating, and tracking visual stimuli. Here, we only talk about the voluntary movement of the eyes to search and capture visuals.",
+          "children": [
+            {
+              "depth": 4,
+              "name": "Seeking Information",
+              "img": "./img/images-03.svg",
+              "description": "Our eye movement occurs because of seeking information "
+            },
+            {
+              "depth": 4,
+              "name": "From Eye to Brain",
+              "img": "./img/images-03.svg",
+              "description":"What do we see when we see something? How can we see something? And why can we see something? The visual related processes happen inside of our body, from eye to brain."
+            }
+          ]
+        },
+        {
+          "depth": 3,
+          "name": "Primary Visual Cortex (V1)",
+          "img": "./img/3Whatwecaneasilysee.png",
+          "description":"The primary visual cortex (area V1) is the first stage of visual cortical processing.",
+          "children": [
+            {
+              "depth": 4,
+              "name": "Form",
+              "img": "./img/5Bottom-UpInformationProcessing.png",
+              "description":"The form of elements, patterns, visual graphics, etc."
+            },
+            {
+              "depth": 4,
+              "name": "Color",
+              "img": "./img/5Bottom-UpInformationProcessing.png",
+              "description":"The color differences of elements, patterns, visual graphics, etc."
+            },
+            {
+              "depth": 4,
+              "name": "Movement",
+              "img": "./img/5Bottom-UpInformationProcessing.png",
+              "description":"The movement of elements, patterns, visual graphics, etc."
+            }
+          ]
+        },
+        {
+          "depth": 3,
+          "name": "What and Where System",
+          "img": "./img/12WhatandWhereSystem.png",
+          "description":"The what pathway sweeps forward from V1 and V2 along the lower edge of the brain on each side, processing information about the identity of an object. The where pathway sweeps forward higher up on the brain and processes information about where objects in the world are located.",
+          "children": [
+            {
+              "depth": 4,
+              "name": "Identify and recognize objects information",
+              "img": "./img/6Top-downContextualProcessing.png",
+              "description":"The 'WHAT' and 'WHERE' channels do this for us."
+            }
+          ]
+        },
+        {
+          "depth": 3,
+          "name": "What We Can Bias For",
+          "img": "./img/13visualchannel.png",
+          "description":"What stands out? We couldn't miss out if something pop up from others.",
+          "children": [
+            {
+              "depth": 4,
+              "name": "Color",
+              "img": "./img/11color.png",
+              "description":"The color of elements, patterns, visual graphics, etc."
+            },
+            {
+              "depth": 4,
+              "name": "Orientation",
+              "img": "./img/images-03.svg",
+              "description":"The orientation of elements, patterns, visual graphics, etc."
+            },
+            {
+              "depth": 4,
+              "name": "Size",
+              "img": "./img/images-03.svg",
+              "description":"The size of elements, patterns, visual graphics, etc."
+            },
+            {
+              "depth": 4,
+              "name": "Motion",
+              "img": "./img/images-03.svg",
+              "description":"The movement of elements, patterns, visual graphics, etc."
+            },
+            {
+              "depth": 4,
+              "name": "Stereoscopic Depth",
+              "img": "./img/images-03.svg",
+              "description":"Usually, refers to a 3-dimensional structure obtained on the basis of visual information. "
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "depth": 2,
+      "name": "Visual Channel",
+      "img": "./img/4VisualChannel.png",
+      "description":"A visual channel is a way to control the appearance of marks, there are many different visual channels, such as position, color, shape, and size, etc..",
+      "children": [
+        {
+          "depth": 3,
+          "name": "Dimensional Structure",
+          "img": "./img/images-03.svg",
+          "description":"The dimension of an object.",
+          "children": [
+            {
+              "depth": 4,
+              "name": "2-Dimensional Space",
+              "img": "./img/images-04.svg",
+              "description":"Two-dimensional space can be seen as a projection of the physical universe onto a plane."
+            },
+            {
+              "depth": 4,
+              "name": "2.5-Dimensional Space",
+              "img": "./img/images-03.svg",
+              "description":"It is for this reason that people sometimes refer to visual space as having 2.5 dimensions, where the 0.5 refers to the away dimension.",
+              "children": [
+                {
+                  "depth": 5,
+                  "name": "Up-Down",
+                  "img": "./img/images-04.svg",
+                  "description":"Thousands of points in an object from the direction through up and down."
+                },
+                {
+                  "depth": 5,
+                  "name": "Sideways",
+                  "img": "./img/images-04.svg",
+                  "description":"Thousands of points in an object from the sideways direction."
+                },
+                {
+                  "depth": 5,
+                  "name": "Toward-Away",
+                  "img": "./img/images-04.svg",
+                  "description":"In terms of steroscopic depth, the term is used to refer to position that is towards the viewer, or further away."
+                }
+              ]
+            },
+            {
+              "depth": 4,
+              "name": "3-Dimensional Space",
+              "img": "./img/images-04.svg",
+              "description":"Besides having the up-down and sideways dimensions of the object, we could also access the depths of the projects to have more spatial visuals."
+            }
+          ]
+        },
+        {
+          "depth": 3,
+          "name": "Visual Hierarchy",
+          "img": "./img/images-04.svg",
+          "description":"Visual hierarchy is the principle of arranging elements to show their order of importance.",
+          "children": [
+            {
+              "depth": 4,
+              "name": "Pattern",
+              "img": "./img/images-04.svg",
+              "description":"Patterns are built out of features depending on attentional demands. Sometimes can be used to code something for enriching design or visualizing.",
+              "children": [
+                {
+                  "depth": 5,
+                  "name": "Intermediate",
+                  "img": "./img/images-04.svg",
+                  "description":"At the intermediate level of the visual processing hierarchy, feature information is used to construct increasingly complex patterns."
+                },
+                {
+                  "depth": 5,
+                  "name": "Pattern Learning",
+                  "img": "./img/images-04.svg",
+                  "description":"A cognitive process that happens in our brain when we match some information that we encounter with data stored in our memory. "
+                },
+                {
+                  "depth": 5,
+                  "name": "Visual Pattern Queries",
+                  "img": "./img/images-04.svg",
+                  "description":"Similar to Visual Queries, we are seeking the thing we want in terms of some specific patterns."
+                },
+                {
+                  "depth": 5,
+                  "name": "Spatial Pattern",
+                  "img": "./img/images-04.svg",
+                  "description":"A spatial pattern is a perceptual structure, placement, or arrangement of objects on Earth."
+                },
+                {
+                  "depth": 5,
+                  "name": "Pattern for Design",
+                  "img": "./img/images-04.svg",
+                  "description":"Patterns are a repetition of more than one design element working in concert with each other.",
+                  "children": [
+                    {
+                      "depth": 6,
+                      "name": "Graphic Code",
+                      "img": "./img/images-04.svg",
+                      "description":"Designers can create a pattern and code it with some meaning."
+                    },
+                    {
+                      "depth": 6,
+                      "name": "Semantic",
+                      "img": "./img/images-04.svg",
+                      "description":"Activation of a concept of a letter evokes sensory-like experiences."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "depth": 4,
+              "name": "Generalized Contour",
+              "img": "./img/images-04.svg",
+              "description":"The brain requires a generalized contour extraction mechanism in the pattern-processing stage of perception. It helps us to intergrate all diferences boundaries of the objects."
+            },
+            {
+              "depth": 4,
+              "name": "Texture",
+              "img": "./img/images-04.svg",
+              "description":"Use of texture, along with other elements of design, can convey a variety of messages and emotions.",
+              "children": [
+                {
+                  "depth": 5,
+                  "name": "Texture Element Orientation",
+                  "img": "./img/images-04.svg",
+                  "description":"The orientation of the texture elements of objects."
+                },
+                {
+                  "depth": 5,
+                  "name": "Size Contrast",
+                  "img": "./img/images-04.svg",
+                  "description":"Bigger or smaller, longer or shorter, this is a question!"
+                },
+                {
+                  "depth": 5,
+                  "name": "Color",
+                  "img": "./img/images-04.svg",
+                  "description":"The color of objects."
+                }
+              ]
+            },
+            {
+              "depth": 5,
+              "name": "Visual Interference",
+              "img": "./img/images-04.svg",
+              "description":"Visual interference impairs people’s ability to make use of visual knowledge."
+            }
+          ]
+        },
+        {
+          "depth": 3,
+          "name": "Data Types",
+          "img": "./img/14Datatype.png",
+          "description":"Data types may differ in certain circumstances. But it can help designers making choices on the methodology of coding data.",
+          "children": [
+            {
+              "depth": 4,
+              "name": "Qualitative Data",
+              "img": "./img/14Datatype.png",
+              "description":"Describes qualities or characteristics.",
+              "children": [
+                {
+                  "depth": 5,
+                  "name": "Nominal Data",
+                  "img": "./img/14Datatype.png",
+                  "description":"Used for naming or labelling variables, without any quantitative value.",
+                  "children": [
+                    {
+                      "depth": 6,
+                      "name": "Gender",
+                      "img": "./img/14Datatype.png",
+                      "description":"It's not a binary!  There are many, and each has a name. Woman, man, non-binary, two-spirit, etc."
+                    },
+                    {
+                      "depth": 6,
+                      "name": "Hair Color",
+                      "img": "./img/14Datatype.png",
+                      "description":"The characteristics of hair."
+                    },
+                    {
+                      "depth": 6,
+                      "name": "Race or Ethnicity",
+                      "img": "./img/14Datatype.png",
+                      "description":"Black, White, Asian, Hispanic, etc. "
+                    }
+                  ]
+                },
+                {
+                  "depth": 5,
+                  "name": "Ordinal Data",
+                  "img": "./img/14Datatype.png",
+                  "description":"Categorical data. Having clear sequence and in a well-ordered sequence",
+                  "children": [
+                    {
+                      "depth": 6,
+                      "name": "First, Second, Third, etc.",
+                      "img": "./img/14Datatype.png",
+                      "description":"Well, this is the most ordinal datasets ever."
+                    },
+                    {
+                      "depth": 6,
+                      "name": "Letter Grades",
+                      "img": "./img/14Datatype.png",
+                      "description":"Human made ordered letter and this is also a ordinal dataset."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "depth": 4,
+              "name": "Quantitative Data",
+              "img": "./img/14Datatype.png",
+              "description":"Their value is measured in the form of numbers or counts.",
+              "children": [
+                {
+                  "depth": 5,
+                  "name": "Discrete Data",
+                  "img": "./img/14Datatype.png",
+                  "description":"Discrete data is information that can only take certain values, usually whole numbers or integers.",
+                  "children": [
+                    {
+                      "depth": 6,
+                      "name": "Number of Students in a Class",
+                      "img": "./img/14Datatype.png",
+                      "description":"We've got 17 people in one course."
+                    },
+                    {
+                      "depth": 6,
+                      "name": "Number of Workers in a Company",
+                      "img": "./img/14Datatype.png",
+                      "description":"They've got 108 people in this company."
+                    }                    
+                  ]
+                },
+                {
+                  "depth": 5,
+                  "name": "Continuous Data",
+                  "img": "./img/14Datatype.png",
+                  "description":"Continuous data is data that can take any numerical value.",
+                  "children": [
+                    {
+                      "depth": 6,
+                      "name": "Height of Children",
+                      "img": "./img/14Datatype.png",
+                      "description":"Last year, I was 160 cm; this year, I'm 164.5 cm!"
+                    },
+                    {
+                      "depth": 6,
+                      "name": "Square footage of a Home",
+                      "img": "./img/14Datatype.png",
+                      "description":"Multiply the length by the width: 2,860.5 square feet."
+                    },
+                    {
+                      "depth": 6,
+                      "name": "Speed of Cars",
+                      "img": "./img/14Datatype.png",
+                      "description":"Travelled an average of 45.66 miles per hour."
+                    }
+                  ]
+                }
+              ]
+            }      
+          ]
+        }
+      ]
+    },
+    {
+      "depth": 2,
+      "name": "Color",
+      "img": "./img/images-01.svg",
+      "description":"Color is the characteristic of visual perception described through color categories, with names such as red, orange, yellow, green, blue, or purple.",
+      "children": [
+        {
+          "depth": 3,
+          "name": "Color Processing",
+          "img": "./img/processing.gif",
+          "description":"Color is a sensation, not a property of the physical world. Our eyes and brain help us to know: 'This is a red apple!'."
+        },
+        {
+          "depth": 3,
+          "name": "Color Dimensions",
+          "img": "./img/images-04.svg",
+          "description":"The main attributes that define a color in all its endless variations are hue, value, and chroma",
+          "children": [
+            {
+              "depth": 4,
+              "name": "Hue",
+              "img": "./img/images-05.svg",
+              "description":"The dominant wavelength of the visible spectrum. Like red, yellow, green, blue, etc."
+            },
+            {
+              "depth": 4,
+              "name": "Brightness",
+              "img": "./img/images-05.svg",
+              "description":"The amount of white light mixed with a hue. "
+            },
+            {
+              "depth": 4,
+              "name": "Saturation",
+              "img": "./img/images-05.svg",
+              "description":"Refers to intensity, distinguished by the amount of shading mixed with the hue."
+            }
+          ]
+        },
+        {
+          "depth": 3,
+          "name": "Properties",
+          "img": "./img/images-05.svg",
+          "description":"Color has three properties: hue, intensity (also called saturation), and value.",
+          "children": [
+            {
+              "depth": 4,
+              "name": "Contrast",
+              "img": "./img/images-05.svg",
+              "description":"How well one color stands out from another color determines whether or not most people will be able to read the information."
+            },
+            {
+              "depth": 4,
+              "name": "Stereoscopic Depth",
+              "img": "./img/images-06.svg",
+              "description":"Usually, refer to a 3-dimensional structure obtained on the basis of visual information. "
+            },
+            {
+              "depth": 4,
+              "name": "Color Segmentation",
+              "img": "./img/images-05.svg",
+              "description":"It discards information about color and brightness variations that provides many valuable cues about the shapes and textures of 3D surfaces."
+            },
+            {
+              "depth": 4,
+              "name": "Color Blindness",
+              "img": "./img/images-05.svg",
+              "description":"Unable to see colors in a normal way."
+            },
+            {
+              "depth": 4,
+              "name": "Color and Attention",
+              "img": "./img/images-05.svg",
+              "description":"The different colors provide a great example of using the distinction between colors to draw people's attention."
+            },
+            {
+              "depth": 4,
+              "name": "Color Appearance",
+              "img": "./img/images-05.svg",
+              "description":"How can we describe a color? When we generate the color by having the hue, saturation, brightness of the color, what do we see exactly?"
+            }
+          ]
+        },
+        {
+          "depth": 3,
+          "name": "Color Discriminability",
+          "img": "./img/2Colordiscriminability.png",
+          "description":"How often color differences were perceived?",
+          "children": [
+            {
+              "depth": 4,
+              "name": "Color-coding Information",
+              "img": "./img/images-06.svg",
+              "description":"Does red mean danger or love? We encode the meaning into color and that makes colors more interesting. ",
+              "children":[
+                {
+                  "depth": 5,
+                  "name": "Color Perceptions Differ",
+                  "img": "./img/images-05.svg",
+                  "description":"The human eye can physically perceive millions of colors. But we don't all recognize these colors in the same way. From my understanding, it happens in every perception and cognitive perspective rather than just color."
+                },
+                {
+                  "depth": 5,
+                  "name": "Design in Terms of Make Types",
+                  "img": "./img/images-05.svg",
+                  "description":"Designers can create distinctions by different elements.",
+                  "children":[
+                    {
+                      "depth": 6,
+                      "name": "Circles",
+                      "img": "./img/images-05.svg",
+                      "description":"It's better using color with bigger area in circular shapes."
+                    },
+                    {
+                      "depth": 6,
+                      "name": "Rectangles",
+                      "img": "./img/images-05.svg",
+                      "description":"It's better using color with bigger area in rectangular shapes."
+                    },
+                    {
+                      "depth": 6,
+                      "name": "Lines",
+                      "img": "./img/images-05.svg",
+                      "description":"It's not obvious using color in lines but if you can make it thicker to be noticed."
+                    }
+                  ]                
+                },
+                {
+                  "depth": 5,
+                  "name": "Robust",
+                  "img": "./img/images-05.svg",
+                  "description":"Thinking twince when you are using colors. Colors should be robust for color-blind individuals, to contrast effects, to shadows!"
+                }
+              ]
+            },
+            {
+              "depth": 4,
+              "name": "Emphasis and Highlighting",
+              "img": "./img/images-06.svg",
+              "description":"Using colors to emphasize and highlighting something you want others can notice quickly. Sometimes, designers also make it differ from others which let it stands out!"
+            },
+            {
+              "depth": 4,
+              "name": "Color Utilize",
+              "img": "./img/images-07.svg",
+              "description":"Designers need to know how to play with colors!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "depth": 2,
+      "name": "Attention",
+      "img": "./img/images-01.svg",
+      "description":"Attention is the ability to actively process specific information in the environment while tuning out other details. So, what draws your attention? How can designers make something to gain your attention?",
+      "children": [
+        {
+          "depth": 3,
+          "name": "Spatial Dimension",
+          "img": "./img/images-04.svg",
+          "description":"Spatial dimension refers to the location, position of objects, it's important because, in visual cognition, response proves faster when the target appears closer to the cued center of visual focus. ",
+          "children": [
+            {
+              "depth": 4,
+              "name": "Disturbing",
+              "img": "./img/images-07.svg",
+              "description":"It's NOT something that may cause feelings of worry, concern, or anxiety, it's something won't let you pay attention.",
+              "children":[
+                {
+                  "depth": 5,
+                  "name": "Transition Point",
+                  "img": "./img/images-07.svg",
+                  "description":"Quite often, some nonessential quality such as a name or a color provides the transition point. Wherever an element of the current object of attention also has meaning in another nearby conceptual context, the temptation arises to shift to that one.",
+                  "children": [
+                    {
+                      "depth": 6,
+                      "name": "Symbol",
+                      "img": "./img/images-07.svg",
+                      "description":"A mark or character used as a conventional representation of an object, function, or process."
+                    },
+                    {
+                      "depth": 6,
+                      "name": "Color",
+                      "img": "./img/images-07.svg",
+                      "description":"The color of objects."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "depth": 4,
+              "name": "Visual Patterns",
+              "img": "./img/images-07.svg",
+              "description":"A visual pattern is a sequence of pictures or geometric objects that have been created based on some rule. ",
+              "children": [
+                {
+                  "depth": 5,
+                  "name": "Form of symbolic Processing",
+                  "img": "./img/processing.gif",
+                  "description":"The process of cognitive modeling makes use of computational architectures, as we have seen for symbol processing and connectionist frameworks."
+                }
+              ]
+            },
+            {
+              "depth": 4,
+              "name": "Depth Perception",
+              "img": "./img/images-07.svg",
+              "description":"Depth perception is the visual ability to perceive the world in three dimensions (3D) and the distance of an object.",
+              "children": [
+                {
+                  "depth": 5,
+                  "name": "Zooming",
+                  "img": "./img/images-07.svg",
+                  "description":"Make something bigger or close forward in terms of stereoscopic depth"
+                }
+              ]
+            },
+            {
+              "depth": 4,
+              "name": "Cue Theory",
+              "img": "./img/images-07.svg",
+              "description":"Some depth cues are not captured in a static image, and are therefore not pictorial. One kind of depth cue comes from the fact that humans, like many other animals, have two front-facing eyes. Another non-pictorial depth cue that is more useful and powerful than stereoscopic depth is called structure from motion. Th e brain can interpret the moving pattern that arises when objects rotate with respect to a viewpoint to derive information about depth.",
+              "children": [
+                {
+                  "depth": 5,
+                  "name": "Pictorial",
+                  "img": "./img/images-07.svg",
+                  "description":"Depth cues can be divided into those that are pictorial and those that are non-pictorial . Pictorial depth cues can be reproduced in a photograph or a realistic painting. "
+                },
+                {
+                  "depth": 5,
+                  "name": "Non-Pictorial",
+                  "img": "./img/images-07.svg",
+                  "description":"The non-pictorial depth cues are stereopsis (arising from our having two eyes), structure from motion (which we get as we move through the world), as well as lesser eff ects like focusing of the lens in the eye, and the convergence of the two eyes that occurs when we fixate near objects."
+                }
+              ]
+            },
+            {
+              "depth": 4,
+              "name": "Where Pathway",
+              "img": "./img/images-07.svg",
+              "description":"The where pathway sweeps forward higher up on the brain and processes information about where objects in the world are located."
+            }
+          ]
+        },
+        {
+          "depth": 3,
+          "name": "Temporal Dimension",
+          "img": "./img/images-04.svg",
+          "description":"A temporal dimension, or time dimension, is a dimension of time. Time is often referred to as the 'fourth dimension' for this reason, but that is not to imply that it is a spatial dimension. A temporal dimension is one way to measure physical change. It is perceived differently from the three spatial dimensions in that there is only one of it, and that we cannot move freely in time but subjectively move in one direction.",
+          "children": [
+            {
+              "depth": 4,
+              "name": "Fear of Missing Out",
+              "img": "./img/images-05.svg",
+              "description":"Fear of missing out (FOMO) is a social anxiety stemming from the belief that others might be having fun while the person experiencing the anxiety is not present. ",
+              "children": [
+                {
+                  "depth": 5,
+                  "name": "Desire for Information",
+                  "img": "./img/images-07.svg",
+                  "description":"The desire for information motivates people to seek information. Based on the information we want, we search with visual queries."
+                }
+              ]            
+            },
+            {
+              "depth": 4,
+              "name": "Physiological Network",
+              "img": "./img/images-05.svg",
+              "description":"To explain the diversity of attention’s purposes, and to understand how these differ in their demands on the mental hierarchy, consider three physiological networks for “alerting, orienting, and executing.”",
+              "children": [
+                {
+                  "depth": 5,
+                  "name": "Alerting",
+                  "img": "./img/images-07.svg",
+                  "description":"Alerting is the gatekeeper network, the caretaker who turns the lights on and off and keeps the hearth fires burning in our cerebral house. Simply put, alerting is wakefulness, the cornerstone of sensibility to our surroundings."
+                },
+                {
+                  "depth": 5,
+                  "name": "Orienting",
+                  "img": "./img/images-07.svg",
+                  "description":"Orienting is akin to a cognitive mouth, a gateway to our perception, the scout."
+                },
+                {
+                  "depth": 5,
+                  "name": "Executing",
+                  "img": "./img/images-07.svg",
+                  "description":"The executive network is our troubleshooter, a sheriff who moonlights as the judge, with a long reach and a heady power that is, alas, easily corrupted."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "depth": 3,
+          "name": "Inattention Blindness",
+          "img": "./img/images-05.svg",
+          "description":"Inattentional blindness or perceptual blindness (rarely called inattentive blindness) occurs when an individual fails to perceive an unexpected stimulus in plain sight, purely as a result of a lack of attention rather than any vision defects or deficits.",
+          "children": [
+            {
+              "depth": 4,
+              "name": "You See What You Seek",
+              "img": "./img/images-05.svg",
+              "description":"Having the visual queries, you know you are seeking for information. And then you can pay attention and see something."
+            }            
+          ]
+        }
+      ]
+    },
+    {
+      "depth": 2,
+      "name": "Motion",
+      "img": "./img/images-07.svg",
+      "description":"When an object moves toward an observer, the retinal projection of the object expands over a period of time, which leads to the perception of movement in a line toward the observer.",
+      "children": [
+        {
+          "depth": 3,
+          "name": "Internal",
+          "img": "./img/images-07.svg",
+          "description":"The internal functions of our body, like eye movment and brain processing help us a lot in information generating.",
+          "children": [
+            {
+              "depth": 4,
+              "name": "Eye Movement",
+              "img": "./img/images-07.svg",
+              "description":"Eye movement includes the voluntary or involuntary movement of the eyes, helping in acquiring, fixating, and tracking visual stimuli. Here, we only talk about the voluntary movement of the eyes to search and capture visuals.",
+              "children": [
+                {
+                  "depth": 5,
+                  "name": "Capturing Objects",
+                  "img": "./img/images-07.svg",
+                  "description":"What we see is what we successfully captured the objects!"
+                }
+              ]
+            },
+            {
+              "depth": 4,
+              "name": "Gesture",
+              "img": "./img/15Gestures.png",
+              "description":"A gesture is a form of non-verbal communication or non-vocal communication in which visible bodily actions communicate particular messages.",
+              "children": [
+                {
+                  "depth": 5,
+                  "name": "Understanding Contents",
+                  "img": "./img/15Gestures.png",
+                  "description":"How do we understand the contents of gestures? We see the movement of hands, faces, or any part of our body, and decode those movements into understandable information."
+                }
+              ]
+            },
+            {
+              "depth": 4,
+              "name": "Mind",
+              "img": "./img/images-08.svg",
+              "description":"The same, our eyes and mind work together to let us be able to see!",
+              "children": [
+                {
+                  "depth": 5,
+                  "name": "Decoding Information",
+                  "img": "./img/images-01.svg",
+                  "description":"Our mind is like a mini-size supercomputer that can access, generate, the process even the most complex information, like from our eyes."                
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "depth": 3,
+          "name": "External",
+          "img": "./img/images-03.svg",
+          "description":"The external world also providing a lot of information.",
+          "children": [
+            {
+              "depth": 4,
+              "name": "Object's Movement",
+              "img": "./img/images-08.svg",
+              "description":"The movement of objects."
+            },
+            {
+              "depth": 4,
+              "name": "Structure Objects",
+              "img": "./img/images-08.svg",
+              "description":"Showing the joints clearly in a structured object will make it easier to identify that object. Th is can be done by posing the object in such a way that the joints are clear in the silhouette."
+            },
+            {
+              "depth": 4,
+              "name": "Scene Perception",
+              "img": "./img/images-08.svg",
+              "description":"Scene Perception is the visual perception of an environment as viewed by an. observer at any given time. It includes not only the perception of individual objects, but also such things as their relative locations, and expectations about what other kinds of objects might be encountered."
+            },
+            {
+              "depth": 4,
+              "name": "Variable Changing",
+              "img": "./img/images-08.svg",
+              "description":"The qualities or characteristics of one variable of objects change.",
+              "children": [
+                {
+                  "depth": 5,
+                  "name": "Color",
+                  "img": "./img/images-07.svg",
+                  "description":"The color of objects."
+                },
+                {
+                  "depth": 5,
+                  "name": "Brightness",
+                  "img": "./img/images-07.svg",
+                  "description":"The brightness of objects."
+                },
+                {
+                  "depth": 5,
+                  "name": "Shape",
+                  "img": "./img/images-07.svg",
+                  "description":"The shape of objects."
+                },
+                {
+                  "depth": 5,
+                  "name": "Size",
+                  "img": "./img/images-07.svg",
+                  "description":"The size of objects."
+                }
+              ]
+            },
+            {
+              "depth": 4,
+              "name": "Spatial",
+              "img": "./img/images-08.svg",
+              "description":"The spatial dimension of objects. Like position, orientation, etc. It can help to enhance the conceptual inference."
+            }
+          ]
+        },
+        {
+          "depth": 3,
+          "name": "Thinking in Action",
+          "img": "./img/images-03.svg",
+          "description":"The sequence of our actions is corresponding to the way we think."
+        }
+      ]
+    },
+    {
+      "depth": 2,
+      "name": "Narrative",
+      "img": "./img/16NarrativeDiagrams.png",
+      "description":"Narratives can be presented through a sequence of written or spoken words, still or moving images, or any combination of these.",
+      "children": [
+        {
+          "depth": 3,
+          "name": "Visual Thinking",
+          "img": "./img/images-07.svg",
+          "description":"Visual thinking consists of a series of acts of attention, driving eye movements and tuning our pattern-finding circuits.",
+          "children": [
+            {
+              "depth": 4,
+              "name": "Symbols",
+              "img": "./img/images-07.svg",
+              "description":"A mark or character used as a conventional representation of an object, function, or process."
+            },
+            {
+              "depth": 4,
+              "name": "Gesture",
+              "img": "./img/15Gesture.png",
+              "description":"A gesture is a form of non-verbal communication or non-vocal communication in which visible bodily actions communicate particular messages."
+            }
+          ]
+        },
+        {
+          "depth": 3,
+          "name": "Language-Based Thinking",
+          "img": "./img/images-03.svg",
+          "description":"We need a clear way of distinguishing between the visual thinking that goes with graphic expression, and other forms of thinking, especially language-based thinking. The existence of sign languages clearly demolishes the idea that one mode is fundamentally visual and the other mode is fundamentally auditory. ",
+          "children": [
+            {
+              "depth": 4,
+              "name": "Words",
+              "img": "./img/images-08.svg",
+              "description":"A single distinct meaningful element of speech or writing."
+            },
+            {
+              "depth": 4,
+              "name": "Grammar and Logic",
+              "img": "./img/images-08.svg",
+              "description":"Natural language, whether it is sign language or spoken language, incorporates a form of logic that is quite distinct from the logic of visual representation. Visual representations can incorporate a kind of logic, but it is very different from the more abstract logic of natural language. Visual logic is the logic of pattern, object, and space."
+            }
+          ]
+        },
+        {
+          "depth": 3,
+          "name": "Visual and Verbal",
+          "img": "./img/images-03.svg",
+          "description":"We speak while we are acting. For example, later in life, pointing is still an important part of communication, especially when it is necessary to link visual and verbal information. Phrases like “ look at that one, ” “ put it over there, ” and “ it ’ s here” gain their meaning through the linking of objects to a speech by gestures such as pointing. Actions that provide the subject or object of a spoken sentence by directing attention to objects in the world are called deictic gestures.",
+          "children": [
+            {
+              "depth": 4,
+              "name": "Cartoons",
+              "img": "./img/images-08.svg",
+              "description":"Cartoons are a form of visual narrative that have much in common with movies.",
+              "children": [
+                {
+                  "depth": 5,
+                  "name": "Video",
+                  "img": "./img/images-07.svg",
+                  "description":"Videos are also a form of visual narrative by recording, copying, playback, broadcasting, and display of moving visual media. A video presentation is less effective in supporting information gathering because navigating through time in a video sequence is much more difficult than simply looking at different parts of a diagram sequence."
+                }
+              ]
+            },
+            {
+              "depth": 4,
+              "name": "Narrative Diagrams",
+              "img": "./img/images-08.svg",
+              "description":"The narrative diagram is visual graphics or visualizations created by the designers that express the information to the audience.",
+              "children": [
+                {
+                  "depth": 5,
+                  "name": "Interactive and Scrollytelling",
+                  "img": "./img/images-07.svg",
+                  "description":"Interactive means two people or things influencing or having an effect on each other. Scrollytelling was a term first coined to describe online longform stories characterised by audio, video and animation effects triggered by simply scrolling the page."
+                }
+              ]
+            },
+            {
+              "depth": 4,
+              "name": "Single Frame Narratives",
+              "img": "./img/images-08.svg",
+              "description":"Some single-frame diagrams are designed to perform a narrative function; they lead the interpreter through a series of cognitive steps in a particular order.",
+              "children": [
+                {
+                  "depth": 5,
+                  "name": "Infographic",
+                  "img": "./img/images-07.svg",
+                  "description":"Infographics are graphic visual representations of information, data, or knowledge intended to present information quickly and clearly."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "depth": 2,
+      "name": "Creative Meta-Seeing",
+      "img": "./img/images-07.svg",
+      "description":"It is critical and analytic in a way that goes beyond the normal process of visual thinking associated with everyday tasks.",
+      "children": [
+        {
+          "depth": 3,
+          "name": "Normal Seeing",
+          "img": "./img/images-07.svg",
+          "description":"Normal seeing is a constructive, task-oriented process whereby the brain searches the environment and extracts information as needed for the task at hand."
+        },
+        {
+          "depth": 3,
+          "name": "Imaging",
+          "img": "./img/images-03.svg",
+          "description":"The action of visualizing elements – objects or the related dynamics.",
+          "children": [
+            {
+              "depth": 4,
+              "name": "Scribbling",
+              "img": "./img/17Scribbling.png",
+              "description":"The action of writing or drawing something carelessly or hurriedly."
+            },
+            {
+              "depth": 4,
+              "name": "Visual Brainstorming",
+              "img": "./img/images-08.svg",
+              "description":"Putting ideas and thoughts on display rather than the actual act of drawing visuals."
+            },
+            {
+              "depth": 4,
+              "name": "Diagrams",
+              "img": "./img/17Scribbling.png",
+              "description":"A diagram is a symbolic representation of information using visualization techniques."
+            },
+            {
+              "depth": 4,
+              "name": "Sketches",
+              "img": "./img/17Scribbling.png",
+              "description":"A rough or unfinished drawing or painting, often made to assist in making a more finished picture."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

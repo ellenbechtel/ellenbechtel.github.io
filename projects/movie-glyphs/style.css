@@ -71,31 +71,41 @@ h1{
    
 }
 .explainer-triangle {
-    opacity: .3;
+    fill: #ca4878;
+    stroke: white;
+    transform-origin: 50% 60%;
+    animation: rotate 20s infinite;
+    animation-delay: 3s;
 }
+
+.backgroundArc {
+    opacity: .5;
+}
+
 .triangle {
     opacity: .6;
 }
-
+.imdb-rating{
+    stroke:black;
+}
 .RT-audience-rating {
-    /* stroke: black;
-    stroke-width: 1px; */
+    stroke: white;
 }
-.imdb-rating {
-    /* stroke: black;
-    stroke-width: 1px; */
-}
-
 .wiggle {
     transform-origin: 50% 50%;
     -webkit-animation: wiggle 6s ease-in-out infinite;
     -moz-animation: wiggle 6s ease-in-out infinite;
-    animation: wiggle 6s ease-in-out infinite;
+    animation: wiggle 10s ease-in-out infinite;
+    animation-delay: 1.5s;
 }
 
 .sparkle{
     fill: white;
+    /* -webkit-animation: sparkle 2s ease-in-out infinite;
+    -moz-animation: sparkle 2s ease-in-out infinite;
+    animation: sparkle 2s ease-in-out infinite; */
 }
+
 
 .critic-triangle {
     stroke: white;
@@ -116,6 +126,8 @@ h1{
 
 
 
+
+
 /* Animation key frames */
 @keyframes wiggle {
     0% { transform: rotate(0deg); }
@@ -126,3 +138,75 @@ h1{
    99% { transform: rotate(-1deg); }
   100% { transform: rotate(0deg); }
 }
+
+
+
+@keyframes sparkle {
+    0% {
+        transform: translate(0,0);
+        transition-property: transform;
+    }
+    80% {
+        transform: translate(3px,3px);
+        transition-property: transform;
+    }
+    100% {
+        transform: translate(0,0);
+        transition-property: transform;
+    }
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+        fill: #ca4878;
+        transition-property: rotate, fill;
+    }
+    5%{
+        fill: #f59640;
+    }
+    10% {
+        transform: rotate(90deg);
+        fill: #ebcf29;
+        transition-property: rotate, fill;
+    }
+    15% {
+        fill: #f59640;
+    }
+    20% {
+        transform: rotate(0deg);
+        fill: #ca4878;
+        transition-property: rotate, fill;
+    }
+    25%{
+        fill: #781d7d;
+    }
+    30%{
+        fill: #44049b;
+    }
+    35% {
+        transform: rotate(-90deg);
+        fill: #1f1b50;
+        transition-property: rotate, fill;
+    }
+    40%{
+        fill: #44049b;
+    }
+    45%{
+        fill: #781d7d;
+    }
+    50% {
+        transform: rotate(0deg);
+        fill: #ca4878;
+        transition-property: rotate, fill;
+    }
+}
+/* 
+
+<stop offset="0" stop-color="#1f1b50"/>
+<stop offset="0.14" stop-color="#44049b"/>
+<stop offset="0.34" stop-color="#781d7d"/>
+<stop offset="0.54" stop-color="#ca4878"/>
+<stop offset="0.73" stop-color="#f59640"/>
+<stop offset="0.89" stop-color="#ebcf29"/>
+<stop offset="1" stop-color="#f1f722"/> */
