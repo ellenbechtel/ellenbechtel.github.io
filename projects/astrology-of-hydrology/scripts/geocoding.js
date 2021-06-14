@@ -1053,6 +1053,7 @@ function fetchLocation() {
     // Compile Geocoding URL
     var geocode = geocodeAPIURL + "+" + city + ",+" + state + key;
 
+    console.log(geocode, "url");
     /////////////////////////////////
     // Call API
     d3.json(geocode, function(error, apiData) { 

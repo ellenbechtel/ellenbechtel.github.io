@@ -1,0 +1,48 @@
+body {
+  padding-top: 10vh;
+}
+
+#hlito {
+  text-align: center;
+  margin: auto;
+  width: auto;
+}
+
+/* .inverted {
+    -webkit-filter: invert(100%);
+    filter: invert(100%); 
+} */
+
+#background {
+  fill: #262c36;
+}
+.blank-path {
+  fill: none;
+  stroke: none;
+}
+
+.line,
+.circ {
+  fill: none;
+  stroke-width: 4px;
+  stroke-miterlimit: 10;
+}
+.yellow-blue {
+  stroke: #394c93;
+}
+
+.blue-orange {
+  stroke: #f8a065;
+}
+
+.green-purp {
+  stroke: #8462aa;
+}
+
+.red-teal {
+  stroke: #3ebfbb;
+}
+
+.black-white {
+  stroke: #fff;
+}
