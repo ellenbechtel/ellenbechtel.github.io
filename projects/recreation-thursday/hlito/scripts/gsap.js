@@ -7,7 +7,7 @@ let red = "#c24045"
 let duration = 1000
 let time = 0.7;
 let delay = -0.3
-let stagger = 0.1;
+let stagger = 0.175;
 
 // create d3 function to invert colors
 const invertColors = () => {
@@ -61,7 +61,7 @@ TweenMax.set(".path, .circ", {
 const tl = gsap.timeline();
 
 // Add animations to timeline
-tl.to(".path", 0.5, {drawSVG: "100%", ease: Linear.easeNone, stagger: stagger})
+tl.to(".path", 0.5, {drawSVG: "100%", ease: Linear.easeNone, stagger: stagger, delay: 1})
 tl.to(".circ-2", {
     duration: 3,
     ease: "power1.inOut",
