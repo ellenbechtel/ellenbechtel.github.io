@@ -43,22 +43,53 @@ const invertColors = () => {
         .style("stroke", "black")
 }
 
+
+// Activate toggle switch
+const toggleInversion = () => {
+    var svg = d3.select("#hlito");
+    svg.classList.toggle("inverted")
+}
+
+
+
 // Hide everything
-TweenMax.set(".path", {
+TweenMax.set(".path, .circ", {
     drawSVG: '0% 0%'
 })
 
 // Create Timeline
 const tl = gsap.timeline();
 
-
-
 // Add animations to timeline
-tl.to(".path", {drawSVG: "100%", ease: Linear.easeNone, stagger: stagger})
-tl.from("#big-curve", { x: -100, y: 400, rotation: 90, duration: time, delay: delay })
-tl.from("#small-curve", { x: 500, y: 90, rotation: 400, duration: time, delay: 0})
-tl.from("#straight-line", { x: 500, y: 180, rotation: 27, duration: time, delay: 0,})
-// tl.from(".black-white", { x: 100, rotation: 450, duration: 2 })
+tl.to(".path", 0.5, {drawSVG: "100%", ease: Linear.easeNone, stagger: stagger})
+tl.to(".circ-2", {
+    duration: 3,
+    ease: "power1.inOut",
+    motionPath: {
+        path: "#big-curve",
+        align: "#big-curve",
+        alignOrigin: [0.5, 0.5],
+        start: 0,
+        end: 1
+    },
+    drawSVG: "100%",
+    stagger: .2
+})
+tl.to(".circ-2", { opacity: 0, stagger: 0.2, delay: -1 })
+tl.to(".circ-1", {
+    duration: 3,
+    ease: "power1.inOut",
+    motionPath: {
+        path: "#blank-path-right",
+        align: "#blank-path-right",
+        alignOrigin: [0.5, 0.5],
+        start: 1,
+        end: 0
+    },
+    drawSVG: "100%",
+    stagger: .2,
+    delay: -2
+})
+tl.to(".circ-1", {opacity: 0, stagger: 0.2, delay: -1})
 tl.call(invertColors)
-// tl.to(".line, .circ", {x: 600, delay: 1, duration: 2}) // disappear offscreen
 
