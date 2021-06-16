@@ -1,59 +1,239 @@
-html, body {
-    margin: 0;
-    height: 100%;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16pt;
+/*
+    File Contents:
+
+        1. Variables
+        2. Mixins
+        3. Global Styles
+        4. Lead Styles
+        5. About Styles
+        6. Experience Styles
+        7. Education Styles
+        8. Project Styles
+        9. Skills Styles
+        10. Contact Styles
+        11. Optional Section Styles
+        12. Media Queries
+*/
+
+/*
+    ------------------------
+    ----- 1. Variables -----
+    ------------------------
+*/
+
+// // base and accent colors
+// $base-color: #03543e;
+// $base-color-hover: darken($base-color, 10%);
+
+// // background colors
+// $background: #fff;
+// $background-alt: #f2f2f5;
+
+// // Define border colors
+// $border: #dcd9d9;
+
+// // Define text colors
+// $heading: #374054;
+// $text: #74808a;
+
+/*
+    ---------------------
+    ----- 2. Mixins -----
+    ---------------------
+*/
+
+/*
+    ----------------------------
+    ----- 3. Global Styles -----
+    ----------------------------
+*/
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 100;
+  line-height: 1.5em;
 }
 
 body {
-    box-sizing: border-box;
-    font-size: 16px;
+  box-sizing: border-box;
+}
+
+// animation for dropping header
+
+h1 {
+  font-size: 8em;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 4em;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 2em;
+  font-weight: 100;
+}
+
+p {
+  font-size: 1em;
+  font-weight: 300;
+}
+
+.filled {
+  fill: #03543e;
+}
+
+.smooth {
+  margin: 0 auto;
+  padding: 0 4px;
+  padding-left: 8px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+header,
+footer {
+  position: relative;
+  padding: 1em 2em;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: 10vh;
+  //   animation-name: dropHeader;
+  //   animation-iteration-count: 1;
+  //   animation-timing-function: ease;
+  //   animation-duration: 0.75s;
+}
+
+footer {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  height: 10vh;
+}
+
+header h3,
+footer h3 {
+  position: relative;
+}
+
+.logo {
+  max-width: 300px;
+  width: 20%;
+  height: auto;
+}
+
+header ul,
+footer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 1em 0;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+header ul li,
+footer ul li {
+  position: relative;
+  margin: 0 1em;
+  transition: all 0.2s linear;
+}
+
+ul li a {
+  font-weight: 100;
+}
+
+header ul li::before,
+footer ul li::before {
+  position: absolute;
+  content: "";
+  top: calc(100% + 4px);
+  left: 0;
+  width: 20px;
+  height: 2px;
+  transform-origin: 0 100%;
+  transform: rotate(-5deg);
+  transition: all 0.2s ease-out;
+}
+
+header ul li:hover::before,
+footer ul li:hover::before {
+  width: 100%;
+  background-color: $base-color;
 }
 
 #meat {
-    background-image: linear-gradient(90deg, rgba(107,180,94,.3) 0%, rgba(199,150,82,.5) 100%), url(lake.JPG);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+  background-image: linear-gradient(
+      90deg,
+      rgba(107, 180, 94, 0.3) 0%,
+      rgba(199, 150, 82, 0.5) 100%
+    ),
+    url(lake.JPG);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 #meat .content {
-    color: white;
-    margin: 0 auto;
-    padding: 14em 0 14em;
+  color: white;
+  margin: 0 auto;
+  padding: 14em 0 14em;
 }
 .content {
-    width: 960px;
-    margin: 0 auto;
-    padding: 2em 0 1em;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2em 0 1em;
 }
 
-h1 {
-    font-size: 8em;
-    margin: 2em auto 0;
-}
+// Link styling
 
 a {
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-    background: linear-gradient(180deg, rgba(255,255,255,0) 60%, #febd00 80%);
-  }
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  //   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 60%, #febd00 80%);
+}
 
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  color: black;
+}
+
+a:visited {
+  color: purple;
+}
 
 #potatoes .content {
-    margin: 0 auto;
-    padding: 5em 0 5em;
+  margin: 0 auto;
+  padding: 5em 0 5em;
 }
 
-#footer{
-    background-color: #f7f7f7;
+#footer {
+  background-color: #f7f7f7;
 }
 #footer .content {
-    margin: 0 auto;
-    padding: 2em 0 2em;
-    color: #03543e;
-    opacity: .3;
-    font-size: .8em;
+  margin: 0 auto;
+  padding: 2em 0 2em;
+  color: #03543e;
+  opacity: 0.3;
+  font-size: 0.8em;
 }
