@@ -6,5 +6,17 @@ body {
 #art {
   text-align: center;
   margin: auto;
+  padding: 0 10px;
+  height: 80vh;
   width: auto;
+}
+
+#svg {
+  background-color: orchid;
+}
+
+.line {
+  stroke: black;
+  stroke-width: 1px;
+  fill: none;
 }
