@@ -767,6 +767,11 @@ section .header .content p {
     background-image: linear-gradient(90deg, rgba(13,38,18,.4) 0%, rgba(199,150,82,.3) 100%), url(photos/boat.jpeg); 
     background-size: 100%; /* probably will have to play around with this and other background stuff */
   }
+
+  #remote .header {
+    background-image: linear-gradient(90deg, rgba(13,38,18,.4) 0%, rgba(199,150,82,.3) 100%), url(photos/Deelyboppers.jpg); 
+    background-size: 100%; /* probably will have to play around with this and other background stuff */
+  }
   
   #location .header {
     background-image: linear-gradient(90deg, rgba(13,38,18,.4) 0%, rgba(199,150,82,.3) 100%), url(photos/redhill.JPG);
@@ -776,7 +781,7 @@ section .header .content p {
     background-image: linear-gradient(90deg, rgba(13,38,18,.4) 0%, rgba(199,150,82,.3) 100%), url(photos/genevapoint.JPG);
   }
   
-  #rsvp .header {
+  #faq .header {
     background-image: linear-gradient(90deg, rgba(13,38,18,.4) 0%, rgba(199,150,82,.3) 100%), url(photos/edies.jpg);
   }
   
