@@ -37,7 +37,7 @@ body.full {
 
   a {
     color: #2F612E;
-    display: block;
+    /* display: block; */
   }
   
   a:visited {
@@ -157,7 +157,7 @@ footer .end-circle {
   }
   
   nav > div > a {
-    color: #444;
+    color: #111;
     margin: 0 0 0 20px;
   }
 
@@ -175,12 +175,12 @@ footer .end-circle {
   nav a,
   nav a:visited {
     font-family: 'Montserrat', sans-serif;
-    font-size: .6em;
+    font-size: .7em;
     font-weight: inherit;
     line-height: 1;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: #777;
+    color: #222;
     text-decoration: none;
     cursor: pointer;
     padding: 14px 20px;
