@@ -768,7 +768,7 @@ section .header .content p {
     background-size: 100%; /* probably will have to play around with this and other background stuff */
   }
 
-  #remote .header {
+  #thanks .header {
     background-image: linear-gradient(90deg, rgba(13,38,18,.4) 0%, rgba(199,150,82,.3) 100%), url(photos/Deelyboppers.jpg); 
     background-size: 100%; /* probably will have to play around with this and other background stuff */
   }
